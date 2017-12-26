@@ -1,0 +1,2889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>三江购物超市-食品饮料、粮油调味、营养保健、生鲜食品 –三江购物</title>
+		<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/swiper-3.4.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/index.css">
+		<script type="text/javascript" src="__ROOT__/Index/Common/js/angular.min.js"></script>
+		<script src="__ROOT__/Index/Common/js/jquery-1.11.3.min.js"></script>
+		<script src="__ROOT__/Index/Common/js/Popt.js"></script>
+		<script src="__ROOT__/Index/Common/js/cityJson.js"></script>
+		<script src="__ROOT__/Index/Common/js/citySet.js"></script>
+	</head>
+
+	<body ng-app="myApp" ng-controller="myController">
+		<!--头部导航条-->
+		<div class="header">
+			<!--导航条主体-->
+			<div class="top_bar">
+				<div class="w1200">
+					<div class="send_where">
+						送至：<input type="text" id="city" placeholder="浙江省"/>
+					</div>
+					<ul class="ufr">
+						<li class="item1">
+								<div ng-if="isLogin.status==2">
+									您好，欢迎来到三江！
+									<span>
+									<a href="__APP__/Login/login" class="login">登录</a>
+									<a href="__APP__/Register/register">注册</a>
+									</span>
+								</div>
+								<a href="__APP__/Mymessage/mymessage" style="margin-right: 15px;" ng-if="isLogin.status==1">{{isLogin.info}}</a>
+								<a href="javascript:void(0)" ng-click="quit()" ng-if="isLogin.status==1">退出</a>
+						</li>
+						<li class="item2 mydd">
+							<div></div>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的订单</a>
+							<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+							</if>
+						</li>
+						<li class="menu">
+							<div class="drop_down_top">
+								<div></div>
+								<if condition="!isset($_SESSION['username'])">
+									<a href="__APP__/Login/login" target="_blank">我的三江</a>
+								<else />
+									<a href="__APP__/Mymessage/mymessage" target="_blank">我的三江</a>
+								</if>
+								<em></em>
+
+							</div>
+							<div class="drop_down_box w140">
+								<p></p>
+								<if condition="!isset($_SESSION['username'])">
+									<a href="__APP__/Login/login" target="_blank">我的订单</a>
+									<a href="__APP__/Login/login" target="_blank">我的收藏</a>
+									<a href="__APP__/Login/login" target="_blank">我的优惠券</a>
+									<a href="__APP__/Login/login" target="_blank">地址管理</a>
+								<else />
+									<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+									<a href="__APP__/Mymessage/mymessage" target="_blank">我的收藏</a>
+									<a href="__APP__/Mymessage/mymessage" target="_blank">我的优惠券</a>
+									<a href="__APP__/Mymessage/mymessage" target="_blank">地址管理</a>
+								</if>
+							</div>
+						</li>
+						<li class="koudai">
+							<div class="drop_down_top">
+								<div class="line"></div>
+								<div class="phone_app"></div>
+								<a href="http://help.sanjiang.com/app.html" target="_blank">口袋三江</a>
+								<em></em>
+
+							</div>
+							<div class="kd_box">
+								<p></p>
+								<div class="app_code"><span>三江客户端</span><span>三江订阅号</span></div>
+							</div>
+						</li>
+						<li class="item2">
+							<div></div>
+							<a href="javascript:void(0);" target="_blank">企业团购</a>
+						</li>
+						<li class="menu">
+							<div class="drop_down_top">
+								<div></div>
+								<a href="__APP__/Help/helpIndex" target="_blank">客户服务</a>
+								<em></em>
+
+							</div>
+							<div class="drop_down_box w140">
+								<p></p>
+								<a href="__APP__/Help/helpIndex" target="_blank">帮助中心</a>
+								<a href="__APP__/Help/shfwTHGZ" target="_blank">售后服务</a>
+								<if condition="!isset($_SESSION['username'])">
+									<a href="__APP__/Login/login" target="_blank">意见反馈</a>
+								<else />
+									<a href="__APP__/Mymessage/mymessage" target="_blank">意见反馈</a>
+								</if>
+							</div>
+						</li>
+						<li class="menu">
+							<div class="drop_down_top">
+								<div></div>
+								<a href="javascript:void(0)">网站导航</a>
+								<em></em>
+
+							</div>
+							<div class="drop_down_box w140 daohang">
+								<p></p>
+								<a href="__URL__/sjyx" target="_blank">三江优选</a>
+								<a href="__URL__/hsp" target="_blank">惠商品</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--搜索框-->
+			<div class="searchContainer">
+				<div class="logo">
+					<a href="__APP__/Index/index"></a>
+				</div>
+				<div class="top_search">
+					<input type="text" name="keyword" placeholder="三江购物东北大米" ng-model="keyword">
+					<button class="button" type="submit" id="search" ng-click="search()">搜索</button>
+				</div>
+				<div class="s_cart">
+					<div class="s_box">
+						<if condition="!isset($_SESSION['username'])">
+							<a href="__APP__/Login/login">我的购物车</a>
+						<else />
+							<a href="__APP__/Shopping/shopping">我的购物车</a>
+						</if>
+						<div class="goods_number"><b>{{totalNum}}</b></div>
+
+					</div>
+					<div class="s_content">
+						<!-- 未登陆无商品start-->
+						<if condition="!isset($_SESSION['username'])">
+							<div class="s_goods_no">
+								<i></i>
+								<p>您的购物车中空荡荡的。</p>
+
+								<p>如果您已经添加了商品，请
+									<a id="miLogin" href="http://login.sanjiang.com/?redirectURL=http://www.sanjiang.com/#1F">登录</a>查看。
+								</p>
+							</div>
+							<else />
+							<div class="s_goods_no" id="no_goods" ng-hide='isHave'>
+						        <i></i>
+						        <p>您的购物车中空荡荡的，赶紧去选购吧！</p>
+						      </div>
+							<div class="mc" ng-show="isHave">
+								<div class="d_cart_list" id="s_cart_list">
+									<dl>
+										<dd ng-repeat='val in shoppingArr'>
+											<span class="p_img"><a href="__APP__/Info/info?id={{val.pid}}"><img src="{{val.data.productImg}}"></a> </span>
+
+											<div class="p_name">
+												<a href="__APP__/Info/info?id={{val.pid}}">{{val.data.productTitle}}</a>
+											</div>
+											<div class="p_price">
+												<span><b>￥{{val.data.Price}}</b></span>
+												<div class="choose_amount">
+													<a class="btn_reduce" ng-click='minus(val.data.id,$index)'>-</a>
+													<p>{{val.num}}</p>
+													<a class="btn_add" ng-click='plus(val.data.id,$index)'>+</a>
+												</div>
+
+												<i class="miniDel" attr="1032502" ng-click="del(val.pid)">删除</i>
+											</div>
+										</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="mb" ng-show="isHave">
+								<div class="s_buy_num">
+									<p>共<span id="goodsNumber">{{totalNum}}</span>件商品</p>
+
+									<p>共计<b id="priceTotal">￥{{totalPrice | number:2}}</b></p>
+								</div>
+								<a href="__APP__/Shopping/shopping" class="s_buy_button">去购物车结算</a>
+							</div>
+						</if>
+					</div>
+				</div>
+				<div class="hotword">热门搜索：
+					<a class="hot" href="javascript:void(0);">三江购物</a>
+					<a href="javascript:void(0);">蒙牛</a>
+					<a href="javascript:void(0);">大米</a>
+					<a href="javascript:void(0);">伊利</a>
+					<a href="javascript:void(0);">昆仑山</a>
+					<a href="javascript:void(0);">可乐</a>
+				</div>
+			</div>
+			<!--商品导航条-->
+			<div class="nav">
+				<div class="navContainer">
+					<div class="cate_nav">
+						<div class="nav_top">
+							全部商品分类
+							<i></i>
+						</div>
+					</div>
+					<div class="navitems">
+						<a href="javascript:void(0);" target="_blank" class="curr">首页</a>
+						<a href="__URL__/hsp" target="_blank">惠商品</a>
+						<a href="__URL__/sjyx" target="_blank">三江优选</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--头部广告容器-->
+		<div class="adverContainer">
+			<div class="categorys">
+				<!--1-->
+				<div class="item">
+					<div class="product">
+						<b class="b_jinkou"></b>
+						<a href="javascript:void(0);">
+							进口食品
+						</a>
+						<i></i>
+					</div>
+					<div class="product_wrap list1">
+						<div class="subitems">
+							<dl>
+								<dt>
+                                    <a href="javascript:void(0);">
+                                    进口牛奶/乳品
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="javascript:void(0);">
+										进口牛奶
+									</a>
+									<a href="javascript:void(0);">
+										进口奶酪
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="javascript:void(0);">
+                                    进口糖巧
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="javascript:void(0);">
+										进口巧克力
+									</a>
+									<a href="javascript:void(0);">
+										进口硬糖
+									</a>
+									<a href="javascript:void(0);">
+										进口棒棒糖
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="javascript:void(0);">
+                                    进口休闲零食
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="javascript:void(0);">
+										进口膨化
+									</a>
+									<a href="javascript:void(0);">
+										进口坚果炒货
+									</a>
+									<a href="javascript:void(0);">
+										进口蜜饯果干
+									</a>
+									<a href="javascript:void(0);">
+										进口海产品
+									</a>
+									<a href="javascript:void(0);">
+										进口肉类即食/豆制品
+									</a>
+									<a href="javascript:void(0);">
+										进口果冻/布丁
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="javascript:void(0);">
+                                    进口酒品
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="javascript:void(0);">
+										进口葡萄酒
+									</a>
+									<a href="javascript:void(0);">
+										进口啤酒
+									</a>
+									<a href="javascript:void(0);">
+										其它进口酒
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="javascript:void(0);">
+                                    进口饼干/糕点
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="javascript:void(0);">
+										进口饼干
+									</a>
+									<a href="javascript:void(0);">
+										进口糕点
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="javascript:void(0);">
+                                    进口水/饮料
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="javascript:void(0);">
+										进口果汁/蔬菜汁
+									</a>
+									<a href="javascript:void(0);">
+										进口饮用水
+									</a>
+									<a href="javascript:void(0);">
+										进口咖啡
+									</a>
+									<a href="javascript:void(0);">
+										进口碳酸饮料
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="javascript:void(0);">
+                                    进口米面油
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="javascript:void(0);">
+										进口挂面/意面/粉丝
+									</a>
+									<a href="javascript:void(0);">
+										烘焙原料/辅料
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="javascript:void(0);">
+                                    进口Costco好市多
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<!--2-->
+				<div class="item">
+					<div class="product">
+						<b class="b_xiuxian"></b>
+						<a href="javascript:void(0);">
+							休闲食品/坚果炒货
+						</a>
+						<i></i>
+					</div>
+					<div class="product_wrap list2">
+						<div class="subitems">
+							<dl>
+								<dt>
+                                    <a href="javascript:void(0);">
+                                    休闲零食
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="javascript:void(0);">
+										膨化食品
+									</a>
+									<a href="javascript:void(0);">
+										海产品
+									</a>
+									<a href="javascript:void(0);">
+										肉干/豆制品
+									</a>
+									<a href="javascript:void(0);">
+										奶酪/乳制品
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="javascript:void(0);">
+                                    炒货蜜饯
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="javascript:void(0);">
+										碧根果
+									</a>
+									<a href="javascript:void(0);">
+										核桃
+									</a>
+									<a href="javascript:void(0);">
+										开心果
+									</a>
+									<a href="javascript:void(0);">
+										杏仁
+									</a>
+									<a href="javascript:void(0);">
+										腰果
+									</a>
+									<a href="javascript:void(0);">
+										瓜子
+									</a>
+									<a href="javascript:void(0);">
+										花生
+									</a>
+									<a href="javascript:void(0);">
+										梅类
+									</a>
+									<a href="javascript:void(0);">
+										豆类
+									</a>
+									<a href="javascript:void(0);">
+										山楂
+									</a>
+									<a href="javascript:void(0);">
+										葡萄干
+									</a>
+									<a href="javascript:void(0);">
+										其它坚果
+									</a>
+									<a href="javascript:void(0);">
+										其它蜜饯
+									</a>
+									<a href="javascript:void(0);">
+										坚果礼盒
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="javascript:void(0);">
+                                    饼干糕点
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="javascript:void(0);">
+										饼干
+									</a>
+									<a href="javascript:void(0);">
+										西式糕点
+									</a>
+									<a href="javascript:void(0);">
+										传统糕点
+									</a>
+									<a href="javascript:void(0);">
+										月饼
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="javascript:void(0);">
+                                    糖果巧克力
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="javascript:void(0);">
+										巧克力
+									</a>
+									<a href="javascript:void(0);">
+										硬糖
+									</a>
+									<a href="javascript:void(0);">
+										软糖
+									</a>
+									<a href="javascript:void(0);">
+										棒棒糖
+									</a>
+									<a href="javascript:void(0);">
+										薄荷糖/润喉糖
+									</a>
+									<a href="javascript:void(0);">
+										口香糖
+									</a>
+									<a href="javascript:void(0);">
+										果冻/布丁
+									</a>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<!--3-->
+				<div class="item">
+					<div class="product">
+						<b class="b_liangyou"></b>
+						<a href="javascript:void(0);">
+							粮油调味
+						</a>
+						<i></i>
+					</div>
+					<div class="product_wrap list3">
+						<div class="subitems">
+							<dl>
+								<dt>
+                                    <a href="javascript:void(0);">
+                                    方便速食
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="javascript:void(0);">
+										方便面/粉丝/米线
+									</a>
+									<a href="javascript:void(0);">
+										方便粥/饭 /面
+									</a>
+									<a href="javascript:void(0);">
+										火腿肠
+									</a>
+									<a href="javascript:void(0);">
+										罐头
+									</a>
+									<a href="javascript:void(0);">
+										粽子
+									</a>
+									<a href="javascript:void(0);">
+										年糕
+									</a>
+									<a href="javascript:void(0);">
+										其它速食品
+									</a>
+									<a href="javascript:void(0);">
+										速食汤
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="javascript:void(0);">
+                                    米面粮油
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="javascript:void(0);">
+										米类
+									</a>
+									<a href="javascript:void(0);">
+										食用油
+									</a>
+									<a href="javascript:void(0);">
+										挂面
+									</a>
+									<a href="javascript:void(0);">
+										面粉
+									</a>
+									<a href="javascript:void(0);">
+										杂粮
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="javascript:void(0);">
+                                    厨房调料
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="javascript:void(0);">
+										酱油
+									</a>
+									<a href="javascript:void(0);">
+										醋
+									</a>
+									<a href="javascript:void(0);">
+										糖
+									</a>
+									<a href="javascript:void(0);">
+										鸡精/味精
+									</a>
+									<a href="javascript:void(0);">
+										生粉/淀粉/嫩肉粉
+									</a>
+									<a href="javascript:void(0);">
+										调味酱
+									</a>
+									<a href="javascript:void(0);">
+										调味料
+									</a>
+									<a href="javascript:void(0);">
+										调味油
+									</a>
+									<a href="javascript:void(0);">
+										料酒/黄酒
+									</a>
+									<a href="javascript:void(0);">
+										烘焙辅料/食品添加剂
+									</a>
+									<a href="javascript:void(0);">
+										腐乳
+									</a>
+									<a href="javascript:void(0);">
+										酱菜
+									</a>
+									<a href="javascript:void(0);">
+										调味汁
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="javascript:void(0);">
+                                    南北干货
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="javascript:void(0);">
+										海带/干菜
+									</a>
+									<a href="javascript:void(0);">
+										杂粮
+									</a>
+									<a href="javascript:void(0);">
+										黑木耳/银耳
+									</a>
+									<a href="javascript:void(0);">
+										菌菇类
+									</a>
+									<a href="javascript:void(0);">
+										桂圆干/龙眼
+									</a>
+									<a href="javascript:void(0);">
+										枸杞
+									</a>
+									<a href="javascript:void(0);">
+										莲子/枣子
+									</a>
+									<a href="javascript:void(0);">
+										腌干水产品
+									</a>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<!--4-->
+				<div class="item">
+					<div class="product">
+						<b class="b_jiuyin"></b>
+						<a href="javascript:void(0);">
+							酒饮冲调/牛奶乳品
+						</a>
+						<i></i>
+					</div>
+					<div class="product_wrap list4">
+						<div class="subitems">
+							<dl>
+								<dt>
+                                    <a href="javascript:void(0);">
+                                    中外名酒
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="javascript:void(0);">
+										啤酒
+									</a>
+									<a href="javascript:void(0);">
+										白酒
+									</a>
+									<a href="javascript:void(0);">
+										葡萄酒
+									</a>
+									<a href="javascript:void(0);">
+										洋酒
+									</a>
+									<a href="javascript:void(0);">
+										黄酒/米酒
+									</a>
+									<a href="javascript:void(0);">
+										滋补酒
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="javascript:void(0);">
+                                    饮料/水
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="javascript:void(0);">
+										含乳饮料
+									</a>
+									<a href="javascript:void(0);">
+										饮用水
+									</a>
+									<a href="javascript:void(0);">
+										果蔬汁
+									</a>
+									<a href="javascript:void(0);">
+										茶饮料
+									</a>
+									<a href="javascript:void(0);">
+										咖啡饮料
+									</a>
+									<a href="javascript:void(0);">
+										碳酸饮料
+									</a>
+									<a href="javascript:void(0);">
+										功能饮料
+									</a>
+									<a href="javascript:void(0);">
+										植物蛋白饮料
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=172">
+                                    牛奶乳品
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=173">
+										纯牛奶
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=174">
+										酸奶
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=176">
+										豆奶/豆浆
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=178">
+                                    咖啡速溶
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=179">
+										速溶咖啡
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=181">
+										咖啡伴侣
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=182">
+                                    营养冲调
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=183">
+										茶叶
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=184">
+										豆奶粉/豆浆粉
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=185">
+										天然粉
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=186">
+										藕粉
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=187">
+										芝麻糊
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=188">
+										奶茶粉
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=189">
+										麦片谷物
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=190">
+										果味冲饮
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=192">
+										蜂蜜
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=193">
+										其他冲调饮品
+									</a>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<!--5-->
+				<div class="item">
+					<div class="product">
+						<b class="b_muying"></b>
+						<a href="http://list.sanjiang.com/search.html?categoryId=194">
+							母婴用品
+						</a>
+						<i></i>
+					</div>
+					<div class="product_wrap list5">
+						<div class="subitems">
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=195">
+                                    孕婴奶粉
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=196">
+										1段
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=197">
+										2段
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=198">
+										3段
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=199">
+										4段
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=202">
+										成人奶粉
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=203">
+                                    营养辅食
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=204">
+										果蔬肉泥
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=205">
+										婴儿果汁/饮料
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=206">
+										米粉/粥
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=208">
+										婴儿肉松
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=209">
+										饼干/磨牙棒
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=212">
+										益生菌/初乳
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=213">
+										钙铁锌/维生素
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=214">
+                                    尿裤湿巾
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=215">
+										纸尿裤
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=216">
+										成人纸尿裤
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=217">
+										婴儿湿巾
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=218">
+										拉拉裤
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=219">
+										尿布/尿垫
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=221">
+                                    洗护清洁
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=222">
+										洗发沐浴
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=223">
+										洗浴用品
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=224">
+										洗衣液/皂
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=226">
+										婴儿护肤
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=227">
+										驱蚊/爽身/防痱
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=229">
+										日常护理
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=231">
+                                    哺育喂养
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=232">
+										奶瓶
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=233">
+										奶嘴
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=234">
+										安抚奶嘴/牙胶
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=236">
+										婴儿用品收纳
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=237">
+										喂哺辅助工具
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=242">
+                                    玩具益智
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=243">
+										电动遥控
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=244">
+										模型玩具
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=245">
+										益智玩具
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=247">
+										娃娃玩具
+									</a>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<!--6-->
+				<div class="item">
+					<div class="product">
+						<b class="b_meirong"></b>
+						<a href="http://list.sanjiang.com/search.html?categoryId=248">
+							美容洗护
+						</a>
+						<i></i>
+					</div>
+					<div class="product_wrap list6">
+						<div class="subitems">
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=249">
+                                    面部护肤
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=250">
+										面膜
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=251">
+										洁面
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=252">
+										化妆水/爽肤水
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=253">
+										面霜
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=254">
+										眼部护理
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=255">
+										乳液
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=256">
+										眼霜
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=257">
+										面部精华
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=673">
+										鼻贴
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=693">
+										唇膏
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=259">
+                                    洗发护发
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=260">
+										洗发水
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=261">
+										护发素
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=262">
+										染发/烫发
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=264">
+										洗护套装
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=265">
+                                    洗浴用品
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=266">
+										沐浴露
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=267">
+										香皂
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=268">
+										洗手液
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=269">
+										泡澡浴盐/浴液/花瓣
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=270">
+										浴球/浴擦
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=272">
+                                    女性护理
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=273">
+										卫生巾
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=274">
+										女性湿巾
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=275">
+										护垫
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=277">
+										女性洗液
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=278">
+                                    香水彩妆
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=280">
+										隔离霜/妆前乳/打底
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=286">
+										眉笔/眉粉/眉膏
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=289">
+										香水/走珠
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=291">
+                                    男士护理
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=292">
+										剃须护理
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=293">
+										男士面部护理
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=295">
+										男士洁面
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=296">
+										男性洗液
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=297">
+                                    身体护理
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=298">
+										身体乳
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=299">
+										手部护理
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=300">
+										足部护理
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=304">
+										花露水/驱蚊液
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=305">
+                                    口腔护理
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=306">
+										牙膏
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=307">
+										牙刷
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=308">
+										漱口水
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=309">
+										牙线/牙线棒
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=311">
+										假牙清洁剂
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=313">
+                                    美妆工具
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=314">
+										面部工具
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=321">
+										梳具
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=681">
+                                    计生用品
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=682">
+										计生用品
+									</a>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+
+				<!--7-->
+				<div class="item">
+					<div class="product">
+						<b class="b_jiating"></b>
+						<a href="http://list.sanjiang.com/search.html?categoryId=322">
+							家庭清洁
+						</a>
+						<i></i>
+					</div>
+					<div class="product_wrap list7">
+						<div class="subitems">
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=323">
+                                    纸品湿巾
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=324">
+										抽纸
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=325">
+										卷筒纸
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=326">
+										平板卫生纸
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=327">
+										手帕纸
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=328">
+										厨房用纸
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=329">
+										湿巾纸
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=331">
+										湿厕纸
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=333">
+                                    衣物清洁
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=334">
+										洗衣液/凝珠
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=335">
+										洗衣粉
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=336">
+										洗衣皂
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=337">
+										衣物除菌消毒液
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=338">
+										衣物护理
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=339">
+										漂白/去渍剂
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=340">
+                                    厨卫清洁
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=341">
+										洗洁精
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=342">
+										油污净
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=343">
+										洁厕剂/块
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=344">
+										消毒液
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=346">
+										管道疏通
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=347">
+                                    家居清洁
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=348">
+										玻璃清洁剂
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=349">
+										地板清洁护理
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=350">
+										家具清洁护理
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=351">
+										电器清洁护理
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=352">
+										驱蚊驱虫
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=353">
+										空气清洁
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=354">
+                                    清洁工具
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=355">
+										垃圾桶
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=356">
+										脸盆/水桶
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=357">
+										扫帚/簸箕
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=358">
+										拖把/配件
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=359">
+										抹布
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=360">
+										百洁布
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=361">
+										钢丝球
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=362">
+										家务手套
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=363">
+										擦玻璃器
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=364">
+										清洁刷
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=365">
+										除尘工具/掸子
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=367">
+										皂盒
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=369">
+                                    一次性用品
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=370">
+										垃圾袋
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=371">
+										保鲜膜
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=372">
+										铝箔/烹调用纸
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=373">
+										保鲜袋
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=374">
+										购物袋
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=375">
+										一次性餐具
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=376">
+										纸杯/塑杯
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=377">
+										桌布/围裙
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=378">
+										牙签
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=379">
+										野餐烧烤
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=668">
+										其他
+									</a>
+								</dd>
+							</dl>
+						</div>
+
+					</div>
+				</div>
+				<!--8-->
+				<div class="item">
+					<div class="product">
+						<b class="b_jiaju"></b>
+						<a href="http://list.sanjiang.com/search.html?categoryId=380">
+							家居家纺/厨房用具
+						</a>
+						<i></i>
+					</div>
+					<div class="product_wrap list8">
+						<div class="subitems">
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=381">
+                                    床上用品
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=382">
+										凉席/凉枕
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=383">
+										被子
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=384">
+										床品套件
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=385">
+										枕头/枕芯
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=388">
+										毯子/毛巾毯
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=391">
+                                    餐具水具
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=392">
+										保鲜盒/饭盒
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=393">
+										碗/碟/盘
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=394">
+										水具
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=395">
+										滤水壶
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=396">
+										茶具/酒具
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=397">
+										刀/叉/匙/筷
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=398">
+										密封罐
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=399">
+										果盆
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=400">
+										烟灰缸
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=401">
+                                    家居家纺
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=403">
+										毛巾/浴巾
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=406">
+										靠垫坐垫
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=408">
+										餐桌布艺
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=410">
+										地毯地垫
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=412">
+										围裙/袖套
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=413">
+										缝纫/针织用品
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=414">
+										闹钟/挂钟/落地钟
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=415">
+										卧室家具
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=416">
+                                    居家日用
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=417">
+										口罩
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=418">
+										雨具
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=419">
+										纸巾盒
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=420">
+										挂钩
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=422">
+										椅子
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=423">
+										运动器材
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=424">
+										洗衣板/刷
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=426">
+										园艺/工具
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=427">
+										宠物主食
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=428">
+                                    家装建材
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=429">
+										灯管/灯泡
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=431">
+										五金工具
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=432">
+										家饰
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=435">
+                                    收纳洗晒
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=436">
+										收纳箱
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=437">
+										收纳层架
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=438">
+										压缩袋
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=439">
+										晾晒衣架
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=440">
+										洗护袋
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=442">
+										衣夹/晾衣绳
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=444">
+										洗漱收纳
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=445">
+										洗晒用具
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=446">
+                                    厨具锅具
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=447">
+										炒锅
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=448">
+										压力锅
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=449">
+										平底锅
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=450">
+										汤锅
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=451">
+										奶锅
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=452">
+										蒸锅
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=453">
+										煲/砂锅
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=454">
+										厨房工具
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=455">
+										烧水壶
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=456">
+										刀具
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=457">
+										置物架
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=458">
+										铲勺
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=459">
+										锅盖/蒸格/蒸架
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=460">
+                                    汽车用品
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=465">
+										玻璃水
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=472">
+										空气净化
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=474">
+										功能小件
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=475">
+										车身装饰件
+									</a>
+								</dd>
+							</dl>
+						</div>
+
+					</div>
+				</div>
+				<!--9-->
+				<div class="item">
+					<div class="product">
+						<b class="b_fushi"></b>
+						<a href="http://list.sanjiang.com/search.html?categoryId=478">
+							服饰箱包/运动户外
+						</a>
+						<i></i>
+					</div>
+					<div class="product_wrap list9">
+						<div class="subitems">
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=479">
+                                    内衣裤袜
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=480">
+										男士内裤
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=481">
+										女士内裤
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=482">
+										文胸
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=488">
+                                    功能箱包
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=490">
+										旅行包
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=491">
+										书包
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=553">
+                                    球类
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=554">
+										羽毛球
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=555">
+										篮球
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=556">
+										乒乓球
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=557">
+										网球
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=558">
+										足球
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=669">
+										其他
+									</a>
+								</dd>
+							</dl>
+						</div>
+
+					</div>
+				</div>
+
+				<!--10-->
+				<div class="item">
+					<div class="product">
+						<b class="b_jiadian"></b>
+						<a href="http://list.sanjiang.com/search.html?categoryId=559">
+							家电3C/办公文仪
+						</a>
+						<i></i>
+					</div>
+					<div class="product_wrap list10">
+						<div class="subitems">
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=560">
+                                    厨房电器
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=561">
+										电饭煲
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=562">
+										电压力锅
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=563">
+										电炖锅
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=565">
+										微波炉
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=566">
+										电磁炉
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=568">
+										面包机
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=570">
+										电烤箱
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=571">
+										料理/榨汁机
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=572">
+										豆浆机
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=573">
+										电水壶/热水瓶
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=577">
+                                    生活电器
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=578">
+										电风扇
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=581">
+										加湿器
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=582">
+										挂烫机/熨斗
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=583">
+										插座
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=584">
+										电话机
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=585">
+										取暖器
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=592">
+										电池
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=593">
+										毛球修剪器
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=666">
+										小家电
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=594">
+                                    个护健康
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=595">
+										剃须刀
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=597">
+										电吹风
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=600">
+                                    办公文仪
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=601">
+										本册便签
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=602">
+										装订用品
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=603">
+										笔类
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=604">
+										文件管理
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=605">
+										财务用品
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=606">
+										白板
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=607">
+										纸品
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=608">
+										修正用品
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=609">
+										黏胶用品
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=610">
+										学生文具
+									</a>
+								</dd>
+							</dl>
+						</div>
+
+					</div>
+				</div>
+
+				<!--11-->
+				<div class="item">
+					<div class="product">
+						<b class="b_shengxian"></b>
+						<a href="http://list.sanjiang.com/search.html?categoryId=637">
+							生鲜超市
+						</a>
+						<i></i>
+					</div>
+					<div class="product_wrap list11">
+						<div class="subitems">
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=638">
+                                    水果蔬菜
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=639">
+										新鲜蔬菜
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=640">
+										国产水果
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=641">
+										进口水果
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=642">
+                                    海鲜水产
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=643">
+										蟹
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=644">
+										鱼
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=645">
+										虾类
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=646">
+										贝类
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=707">
+										海带
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=667">
+										蛙
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=651">
+                                    肉禽蛋奶
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=652">
+										猪肉
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=653">
+										牛肉
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=654">
+										羊肉
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=655">
+										鸡鸭禽类
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=656">
+										蛋类
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=657">
+										奶制品
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=658">
+                                    熟食腊味
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=659">
+										熟食
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=660">
+										腊肠/腊肉
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=661">
+										火腿
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=662">
+										面食
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=663">
+                                    烘焙糕点
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=664">
+										糕点
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=665">
+										冷冻甜品
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=684">
+                                    盆菜
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=685">
+										盆菜
+									</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+                                    <a href="http://list.sanjiang.com/search.html?categoryId=690">
+                                    快餐便当
+                                    </a>
+                                    <i>&gt;</i>
+                                </dt>
+								<dd>
+									<a href="http://list.sanjiang.com/search.html?categoryId=691">
+										套餐主食
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=701">
+										热炒小菜
+									</a>
+									<a href="http://list.sanjiang.com/search.html?categoryId=706">
+										饮料小吃
+									</a>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<a target="_blank" href="__URL__/hsp" class="focus-banner-img">
+							<img src="http://img.sanjiang.com/image/201711/29/image1511946568493.jpg" alt="玉兰油" title="玉兰油">
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a target="_blank" href="__URL__/hsp" class="focus-banner-img">
+							<img src="http://img.sanjiang.com/image/20179/11/image1505117627765.jpg" alt="生鲜" title="生鲜">
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a target="_blank" href="__URL__/hsp" class="focus-banner-img">
+							<img src="http://img.sanjiang.com/image/201711/16/image1510824632130.jpg" alt="面" title="面">
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a target="_blank" href="__URL__/hsp" class="focus-banner-img">
+							<img src="http://img.sanjiang.com/image/201711/29/image1511946641183.jpg" alt="百雀羚" title="百雀羚">
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a target="_blank" href="__URL__/hsp" class="focus-banner-img">
+							<img src="http://img.sanjiang.com/image/201711/16/image1510824577045.jpg" alt="零食" title="零食">
+						</a>
+					</div>
+				</div>
+				<!-- 如果需要分页器 -->
+				<div class="swiper-pagination"></div>
+
+				<!-- 如果需要导航按钮 -->
+				<div class="swiper-button-prev swiper-button-white arrow"></div>
+				<div class="swiper-button-next swiper-button-white arrow"></div>
+			</div>
+			<div class="news">
+				<div class="news_inner">
+					<div class="mt"><span>三江快报</span>
+					</div>
+					<ul>
+						<li>
+							<a href="__URL__/hsp" target="_blank">2017年底积分兑换来啦！</a>
+						</li>
+						<li>
+							<a href="__URL__/hsp" target="_blank">三江惠商品【11.30-12.13】</a>
+						</li>
+						<li>
+							<a href="__URL__/sjyx" target="_blank">三江优选</a>
+						</li>
+					</ul>
+				</div>
+				<div class="news_app">
+					<img class="lazy-loaded" src="http://img.sanjiang.com/image/20176/15/image1497515766938.jpg" alt="app" title="app">
+				</div>
+			</div>
+			<div class="smallSwiper">
+				<ul>
+					<li>
+						<a href="__URL__/sjyx" target="_blank">
+							<img class="lazy-loaded" src="http://img.sanjiang.com/image/201611/2/image1478070296394.jpg" alt="米面调味品厨房大聚惠" title="米面调味品厨房大聚惠">
+						</a>
+					</li>
+					<li>
+						<a href="__URL__/sjyx" target="_blank">
+							<img class="lazy-loaded" src="http://img.sanjiang.com/image/20169/29/image1475137517602.jpg" alt=" 百货任你选" title=" 百货任你选">
+						</a>
+					</li>
+					<li>
+						<a href="__URL__/sjyx" target="_blank">
+							<img class="lazy-loaded" src="http://img.sanjiang.com/image/20167/13/image1468371670832.jpg" alt="美护热卖榜" title="美护热卖榜">
+						</a>
+					</li>
+					<li>
+						<a href="__URL__/sjyx" target="_blank">
+							<img class="lazy-loaded" src="http://img.sanjiang.com/image/201611/2/image1478050554014.jpg" alt="美食超值囤" title="美食超值囤">
+						</a>
+					</li>
+					<li>
+						<a href="__URL__/sjyx" target="_blank">
+							<img class="lazy-loaded" src="http://img.sanjiang.com/image/20173/13/image1489368716624.jpg" alt=" 酒水畅饮季" title=" 酒水畅饮季">
+						</a>
+					</li>
+					<li>
+						<a href="__URL__/sjyx" target="_blank">
+							<img class="lazy-loaded" src="http://img.sanjiang.com/image/20166/1/image1464761831277.png" alt="品牌大清仓" title="品牌大清仓">
+						</a>
+					</li>
+
+				</ul>
+				<div class="left_arrow">
+					<img class="lazy-loaded" src="__ROOT__/Index/Common/images/left_arrow.png" />
+				</div>
+				<div class="right_arrow">
+					<img class="lazy-loaded" src="__ROOT__/Index/Common/images/right_arrow.png" />
+				</div>
+			</div>
+			<div class="mc">
+				<a href="http://fresh.sanjiang.com/" target="_blank">
+					<img class="lazy-loaded" src="http://img.sanjiang.com/image/20166/2/image1464844844207.png" alt="生鲜超市" title="生鲜超市">
+				</a>
+			</div>
+		</div>
+
+		<!--热销好货-->
+		<div class="hot_goods">
+			<div class="mt">
+				<h1><i></i>热销好货<span>Hot and Good</span></h1>
+				<a href="javascript:void(0);" id="change_goods" ng-click='changeOther()'>
+					<div></div>换一组</a>
+			</div>
+			<div class="mc">
+				<div class="product_left">
+					<h1>
+		            <a href="__APP__/Info/info?id={{hotArrStart.id}}" target="_blank">{{hotArrStart.productTitle}}</a>
+		        </h1>
+					<div class="tips" style="background-color: 1">热销</div>
+					<div class="price">
+						<b>￥{{hotArrStart.Price}}</b>
+						<a href="javascript:;" class="buy asda" ng-click='buy(hotArrStart.id)'>点击购买&gt;</a>
+					</div>
+					<a href="__APP__/Info/info?id={{hotArrStart.id}}">
+						<img class="lazy-loaded" src="{{hotArrStart.productImg}}">
+					</a>
+				</div>
+				<div class="product_right">
+					<ul>
+						<li ng-repeat='val in hotArrSure'>
+							<h1>
+		                <a href="__APP__/Info/info?id={{val.id}}" target="_blank">{{val.productTitle}}</a>
+		              </h1>
+
+							<div class="tips" style="background-color:1">Hot</div>
+							<b>￥{{val.Price}}</b>
+							<a href="javascript:;" class="buy purchas" ng-click='buy(val.id)'>点击购买&gt;</a>
+							<a href="__APP__/Info/info?id={{val.id}}" target="_blank">
+								<img class="lazy-loaded" src="{{val.productImg}}">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--四个入口-->
+		<div class="entrance">
+			<ul>
+				<li class="li1">
+					<a href="http://sale.sanjiang.com/activity/59cf59dee4b0f9289772ce18" target="_blank">
+						<img class="lazy-loaded" src="http://img.sanjiang.com/image/201612/27/image1482803737458.jpg" alt="特价促销" title="特价促销">
+					</a>
+				</li>
+				<li class="li2">
+					<a href="http://sale.sanjiang.com/activity/5744143be4b031cd154db8d3" target="_blank">
+						<img class="lazy-loaded" src="http://img.sanjiang.com/image/201612/27/image1482803763211.jpg" alt=" 新品尝鲜" title=" 新品尝鲜">
+					</a>
+				</li>
+				<li class="li3">
+					<a href="http://sale.sanjiang.com/activity/576c9b67e4b0ca2338adec0d" target="_blank">
+						<img class="lazy-loaded" src="http://img.sanjiang.com/image/20168/15/image1471245471618.png" alt=" 秒杀风暴" title=" 秒杀风暴">
+					</a>
+				</li>
+				<li class="li4">
+					<a href="http://sale.sanjiang.com/sjChoosed.html" target="_blank">
+						<img class="lazy-loaded" src="http://img.sanjiang.com/image/201612/27/image1482803798849.jpg" alt=" 三江优选" title=" 三江优选">
+					</a>
+				</li>
+
+			</ul>
+		</div>
+		<!--楼层-->
+		<div class="floor" ng-repeat="(key,val) in arr">
+			<div class="mt" id="{{key+1}}F">
+				<h1>
+		        <i>
+		          <span>{{key+1}}</span>F
+		        </i>
+		        <span>{{val.floorTitle}}</span>
+		      </h1>
+				<ul class="ul_class">
+					<li rel="1" ng-repeat="(k,v) in val.data">
+						<a href="javascript:void(0);" target="_blank">{{v.productType}}</a>
+
+					</li>
+				</ul>
+			</div>
+			<div class="mc">
+				<div class="side">
+					<img class="lazy-loaded" src="{{val.img.leftImg}}" alt="{{val.floorTitle}}" title="{{val.floorTitle}}">
+					<div class="s_type">
+						<p></p>
+						<ul>
+							<li ng-repeat="(k,v) in val.data">
+								<a href="__APP__/Search/search?productType={{v.productType}}" target="_blank">
+									<span>{{v.productType}}</span>
+
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="s_bottom">
+						<a href="__APP__/Search/search?productType={{v.productType}}" target="_blank" ng-repeat="(k,v) in val.data">{{v.productType}}</a>
+					</div>
+				</div>
+				<div class="center">
+					<div class="cs">
+						<ul ng-repeat='v in val.data'>
+							<li ng-repeat='v1 in v.data'>
+
+								<a href="__APP__/Info/info?id={{v1.id}}" class="img_box" target="_blank">
+									<img class="lazy-loaded" alt="花生400-410g/份" title="花生400-410g/份" src="{{v1.productImg}}">
+								</a>
+								<h2>
+                  <a href="__APP__/Info/info?id={{v1.id}}" target="_blank">{{v1.productTitle}}</a>
+                </h2>
+								<div class="price">
+									<b>￥{{v1.Price}}</b>
+									<a href="javascript:;" class="buy Q-buy-btn" ref="5406089" ng-click="add(v1.id)"></a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="side_right">
+					<a href="javascript:void(0);" target="_blank">
+						<img class="lazy-loaded" src="{{val.img.rightTopImg}}">
+					</a>
+					<a href="javascript:void(0);" target="_blank">
+						<img class="lazy-loaded" src="{{val.img.rightBottomImg}}">
+					</a>
+
+				</div>
+			</div>
+			<div class="mb">
+				<a href="javascript:void(0);" target="_blank">
+					<img src="http://img.sanjiang.com/image/20166/8/image1465355844985.jpg" alt="厨邦" title="厨邦">
+				</a>
+				<a href="javascript:void(0);" target="_blank">
+					<img src="http://img.sanjiang.com/image/20164/25/image1461571235903.jpg" alt="粮油" title="粮油">
+				</a>
+				<a href="javascript:void(0);" target="_blank">
+					<img src="http://img.sanjiang.com/image/20164/25/image1461572365750.jpg" alt="金龙鱼" title="金龙鱼">
+				</a>
+				<a href="javascript:void(0);" target="_blank">
+					<img src="http://img.sanjiang.com/image/20164/25/image1461572445520.jpg" alt="康师傅" title="康师傅">
+				</a>
+				<a href="javascript:void(0);" target="_blank">
+					<img src="http://img.sanjiang.com/image/20164/25/image1461572472185.jpg" alt="日清食品" title="日清食品">
+				</a>
+				<a href="javascript:void(0);" target="_blank">
+					<img src="http://img.sanjiang.com/image/20164/25/image1461572567356.jpg" alt="老干妈" title="老干妈">
+				</a>
+				<a href="javascript:void(0);" target="_blank">
+					<img src="http://img.sanjiang.com/image/20164/25/image1461572590711.jpg" alt="上好佳" title="上好佳">
+				</a>
+				<a href="javascript:void(0);" target="_blank">
+					<img src="http://img.sanjiang.com/image/20164/25/image1461572642327.jpg" alt="好时" title="好时">
+				</a>
+				<a href="javascript:void(0);" target="_blank">
+					<img src="http://img.sanjiang.com/image/20164/25/image1461572671589.jpg" alt="乐事" title="乐事">
+				</a>
+				<a href="javascript:void(0);" target="_blank">
+					<img src="http://img.sanjiang.com/image/20164/25/image1461572700851.jpg" alt="好丽友" title="好丽友">
+				</a>
+
+			</div>
+		</div>
+		<!--左侧导航条-->
+		<div class="left_nav">
+			<ul>
+				<li data-src="#floor_1" class="cur">
+					<a href="#1F">
+						<i>1F</i>
+						<span>精品生鲜</span>
+					</a>
+				</li>
+				<li data-src="#floor_1" class="">
+					<a href="#2F">
+						<i>2F</i>
+						<span>粮油调味</span>
+					</a>
+				</li>
+				<li data-src="#floor_1" class="">
+					<a href="#3F">
+						<i>3F</i>
+						<span>进口食品</span>
+					</a>
+				</li>
+				<li data-src="#floor_1" class="">
+					<a href="#4F">
+						<i>4F</i>
+						<span>休闲小食</span>
+					</a>
+				</li>
+				<li data-src="#floor_1" class="">
+					<a href="#5F">
+						<i>5F</i>
+						<span>酒水冲饮</span>
+					</a>
+				</li>
+				<li data-src="#floor_1" class="">
+					<a href="#6F">
+						<i>6F</i>
+						<span>母婴用品</span>
+					</a>
+				</li>
+				<li data-src="#floor_1" class="">
+					<a href="#7F">
+						<i>7F</i>
+						<span>厨卫清洁</span>
+					</a>
+				</li>
+				<li data-src="#floor_1" class="">
+					<a href="#8F">
+						<i>8F</i>
+						<span>美妆个护</span>
+					</a>
+				</li>
+				<li data-src="#floor_1" class="">
+					<a href="#9F">
+						<i>9F</i>
+						<span>家居日用</span>
+					</a>
+				</li>
+
+			</ul>
+		</div>
+		<!--右侧导航条-->
+		<div class="right_nav">
+			<div class="nav_top">
+				<div class="mc">
+					<if condition="!isset($_SESSION['username'])">
+						<a class="member" href="__APP__/Login/login" target="_blank"></a>
+					<else />
+						<a class="member" href="__APP__/Mymessage/mymessage" target="_blank"></a>
+					</if>
+					<div class="left_tips">我的账户<i></i></div>
+				</div>
+				<div class="mc">
+					<if condition="!isset($_SESSION['username'])">
+						<a class="coupon" href="__APP__/Login/login" target="_blank"></a>
+					<else />
+						<a class="coupon" href="__APP__/Mymessage/mymessage" target="_blank"></a>
+					</if>
+					<a class="coupon" href="__APP__/Mymessage/mymessage" target="_blank"></a>
+					<div class="left_tips">我的优惠券<i></i></div>
+				</div>
+				<div class="mc">
+					<if condition="!isset($_SESSION['username'])">
+						<a class="collection" href="__APP__/Login/login" target="_blank"></a>
+					<else />
+						<a class="collection" href="__APP__/Mymessage/mymessage" target="_blank"></a>
+					</if>
+					<div class="left_tips">我的收藏<i></i></div>
+				</div>
+				<div class="mc" id="cart_show">
+					<a href="javascript:void(0);" class="cart"><b class="J-shoping-num">{{totalNum}}</b></a>
+
+					<div class="left_tips">我的购物车<i></i></div>
+				</div>
+			</div>
+			<div class="nav_bottom">
+				<div class="mc">
+					<a href="javascript:void(0);" class="app"></a>
+
+					<div class="left_tips qrcode"><img src="http://static.sanjiang.com/www/images/app_r.jpg" alt="app"></div>
+				</div>
+				<div class="mc">
+					<if condition="!isset($_SESSION['username'])">
+						<a class="feedback" href="__APP__/Login/login" target="_blank"></a>
+					<else />
+						<a class="feedback" href="__APP__/Mymessage/mymessage" target="_blank"></a>
+					</if>
+					<div class="left_tips">意见反馈<i></i></div>
+				</div>
+				<div class="mc" id="totop">
+					<a class="totop"></a>
+
+					<div class="left_tips">返回顶部<i></i></div>
+				</div>
+			</div>
+		</div>
+
+		<!--我的购物车-->
+		<div class="side_cart" style="z-index: 112;">
+			<div class="mt"><b>我的购物车</b>
+				<a href="javascript:void(0);"></a>
+			</div>
+			<div class="mc">
+				<div class="d_cart_list" id="d_cart_list">
+					<dl>
+						<if condition="!isset($_SESSION['username'])">
+							<div class="m_cart_no">
+								<p>您的购物车中空荡荡的，<br />如果您已经添加了商品，请登录后查看。
+									<a href="__APP__/Login/login" class="buy_button_login">登录</a>
+								</p>
+							</div>
+							<else />
+							<div class="m_cart_no" ng-hide="isHave">
+								<p>您的购物车中空荡荡的，<br/>赶紧去挑选自己喜欢的商品吧！。
+									<a href="__URL__/index" class="buy_button_yes">去首页看看</a>
+								</p>
+							</div>
+							<dd class="J-shoping-list" ng-repeat='val in shoppingArr' ng-show="isHave">
+								<span class="p_img"><a href="__APP__/Info/info?id={{val.pid}}"><img src="{{val.data.productImg}}" alt="商品"/></a> </span>
+								<div class="p_name">
+									<a href="__APP__/Info/info?id={{val.pid}}">{{val.data.productTitle}}</a>
+								</div>
+								<div class="p_price">
+									<span><b>￥{{val.data.Price}}</b></span>
+									<div class="choose_amount">
+										<a class="btn_reduce" ng-click='minus(val.data.id,$index)'>-</a>
+										<p>{{val.num}}</p>
+										<a class="btn_add" ng-click='plus(val.data.id,$index)'>+</a>
+									</div><i class="J-shoping-close" ng-click="del(val.pid)">删除</i></div>
+							</dd>
+							<div class="mb" ng-show="isHave">
+								<div class="buy_num">
+									<p>共<span>{{totalNum}}</span>件商品</p>
+
+									<p>共计<span>￥{{totalPrice | number:2}}</span></p>
+								</div>
+								<a href="__APP__/Shopping/shopping" class="buy_button">去购物车结算></a>
+							</div>
+						</if>
+
+					</dl>
+				</div>
+
+			</div>
+		</div>
+
+		
+		<!--登录弹窗-->
+		<div class="bg">
+			<div class="layer_box" id="login" style="z-index: 113; display: block; margin-top: -218px;">
+				<div class="layer_t"><b>您尚未登录</b>
+					<a href="javascript:void(0);" class="close">X</a>
+				</div>
+				<form action="" method="post" class="fr login_from">
+					<div class="lg_t">
+						<b>用户登录</b>
+						<span>
+						没有账号
+						<a href="__APP__/Register/register">免费注册</a>
+					</span>
+					</div>
+					<div class="item1">
+						<input type="text" name="" id="" placeholder="用户名/手机/邮箱" class="input" ng-model="username" />
+						<i class="i_common" id="i_phone"></i>
+					</div>
+					<div class="item1">
+						<input type="password" name="" id="" placeholder="请输入密码" class="input" ng-model="pwd" />
+						<i class="i_common" id="i_psd"></i>
+					</div>
+					<div class="password_un">
+						<label for="" id="zddl">
+						<input type="checkbox" name="" id="" value="" checked="checked" class="check"/>自动登录
+						<span class="tip">公共场合请勿使用</span>
+					</label>
+						<a href="#">忘记密码？</a>
+					</div>
+					<div class="item1">
+						<input type="submit" name="" id="" value="登录" class="btn_entry" ng-click="login()" />
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--底部导航-->
+		<iframe width="100%" height="356px" frameborder=0 scrolling="no" src="__APP__/Footer/footer"></iframe>
+	</body>
+	<script src="__ROOT__/Index/Common/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="__ROOT__/Index/Common/js/jquery.lazyload.js"></script>
+	<script src="__ROOT__/Index/Common/js/swiper-3.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="__ROOT__/Index/Common/js/index.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//懒加载
+		$(function() {
+		    $("img.lazy-loaded").lazyload({
+		    		effect : "fadeIn",
+		    		threshold : 400
+		    });
+		})				
+		$(".d_cart_list").on("mouseover", "dd", function() {
+			$(this).children().find(".miniDel").show();
+		})
+		$(".d_cart_list").on("mouseout", "dd", function() {
+			$(this).children().find(".miniDel").hide();
+		})
+		$(".side_cart").on("mouseover", ".J-shoping-list", function() {
+			$(this).children().find(".J-shoping-close").show();
+		})
+		$(".side_cart").on("mouseout", ".J-shoping-list", function() {
+			$(this).children().find(".J-shoping-close").hide();
+		})
+		$(".layer_t a").click(function() {
+			$(".bg").hide();
+		});
+		var app = angular.module("myApp", []);
+		app.controller("myController", function($scope, $http) {
+			$scope.arr = [];
+			$scope.shoppingArr = [];
+			$scope.hotArrStart = null;
+			$scope.hotArrSure = [];
+			$scope.totalPrice = 0;
+			$scope.totalNum = 0;
+			$scope.isHave = false;
+			$scope.isLogin = "";
+			$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__URL__/isLogin"
+				}).success((res) => {
+					console.log(res);
+					$scope.isLogin = res;
+				}).error((err) => {
+					console.log(err);
+				})
+			//登录按钮
+			$scope.login = function() {
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__APP__/Login/check",
+					data: "username=" + $scope.username + "&pwd=" + $scope.pwd
+				}).success((res) => {
+					console.log(res);
+					if(res.status == 1) {
+						window.location.href = "__APP__/Index/index";
+					} else if(res.status == 2) {
+						alert(res.info);
+					}
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+			//退出按钮
+			$scope.quit = function() {
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__URL__/quit"
+				}).success((res) => {
+					console.log(res);
+					if(res){
+						window.location.href = "__APP__/Login/login";
+					}
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+			
+			//获取热销好货
+			$http({
+				method: "post",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded"
+				},
+				url: "__URL__/getHotData"
+			}).success((res) => {
+				$scope.shoppingArr = [];
+				$scope.hotArrStart = null;
+				$scope.hotArrSure = [];
+//				console.log(res);
+				$scope.hotArrStart = res[0];
+				for(var i=1;i<res.length;i++){
+					$scope.hotArrSure.push(res[i]);
+				}
+//				console.log($scope.hotArrStart);
+//				console.log($scope.hotArrSure);
+			}).error((err) => {
+				console.log(err);
+			})
+			//换一组
+			$scope.changeOther = function(){
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__URL__/getOtherData"
+				}).success((res) => {
+					$scope.shoppingArr = [];
+					$scope.hotArrStart = null;
+					$scope.hotArrSure = [];
+//					console.log(res);
+					$scope.hotArrStart = res[0];
+					for(var i=1;i<res.length;i++){
+						$scope.hotArrSure.push(res[i]);
+					}
+//					console.log($scope.hotArrStart);
+//					console.log($scope.hotArrSure);
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+			//获取楼层数据
+			$http({
+				method: "post",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded"
+				},
+				url: "__URL__/getData"
+			}).success((res) => {
+//				console.log(res);
+				$scope.arr = res;
+			}).error((err) => {
+				console.log(err);
+			})
+			//点击购买
+			$scope.buy = function(id){
+				console.log(id);
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__URL__/addData",
+					data:"pid="+id
+				}).success((res) => {
+					console.log(res);
+					if(res.status==3){
+						$(".bg").show();
+					}else if(res.status==1){
+						window.location.href = "__APP__/Shopping/shopping";
+					}
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+			//加入购物车图标
+			$scope.add = function(id){
+				console.log(id);
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__URL__/addData",
+					data:"pid="+id
+				}).success((res) => {
+					console.log(res);
+					if(res.status==3){
+						$(".bg").show();
+					}else if(res.status==1){
+						getData();
+					}
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+			getData();
+			// 获取头部购物车数据
+			function getData() {
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__APP__/Index/getShoppingData"
+				}).success((res) => {
+					console.log(res);
+					if(res == null) {
+						$scope.shoppingArr = [];
+						$scope.isHave = false;
+					} else {
+						$scope.shoppingArr = res;
+						$scope.isHave = true;
+					}
+					$scope.totalPrice = 0;
+					$scope.totalNum = $scope.shoppingArr.length;
+					for(var i = 0; i < $scope.shoppingArr.length; i++) {
+						$scope.totalPrice += $scope.shoppingArr[i].num * $scope.shoppingArr[i].data.Price;
+					}
+				}).error((err) => {
+					console.log(err);
+				})
+			};
+			getData();
+			
+				$scope.shoppingArr = [];
+				$scope.totalPrice = 0;
+				$scope.totalNum = 0;
+				$scope.isHave = false;
+				$scope.keyword="";
+				$scope.search = function(){
+					console.log($scope.keyword);
+
+					$http({
+						method: "post",
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded"
+						},
+						url: "__APP__/Search/search",
+						data:"productType="+$scope.keyword
+					}).success((res) => {
+						window.location.href = "__APP__/Search/search"
+					}).error((err) => {
+						console.log(err);
+					})
+				}
+				//删除商品
+				$scope.del = function(id,index) {
+					$http({
+						method: "post",
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded"
+						},
+						url: "__URL__/del",
+						data: "pid=" + id
+					}).success((res) => {
+						$scope.shoppingArr.splice(index,1);
+						computed();
+					}).error((err) => {
+						console.log(err);
+					})
+				}
+				//减
+				$scope.minus = function(id,index) {
+					$http({
+						method: "post",
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded"
+						},
+						url: "__URL__/minusNum",
+						data: "pid=" + id
+					}).success((res) => {
+						$scope.shoppingArr[index].num--;
+						if($scope.shoppingArr[index].num==0){
+							$scope.shoppingArr[index].num=1;
+						}
+						computed();
+					}).error((err) => {
+						console.log(err);
+					})
+				}
+				//加
+				$scope.plus = function(id,index) {
+					$http({
+						method: "post",
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded"
+						},
+						url: "__URL__/plusNum",
+						data: "pid=" + id
+					}).success((res) => {
+						console.log(index);
+						$scope.shoppingArr[index].num++;
+						computed();
+					}).error((err) => {
+						console.log(err);
+					})
+				}
+				//获取购物车数据
+				function computed(){
+					$scope.totalPrice = 0;
+					$scope.totalNum = $scope.shoppingArr.length;
+					for(var i = 0; i < $scope.shoppingArr.length; i++) {
+						$scope.totalPrice += $scope.shoppingArr[i].num * $scope.shoppingArr[i].data.Price;
+					}
+					if($scope.totalNum==0){
+						$scope.isHave = true;
+					}
+				}
+			
+		})
+	</script>
+
+</html>

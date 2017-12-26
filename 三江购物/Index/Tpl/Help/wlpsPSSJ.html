@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>配送时间说明 - 三江购物帮助中心 - 三江购物</title>
+		<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/help.css">
+	</head>
+
+	<body>
+		<!--导航条主体-->
+		<div class="top_bar">
+			<div class="w900">
+				<div class="gohome"><i></i>
+					<a href="__APP__/Index/index">返回首页</a>
+				</div>
+				<ul class="ufr">
+					<li class="item1">
+						<if condition="!isset($_SESSION['username'])">
+							您好，欢迎来到三江！
+							<span>
+									<a href="__APP__/Login/login" class="login">登录</a>
+									<a href="__APP__/Register/register">注册</a>
+								</span>
+							<else />
+							<a href="###" style="margin-right: 15px;">{$Think.session.username}</a>
+							<a href="__APP__/Login/login">退出</a>
+						</if>
+					</li>
+					<li class="item2 mydd">
+						<div></div>
+						<if condition="!isset($_SESSION['username'])">
+							<a href="__APP__/Login/login" target="_blank">我的订单</a>
+							<else />
+							<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+						</if>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的三江</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessageindex" target="_blank">我的三江</a>
+							</if>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的订单</a>
+								<a href="__APP__/Login/login" target="_blank">我的收藏</a>
+								<a href="__APP__/Login/login" target="_blank">我的优惠券</a>
+								<a href="__APP__/Login/login" target="_blank">地址管理</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的收藏</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的优惠券</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">地址管理</a>
+							</if>
+						</div>
+					</li>
+					<li class="koudai">
+						<div class="drop_down_top">
+							<div class="line"></div>
+							<div class="phone_app"></div>
+							<a href="http://help.sanjiang.com/app.html" target="_blank">口袋三江</a>
+							<em></em>
+
+						</div>
+						<div class="kd_box">
+							<p></p>
+							<div class="app_code"><span>三江客户端</span><span>三江订阅号</span></div>
+						</div>
+					</li>
+					<li class="item2">
+						<div></div>
+						<a href="javascript:void(0);" target="_blank">企业团购</a>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="__APP__/Help/helpIndex" target="_blank">客户服务</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<a href="__APP__/Help/helpIndex" target="_blank">帮助中心</a>
+							<a href="__APP__/Help/shfwTHGZ" target="_blank">售后服务</a>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">意见反馈</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">意见反馈</a>
+							</if>
+						</div>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="javascript:void(0)">网站导航</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140 daohang">
+							<p></p>
+							<a href="__URL__/sjyx" target="_blank">三江优选</a>
+							<a href="__URL__/hsp" target="_blank">惠商品</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='help-nav-bj'>
+			<div class='help-nav'>
+				<a href="###主页" class='logo'></a>
+				<ul>
+					<li>
+						<a href="__URL__/helpIndex" class='help-index'>首页<i></i></a>
+					</li>
+					<li>
+						<a href="__URL__/gwznZCLC" class='help-index'>问题分类<i class='active'></i></a>
+					</li>
+					<li>
+						<a href="__URL__/zzfwZZFW" class='help-index'>自助服务<i></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='help-nav-bar'>
+			<ul>
+				<li>
+					<a href="__URL__/gwznZCLC">购物指南</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/zffsZXZF">支付方式</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/wlpsPSFS">物流配送</a>
+					<div class='icon active'></div>
+				</li>
+				<li>
+					<a href="__URL__/shfwTHGZ">售后服务</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/mdylbMDYLB">门店一览表</a>
+					<div class='icon'></div>
+				</li>
+			</ul>
+		</div>
+		<div class='helplist-b'>
+			<div class='box'>
+				<div class='helplist-nav'>
+					<ul>
+						<li>
+							<a href="__URL__/wlpsPSFS">配送方式</a>
+						</li>
+						<li>
+							<a href="__URL__/wlpsPSFW">配送范围</a>
+						</li>
+						<li>
+							<a href="__URL__/wlpsPSSFBZ">配送收费标准</a>
+						</li>
+						<li>
+							<a href="__URL__/wlpsPSSJ" class='active'>配送时间</a>
+						</li>
+						<li>
+							<a href="__URL__/wlpsZTLC">自提流程</a>
+						</li>
+						<li>
+							<a href="__URL__/wlpsQSYH">签收验货</a>
+						</li>
+					</ul>
+				</div>
+				<div class='help-detail'>
+					<h2 class='help-detail-title'>配送时间</h2>
+					<div class='help-list'>
+						<a href='###' class='active'>配送时间说明</a>
+						<a href='###'>常见问题</a>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>配送时间说明
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+							<!--详细内容-->
+							<p>1. 下单成功后24小时内配送完成。</p>
+							<p>2. 重要说明：
+								<br>&nbsp;&nbsp;&nbsp;&nbsp; 支持当日达物流配送的具体订单，可能会因法定节假日、重大促销活动（包括双十一，双十二，618大促，国庆大促等）、交通管制、自然灾害或其他不可抗拒因素等原因，实际到货时间可能会有所迟延，三江购物可依据消费者诉求和规则相应处理。</p>
+							<!--详细内容-->
+						</div>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>常见问题
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+							<!--详细内容-->
+							<h3>可以指定送货时间吗？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 目前三江暂不提供指定时间段的配送服务，但是配送人员在配送前电话联系您的时候，您可以与配送员协商您的需求，配送的同事会尽量为您安排的！</p>
+							<!--详细内容-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<iframe width="100%" height="356px" frameborder=0 scrolling="no" src="__ROOT__/Index/Tpl/Footer/footer.html"></iframe>
+	</body>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/jquery-3.2.1.min.js'></script>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/help.js'></script>
+
+</html>

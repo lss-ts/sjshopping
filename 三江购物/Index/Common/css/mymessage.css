@@ -1,0 +1,2670 @@
+body {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font: 12px Arial, Helvetica, sans-serif;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #666;
+}
+
+.m_left {
+	width: 133px;
+	padding-left: 25px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	float: left;
+	background: #f8f8f8;
+	border: 1px solid #eee;
+	min-height: 450px;
+}
+
+.top {
+	height: 30px;
+	border-bottom: 1px solid #eee;
+	background: #f7f7f7;
+	line-height: 30px;
+	position: relative;
+}
+
+.nav1 {
+	background: #fa494a;
+	height: 60px;
+	padding: 6px 0;
+}
+
+.nav1 .w1 {
+	width: 1200px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.logo {
+	height: 60px;
+	float: left;
+}
+
+.logo a {
+	background: url(http://static.sanjiang.com/member/images/member-logo.png) 0 no-repeat;
+	width: 260px;
+	height: 60px;
+	display: block;
+}
+
+.back {
+	float: left;
+	line-height: 60px;
+	width: 325px;
+}
+
+.back a {
+	color: white;
+	font-size: 14px;
+}
+
+.search {
+	float: left;
+	margin-top: 15px;
+}
+
+.search input {
+	float: left;
+	width: 300px;
+	height: 22px;
+	line-height: 22px;
+	border: none;
+	color: #333;
+	padding: 4px;
+}
+
+.button {
+	background: #eee;
+	float: left;
+	width: 64px;
+	text-align: center;
+	height: 30px;
+	border: none;
+	line-height: 1;
+	color: #333;
+	font-family: Microsoft YaHei;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.shop2 {
+	margin: 13px 0 0;
+	float: right;
+	height: 36px;
+	position: relative;
+}
+
+.shop2 {
+	width: 78px;
+	height: 34px;
+	border: 1px solid #f03838;
+	padding: 0 15px 0 35px;
+	background: #fff;
+	line-height: 34px;
+	position: relative;
+	cursor: pointer;
+	z-index: 13;
+}
+
+.before {
+	width: 17px;
+	height: 15px;
+	display: block;
+	content: "";
+	background: url(http://static.sanjiang.com/common/images/index.png) -103px -868px no-repeat;
+	position: absolute;
+	top: 8px;
+	left: 8px;
+}
+
+.number {
+	background: url(http://static.sanjiang.com/common/images/index.png) -112px -928px no-repeat;
+	line-height: 16px;
+	position: absolute;
+	top: -5px;
+	left: 95px;
+	padding-left: 6px;
+	color: #fff
+}
+
+#number2 {
+	background: url(http://static.sanjiang.com/common/images/index.png) 100% -954px no-repeat;
+	float: left;
+	display: block;
+	height: 16px;
+	padding-right: 4px;
+}
+
+.after {
+	width: 4px;
+	height: 7px;
+	display: block;
+	content: "";
+	background: url(http://static.sanjiang.com/common/images/index.png) -103px -890px no-repeat;
+	position: absolute;
+	top: 13px;
+	right: 9px;
+}
+
+.content {
+	border: 1px solid #f03838;
+	width: 288px;
+	z-index: 12;
+	position: absolute;
+	top: 34px;
+	right: 0;
+	background: #fff;
+	display: none;
+}
+
+.goods {
+	padding: 10px 0;
+	margin-bottom: 15px;
+}
+
+.goods i {
+	float: left;
+	display: block;
+	width: 36px;
+	height: 37px;
+	background: url(http://static.sanjiang.com/common/images/index.png) -84px -814px no-repeat;
+	margin: 0 10px 20px;
+}
+
+.goods {
+	color: #bbb;
+	line-height: 22px;
+	margin-top: 10px;
+}
+
+.box1 .w2 {
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.mun {
+	/*width: 1200px;*/
+	line-height: 40px;
+	height: 40px;
+	font-family: 宋体;
+	text-align: left;
+}
+
+.mun b a {
+	font-weight: 400;
+	font-family: 微软雅黑;
+	font-size: 14px;
+	color: #333;
+}
+
+.cur {
+	color: #f03838;
+}
+
+.box1 .m_left {
+	width: 133px;
+	padding-left: 25px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	float: left;
+	background: #f8f8f8;
+	border: 1px solid #eee;
+	min-height: 450px;
+	height: 650px;
+}
+
+.m_title {
+	margin: 15px 0;
+	font-weight: 700;
+	overflow: hidden;
+	line-height: 20px;
+	font-size: 14px;
+	font-family: 微软雅黑;
+}
+
+.m_title b {
+	width: 20px;
+	height: 20px;
+	display: block;
+	float: left;
+	background: url(http://static.sanjiang.com/common/images/mine.png) no-repeat;
+}
+
+.m_title a {
+	color: #f03838;
+}
+
+.mt {
+	/*margin: 15px 0 5px;*/
+	color: #333;
+	font-weight: 700;
+	overflow: hidden;
+	line-height: 20px;
+	font-size: 14px;
+	font-family: 微软雅黑;
+}
+
+.mt b {
+	width: 4px;
+	height: 4px;
+	margin: 8px 12px 8px 4px;
+	display: block;
+	background: #ea1414;
+	float: left;
+}
+
+.mc {
+	line-height: 28px;
+}
+
+.mc a {
+	color: #666;
+	display: block;
+}
+
+.mc a:hover {
+	color: red;
+}
+
+.box1 .m_right {
+	width: 1039px;
+	border: 1px solid #eee;
+	border-left: none;
+	margin-top: 5px;
+	float: left;
+	margin-bottom: 15px;
+}
+
+.body .m_right {
+	width: 820px;
+	border-left: none;
+	margin-top: 5px;
+	float: left;
+	margin-bottom: 15px;
+}
+
+.box3 .m_right {
+	width: 820px;
+	border-left: none;
+	margin-top: 5px;
+	float: left;
+	/*border: 1px solid #eee;*/
+	margin-bottom: 15px;
+	margin-left: 10px;
+}
+
+.user_info {
+	background: #f8f8f8;
+	height: 170px;
+	margin-bottom: 20px;
+}
+
+.user_left {
+	border-right: 1px dashed #ddd;
+	height: 90px;
+	margin: 35px 10px 40px 40px;
+	width: 300px;
+	float: left;
+}
+
+.user_pic {
+	width: 96px;
+	height: 96px;
+	float: left;
+	position: relative;
+}
+
+.user_pic img {
+	width: 90px;
+	height: 90px;
+	margin: 3px;
+	border: 0 none;
+	vertical-align: top;
+}
+
+
+/*.user_bg {
+	background: url(http://static.sanjiang.com/member/images/main-bg.png) no-repeat;
+	width: 96px;
+	height: 96px;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	}*/
+
+.user_info {
+	background: #f8f8f8;
+	height: 170px;
+	margin-bottom: 20px;
+}
+
+.user_m {
+	margin-left: 18px;
+	float: left;
+	width: 180px;
+	overflow: hidden;
+}
+
+.user_m p {
+	color: #333;
+	font-size: 18px;
+	font-family: Arial;
+	margin-top: 15px;
+	word-break: break-all;
+}
+
+.u_type {
+	padding-top: 10x;
+}
+
+.u_type i {
+	display: inline-block;
+	background: url(http://static.sanjiang.com/common/images/mysj.png) 0 -630px no-repeat;
+	width: 19px;
+	height: 19px;
+	vertical-align: middle;
+	float: left;
+}
+
+.u_type span {
+	display: inline-block;
+	margin-left: 8px;
+	line-height: 19px;
+}
+
+.u_type a {
+	display: inline-block;
+	margin-left: 10px;
+	color: #0762be;
+}
+
+.user_center {
+	float: left;
+	margin-top: 20px;
+	width: 200px;
+	color: #666;
+}
+
+.user_info h3 {
+	padding: 10px 10px 0 30px;
+	font-family: 微软雅黑;
+	font-size: 14px;
+	font-weight: 400;
+	margin: 0;
+}
+
+.user_center .con {
+	padding-top: 20px;
+}
+
+.user_center .con .mc {
+	float: left;
+	height: 60px;
+	margin-bottom: 10px;
+	padding-left: 30px;
+}
+
+.user_center .con .mc b {
+	background: url(http://static.sanjiang.com/common/images/mysj.png) no-repeat;
+	width: 42px;
+	height: 42px;
+	display: block;
+	margin-bottom: 2px;
+}
+
+.user_center .con .mc p {
+	color: #666;
+	line-height: 16px;
+	margin: 0;
+	padding: 0;
+}
+
+.user_center.con .mc p strong {
+	color: #f03838;
+	font-family: Verdana;
+	margin-left: 5px;
+}
+
+.user_center .con .mc p:hover {
+	color: red;
+}
+
+.user_info .user_center .con .mc b.b2 {
+	background-position: -92px 0;
+}
+
+.user_info .user_point {
+	float: left;
+	color: #666;
+	height: 120px;
+	width: 225px;
+	margin: 20px 0;
+	border-right: 1px dashed #ddd;
+	border-left: 1px dashed #ddd;
+}
+
+.user_info .user_point .con {
+	padding: 20px 40px 0;
+}
+
+.user_info .user_point .con p {
+	height: 30px;
+	line-height: 30px;
+	margin: 0;
+	padding: 0;
+}
+
+.user_point .con p span {
+	display: block;
+}
+
+.fl {
+	float: left;
+}
+
+.user_info .user_point .con p.jf i {
+	background: url(http://static.sanjiang.com/common/images/mysj.png) 0 -715px no-repeat;
+	width: 21px;
+	height: 19px;
+}
+
+.user_info .user_point .con p i {
+	display: inline-block;
+	padding-left: 12px;
+	vertical-align: middle;
+}
+
+.fr {
+	float: right;
+}
+
+.fr b {
+	color: #f03838;
+}
+
+.user_info .user_point .con p.yhq i {
+	background: url(http://static.sanjiang.com/common/images/mysj.png) 2px -745px no-repeat;
+	width: 21px;
+	height: 15px;
+}
+
+.user_info .user_point .con p:hover {
+	color: red;
+}
+
+.user_safe {
+	float: left;
+	margin: 20px 0;
+	width: 250px;
+}
+
+.user_info .user_safe .con {
+	padding: 20px 20px 0 40px;
+}
+
+.user_safe .con .u_safe {
+	line-height: 14px;
+	height: 14px;
+}
+
+.user_safe .con .u_safe span {
+	display: inline-block;
+}
+
+.user_safe .con .u_safe span b {
+	color: #f79100;
+}
+
+.user_safe .con .u_safe a {
+	display: inline-block;
+	margin-left: 20px;
+	color: #0762be;
+}
+
+.user_info .user_safe .con .u_strength {
+	background: #fff;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	position: relative;
+	width: 180px;
+	height: 10px;
+	display: block;
+	margin: 10px 0;
+	float: left
+}
+
+.user_info .user_safe .con .u_strength b {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 10px;
+	width: 50px;
+	display: block;
+	border-radius: 5px;
+	background: #f79100;
+}
+
+.user_info .user_safe .con .u_validate span i {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-right: 6px;
+	vertical-align: middle;
+	background: url(http://static.sanjiang.com/common/images/mysj.png) -20px -658px no-repeat;
+}
+
+.user_info .user_safe .con .u_validate a.yxyz {
+	padding-left: 30px;
+}
+
+.user_info .user_safe .con .u_validate a.yxyz i {
+	background: url(http://static.sanjiang.com/common/images/mysj.png) 0 -687px no-repeat;
+}
+
+.user_safe .con .u_validate a i {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-right: 6px;
+	vertical-align: middle;
+}
+
+.layer_bg {
+	background: black;
+	opacity: 0.3;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 112px;
+	display: none;
+}
+
+.layer_box {
+	border: 5px solid #b3b3b3;
+	width: 470px;
+	position: fixed;
+	left: 50%;
+	margin-left: -235px;
+	top: 50%;
+	margin-top: -250px;
+	display: none;
+	background: #fff;
+	/*display: none;*/
+}
+
+.layer_t {
+	padding: 0 15px;
+	border-bottom: 1px solid #e0e0e0;
+	background: #eee;
+	height: 31px;
+	line-height: 31px;
+}
+
+.layer_t b {
+	float: left;
+	font-size: 15px;
+	color: black;
+	font-family: 微软雅黑;
+}
+
+.layer_t a {
+	font-size: 16px;
+	color: #aaa;
+	float: right;
+}
+
+.layer_content {
+	padding: 15px;
+}
+
+.layer_cancle {
+	background: #fff;
+	padding: 15px 20px 25px 40px;
+	position: relative;
+}
+
+.layer_cancle ul {
+	margin-left: 120px;
+}
+
+.yes {
+	background: url(http://static.sanjiang.com/common/images/huihui.jpg) no-repeat;
+	width: 88px;
+	height: 104px;
+	display: block;
+	position: absolute;
+	left: 50px;
+	top: 0;
+}
+
+.yes p {
+	font-size: 14px;
+	color: black;
+	font-family: 微软雅黑;
+}
+
+.layer_cancle .mt_20 {
+	margin-top: 20px;
+}
+
+.btn_y {
+	width: 92px;
+	height: 26px;
+	border: none;
+	cursor: pointer;
+	line-height: 26px;
+	text-align: center;
+	background: #e63c3f;
+	border-radius: 2px;
+	color: #fff;
+	display: inline-block;
+	margin-right: 10px;
+	outline: none;
+}
+
+.btn_n {
+	width: 90px;
+	height: 24px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	line-height: 24px;
+	text-align: center;
+	background: #eee;
+	border-radius: 2px;
+	color: #666;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.member_title {
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+	background: #f8f8f8;
+}
+
+.member_title b {
+	float: left;
+	font-size: 16px;
+	color: #333;
+	font-family: 微软雅黑;
+	margin-left: 35px;
+}
+
+.m_order_no {
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 60px;
+}
+
+.m_order_no p {
+	text-align: center;
+	color: #999;
+	margin-top: 120px;
+	font-size: 14px;
+}
+
+.m_order_no p a {
+	color: #0762bc;
+	margin-left: 5px;
+	font-size: 14px;
+}
+
+.after2 {
+	content: "";
+	display: block;
+	width: 55px;
+	height: 55px;
+	position: absolute;
+	left: 400px;
+	top: 60px;
+	background: url(http://static.sanjiang.com/common/images/mysj.png) -80px -189px no-repeat;
+}
+
+.box1 .after2 {
+	content: "";
+	display: block;
+	width: 55px;
+	height: 55px;
+	position: absolute;
+	left: 484px;
+	top: 50px;
+	background: url(http://static.sanjiang.com/common/images/mysj.png) -80px -189px no-repeat;
+}
+
+.box1 .after3 {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	left: 485px;
+	top: 40px;
+	background: url(http://static.sanjiang.com/common/images/mysj.png) -84px -269px no-repeat;
+}
+
+.box3 .m_Collection_no {
+	position: relative;
+	overflow: hidden;
+	height: 180px;
+	padding-bottom: 170px;
+}
+
+.m_Collection_no {
+	position: relative;
+	overflow: hidden;
+	height: 180px;
+}
+
+.m_Collection_no p {
+	text-align: center;
+	color: #999;
+	margin-top: 100px;
+	font-size: 14px;
+}
+
+.m_Collection_no p a {
+	color: #0762bc;
+	margin-left: 5px;
+	font-size: 14px;
+}
+
+.after3 {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	left: 375px;
+	top: 40px;
+	background: url(http://static.sanjiang.com/common/images/mysj.png) -84px -269px no-repeat;
+}
+
+.top2 {
+	width: 990px;
+	margin: 0 auto;
+	height: 180px;
+	border-bottom: 1px solid red;
+	position: relative;
+}
+
+.order_tabs {
+	border-bottom: 2px solid #eee;
+	height: 32px;
+	line-height: 32px;
+}
+
+.order_tabs ul {
+	margin: 0;
+	padding: 0;
+}
+
+.order_tabs ul li {
+	text-align: center;
+	width: 142px;
+	display: block;
+	float: left;
+	font-family: 微软雅黑;
+	font-size: 16px;
+	cursor: pointer;
+	position: relative;
+	padding: 0;
+	margin: 0;
+}
+
+.current {
+	border-bottom: 2px solid #ea1414;
+	color: #ea1414;
+}
+
+.order_time_select {
+	width: 140px;
+	height: 26px;
+	float: left;
+	margin-right: 16px;
+	position: relative;
+	color: #999;
+}
+
+.time_value {
+	border: 1px solid #ccc;
+	width: 138px;
+	height: 24px;
+	line-height: 24px;
+	cursor: pointer;
+}
+
+.order_time_select i {
+	display: block;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	background: url(http://static.sanjiang.com/common/images/list.png) 0 -23px no-repeat;
+	width: 9px;
+	height: 5px;
+}
+
+.time_down {
+	border: 1px solid #ccc;
+	border-top: none;
+	display: none;
+	background: #fff;
+	z-index: 2
+}
+
+.time_down ul {
+	margin: 0;
+	padding: 0;
+}
+
+.time_down li {
+	padding-left: 10px;
+	height: 24px;
+	line-height: 24px;
+	cursor: pointer;
+}
+
+.order_dl.block {
+	margin: 15px 0;
+	height: 26px;
+	z-index: 2;
+	position: relative;
+	display: block;
+}
+
+.order_time_seach {
+	width: 218px;
+	height: 24px;
+	border: 1px solid #ccc;
+	float: right;
+}
+
+.order_time_seach input {
+	width: 160px;
+	line-height: 18px;
+	height: 18px;
+	padding: 3px 5px;
+	float: left;
+	border: none;
+}
+
+.order_time_seach a {
+	color: #000;
+	background: #f0f0f0;
+	width: 47px;
+	line-height: 24px;
+	height: 24px;
+	text-align: center;
+	border-left: 1px solid #ccc;
+	display: block;
+	float: left;
+}
+
+.order_head,
+.order_list {
+	overflow: hidden;
+}
+
+.order_head {
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid #eee;
+	text-align: center;
+}
+
+.order_span_w125,
+.order_span_w310 {
+	text-align: center;
+	display: block;
+	float: left;
+}
+
+.order_span_w310 {
+	width: 310px;
+}
+
+.order_span_w125 {
+	width: 125px;
+}
+
+.order_body {
+	border: 1px solid #e7f6ff;
+	height: 144px;
+}
+
+.order_body .mt {
+	background: #e7f6ff;
+	height: 32px;
+	line-height: 32px;
+}
+
+.order_body .mt span {
+	color: #666;
+	float: left;
+	margin-left: 25px;
+	font-size: 12px;
+}
+
+.order_body .mt a {
+	float: right;
+	color: #666;
+	display: none;
+	padding-left: 22px;
+	margin-right: 35px;
+	background: url(http://static.sanjiang.com/common/images/my_order.png) -636px -110px no-repeat;
+}
+
+.order_body .mc {
+	height: 108px;
+	overflow: hidden;
+}
+
+.order_body .order_yes {
+	background: #fff;
+}
+
+tbody {
+	display: table-row-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+
+.order_body .order_yes td {
+	border-top: 1px solid #eee;
+	padding: 13px 0;
+	text-align: center;
+	vertical-align: middle;
+	font-family: Verdana;
+}
+
+.order_body .order_yes .o_img {
+	border-right: 1px solid #eee;
+	text-align: left;
+	width: 311px;
+	height: 82px;
+	overflow: hidden;
+}
+
+.order_body .order_yes .o_img a{
+	float: left;
+}
+.order_body .order_yes .o_img img {
+	width: 72px;
+	height: 72px;
+	margin-right: -1px;
+	margin-left: 19px;
+	border: 1px solid #eee;
+	padding: 4px;
+}
+
+.order_body .order_yes .o_img p {
+	color: #666;
+	line-height: 18px;
+	width: 160px;
+	padding-top: 24px;
+	overflow: hidden;
+	height: 36px;
+	display: inline-block;
+	margin-left: 12px;
+}
+
+.order_body .order_yes .o_money {
+	border-right: 1px solid #eee;
+	width: 124px;
+	height: 57px;
+	padding-top: 25px;
+	line-height: 20px;
+}
+
+.order_body .order_yes .o_money b {
+	color: #f03838;
+	font-weight: 700;
+	display: block;
+}
+
+.order_body .order_yes .o_money i {
+	display: block;
+	vertical-align: middle;
+	color: #999;
+	font-style: normal;
+}
+
+.order_body .order_yes .o_time {
+	color: #999;
+	border-right: 1px solid #eee;
+	width: 124px;
+	height: 57px;
+	padding-top: 25px;
+	line-height: 18px;
+}
+
+.order_body .order_yes .o_status {
+	color: #f03838;
+	border-right: 1px solid #eee;
+	width: 124px;
+	height: 57px;
+	padding-top: 25px;
+	line-height: 18px;
+}
+
+.order_body .order_yes .o_status span.no_pay {
+	color: #f03838;
+}
+
+.order_body .order_yes .o_status a {
+	color: #666;
+	display: block;
+}
+
+.order_body .order_yes .o_operate {
+	width: 124px;
+	height: 57px;
+	padding-top: 25px;
+}
+
+.order_body .order_yes .o_operate a.pay {
+	margin: 0 auto;
+	width: 72px;
+	height: 28px;
+	line-height: 28px;
+	border-radius: 3px;
+	text-align: center;
+	border: 1px solid #b5dcf5;
+	background: #e7f6ff;
+	color: #333;
+	display: block;
+}
+
+.order_body .order_yes .o_operate a {
+	color: #0762be;
+	display: block;
+	line-height: 22px;
+}
+
+.fav_tabs_head {
+	height: 60px;
+}
+
+.fav_all {
+	height: 30px;
+	line-height: 30px;
+	color: #999;
+	padding: 15px 0;
+	float: left;
+}
+
+.fav_all {
+	vertical-align: middle;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.fav_all a {
+	color: #2272c8;
+	margin: 0 10px;
+}
+
+.send_all {
+	float: right;
+	position: relative;
+	z-index: 5;
+	margin-top: 17px;
+	margin-right: 45px;
+	line-height: 26px;
+}
+
+.send_all p {
+	float: left;
+	line-height: 26px;
+	margin: 0;
+}
+
+.send_where {
+	border: 1px solid #ddd;
+	height: 24px;
+	cursor: pointer;
+	padding: 0 10px;
+	line-height: 24px;
+	position: relative;
+	display: block;
+	float: left;
+	min-width: 40px;
+}
+
+.send_where span {
+	margin-right: 5px;
+	border-right: 1px solid #999;
+	color: #999;
+	padding-right: 5px;
+}
+
+.send_where i {
+	margin-left: 3px;
+	display: inline-block;
+	background: url(http://static.sanjiang.com/common/images/list.png) 0 -23px no-repeat;
+	width: 9px;
+	height: 5px;
+}
+
+.favorite_tabs_body .mt {
+	background: #f9f9f9;
+	border: 1px solid #eee;
+	height: 33px;
+	line-height: 33px;
+	text-align: center;
+	font-size: 12px;
+}
+
+.favorite_tabs_body .mt .t_goods {
+	width: 340px;
+	float: left;
+}
+
+.favorite_tabs_body .mt .t_price {
+	width: 120px;
+	position: relative;
+	float: left;
+}
+
+.favorite_tabs_body .mt .t_price i {
+	cursor: pointer;
+	font-style: normal;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	margin-left: 5px;
+	width: 16px;
+	height: 16px;
+	background: url(http://static.sanjiang.com/common/images/my_order.png) 0 -137px no-repeat;
+}
+
+.favorite_tabs_body .mt .t_price i .tips {
+	z-index: 9;
+	font-family: 微软雅黑;
+	background: url(http://static.sanjiang.com/common/images/m_tips.png) no-repeat;
+	width: 210px;
+	height: 25px;
+	line-height: 25px;
+	padding: 6px 5px 0;
+	position: absolute;
+	display: none;
+	top: 16px;
+	left: -100px;
+}
+
+.favorite_tabs_body .mt .t_price i .tips a {
+	color: #06b;
+	margin-left: 5px;
+}
+
+.favorite_tabs_body .mc {
+	width: 818px;
+	border: 1px solid #eee;
+	margin-top: -1px;
+	color: #666;
+	line-height: 30px;
+	font-family: Verdana;
+	overflow: hidden;
+}
+
+.favorite_tabs_body .mc .c_goods {
+	width: 280px;
+	float: left;
+	height: 102px;
+	margin: 7px 0;
+	padding-left: 60px;
+}
+
+.favorite_tabs_body .mc .c_goods input {
+	float: left;
+	margin: 50px 10px 0;
+}
+
+.favorite_tabs_body .mc .c_goods .goods_info {
+	width: 110px;
+	position: relative;
+	display: block;
+	height: 102px;
+	float: left;
+}
+
+.favorite_tabs_body .mc .c_goods img {
+	width: 100px;
+	height: 100px;
+	float: left;
+	border: 1px solid #eee;
+	margin: 0 8px 0 0;
+}
+
+.favorite_tabs_body .mc .c_goods p {
+	float: left;
+	margin-top: 18px;
+	line-height: 22px;
+	color: #666;
+	width: 160px;
+	overflow: hidden;
+}
+
+.favorite_tabs_body .mc .c_goods p a {
+	line-height: 20px;
+	display: block;
+	color: #666;
+}
+
+.favorite_tabs_body .mc .c_price {
+	width: 118px;
+	margin-top: 25px;
+	position: relative;
+	border-left: 1px solid #eee;
+	float: left;
+	line-height: 60px;
+	height: 60px;
+	text-align: center;
+	font-family: Verdana;
+	color: #666;
+}
+
+.favorite_tabs_body .mc .c_price b.member_price {
+	color: #f03838;
+}
+
+.favorite_tabs_body .mc .c_price .a_put {
+	border-radius: 3px;
+	display: block;
+	margin: 8px auto 3px;
+	color: #000;
+	background: #e7f6ff;
+	border: 1px solid #b5dcf5;
+	width: 72px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.favorite_tabs_body .mc .c_price .a_cancel {
+	color: #2272c8;
+	display: block;
+	line-height: 20px;
+	cursor: pointer;
+}
+
+.favorite_tabs_body .mb {
+	border: 1px solid #eee;
+	margin-top: -1px;
+	color: #666;
+	line-height: 30px;
+	font-family: Verdana;
+	overflow: hidden;
+}
+
+.favorite_tabs_body .mb a {
+	margin: 0 10px;
+}
+
+.favorite_all_select {
+	height: 30px;
+	line-height: 30px;
+	color: #999;
+	padding: 15px 0;
+	float: left;
+}
+
+label {
+	cursor: default;
+}
+
+.t_goods {
+	width: 340px;
+	float: left;
+}
+
+.t_price {
+	width: 120px;
+	position: relative;
+	float: left;
+}
+
+.t_price i {
+	cursor: pointer;
+	font-style: normal;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	margin-left: 5px;
+	width: 16px;
+	height: 16px;
+	background: url(http://static.sanjiang.com/common/images/my_order.png) 0 -137px no-repeat;
+}
+
+.t_price i .tips {
+	z-index: 9;
+	font-family: 微软雅黑;
+	background: url(http://static.sanjiang.com/common/images/m_tips.png) no-repeat;
+	width: 210px;
+	height: 25px;
+	line-height: 25px;
+	padding: 6px 5px 0;
+	position: absolute;
+	font-size: 12px;
+	display: none;
+	top: 0px;
+	left: -100px;
+}
+
+.t_price i .tips a {
+	color: #06b;
+	margin-left: 5px;
+}
+
+.fav_tabs_body .mb {
+	border: 1px solid #eee;
+	margin-top: -1px;
+	color: #666;
+	line-height: 30px;
+	font-family: Verdana;
+}
+
+.box4 .order_tabs a {
+	color: #2272c8;
+	float: right;
+	margin-left: 20px;
+	display: block;
+	height: 30px;
+}
+
+.box4 .order_tabs a i {
+	float: left;
+	width: 16px;
+	height: 16px;
+	background: url(http://static.sanjiang.com/common/images/mysj.png) 0 -386px no-repeat;
+	margin-right: 5px;
+	margin-top: 7px;
+}
+
+.box4 .order_tabs a .use {
+	background-position: 0 -408px;
+}
+
+.box4 .order_tabs a .exchange {
+	background-position: 0 -386px;
+}
+
+.coupon_tabs_head {
+	overflow: hidden;
+	padding-left: 15px;
+	display: block;
+}
+
+.fl {
+	float: left;
+}
+
+.coupon_tabs_head ul li.cur,
+.coupon_tabs_head ul li:hover {
+	color: #f03838;
+	font-weight: 700;
+}
+
+.coupon_tabs_head ul li {
+	float: left;
+	padding: 0 10px;
+	margin-top: 25px;
+	margin-bottom: 15px;
+	color: #666;
+	cursor: pointer;
+}
+
+.change_button button {
+	border-radius: 3px;
+	/* border: 0; */
+	width: 120px;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	background: #f03838;
+	line-height: 32px;
+	text-align: center;
+	font-family: 微软雅黑;
+	font-size: 14px;
+	color: #fff;
+	cursor: pointer;
+}
+
+.change_button {
+	float: right;
+}
+
+.coupon_tabs_title {
+	background: #f9f9f9;
+	border: 1px solid #eee;
+	height: 33px;
+	line-height: 33px;
+	overflow: hidden;
+}
+
+.coupon_tabs_title span {
+	float: left;
+	text-align: center;
+	color: #666;
+}
+
+.w200 {
+	width: 200px;
+}
+
+.w100 {
+	width: 100px;
+}
+
+.coupon_tabs_body {
+	display: block;
+}
+
+.coupon_not {
+	position: relative;
+	overflow: hidden;
+}
+
+.coupon_not p {
+	text-align: center;
+	color: #999;
+	margin-top: 170px;
+	font-size: 14px;
+}
+
+.coupon_not p a {
+	color: #0762be;
+	margin-left: 5px;
+	font-size: 14px;
+}
+
+.after4 {
+	content: "";
+	display: block;
+	width: 55px;
+	height: 45px;
+	position: absolute;
+	left: 370px;
+	top: 120px;
+	background: url(http://static.sanjiang.com/common/images/mysj.png) -80px -400px no-repeat;
+}
+
+.w2 {
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.layer_box2 {
+	width: 540px;
+	margin-left: -270px;
+	border: 5px solid #b3b3b3;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-top: -250px;
+	background: #fff;
+	display: none;
+}
+
+.form .info_item {
+	position: relative;
+	padding-bottom: 20px;
+	padding-left: 10px;
+}
+
+.info_span {
+	display: inline-block;
+	min-width: 80px;
+	margin-right: 10px;
+	text-align: right;
+	color: #666;
+	vertical-align: middle;
+}
+
+.info_span span {
+	color: red;
+}
+
+.form .input {
+	display: inline-block;
+	width: 180px;
+	height: 20px;
+	line-height: 20px;
+	padding: 5px;
+	border: 1px solid #ccc;
+}
+
+.form p {
+	display: inline-block;
+	width: 200px;
+	color: #999;
+	margin-left: 5px;
+	vertical-align: middle;
+	color: red;
+}
+
+.layer_box .layer_content .btn_y,
+.layer_box_two .layer_content .btn_y {
+	width: 92px;
+	height: 26px;
+	border: none;
+	cursor: pointer;
+	line-height: 26px;
+	text-align: center;
+	background: #e63c3f;
+	border-radius: 2px;
+	color: #fff;
+	display: inline-block;
+	margin-right: 10px;
+	outline: none;
+}
+
+.btn_n {
+	width: 90px;
+	height: 24px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	line-height: 24px;
+	text-align: center;
+	background: #eee;
+	border-radius: 2px;
+	color: #666;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.point_not {
+	position: relative;
+	overflow: hidden;
+}
+
+.point_not p {
+	text-align: center;
+	color: #999;
+	margin-top: 170px;
+	font-size: 14px;
+}
+
+.after5 {
+	content: "";
+	display: block;
+	width: 55px;
+	height: 45px;
+	position: absolute;
+	left: 370px;
+	top: 120px;
+	background: url(http://static.sanjiang.com/common/images/mysj.png) -80px -400px no-repeat;
+}
+
+.layer_box3 {
+	width: 540px;
+	margin-left: -270px;
+	border: 5px solid #b3b3b3;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-top: -250px;
+	background: #fff;
+	display: none;
+}
+
+.btn_y2 {
+	width: 92px;
+	height: 26px;
+	border: none;
+	cursor: pointer;
+	line-height: 26px;
+	text-align: center;
+	background: #e63c3f;
+	border-radius: 2px;
+	color: #fff;
+	display: inline-block;
+	margin-right: 10px;
+	outline: none;
+}
+
+.btn_n2 {
+	width: 90px;
+	height: 24px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	line-height: 24px;
+	text-align: center;
+	background: #eee;
+	border-radius: 2px;
+	color: #666;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.profile_tabs {
+	padding-bottom: 15px;
+}
+
+.profile_tabs .clearfix {
+	margin: 0;
+}
+
+.profile_tabs .clearfix .current {
+	border-bottom: 2px solid #ea1414;
+	float: left;
+	margin-right: 20px;
+}
+
+.profile_tabs .clearfix .current a {
+	color: #ea1414;
+	font-weight: 700px;
+}
+
+.m_right2 {
+	float: left;
+	width: 768px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	margin-left: -1px;
+	padding: 20px 30px;
+	border: 1px solid #eee;
+}
+
+.address_list {
+	width: 750px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.add_btn {
+	display: inline-block;
+}
+
+.add_btn input {
+	width: 120px;
+	border: 0;
+	display: inline-block;
+	background: #ea1414;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 3px;
+	text-align: center;
+	font-weight: 700;
+	color: #fff;
+	cursor: pointer;
+}
+
+.m_right3 {
+	float: left;
+	width: 822px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	margin-left: 8px;
+}
+
+.ftxt {
+	display: inline-block;
+	margin-left: 20px;
+	color: #999;
+}
+
+.ftxt b {
+	font-family: vardana;
+	color: #f03838;
+}
+
+.address_not {
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 200px;
+	border-top: none;
+}
+
+.address_not p {
+	text-align: center;
+	color: #999;
+	margin-top: 220px;
+	font-size: 14px;
+}
+
+.after6 {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	left: 350px;
+	top: 160px;
+	background: url(http://static.sanjiang.com/common/images/mysj.png) -98px -570px no-repeat;
+}
+
+.ICCarrd-con {
+	padding-top: 15px;
+}
+
+.ICCarrd-con .form {
+	background: url(http://static.sanjiang.com/ICCard/images/IC-bg.png) right 0 no-repeat;
+	height: 174px;
+	padding-left: 290px;
+	padding-top: 60px;
+}
+
+.IMG {
+	width: 58px;
+	border: 0 none;
+	vertical-align: top;
+}
+
+.ICCarrd-con .form p {
+	display: inline-block;
+	color: #999;
+	margin-left: 5x;
+	width: 100px;
+}
+
+.ICCarrd-con .form p a {
+	color: #2272c8;
+}
+
+#queryButton {
+	width: 100px;
+	border: 0;
+	display: inline-block;
+	background: #ea1414;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 3px;
+	text-align: center;
+	font-weight: 700;
+	color: #fff;
+	cursor: pointer;
+}
+
+.ICCarrd-tip {
+	padding: 30px 0;
+	margin-top: 20px;
+	border: 1px solid #eee;
+	border-radius: 15px;
+}
+
+.tip-txt {
+	padding-left: 80px;
+}
+
+.tip-txt dt {
+	margin-bottom: 15px;
+	font-family: 微软雅黑;
+	font-size: 14px;
+	color: #666;
+}
+
+.tip-txt dd {
+	background: url(http://static.sanjiang.com/card/images/card.png) -112px 5px no-repeat;
+	padding-left: 15px;
+	margin-bottom: 10px;
+	color: #999;
+}
+
+.tip-txt dd span {
+	color: #ea1414;
+}
+
+.after7 {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 78px;
+	height: 115px;
+	left: 335px;
+	top: 100px;
+	background: url(http://static.sanjiang.com/feedback/images/hui2.png) no-repeat;
+}
+
+.address_not p b {
+	display: block;
+}
+
+.infoest {
+	padding-top: 15px;
+	display: block;
+}
+
+.infoest .info_box {
+	border-bottom: 1px dashed #e5e5e5;
+	display: block;
+	overflow: hidden;
+	padding-bottom: 20px;
+}
+
+.form_fl {
+	padding-top: 10px;
+	float: left;
+}
+
+.m_right2 .form_fl .info_item {
+	position: relative;
+	padding-bottom: 20px;
+	padding-left: 10px;
+}
+
+.m_right2 .form_fl .info_span {
+	display: inline-block;
+	min-width: 40px;
+	text-align: right;
+	color: #666;
+	vertical-align: middle;
+}
+
+.get_txt {
+	display: inline-block;
+	font-size: 16px;
+	color: #666;
+	font-weight: 700;
+}
+
+.update_btn {
+	width: 74px;
+	margin-left: 40px;
+	display: inline-block;
+	background: #ea1414;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 3px;
+	text-align: center;
+	font-weight: 700;
+	color: #fff;
+	cursor: pointer;
+}
+
+.update_btn a {
+	color: #fff;
+	display: block;
+}
+
+.form_fl .input {
+	display: inline-block;
+	width: 180px;
+	height: 20px;
+	line-height: 20px;
+	padding: 5px;
+	border: 1px solid #ccc;
+}
+
+.form_fl p {
+	width: 180px;
+	vertical-align: middle;
+	overflow: hidden;
+	display: inline-block;
+	margin-left: 5px;
+	vertical-align: middle;
+	color: #999;
+}
+
+.user_info_fr {
+	background: #f9f9f9;
+	width: 290px;
+	height: 120x;
+	border: 1px solid #eee;
+	float: right;
+}
+
+.user_pic {
+	display: block;
+	position: relative;
+	width: 96px;
+	height: 96px;
+	padding-top: 12px;
+	padding-left: 12px;
+}
+
+
+/*.user_pic img {
+	position: absolute;
+	width: 96px;
+	height: 96px;
+}
+*/
+
+.user_pic .pic_bg {
+	position: absolute;
+	background: url(http://static.sanjiang.com/common/images/profile.png) 0 -86px no-repeat;
+	width: 96px;
+	height: 96px;
+}
+
+.user_con {
+	overflow: hidden;
+	width: 158px;
+	padding-top: 25px;
+	padding-left: 12px;
+}
+
+.user_con p {
+	display: inline-block;
+	color: #999;
+	margin-left: 5px;
+	vertical-align: middle;
+	font-family: 微软雅黑;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+.user_con p b {
+	display: block;
+	height: 24px;
+	overflow: hidden;
+	word-break: break-all;
+	font-weight: 400;
+	color: #666;
+}
+
+.user_type {
+	padding-top: 5px;
+}
+
+.user_type i {
+	display: inline-block;
+	background: url(http://static.sanjiang.com/common/images/mysj.png) 0 -630px no-repeat;
+	width: 19px;
+	height: 19px;
+	vertical-align: middle;
+	float: left;
+}
+
+.user_type span {
+	display: inline-block;
+	margin-left: 8px;
+	line-height: 19px;
+}
+
+.user_type a {
+	display: inline-block;
+	margin-left: 10px;
+	color: #0762be;
+}
+
+.fun_type h2 {
+	padding: 20px 10px;
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.fun_type ul {
+	margin-left: 30px;
+}
+
+.fun_type ul li {
+	position: relative;
+	display: inline-block;
+	zoom: 1;
+	width: 136px;
+	height: 32px;
+	line-height: 32px;
+	margin: 10px;
+	padding: 1px;
+	border: 1px solid #ccc;
+	text-align: center;
+	cursor: pointer;
+}
+
+.item_btn {
+	margin-top: 35px;
+	text-align: center;
+}
+
+.item_btn input {
+	display: inline-block;
+	background: #ea1414;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 3px;
+	text-align: center;
+	font-weight: 700;
+	color: #fff;
+	cursor: pointer;
+	width: 100px;
+	border: 0;
+	vertical-align: middle;
+}
+
+.fun_type ul li i {
+	display: none;
+	position: absolute;
+	bottom: -1px;
+	right: -1px;
+	background: url(http://static.sanjiang.com/common/images/profile.png) 0 -21px no-repeat;
+	width: 17px;
+	height: 17px;
+}
+
+.card_tabs {
+	padding-top: 20px;
+	padding-bottom: 15px;
+}
+
+.card_tabs p {
+	padding-bottom: 15px;
+}
+
+.card_tabs p a {
+	font-weight: bold;
+	color: #ea1414;
+}
+
+.card_tabs ul {
+	clear: both;
+	padding: 0;
+}
+
+.card_tabs ul li {
+	margin-right: 20px;
+}
+
+.card_tabs ul li a {
+	font-size: medium;
+	font-weight: bold;
+	color: #000204;
+	margin: 0;
+}
+
+.p2 {
+	color: #EA1414;
+}
+
+.b_line {
+	border-bottom: 1px dashed #e5e5e5;
+}
+
+.card-apply form .info_item {
+	position: relative;
+	padding-bottom: 20px;
+	padding-left: 10px;
+}
+
+.card-apply form .info_item .info_span {
+	width: 120px;
+	display: inline-block;
+	min-width: 40px;
+	text-align: right;
+	color: #666;
+	vertical-align: middle;
+}
+
+.card-apply form input {
+	display: inline-block;
+	width: 180px;
+	height: 20px;
+	line-height: 20px;
+	padding: 5px;
+	border: 1px solid #ccc;
+}
+
+.card-apply .item_btn {
+	display: inline-block;
+}
+
+.card-apply .item_btn input {
+	width: 120px;
+	display: inline-block;
+	background: #ea1414;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 3px;
+	text-align: center;
+	font-weight: 700;
+	color: #fff;
+	cursor: pointer;
+}
+
+#idCardFront {
+	border: none;
+}
+
+.member_rights {
+	margin-top: 30px;
+	margin-bottom: 20px;
+	font-family: 微软雅黑;
+	display: block;
+	clear: both;
+	overflow: hidden;
+}
+
+.ic {
+	position: relative;
+	background: url(http://static.sanjiang.com/card/images/ic.png) no-repeat;
+	width: 320px;
+	height: 180px;
+}
+
+.ic2 {
+	width: 410px;
+	margin-left: 16px;
+}
+
+.ic2 h2 {
+	margin: 10px 0 10px 13px;
+	font-size: 14px;
+}
+
+.ic2 ul {
+	padding: 0;
+}
+
+.ic2 ul li {
+	position: relative;
+	float: left;
+	margin: 15px 0 0;
+	height: 55px;
+	width: 130px;
+}
+
+.ic2 ul li i {
+	display: block;
+	float: left;
+	background: url(http://static.sanjiang.com/card/images/card.png) 0 0 no-repeat;
+	width: 40px;
+	height: 40px;
+	margin-right: 5px
+}
+
+.ic2 .c_price i {
+	background-position: 0 0;
+}
+
+.ic2 .c_activity i {
+	background-position: 0 -144px;
+}
+
+.ic2 .c_point i {
+	background-position: 5px -48px;
+	width: 45px;
+}
+
+.ic2 .c_coupon i {
+	background-position: 0 -96px;
+	width: 40px;
+}
+
+.box7 .m_right2 {
+	float: left;
+	width: 748px;
+	height: 800px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	margin-left: -1px;
+	padding: 20px 40px;
+	border: 1px solid #eee;
+}
+
+.ic2 b {
+	font-size: 13px;
+	font-weight: 14px;
+	line-height: 40px;
+}
+
+.ic2 span {
+	display: none;
+}
+
+.box1 .user_pic {
+	width: 96px;
+	height: 96px;
+	float: left;
+	position: relative;
+}
+
+.box1 .user_m {
+	margin-left: 18px;
+	float: left;
+	width: 160px;
+	overflow: hidden;
+}
+
+.box1 .con strong {
+	color: red;
+}
+
+.box3 .layer_box {
+	margin-top: -78px;
+	z-index: 113px;
+}
+
+.box3 .layer_box .layer_content {
+	text-align: center;
+	padding: 15px;
+}
+
+.error3 {
+	padding: 20px 0;
+	background-position: -48px -398px;
+}
+
+.box3 .layer_box .layer_content p i {
+	display: inline-block;
+	background: url(http://static.sanjiang.com/common/images/items.png) 0 -398px no-repeat;
+	width: 28px;
+	height: 28px;
+	vertical-align: middle;
+	margin-right: 10px;
+	margin-left: -38px;
+}
+
+.time_down li:hover {
+	background-color: skyblue;
+}
+
+.yxyz:hover {
+	color: red;
+}
+
+.fun_type ul li.cuurr {
+	padding: 0;
+	border: 2px solid #ea1414;
+}
+
+.fun_type ul li.cuurr i {
+	display: block;
+}
+
+.card-apply p {
+	display: inline-block;
+	color: #999;
+	margin-left: 5px;
+}
+
+.card-apply p.error2 {
+	color: #f03838;
+}
+
+.card-apply p i {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	margin-right: 5px;
+	background: url(http://static.sanjiang.com/safe/images/safe-bf.png) 0 -50px no-repeat;
+	vertical-align: middle;
+}
+
+.box9 .layer_box4 {
+	border: 5px solid #b3b3b3;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-top: -250px;
+	background: #fff;
+	width: 700px;
+	margin-left: -350px;
+	z-index: 113px;
+	display: none;
+}
+
+.box9 .form input {
+	display: inline-block;
+	width: 180px;
+	height: 20px;
+	line-height: 20px;
+	padding: 5px;
+	border: 1px solid #ccc;
+}
+
+.box9 .form p i {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	margin-right: 5px;
+	background: url(http://static.sanjiang.com/safe/images/safe-bf.png) 0 -50px no-repeat;
+	vertical-align: middle;
+}
+
+.all2 {
+	display: inline-block;
+	z-index: 3;
+	color: #666;
+	position: relative;
+	float: none;
+}
+
+.send {
+	position: relative;
+	float: none;
+	border: 1px solid #ccc;
+	height: 20px;
+	min-width: 165px;
+	padding: 5px 20px 5px 5px;
+	line-height: 20px;
+}
+
+.send span {
+	color: #666;
+	padding-right: 5px;
+	margin-right: 0;
+}
+
+.send i {
+	background: url(http://static.sanjiang.com/common/images/list.png) 0 -23px no-repeat;
+	width: 9px;
+	height: 5px;
+	position: absolute;
+	right: 10px;
+	top: 13px;
+	display: inline-block;
+	margin-left: 0;
+}
+
+.box9 .form .input2 {
+	display: inline-block;
+	width: 310px;
+	height: 51px;
+	line-height: 20px;
+	padding: 5px;
+	border: 1px solid #ccc;
+	font-size: 100%;
+	color: #999;
+	vertical-align: middle;
+	outline: none;
+}
+
+.info_spanv {
+	display: inline-block;
+	min-width: 100px;
+	margin-right: 10px;
+	text-align: right;
+	color: #666;
+	margin-top: 8px;
+	vertical-align: top;
+}
+
+.info_spanv span {
+	color: #ea1414;
+	text-align: right;
+}
+
+.btn_y3 {
+	width: 92px;
+	height: 26px;
+	border: none;
+	cursor: pointer;
+	line-height: 26px;
+	text-align: center;
+	background: #e63c3f;
+	border-radius: 2px;
+	color: #fff;
+	display: inline-block;
+	margin-right: 10px;
+	outline: none;
+}
+
+.box4 p.error i {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	margin-right: 5px;
+	background: url(http://static.sanjiang.com/safe/images/safe-bf.png) 0 -50px no-repeat;
+	vertical-align: middle;
+}
+
+.m_right4 {
+	margin-top: 5px;
+	float: left;
+	margin-bottom: 15px;
+	min-height: 956px;
+	margin-left: 8px;
+	width: 822px;
+}
+
+.complain_edit {
+	padding: 20px 40px 0;
+}
+
+#applyForm {
+	margin: 0;
+}
+
+.box11 .info_item {
+	position: relative;
+	padding-bottom: 20px;
+}
+
+.complain_edit .info_span {
+	min-width: 65px;
+	display: inline-block;
+	zoom: 1;
+	margin-right: 10px;
+	text-align: right;
+	color: #666;
+	vertical-align: middle;
+}
+
+.option_group1 {
+	margin: 0;
+}
+
+.option_group1 li {
+	position: relative;
+	display: inline-block;
+	zoom: 1;
+	width: 166px;
+	height: 34px;
+	line-height: 34px;
+	margin: 10px 10px 0 0;
+	padding: 1px;
+	border: 1px solid #ccc;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	text-align: center;
+	cursor: pointer;
+}
+
+#applyForm input {
+	display: inline-block;
+	zoom: 1;
+	width: 180px;
+	height: 20px;
+	line-height: 20px;
+	padding: 5px;
+	border: 1px solid #ccc;
+}
+
+.b_line2 {
+	margin: 10px 0 30px;
+	border-bottom: 1px dashed #eee;
+}
+
+#applyForm p {
+	zoom: 1;
+	color: red;
+	margin-left: 5px;
+	display: inline-block;
+}
+
+#applyForm p i {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	margin-right: 5px;
+	background: url(http://static.sanjiang.com/safe/images/safe-bf.png) 0 -50px no-repeat;
+	vertical-align: middle
+}
+
+.option_group2 li {
+	position: relative;
+	display: inline-block;
+	zoom: 1;
+	width: 88px;
+	height: 34px;
+	line-height: 34px;
+	margin: 10px 10px 0 0;
+	padding: 1px;
+	border: 1px solid #ccc;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.complain_edit .text_area {
+	display: block;
+	margin-top: 10px;
+	width: 700px;
+	height: 110px;
+	border: 1px solid #ccc;
+	padding: 10px;
+	background: #fff;
+	position: relative;
+}
+
+.text_area textarea {
+	border: none;
+	width: 100%;
+	height: 110px;
+	overflow-y: auto;
+	resize: none;
+	padding: 0;
+	line-height: 26px;
+}
+
+.text_area em {
+	color: #999;
+	position: absolute;
+	top: -20px;
+	right: 0;
+}
+
+.web {
+	position: relative;
+	width: 113px;
+	height: 113px;
+	overflow: hidden;
+	border: 1px solid gray;
+}
+
+.pick {
+	background: #fff url(http://static.sanjiang.com/feedback/images/up.png) 50% 40% no-repeat;
+	padding: 60px 0 0;
+	border: 1pt dotted #bbb;
+	border-radius: 5px;
+	width: 110px;
+	height: 50px;
+	color: #999;
+	font-size: 14px;
+	text-align: center;
+}
+
+.red_btn {
+	display: inline-block;
+	background: #ea1414;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 3px;
+	text-align: center;
+	font-weight: 700;
+	color: #fff;
+	cursor: pointer;
+}
+
+#applyForm ul li i {
+	display: none;
+	position: absolute;
+	bottom: -1px;
+	right: -1px;
+	background: url(http://static.sanjiang.com/common/images/profile.png) 0 -21px no-repeat;
+	width: 17px;
+	height: 17px;
+}
+
+#applyForm ul li.cuurr {
+	padding: 0;
+	border: 2px solid #ea1414;
+}
+
+#applyForm ul li.cuurr i {
+	display: block;
+	position: absolute;
+	bottom: -1px;
+	right: -1px;
+	background: url(http://static.sanjiang.com/common/images/profile.png) 0 -21px no-repeat;
+	width: 17px;
+	height: 17px;
+}
+
+.a {
+	color: #666;
+	display: block;
+}
+
+.m_left a.active {
+	color: #f03838;
+}
+
+.mymessagebody {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.mymessagebody .w2 {
+	width: 1200px;
+}
+
+.mymessagebody .m_right {
+	float: left;
+}
+
+.mymessagebody .m_right2 {
+	float: left;
+}
+
+.mymessagebody .m_right3 {
+	float: left;
+}
+
+.mymessagebody .m_right4 {
+	float: left;
+}
+
+.form .w310 {
+	width: 310px;
+}
+
+.form .h50 {
+	height: 51px;
+}
+
+.layer_box .layer_content,
+.layer_box_two .layer_content {
+	padding: 15px;
+}
+
+.layer_box {
+	width: 700px;
+	margin-left: -350px;
+}
+
+.form .send_all .send_where {
+	position: relative;
+	float: none;
+	border: 1px solid #ccc;
+	height: 20px;
+	min-width: 165px;
+	padding: 5px 20px 5px 5px;
+	line-height: 20px;
+}
+
+.form .send_all {
+	display: inline-block;
+	position: relative;
+	float: none;
+}

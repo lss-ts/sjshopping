@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>售后服务的常见问题 - 三江购物帮助中心 - 三江购物</title>
+		<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/help.css">
+	</head>
+
+	<body>
+		<!--导航条主体-->
+		<div class="top_bar">
+			<div class="w900">
+				<div class="gohome"><i></i>
+					<a href="__APP__/Index/index">返回首页</a>
+				</div>
+				<ul class="ufr">
+					<li class="item1">
+						<if condition="!isset($_SESSION['username'])">
+							您好，欢迎来到三江！
+							<span>
+									<a href="__APP__/Login/login" class="login">登录</a>
+									<a href="__APP__/Register/register">注册</a>
+								</span>
+							<else />
+							<a href="###" style="margin-right: 15px;">{$Think.session.username}</a>
+							<a href="__APP__/Login/login">退出</a>
+						</if>
+					</li>
+					<li class="item2 mydd">
+						<div></div>
+						<if condition="!isset($_SESSION['username'])">
+							<a href="__APP__/Login/login" target="_blank">我的订单</a>
+							<else />
+							<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+						</if>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的三江</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessageindex" target="_blank">我的三江</a>
+							</if>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的订单</a>
+								<a href="__APP__/Login/login" target="_blank">我的收藏</a>
+								<a href="__APP__/Login/login" target="_blank">我的优惠券</a>
+								<a href="__APP__/Login/login" target="_blank">地址管理</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的收藏</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的优惠券</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">地址管理</a>
+							</if>
+						</div>
+					</li>
+					<li class="koudai">
+						<div class="drop_down_top">
+							<div class="line"></div>
+							<div class="phone_app"></div>
+							<a href="http://help.sanjiang.com/app.html" target="_blank">口袋三江</a>
+							<em></em>
+
+						</div>
+						<div class="kd_box">
+							<p></p>
+							<div class="app_code"><span>三江客户端</span><span>三江订阅号</span></div>
+						</div>
+					</li>
+					<li class="item2">
+						<div></div>
+						<a href="javascript:void(0);" target="_blank">企业团购</a>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="__APP__/Help/helpIndex" target="_blank">客户服务</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<a href="__APP__/Help/helpIndex" target="_blank">帮助中心</a>
+							<a href="__APP__/Help/shfwTHGZ" target="_blank">售后服务</a>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">意见反馈</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">意见反馈</a>
+							</if>
+						</div>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="javascript:void(0)">网站导航</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140 daohang">
+							<p></p>
+							<a href="__URL__/sjyx" target="_blank">三江优选</a>
+							<a href="__URL__/hsp" target="_blank">惠商品</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='help-nav-bj'>
+			<div class='help-nav'>
+				<a href="###主页" class='logo'></a>
+				<ul>
+					<li>
+						<a href="__URL__/helpIndex" class='help-index'>首页<i></i></a>
+					</li>
+					<li>
+						<a href="__URL__/gwznZCLC" class='help-index'>问题分类<i class='active'></i></a>
+					</li>
+					<li>
+						<a href="__URL__/zzfwZZFW" class='help-index'>自助服务<i></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='help-nav-bar'>
+			<ul>
+				<li>
+					<a href="__URL__/gwznZCLC">购物指南</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/zffsZXZF">支付方式</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/wlpsPSFS">物流配送</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/shfwTHGZ">售后服务</a>
+					<div class='icon active'></div>
+				</li>
+				<li>
+					<a href="__URL__/mdylbMDYLB">门店一览表</a>
+					<div class='icon'></div>
+				</li>
+			</ul>
+		</div>
+		<div class='helplist-b'>
+			<div class='box'>
+				<div class='helplist-nav'>
+					<ul>
+						<li>
+							<a href="__URL__/shfwHHGZ">退货规则</a>
+						</li>
+						<li>
+							<a href="__URL__/shfwHHGZ">换货规范</a>
+						</li>
+						<li>
+							<a href="__URL__/shfwCJWT" class='active'>常见问题</a>
+						</li>
+						<li>
+							<a href="__URL__/shfwYHFK">用户反馈</a>
+						</li>
+					</ul>
+				</div>
+				<div class='help-detail'>
+
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>常见问题
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+
+							<!--详细内容-->
+							<h3>1.	配送时取消订单是否需承担运费？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 如订单已在配送状态，用户无理由取消，需承担运费。</p>
+							<h3>2.	拒收是否需要承担运费？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 无理由拒收用户需承担运费。</p>
+							<h3>3.	如签收后，发现商品存在质量问题如何处理？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 您可以携带商品、小票到购买门店进行处理。</p>
+							<h3>4.	哪些商品不参加无理由退货？</h3>
+							<p>
+								&nbsp;&nbsp;&nbsp;&nbsp; 以下商品因特殊性，不参加无理由退换货：<br> &nbsp;&nbsp;&nbsp;&nbsp; (1)个人定制类商品或服务；<br> &nbsp;&nbsp;&nbsp;&nbsp; (2)鲜活易腐的商品；<br> &nbsp;&nbsp;&nbsp;&nbsp; (3)在线下载或者您拆封的音像制品、计算机软件等数字化商品；<br> &nbsp;&nbsp;&nbsp;&nbsp; (4)服装鞋帽类商品已洗涤的；<br> &nbsp;&nbsp;&nbsp;&nbsp; (5)交付的报纸、期刊类商品；<br> &nbsp;&nbsp;&nbsp;&nbsp; (6)虚拟类商品：酒店/门票/度假旅游/保险、彩票、电影/演出/体育赛事、网络游戏虚拟商品交易区类、充值/手机号/增值业务、电脑/服务器/游戏软件类(包括但不限于序列号、激活码、CDKEY等)；<br> &nbsp;&nbsp;&nbsp;&nbsp; (7)代金券、、实体服务等服务类商品；<br> &nbsp;&nbsp;&nbsp;&nbsp; (8)实物类商品：通讯合约机、艺术品及收藏品、奢侈品、美妆/个人洗护类商品、食品/饮料/酒水、奶粉/辅食/尿布/、望远镜/显微镜/夜视镜、隐形眼镜、贴身使用的成人婴儿衣物、钻石/黄金/手表/珠宝首饰及个人配饰类产品；<br> &nbsp;&nbsp;&nbsp;&nbsp; (9)无法保证退回商品完好的；<br> &nbsp;&nbsp;&nbsp;&nbsp; (10)其他根据商品性质不宜适用无理由退换货的商品；
+							</p>
+							<!--详细内容-->
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<iframe width="100%" height="356px" frameborder=0 scrolling="no" src="__ROOT__/Index/Tpl/Footer/footer.html"></iframe>
+	</body>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/jquery-3.2.1.min.js'></script>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/help.js'></script>
+
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>首页 - 三江购物帮助中心 - 三江购物</title>
+		<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/help.css">
+	</head>
+
+	<body>
+		<!--导航条主体-->
+		<div class="top_bar">
+			<div class="w900">
+				<div class="gohome"><i></i>
+					<a href="__APP__/Index/index">返回首页</a>
+				</div>
+				<ul class="ufr">
+					<li class="item1">
+						<if condition="!isset($_SESSION['username'])">
+							您好，欢迎来到三江！
+							<span>
+									<a href="__APP__/Login/login" class="login">登录</a>
+									<a href="__APP__/Register/register">注册</a>
+								</span>
+							<else />
+							<a href="###" style="margin-right: 15px;">{$Think.session.username}</a>
+							<a href="__APP__/Login/login">退出</a>
+						</if>
+					</li>
+					<li class="item2 mydd">
+						<div></div>
+						<if condition="!isset($_SESSION['username'])">
+							<a href="__APP__/Login/login" target="_blank">我的订单</a>
+							<else />
+							<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+						</if>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的三江</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessageindex" target="_blank">我的三江</a>
+							</if>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的订单</a>
+								<a href="__APP__/Login/login" target="_blank">我的收藏</a>
+								<a href="__APP__/Login/login" target="_blank">我的优惠券</a>
+								<a href="__APP__/Login/login" target="_blank">地址管理</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的收藏</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的优惠券</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">地址管理</a>
+							</if>
+						</div>
+					</li>
+					<li class="koudai">
+						<div class="drop_down_top">
+							<div class="line"></div>
+							<div class="phone_app"></div>
+							<a href="http://help.sanjiang.com/app.html" target="_blank">口袋三江</a>
+							<em></em>
+
+						</div>
+						<div class="kd_box">
+							<p></p>
+							<div class="app_code"><span>三江客户端</span><span>三江订阅号</span></div>
+						</div>
+					</li>
+					<li class="item2">
+						<div></div>
+						<a href="javascript:void(0);" target="_blank">企业团购</a>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="__APP__/Help/helpIndex" target="_blank">客户服务</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<a href="__APP__/Help/helpIndex" target="_blank">帮助中心</a>
+							<a href="__APP__/Help/shfwTHGZ" target="_blank">售后服务</a>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">意见反馈</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">意见反馈</a>
+							</if>
+						</div>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="javascript:void(0)">网站导航</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140 daohang">
+							<p></p>
+							<a href="__URL__/sjyx" target="_blank">三江优选</a>
+							<a href="__URL__/hsp" target="_blank">惠商品</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='help-nav-bj'>
+			<div class='help-nav'>
+				<a href="###主页" class='logo'></a>
+				<ul>
+					<li>
+						<a href="__URL__/helpIndex" class='help-index'>首页<i class='active'></i></a>
+					</li>
+					<li>
+						<a href="__URL__/gwznZCLC.html" class='help-index'>问题分类<i></i></a>
+					</li>
+					<li>
+						<a href="__URL__/zzfwZZFW.html" class='help-index'>自助服务<i></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='helps'>
+			<div class='common'>
+				<div class='box'>
+					<h2 class='help-title'>常见自助服务</h2>
+					<div class='help-items'>
+						<div class='help-item'>
+							<a>查询订单</a>
+							<p>快速查看订单详情、配送进度、确认收货等</p>
+							<span class='help-p'></span>
+						</div>
+						<div class='help-item'>
+							<a>配送服务查询</a>
+							<p>查看您所在地址支持的配送服务类型和时效</p>
+							<span class='help-p' style='background-position: -150px -102px;'></span>
+						</div>
+						<div class='help-item'>
+							<a>查询售后政策</a>
+							<p>查看退换货维修规则、处理流程</p>
+							<span class='help-p' style="background-position: 0 -200px;"></span>
+						</div>
+						<div class='help-item'>
+							<a>绑定会员卡</a>
+							<p>快速绑定三江实体会员卡，享受三江会员服务</p>
+							<span class='help-p' style="background-position: -158px -206px;"></span>
+						</div>
+						<div class='help-item'>
+							<a>取消订单</a>
+							<p>申请取消订单、终止发货</p>
+							<span class='help-p' style='background-position: 0 -298px;'></span>
+						</div>
+						<div class='help-item'>
+							<a>账户安全</a>
+							<p>修改密码、绑定手机、提高账户安全等</p>
+							<span class='help-p' style="background-position: -162px -298px;"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='hot'>
+				<div class='box'>
+					<h2 class='help-title'>热门问题</h2>
+					<div class='hots'>
+						<div class='hot-item'>
+							<div class='hot-item-title'>
+								如何下单
+							</div>
+							<div class='hot-item-b'>
+								<a href="__APP__/Help/gwznZCLC">注册流程</a>
+								<a href="__APP__/Help/gwznGWLC">查找商品</a>
+								<a href="__APP__/Help/gwznGWLC">购物流程</a>
+								<a href="__APP__/Help/gwznGWLC">支付流程</a>
+								<a href="__APP__/Help/wlpsPSFW">配送范围</a>
+							</div>
+						</div>
+						<div class='hot-item'>
+							<div class='hot-item-title' style='background-position: 0 -563px;'>
+								如何下单
+							</div>
+							<div class='hot-item-b'>
+								<a href="__APP__/Help/zffsZXZF">线上支付宝</a>
+								<a href="__APP__/Help/zffsZXZF">线上微信支付</a>
+								<a href="__APP__/Help/zffsZXZF">线上银联卡支付</a>
+								<a href="__APP__/Help/zffsZXZF">货到付现金</a>
+							</div>
+						</div>
+						<div class='hot-item'>
+							<div class='hot-item-title' style='background-position: 0 -733px;'>
+								如何下单
+							</div>
+							<div class='hot-item-b'>
+								<a href="__APP__/Help/gwznDDZT">订单查询</a>
+								<a href="__APP__/Help/gwznDDZT">订单取消</a>
+								<a href="__APP__/Help/gwznDDZT">订单状态说明</a>
+								<a href="__APP__/Help/wlpsQSYH">商品验货签收</a>
+							</div>
+						</div>
+						<div class='hot-item'>
+							<div class='hot-item-title' style='background-position: 0 -903px;'>
+								如何下单
+							</div>
+							<div class='hot-item-b'>
+								<a href="__APP__/Help/gwznYHJ">优惠券</a>
+								<a href="__APP__/Help/gwznCXHD">促销活动</a>
+								<a href="__APP__/Help/shfwTHGZ">退货说明</a>
+								<a href="__APP__/Help/shfwTHGZ">退款说明</a>
+								<a href="__APP__/Help/helpIndex">联系客服</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='askforhelp'>
+				<div class='box'>
+					<h2 class='help-title'>联系客服</h2>
+					<div class='asks'>
+						<div class='ask-item'>
+							<div class='ask-item-p'>
+
+							</div>
+							<div class='ask-item-b'>
+								<h3>电话客服</h3>
+								<p>工作日（上午08：30-12：00 下午13：00-17：30）<br> 休息日（上午10：00-12：00 下午13：00-16：00）</p>
+								<div>
+									客服热线：<span>400-186-9090</span>
+								</div>
+							</div>
+						</div>
+						<div class='ask-item'>
+							<div class='ask-item-p'>
+
+							</div>
+							<div class='ask-item-b'>
+								<h3>留言提问</h3>
+								<p>客服收到留言后会及时与您联系，请您留意时填写 正确的联系方式
+								</p>
+								<a>
+									我要留言
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<iframe width="100%" height="356px" frameborder=0 scrolling="no" src="__ROOT__/Index/Tpl/Footer/footer.html"></iframe>
+	</body>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/jquery-3.2.1.min.js'></script>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/help.js'></script>
+
+</html>

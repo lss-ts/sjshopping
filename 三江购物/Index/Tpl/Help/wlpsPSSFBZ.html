@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>收费配送 - 三江购物帮助中心 - 三江购物</title>
+		<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/help.css">
+	</head>
+
+	<body>
+		<!--导航条主体-->
+		<div class="top_bar">
+			<div class="w900">
+				<div class="gohome"><i></i>
+					<a href="__APP__/Index/index">返回首页</a>
+				</div>
+				<ul class="ufr">
+					<li class="item1">
+						<if condition="!isset($_SESSION['username'])">
+							您好，欢迎来到三江！
+							<span>
+									<a href="__APP__/Login/login" class="login">登录</a>
+									<a href="__APP__/Register/register">注册</a>
+								</span>
+							<else />
+							<a href="###" style="margin-right: 15px;">{$Think.session.username}</a>
+							<a href="__APP__/Login/login">退出</a>
+						</if>
+					</li>
+					<li class="item2 mydd">
+						<div></div>
+						<if condition="!isset($_SESSION['username'])">
+							<a href="__APP__/Login/login" target="_blank">我的订单</a>
+							<else />
+							<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+						</if>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的三江</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessageindex" target="_blank">我的三江</a>
+							</if>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的订单</a>
+								<a href="__APP__/Login/login" target="_blank">我的收藏</a>
+								<a href="__APP__/Login/login" target="_blank">我的优惠券</a>
+								<a href="__APP__/Login/login" target="_blank">地址管理</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的收藏</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的优惠券</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">地址管理</a>
+							</if>
+						</div>
+					</li>
+					<li class="koudai">
+						<div class="drop_down_top">
+							<div class="line"></div>
+							<div class="phone_app"></div>
+							<a href="http://help.sanjiang.com/app.html" target="_blank">口袋三江</a>
+							<em></em>
+
+						</div>
+						<div class="kd_box">
+							<p></p>
+							<div class="app_code"><span>三江客户端</span><span>三江订阅号</span></div>
+						</div>
+					</li>
+					<li class="item2">
+						<div></div>
+						<a href="javascript:void(0);" target="_blank">企业团购</a>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="__APP__/Help/helpIndex" target="_blank">客户服务</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<a href="__APP__/Help/helpIndex" target="_blank">帮助中心</a>
+							<a href="__APP__/Help/shfwTHGZ" target="_blank">售后服务</a>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">意见反馈</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">意见反馈</a>
+							</if>
+						</div>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="javascript:void(0)">网站导航</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140 daohang">
+							<p></p>
+							<a href="__URL__/sjyx" target="_blank">三江优选</a>
+							<a href="__URL__/hsp" target="_blank">惠商品</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='help-nav-bj'>
+			<div class='help-nav'>
+				<a href="###主页" class='logo'></a>
+				<ul>
+					<li>
+						<a href="__URL__/helpIndex" class='help-index'>首页<i></i></a>
+					</li>
+					<li>
+						<a href="__URL__/gwznZCLC" class='help-index'>问题分类<i class='active'></i></a>
+					</li>
+					<li>
+						<a href="__URL__/zzfwZZFW" class='help-index'>自助服务<i></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='help-nav-bar'>
+			<ul>
+				<li>
+					<a href="__URL__/gwznZCLC">购物指南</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/zffsZXZF">支付方式</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/wlpsPSFS">物流配送</a>
+					<div class='icon active'></div>
+				</li>
+				<li>
+					<a href="__URL__/shfwTHGZ">售后服务</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/mdylbMDYLB">门店一览表</a>
+					<div class='icon'></div>
+				</li>
+			</ul>
+		</div>
+		<div class='helplist-b'>
+			<div class='box'>
+				<div class='helplist-nav'>
+					<ul>
+						<li>
+							<a href="__URL__/wlpsPSFS">配送方式</a>
+						</li>
+						<li>
+							<a href="__URL__/wlpsPSFW">配送范围</a>
+						</li>
+						<li>
+							<a href="__URL__/wlpsPSSFBZ" class='active'>配送收费标准</a>
+						</li>
+						<li>
+							<a href="__URL__/wlpsPSSJ">配送时间</a>
+						</li>
+						<li>
+							<a href="__URL__/wlpsZTLC">自提流程</a>
+						</li>
+						<li>
+							<a href="__URL__/wlpsQSYH">签收验货</a>
+						</li>
+					</ul>
+				</div>
+				<div class='help-detail'>
+					<h2 class='help-detail-title'>配送收费标准</h2>
+					<div class='help-list'>
+						<a href='###' class='active'>收费配送</a>
+						<a href='###'>免费配送</a>
+						<a href='###'>常见问题</a>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>收费配送
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+
+							<!--详细内容-->
+							<h3>三江超市订单中生鲜商品和其他商品的配送费用分别根据以下规则计算运费</h3>
+							<p>1. 实付订单金额 &lt; 50元，5kg内，运费10元，超出重量按1元/kg计算费用 </p>
+							<p>2. 50元 ≤ 实付订单金额 &lt; 88元，5kg内，运费5元，超出重量按1元/kg计算费用</p>
+							<p>3. 实付订单金额 ≥ 88元，10kg内，免费，超出重量按1元/kg计算费用</p>
+							<p>4. 实付订单金额 ≥ 176元，20kg内，免费，超出重量按1元/kg计算费用</p>
+							<p><b>&nbsp;&nbsp;&nbsp;&nbsp;注：</b></p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 1）上述订单实付金额指扣除满减券、优惠券金额后，用户支付的订单金额。</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 2）这里的实付订单金额指每笔订单的金额，一笔以上的订单不可合并计算运费，且订单一旦生成无法剔除或增加其他商品。</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 3）活动期间配送收费以具体活动为准。</p>
+							<!--详细内容-->
+
+						</div>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>免费配送
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+							<!--详细内容-->
+							<p>1. 收货方式：三江配送，实付订单金额 ≥ 88元，10kg内，免费。</p>
+							<p>2. 收货方式：三江配送，实付订单金额≥ 176元，20kg内，免费。</p>
+							<p>3. 收货方式：门店自提，不收取配送费用。</p>
+							<p><b>&nbsp;&nbsp;&nbsp;&nbsp;注：</b></p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;1）活动期间配送收费以具体活动为准。</p>
+							<!--详细内容-->
+						</div>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>常见问题
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+							<!--详细内容-->
+							<h3>1. 什么情况下能享受免运费？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 实付订单金额 ≥ 88元，10kg内，免费</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 实付订单金额≥ 176元，20kg内，免费</p>
+							<h3>2. 什么是订单实付金额？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 订单实付金额指扣除满减券、优惠券金额后，用户支付的订单金额。</p>
+							<!--详细内容-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<iframe width="100%" height="356px" frameborder=0 scrolling="no" src="__ROOT__/Index/Tpl/Footer/footer.html"></iframe>
+	</body>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/jquery-3.2.1.min.js'></script>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/help.js'></script>
+
+</html>

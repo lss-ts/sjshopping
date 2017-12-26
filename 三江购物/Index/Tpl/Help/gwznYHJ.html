@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>优惠券领取 - 三江购物帮助中心 - 三江购物</title>
+		<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/help.css">
+	</head>
+
+	<body>
+		<!--导航条主体-->
+		<div class="top_bar">
+			<div class="w900">
+				<div class="gohome"><i></i>
+					<a href="__APP__/Index/index">返回首页</a>
+				</div>
+				<ul class="ufr">
+					<li class="item1">
+						<if condition="!isset($_SESSION['username'])">
+							您好，欢迎来到三江！
+							<span>
+									<a href="__APP__/Login/login" class="login">登录</a>
+									<a href="__APP__/Register/register">注册</a>
+								</span>
+							<else />
+							<a href="###" style="margin-right: 15px;">{$Think.session.username}</a>
+							<a href="__APP__/Login/login">退出</a>
+						</if>
+					</li>
+					<li class="item2 mydd">
+						<div></div>
+						<if condition="!isset($_SESSION['username'])">
+							<a href="__APP__/Login/login" target="_blank">我的订单</a>
+							<else />
+							<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+						</if>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的三江</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessageindex" target="_blank">我的三江</a>
+							</if>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的订单</a>
+								<a href="__APP__/Login/login" target="_blank">我的收藏</a>
+								<a href="__APP__/Login/login" target="_blank">我的优惠券</a>
+								<a href="__APP__/Login/login" target="_blank">地址管理</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的收藏</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的优惠券</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">地址管理</a>
+							</if>
+						</div>
+					</li>
+					<li class="koudai">
+						<div class="drop_down_top">
+							<div class="line"></div>
+							<div class="phone_app"></div>
+							<a href="http://help.sanjiang.com/app.html" target="_blank">口袋三江</a>
+							<em></em>
+
+						</div>
+						<div class="kd_box">
+							<p></p>
+							<div class="app_code"><span>三江客户端</span><span>三江订阅号</span></div>
+						</div>
+					</li>
+					<li class="item2">
+						<div></div>
+						<a href="javascript:void(0);" target="_blank">企业团购</a>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="__APP__/Help/helpIndex" target="_blank">客户服务</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<a href="__APP__/Help/helpIndex" target="_blank">帮助中心</a>
+							<a href="__APP__/Help/shfwTHGZ" target="_blank">售后服务</a>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">意见反馈</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">意见反馈</a>
+							</if>
+						</div>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="javascript:void(0)">网站导航</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140 daohang">
+							<p></p>
+							<a href="__URL__/sjyx" target="_blank">三江优选</a>
+							<a href="__URL__/hsp" target="_blank">惠商品</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='help-nav-bj'>
+			<div class='help-nav'>
+				<a href="###主页" class='logo'></a>
+				<ul>
+					<li>
+						<a href="__URL__/helpIndex" class='help-index'>首页<i></i></a>
+					</li>
+					<li>
+						<a href="__URL__/gwznZCLC" class='help-index'>问题分类<i class='active'></i></a>
+					</li>
+					<li>
+						<a href="__URL__/zzfwZZFW" class='help-index'>自助服务<i></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='help-nav-bar'>
+			<ul>
+				<li>
+					<a href="__URL__/gwznZCLC">购物指南</a>
+					<div class='icon active'></div>
+				</li>
+				<li>
+					<a href="__URL__/zffsZXZF">支付方式</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/wlpsPSFS">物流配送</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/shfwTHGZ">售后服务</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/mdylbMDYLB">门店一览表</a>
+					<div class='icon'></div>
+				</li>
+			</ul>
+		</div>
+		<div class='helplist-b'>
+			<div class='box'>
+				<div class='helplist-nav'>
+					<ul>
+						<li>
+							<a href="__URL__/gwznZCLC">注册流程</a>
+						</li>
+						<li>
+							<a href="__URL__/gwznGWLC">购物流程</a>
+						</li>
+						<li>
+							<a href="__URL__/gwznZHAQ">账户安全</a>
+						</li>
+						<li>
+							<a href="__URL__/gwznHYQY">会员权益</a>
+						</li>
+						<li>
+							<a href="__URL__/gwznDDZT">订单状态</a>
+						</li>
+						<li>
+							<a href="__URL__/gwznYHJ" class='active'>优惠劵</a>
+						</li>
+						<li>
+							<a href="__URL__/gwznCXHD">促销活动</a>
+						</li>
+					</ul>
+				</div>
+				<div class='help-detail'>
+					<h2 class='help-detail-title'>优惠卷</h2>
+					<div class='help-list'>
+						<a href='###' class='active'>优惠卷领取</a>
+						<a href='###'>优惠卷使用</a>
+						<a href='###'>优惠卷退货处理规则</a>
+						<a href='###'>常见问题</a>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>优惠卷
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+
+							<!--详细内容-->
+							<h3>1、【入口1】首页轮播中的活动页有领券入口</h3>
+							<p><img src="http://static.sanjiang.com/help/images/coupons/p01_01.jpg"></p>
+							<!--详细内容-->
+						</div>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>优惠卷使用
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+
+							<!--详细内容-->
+							<h3> 1、进入订单结算页后，其中有一栏抵用券可选择可用优惠券。也可以在不可用优惠券中查看不满足条件的优惠券的原因。</h3>
+							<p><img src="http://static.sanjiang.com/help/images/coupons/p02_01.jpg"></p>
+							<h3>2、勾选可用的优惠券后，结算栏中优惠券一行会显示扣减的优惠券金额，如下图：</h3>
+							<p><img src="http://static.sanjiang.com/help/images/coupons/p02_02.jpg"></p>
+							<!--详细内容-->
+
+						</div>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>优惠卷退货处理规则
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+
+							<!--详细内容-->
+							<p> 1、使用现金券提交的订单，取消订单时， 若过机前订单取消后，系统自动返还相应的现金券； 若订单被拆分后取消子单后，先退现金再退现金券(如现金不够退时，退还现金券再退现金)。
+							</p>
+							<p>
+								2、使用现金券提交的订单，退货时： 若过机后，订单整单退，系统自动返还相应的现金券； 若发生售后退货，已使用现金券可能化整为零，以线下换购券形式等额返还；
+							</p>
+							<p>
+								3、使用满减券提交的订单，整个订单取消或退货时： 退款金额为订单实际支付金额(不含运费)，退款原路返回，满减券返回。
+							</p>
+							<p>
+								4、使用满减券提交的订单，订单取消一部分或退货一部分： 退款金额为折扣后的金额，退款原路返回，满减券不返还。
+							</p>
+							<!--详细内容-->
+
+						</div>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>常见问题
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+							<!--详细内容-->
+							<h3>1、哪里能查看我领取的优惠券？点击页面顶部“我的三江”中“我的优惠券”</h3>
+							<p><img src="http://static.sanjiang.com/help/images/coupons/p04_01.jpg"></p>
+							<h3>2、为什么使用不了现金券？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; <b>第一步：</b>请在“我的三江”中“我的优惠券”里面查看是否有可用的现金券，并仔细查看现金券可用的条件。</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; <b>第二步：</b>请在订单确认页中的抵用券一栏中查看是否有可用的现金券。</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; <b>第三步：</b>如果不可用优惠券中包含限品类现金券，请确认订单中是否包括限品类现金券中需要购买的商品。</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; <b>第四步：</b>如果不可用优惠券中包含限应用场景现金券，请确认使用对应的应用场景：PC、APP、微商城。</p>
+							<h3>3、为什么使用不了满减券？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; <b>第一步：</b>请在“我的三江”中“我的优惠券”里面查看是否有可用的满减券，并仔细查看满减券可用的条件。</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; <b>第二步：</b>请在订单确认页中的抵用券一栏中查看是否有可用的满减券。</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; <b>第三步：</b>如果不可用优惠券中包含限品类满减券，请确认订单中是否包括限品类满减券中需要购买的商品。</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; <b>第四步：</b>如果不可用优惠券中包含限应用场景满减券，请确认使用对应的应用场景：PC、APP、微商城。</p>
+							<!--详细内容-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<iframe width="100%" height="356px" frameborder=0 scrolling="no" src="__ROOT__/Index/Tpl/Footer/footer.html"></iframe>
+	</body>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/jquery-3.2.1.min.js'></script>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/help.js'></script>
+
+</html>

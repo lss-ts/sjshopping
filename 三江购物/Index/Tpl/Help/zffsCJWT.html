@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>支付方式的常见问题 - 三江购物帮助中心 - 三江购物</title>
+		<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/help.css">
+	</head>
+
+	<body>
+		<!--导航条主体-->
+		<div class="top_bar">
+			<div class="w900">
+				<div class="gohome"><i></i>
+					<a href="__APP__/Index/index">返回首页</a>
+				</div>
+				<ul class="ufr">
+					<li class="item1">
+						<if condition="!isset($_SESSION['username'])">
+							您好，欢迎来到三江！
+							<span>
+									<a href="__APP__/Login/login" class="login">登录</a>
+									<a href="__APP__/Register/register">注册</a>
+								</span>
+							<else />
+							<a href="###" style="margin-right: 15px;">{$Think.session.username}</a>
+							<a href="__APP__/Login/login">退出</a>
+						</if>
+					</li>
+					<li class="item2 mydd">
+						<div></div>
+						<if condition="!isset($_SESSION['username'])">
+							<a href="__APP__/Login/login" target="_blank">我的订单</a>
+							<else />
+							<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+						</if>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的三江</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessageindex" target="_blank">我的三江</a>
+							</if>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的订单</a>
+								<a href="__APP__/Login/login" target="_blank">我的收藏</a>
+								<a href="__APP__/Login/login" target="_blank">我的优惠券</a>
+								<a href="__APP__/Login/login" target="_blank">地址管理</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的收藏</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的优惠券</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">地址管理</a>
+							</if>
+						</div>
+					</li>
+					<li class="koudai">
+						<div class="drop_down_top">
+							<div class="line"></div>
+							<div class="phone_app"></div>
+							<a href="http://help.sanjiang.com/app.html" target="_blank">口袋三江</a>
+							<em></em>
+
+						</div>
+						<div class="kd_box">
+							<p></p>
+							<div class="app_code"><span>三江客户端</span><span>三江订阅号</span></div>
+						</div>
+					</li>
+					<li class="item2">
+						<div></div>
+						<a href="javascript:void(0);" target="_blank">企业团购</a>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="__APP__/Help/helpIndex" target="_blank">客户服务</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<a href="__APP__/Help/helpIndex" target="_blank">帮助中心</a>
+							<a href="__APP__/Help/shfwTHGZ" target="_blank">售后服务</a>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">意见反馈</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">意见反馈</a>
+							</if>
+						</div>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="javascript:void(0)">网站导航</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140 daohang">
+							<p></p>
+							<a href="__URL__/sjyx" target="_blank">三江优选</a>
+							<a href="__URL__/hsp" target="_blank">惠商品</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='help-nav-bj'>
+			<div class='help-nav'>
+				<a href="###主页" class='logo'></a>
+				<ul>
+					<li>
+						<a href="__URL__/helpIndex" class='help-index'>首页<i></i></a>
+					</li>
+					<li>
+						<a href="__URL__/gwznZCLC" class='help-index'>问题分类<i class='active'></i></a>
+					</li>
+					<li>
+						<a href="__URL__/zzfwZZFW" class='help-index'>自助服务<i></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='help-nav-bar'>
+			<ul>
+				<li>
+					<a href="__URL__/gwznZCLC">购物指南</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/zffsZXZF">支付方式</a>
+					<div class='icon active'></div>
+				</li>
+				<li>
+					<a href="__URL__/wlpsPSFS">物流配送</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/shfwTHGZ">售后服务</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/mdylbMDYLB">门店一览表</a>
+					<div class='icon'></div>
+				</li>
+			</ul>
+		</div>
+		<div class='helplist-b'>
+			<div class='box'>
+				<div class='helplist-nav'>
+					<ul>
+						<li>
+							<a href="__URL__/zffsZXZF">在线支付</a>
+						</li>
+						<li>
+							<a href="__URL__/zffsHDFK">货到付款</a>
+						</li>
+						<li>
+							<a href="__URL__/zffsTKSM">退款说明</a>
+						</li>
+						<li>
+							<a href="__URL__/zffsCJWT" class='active'>常见问题</a>
+						</li>
+					</ul>
+				</div>
+				<div class='help-detail'>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>常见问题
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+
+							<!--详细内容-->
+							<h3>1.订单已提交成功，如何付款？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 支付方式：配送订单可选择货到付款，订单提交成功后，收到商品付款。</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 支付方式：<b>在线支付，</b>提交订单成功后，在成功提交订单页面选择支付平台</p>
+							<p><img src="http://static.sanjiang.com/help/images/pay/p03_01.jpg"></p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 选中支付平台点击立即支付，</p>
+							<p><img src="http://static.sanjiang.com/help/images/pay/p03_02.jpg"></p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 在支付平台输入支付信息确定即可支付完成。支付完成后可在“我的三江”→“我的订单”中查看。</p>
+							<h3>2.目前三江支付哪些支付方式？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 支付宝、微信、货到付款
+								<!--、银行卡（目前开通的银行：工商银行、建设银行、招商银行、农业银行、交通银行、广发银行、中国银行、民生银行、兴业银行、光大银行、邮政储蓄、中信银行、浦发银行、平安银行、杭州银行、上海银行、宁波银行）-->。</p>
+							<h3>3.哪些收货方式支持货到付款？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 仅配送收货支持货到付款。</p>
+							<h3>4.配送-货到付款可以POS机刷卡吗？</h3>
+							<p>&nbsp;&nbsp; &nbsp; 不可以。</p>
+							<h3>5.自提-货到付款可以POS机刷卡吗？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 不可以。</p>
+							<h3>6.是否支持组合支付？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 暂不支持组合支付。</p>
+							<h3>7.货到付款订单提交后，是否能修改支付方式？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 暂不支持修改支付方式。</p>
+							<h3>8.付款之后一般是多久确认收款呢？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 在线支付订单一般会在当天确认收款。</p>
+							<h3>9.配送收取金额与订单金额不一致如何处理？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 配送收取金额与订单金额不一致，可能有以下几种情况：订单商品可能收取了运费、订单参加的优惠活动失败；</p>
+							<h3>10.支付不成功的原因有哪些？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （1）您的银行卡尚未开通网上银行支付功能，建议您到当地营业厅开通网上银行</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （2）所用银行卡超出该银行支持地域范围，请您更换银行卡试试；</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （3）银行卡已过期、作废、挂失或者余额不足等，建议您咨询您的开户行；</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （4）输入的银行卡号、密码或证件号等与预置的不符，建议您重新输入正确的卡密码或证件号等，如果您忘记了密码，请您及时与所属银行联系办理密码重置；</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （5）银行系统数据传输可能出现异常，建议您刷新页面或者稍后重启电脑；</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （6）部分银行设置有支付金额限制，如限制支付金额不能操作1500，超过1500的订单则无法支付成功，您可以联系发卡银行详细了解。</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （7）如遇活动高峰期导致付款不成功，建议您重新打开页面进行支付。</p>
+							<h3>为什么支付总是失败？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （1）您的银行卡尚未开通网上银行支付功能，建议您到当地营业厅开通网上银行</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （2）所用银行卡超出该银行支持地域范围，请您更换银行卡试试；</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （3）银行卡已过期、作废、挂失或者余额不足等，建议您咨询您的开户行；</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （4）输入的银行卡号、密码或证件号等与预置的不符，建议您重新输入正确的卡密码或证件号等，如果您忘记了密码，请您及时与所属银行联系办理密码重置；</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （5）银行系统数据传输可能出现异常，建议您刷新页面或者稍后重启电脑；</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （6）部分银行设置有支付金额限制，如限制支付金额不能操作1500，超过1500的订单则无法支付成功，您可以联系发卡银行详细了解。</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （7）如遇活动高峰期导致付款不成功，建议您重新打开页面进行支付。</p>
+							<!--详细内容-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<iframe width="100%" height="356px" frameborder=0 scrolling="no" src="__ROOT__/Index/Tpl/Footer/footer.html"></iframe>
+	</body>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/jquery-3.2.1.min.js'></script>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/help.js'></script>
+
+</html>

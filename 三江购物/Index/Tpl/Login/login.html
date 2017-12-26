@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>登录-三江</title>
+		<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/login.css" />
+		<script type="text/javascript" src="__ROOT__/Index/Common/js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="__ROOT__/Index/Common/js/angular.min.js"></script>
+	</head>
+
+	<body>
+		<div class="sj_login_head wrap">
+			<div class="fl">
+				<img src="__ROOT__/Index/Common/images/login-logo.png" />
+			</div>
+		</div>
+		<div class="sj_login_main" ng-app="myApp" ng-controller="myController">
+			<div class="fl">
+				<img src="__ROOT__/Index/Common/images/login-img.gif" />
+			</div>
+			<form action="" method="post" class="fr login_from">
+				<div class="lg_t">
+					<b>用户登录</b>
+					<span>
+						没有账号
+						<a href="__APP__/Register/register">免费注册</a>
+					</span>
+				</div>
+				<div class="item">
+					<input type="text" name="" id="" placeholder="用户名/手机/邮箱" class="input" ng-model="username" />
+					<i class="i_phone i_common"></i>
+				</div>
+				<div class="item">
+					<input type="password" name="" id="" placeholder="请输入密码" class="input" ng-model="pwd" />
+					<i class="i_psd i_common"></i>
+				</div>
+				<div class="password_un">
+					<label for="" id="zddl">
+						<input type="checkbox" name="" id="" value="" checked="checked" class="check"/>自动登录
+						<span class="tip">公共场合请勿使用</span>
+					</label>
+					<a href="#">忘记密码？</a>
+				</div>
+				<div class="item">
+					<input type="submit" name="" id="" value="登录" class="btn_entry" ng-click="sub()" />
+				</div>
+
+			</form>
+		</div>
+		<div class="wrap sj_login_footer">
+			<div class="links bor_tb">
+				<a href="#" target="_blank">关于我们</a>|
+				<a href="#" target="_blank">联系我们</a>|
+				<a href="#" target="_blank">人才招聘</a>|
+				<a href="#" target="_blank">手机三江</a>|
+				<a href="#" target="_blank">帮助中心</a>|
+				<a href="#" target="_blank">三江官网</a>
+			</div>
+			<div class="Copyright">
+				Copyright © 2009-2015. www.sanjiang.com 三江购物网,All Rights Reserved
+			</div>
+			<div class="authentication">
+				<a href="#" target="_blank">
+					<img src="__ROOT__/Index/Common/images/ico_01.jpg" />
+				</a>
+				<a href="#" target="_blank">
+					<img src="__ROOT__/Index/Common/images/ico_02.jpg" />
+				</a>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = angular.module("myApp", []);
+		app.controller("myController", function($scope, $http) {
+			$scope.username = "";
+			$scope.pwd = "";
+			$scope.sub = function() {
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__URL__/check",
+					data: "username=" + $scope.username + "&pwd=" + $scope.pwd
+				}).success((res) => {
+					console.log(res);
+					if(res.status == 1) {
+						window.location.href = "__APP__/Index/index";
+					} else if(res.status == 2) {
+						alert(res.info);
+					}
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+		})
+	</script>
+
+</html>

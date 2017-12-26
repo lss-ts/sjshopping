@@ -1,0 +1,733 @@
+*{
+	margin: 0;padding: 0;
+}
+body,html{
+	width:100%;
+}
+a{
+	text-decoration: none;
+	color:#666;
+}
+li{
+	list-style: none !important;
+}
+.top_bar {
+	width: 100%;
+	border-bottom: 1px solid #eee;
+	background: #f7f7f7;
+	line-height: 30px;
+}
+
+.w900 {
+	width: 990px;
+	height: 30px;
+	margin: 0 auto;
+	color: #666;
+	font-size: 12px;
+}
+
+.top_bar .gohome {
+	float: left;
+}
+
+.top_bar .gohome i {
+	height: 31px;
+	width: 20px;
+	float: left;
+	background: url(http://static.sanjiang.com/common/images/index.png) 100% -620px no-repeat;
+	display: block;
+	margin-right: 8px;
+}
+
+.top_bar .gohome a {
+	color: #666;
+}
+
+.top_bar .gohome a:hover {
+	color: #f03838;
+}
+
+.ufr {
+	float: right;
+}
+
+.ufr a {
+	color: #666;
+}
+
+.ufr a:hover {
+	color: #ea1414;
+}
+
+.ufr li {
+	height: 30px;
+	float: left;
+}
+
+.ufr .item1 .login {
+	color: #ea1414;
+	margin-left: 5px;
+	margin-right: 10px;
+}
+
+.ufr .item2 {
+	padding-left: 12px;
+	padding-right: 12px;
+	text-align: center;
+	position: relative;
+}
+
+.ufr .item2.mydd {
+	margin-left: 5px;
+}
+
+.ufr .item2 div {
+	display: inline-block;
+	width: 1px;
+	height: 12px;
+	border-left: 1px solid #ddd;
+	position: absolute;
+	top: 9px;
+	left: 0;
+}
+
+.menu {
+	width: 92px;
+	position: relative;
+}
+
+.menu .drop_down_top {
+	width: 92px;
+	position: relative;
+}
+
+.menu .drop_down_top div {
+	display: inline-block;
+	width: 1px;
+	height: 12px;
+	border-left: 1px solid #ddd;
+	position: absolute;
+	top: 9px;
+	left: 0;
+}
+
+.menu .drop_down_top a {
+	margin-left: 15px;
+}
+
+.drop_down_top em {
+	top: 12px;
+	right: 10px;
+	width: 9px;
+	height: 5px;
+	overflow: hidden;
+	position: absolute;
+	background: url(http://static.sanjiang.com/common/images/index.png) 100% -700px no-repeat;
+	transition: all 0.2s linear;
+}
+
+.top_bar .ufr li .drop_down_box.w140 {
+	width: 160px;
+}
+
+.top_bar .ufr li .drop_down_box {
+	background: #fff;
+	border: 1px solid #ddd;
+	padding: 10px 0 10px 12px;
+	left: 0;
+	top: 30px;
+	position: absolute;
+	display: none;
+	min-width: 70px;
+	z-index: 100;
+}
+
+.top_bar .ufr li .daohang {
+	left: -81px;
+}
+
+.top_bar .ufr li .drop_down_box p {
+	width: 92px;
+	height: 1px;
+	background: #fff;
+	/*background: red;*/
+	position: absolute;
+	top: -1px;
+	left: 0;
+	z-index: 100;
+	/*display: none;*/
+}
+
+.top_bar .ufr li .daohang p {
+	left: 81px;
+}
+
+.top_bar .ufr li .drop_down_box a {
+	width: 80px;
+	float: left;
+}
+
+.koudai {
+	position: relative;
+	width: 112px;
+}
+
+.koudai .drop_down_top .line {
+	display: inline-block;
+	width: 1px;
+	height: 12px;
+	border-left: 1px solid #ddd;
+	position: absolute;
+	top: 9px;
+	left: 0;
+}
+
+.koudai .drop_down_top .phone_app {
+	width: 11px;
+	height: 16px;
+	margin-top: 7px;
+	float: left;
+	background: url(http://static.sanjiang.com/common/images/index.png) 100% -655px no-repeat;
+	display: inline-block;
+	margin-left: 15px;
+	margin-right: 8px;
+}
+
+.kd_box {
+	border: 1px solid #ddd;
+	padding: 10px 0 10px 10px;
+	/*overflow: hidden;*/
+	left: 0;
+	top: 30px;
+	position: absolute;
+	display: none;
+	min-width: 70px;
+	background-color: white;
+}
+
+.kd_box p {
+	width: 112px;
+	height: 1px;
+	position: absolute;
+	left: 0;
+	top: -1px;
+	background: #fff;
+}
+
+.kd_box .app_code {
+	background: url(http://static.sanjiang.com/common/images/app.png) no-repeat;
+	width: 182px;
+	height: 105px;
+	z-index: 100;
+}
+
+.kd_box .app_code span {
+	width: 83px;
+	line-height: 25px;
+	margin-top: 83px;
+	margin-right: 8px;
+	float: left;
+	text-align: center;
+}
+.help-nav-bj{
+	width:100%;
+	height:58px;
+	padding: 10px 0px;
+	background-color: #fa494a;
+}
+.help-nav{
+	width:990px;
+	margin: 0 auto;
+	height:58px;
+	/*background-color: blue;*/
+}
+.logo{
+	display: inline-block;
+    background: url(http://static.sanjiang.com/help/images/help.png) 0 0 no-repeat;
+    width: 204px;
+    height: 58px;
+}
+.help-index{
+
+}
+.help-nav ul {
+	display: inline-block;
+	margin-top: 10px;
+	margin-left: 50px;
+}
+.help-nav ul li {
+	float: left;
+	height: 38px;
+	margin-right: 30px;
+	font-size: 16px;
+	color:white;
+}
+.help-nav ul li a{
+	color:white;
+	position: relative;
+}
+.help-nav ul li a i{
+	display: none;
+    position: absolute;
+    left: 40%;
+    bottom: -26px;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    border-color: #fa494a #fa494a #f7f7f7;
+    border-style: solid;
+    border-width: 6px;
+    font-size: 0;
+}
+.help-nav ul li a .active{
+	display: block;
+}
+.helps{
+	/*width:990px;*/
+	margin: 0 auto;
+}
+.common{
+	background-color: #f7f7f7;
+	margin: 0 auto;
+}
+.box{
+	width:990px;
+	margin: 0 auto;
+}
+
+.help-title{
+	color:#f03838;
+	padding-top: 40px;
+	margin-bottom: 20px;
+}
+.help-items{
+	width:990px;
+	overflow: hidden;
+}
+.help-item{
+	float: left;
+    background: #fff;
+    width: 318px;
+    height: 158px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+    position: relative;
+}
+.help-item:nth-child(3n){
+	margin-right: 0px;
+}
+.help-item a,.help-item p{
+	display: block;
+	float: left;
+	width:160px;
+	margin-left: 20px;
+}
+.help-item a{
+	margin-top: 20px;
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+.help-item a:hover{
+	color:red;
+}
+.help-item p{
+	line-height: 24px;
+    color: #999;
+    font-size: 14px;
+}
+.help-p{
+	position: absolute;
+    display: block;
+    width: 74px;
+    height: 78px;
+    background: url(http://static.sanjiang.com/help/images/help.png) 0 -112px no-repeat;
+    top: 40px;
+    right: 20px;
+}
+.hot{
+	width:990px;
+	margin: 0 auto;
+}
+.hot{
+	width:990px;
+	height: 450px;
+	overflow: hidden;
+}
+.hot-item{
+	width:230px;
+	height:300px;
+	float: left;
+	margin-right: 20px;
+	/*background-color: pink;*/
+}
+.hot-item:nth-child(4n){
+	margin-right: 0px;
+
+}
+.hot-item-title{
+	width:230px;
+	height:150px;
+	text-align: center;
+	color:white;
+	font-size: 24px;
+	padding-top: 20px;
+	background: url(http://static.sanjiang.com/help/images/help.png) 0 -392px no-repeat;
+}
+.hot-item-b {
+	width:230px;
+	padding-top: 10px;
+	height:120px;
+	box-shadow: 0 2px 2px #e0e0e0;
+}
+.hot-item-b a{
+	display: inline-block;
+    width: 100px;
+    line-height: 34px;
+    padding-left: 10px;
+    font-size: 14px;
+}
+.askforhelp{
+	background-color: #f7f7f7;
+	width:100%;
+	height:325px;
+}
+.asks{
+	width:990px;
+}
+.ask-item{
+	width:450px;
+	height: 170px;
+	float: left;
+    padding-top: 20px;
+}
+.ask-item:nth-child(2){
+	float: right;
+}
+.ask-item-p{
+	float: left;
+    background: url(http://static.sanjiang.com/help/images/help.png);
+    width: 87px;
+    text-indent: -999em;
+    margin-top: 5px;
+    margin-right: 20px;
+    height: 80px;
+    background-position: 0 -1093px;
+}
+.ask-item-b{
+	width: 342px;
+	height:150px;
+	float: left;
+}
+.ask-item-b h3{
+	color:#333;
+	padding-bottom: 20px;
+    font-size: 24px;
+    font-weight: 400;
+}
+.ask-item-b p{
+	line-height: 24px;
+    color: #999;
+    font-size: 14px;
+}
+.ask-item-b div{
+	width: 230px;
+    height: 32px;
+    margin-top: 15px;
+    line-height: 32px;
+    border: 1pt dotted #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+.ask-item-b div span{
+	font-weight: 600;
+}
+.ask-item-b a{
+	display: block;
+    width: 100px;
+    height: 32px;
+    margin-top: 15px;
+    line-height: 32px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+}
+.ask-item-b a:hover{
+	background: #fa494a;
+    color: #fff;
+    border: #fa494a;
+}
+
+/*问题分类部分*/
+.help-nav-bar{
+	width:100%;
+	background-color: #eee;
+	height:40px;
+	line-height: 40px;
+}
+.help-nav-bar ul{
+	width: 990px;
+	margin: 0 auto;
+}
+.help-nav-bar ul li{
+	float: left;
+	font-size: 16px;
+	margin-right: 60px;
+}
+.help-nav-bar ul li .icon{
+	width:100%;
+	height:5px;
+	margin-top: -5px;
+	background-color: pink;
+	display: none;
+}
+.help-nav-bar ul li:hover .icon{
+	display: block;
+}
+.help-nav-bar ul li .active{
+	display: block;
+	background-color:red;
+}
+.helplist-b{
+	width:100%;
+	/*height:1000px;*/
+	background: #f7f7f7;;
+	margin: 0 auto;
+	overflow: hidden;
+	padding-bottom: 30px;
+	padding-top:20px; 
+}
+.helplist-nav{
+	width:140px;
+	float: left;
+	margin-right: 22px;
+}
+.helplist-nav ul li a{
+	background: #fbfbfb;
+    width: 140px;
+    height: 40px;
+    display: block;
+    line-height: 40px;
+    border: 1px solid #ddd;
+    text-align: center;
+    margin-bottom: -1px;
+    color:#666;
+    font-size: 14px;
+}
+.helplist-nav ul li a:hover{
+	background: #eee;
+}
+.helplist-nav ul li .active{
+	background: #fa494a;
+    border: 1px solid #fa494a;
+    font-weight: 700;
+    color:white;
+}
+.helplist-nav ul .active:hover{
+	background: #fa494a;
+    border: 1px solid #fa494a;
+    font-weight: 700;
+    color:white;
+}
+.help-detail{
+	width:826px;
+	/*height:800px;*/
+	float: right;
+}
+.help-detail-title{
+	margin-bottom: 10px;
+    font-size: 24px;
+    color: #f03838;
+    font-family: 微软雅黑;
+}
+.help-detail .help-list{
+	background: #fff;
+    padding: 10px 20px;
+    border-top: 1px dashed #f1bebe;
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+.help-detail .help-list a{
+	display: inline-block;
+	width:360px;
+	height:22px;
+	font-size: 14px;
+	margin-left: 19px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    line-height: 22px;
+    position: relative;
+    color: #3390ee;
+}
+.help-detail .help-list a::before{
+	content: '';
+	display: block;
+	width:4px;
+	height:4px;
+	background-color: #999;
+	position: absolute;
+	left:0px;top:9px;
+}
+.help-detail .help-list .active{
+	color: #f03838;
+}
+.help-detail-b{
+	margin-top: 10px;
+
+    background: #fff;
+    border: 1px solid #eee;
+}
+.help-detail-b .title{
+	border-bottom:  1px solid #eee;
+	font-size: 18px;
+	font-weight: 400;
+	height:52px;
+	line-height: 52px;
+	position: relative;
+	padding-left: 22px;
+}
+.help-detail-b .title span{
+	display: inline-block;
+	height:50px;
+	padding:0px 20px;
+	border-bottom: 2px solid #fa494a;
+}
+.help-detail-d{
+	padding: 30px 48px;
+	min-height: 42px;
+}
+.help-detail-d p{
+	padding: 10px 0 0;
+    line-height: 22px;
+    font-size: 14px;
+    color:#666;
+}
+.help-detail-d img{
+	border: 5px solid #eee;
+	width:720px;
+}
+.help-detail-d h3{
+	padding: 10px 0 0;
+    line-height: 22px;
+    font-size: 14px;
+    color:#666;
+}
+.help-detail-d h2{
+	padding: 10px 0 0;
+    font-size: 16px;
+    line-height: 24px;
+    color:#666;
+}
+.table_list {
+    padding: 10px 0 0;
+    text-align: center;
+    font-size: 14px;
+    color:#666;
+}
+.table_list table th {
+    height: 44px;
+    padding: 0 6px;
+    border: 1px solid #eee;
+}
+.table_list table td {
+    height: 48px;
+    padding: 0 6px;
+    vertical-align: central;
+    border: 1px solid #eee;
+}
+.table_list table th .search-shop{
+    width: 78px;
+    height: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    padding: 2px 5px;
+    display: inline-block;
+}
+
+.table_list table th .search-shop ul{
+	width:88px;
+	border: 1px solid #ccc;
+	position: absolute;
+	top:24px;
+	left:-1px;
+	overflow: auto;
+	height:150px;
+	display: none;
+	background-color: white;
+}
+.table_list table th .search-shop ul li{
+	height:20px;
+	padding: 2px;
+	text-align: center;
+	width:70px;
+}
+.table_list table th .search-shop ul li:hover{
+	background-color: #3390ee;
+	color:white;
+}
+.table_list table .area{
+	background: #e7f6ff;
+    color: #666;
+}
+.more-self-help{
+	background-color: #f7f7f7;
+	margin: 0 auto;
+}
+.more-self-help dl{
+	width:990px;
+	height:60px;
+	margin-bottom: 2px;
+	background-color: white;
+}
+.more-self-help dt{
+	float: left;
+	line-height: 60px;
+	height:60px;
+	width:150px;
+	/*border-left:10px solid #cadffe;*/
+	text-align: center;
+}
+.dt1{
+	border-left:10px solid #cdedfe;
+}
+.dt2{
+	border-left:10px solid #cadffe;
+}
+.dt3{
+	border-left:10px solid #fecddd;
+}
+.dt4{
+	border-left:10px solid #feefcd;
+}
+.more-self-help dd{
+	float: left;
+	line-height: 60px;
+	height:60px;
+}
+.more-self-help dd a{
+	display: inline-block;
+	padding-right: 25px;
+	margin-right: 25px;
+	height:16px;
+	line-height: 16px;
+	border-right: 2px solid #ccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

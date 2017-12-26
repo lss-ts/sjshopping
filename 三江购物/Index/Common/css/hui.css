@@ -1,0 +1,302 @@
+*{
+	margin: 0;padding: 0;
+}
+body,html{
+	width:100%;
+	min-width: 1200px;
+}
+/*整体*/
+.hui-body{
+	width:100%;
+	background: url(http://img.sanjiang.com/image/201710/5/image1507164794948.jpg) repeat;
+	background-position: center 0;
+}
+.bigimgbox{
+	width:100%;
+	overflow: hidden;
+}
+/*大图*/
+.banner{
+    width: 1000px;
+    margin: 0 auto;
+}
+.banner-img{
+	width:1920px;
+	margin-left: -460px;
+}
+/*商品栏*/
+.hui-items{
+	width:990px;
+	margin: 0 auto;
+}
+.item{
+	margin-top: 5px;
+}
+.items-title{
+	width:990px;
+	height:90px;
+	background-color: rgb(0, 149, 133);
+	margin: 0 auto;
+	color:white;
+	line-height: 90px;
+	text-align: center;
+	font-size: 55px;
+}
+.goods{
+	width:990px;
+	margin: 0 auto;
+}
+li{
+	list-style: none !important;
+}
+.goods ul{
+	width:991px;
+	overflow: hidden;
+}
+.message{
+	width:100%;
+}
+/*放4排*/
+.goods-item4{
+	float: left;
+	width:244px;
+	height:335px;
+	background-color: white;
+	margin-top: 5px;
+	margin-right: 5px;
+	text-align: center;
+	position: relative;
+}
+.goods-item4:nth-child(4n){
+	margin-right: 0px;
+
+}
+.imgbox4{
+	width:210px;
+	height:210px;
+	margin: 17px;
+	line-height: 210px;
+	text-align: center;
+}
+.imgbox4 img{
+	width:210px;
+	height:210px;
+	transition: all 0.5s;
+}
+.imgbox4 img:hover{
+	transform: scale(0.93,0.93);
+	transition: all 0.5s;
+}
+/*放5排*/
+.goods-item5{
+	float: left;
+	width:194px;
+	height:295px;
+	background-color: white;
+	margin-top: 5px;
+	margin-right: 5px;
+	text-align: center;
+	position: relative;
+}
+.goods-item5:nth-child(5n){
+	margin-right: 0px;
+
+}
+.imgbox5{
+	width:180px;
+	height:180px;
+	margin: 15px auto;
+	line-height: 180px;
+	text-align: center;
+}
+.imgbox5 img{
+	width:180px;
+	height:180px;
+	transition: all 0.5s;
+}
+.imgbox5 img:hover{
+	transform: scale(0.93,0.93);
+	transition: all 0.5s;
+}
+
+.goods-name{
+	text-decoration: none;
+	color:#333;
+	display: block;
+	width:100%;
+	font-size: 14px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.goods-name:hover{
+	color:red;
+}
+.price1{
+	color:gray;
+	font-size: 13px;
+}
+.price2{
+	color:red;
+	font-size: 13px;
+}
+.buy{
+	width:100%;
+	height:28px;
+	background-color: red;
+	position: absolute;
+	bottom: 0;
+	left:0;
+	border:none;
+	outline: none;
+	border-radius: 0;
+	color:white;
+	font-size: 16px;
+	cursor: pointer;
+}
+/* 按钮右边的一个小箭头*/
+i{
+	display: inline-block;
+    background: url(http://static.sanjiang.com/activity/images/activity.png) 0 -119px no-repeat;
+    width: 11px;
+    height: 11px;
+    margin-left: 15px;
+}
+/* 右边漂浮的导航栏 楼层导航 */
+.slide-nav{
+	width:120px;
+	/*height:500px;*/
+	background-color: pink;
+	position: fixed;
+	top: 100px;
+	left:50%;
+	display: none;
+	margin-left: 520px;
+	background-color: rgb(0, 149, 133);
+}
+.slide-nav ul li{
+	width:120px;
+	height:25px;
+	border-bottom: 1px solid white;
+}
+.slide-nav .storey{
+	display: inline-block;
+	width:120px;
+	height:25px;
+	text-decoration:none;
+	color:white;
+	text-align: center;
+	line-height: 25px;
+	font-size: 14px;
+}
+.to-top{
+	width:120px;
+	height:40px;
+	
+}
+.QR-code{
+	width:120px;
+	height: 120px;
+	text-align: center;
+	line-height: 120px;
+	border-bottom: 1px solid white;
+}
+.you-body{
+	width:100%;
+	background: url(http://img.sanjiang.com/image/20165/25/image1464160196786.jpg) repeat;
+	background-position: center 0;
+}
+.you-goods{
+	width:990px;
+	margin: 0 auto;
+}
+.you-goods-title{
+	height: 108px;
+	position: relative;
+}
+.line{
+	width: 990px;
+	background-color: red;
+	height:2px;
+	position: absolute;
+	top:70px;left:0px;
+}
+.you-goods-typename{
+	width:330px;
+	height:50px;
+	line-height: 50px;
+	border-radius: 25px;
+	background-color: red;
+	position: absolute;
+	color:white;
+	font-size: 40px;
+	top: 45px;left:330px;
+	text-align: center;
+}
+/*三列商品的css*/
+
+.goods-item3{
+	float: left;
+	width:327px;
+	height:200px;
+	background-color: white;
+	margin-top: 5px;
+	margin-right: 5px;
+	text-align: center;
+	position: relative;
+}
+.goods-item3:nth-child(3n){
+	margin-right: 0px;
+}
+.imgbox3{
+	width:180px;
+	height:180px;
+	margin: 10px 0px;
+	line-height: 210px;
+	text-align: center;
+	float: left;
+}
+.imgbox3 img{
+	width:180px;
+	height:180px;
+	transition: all 0.5s;
+}
+.imgbox3 img:hover{
+	transform: scale(0.93,0.93);
+}
+.goods-item3 .message{
+	width:140px;
+	float: left;
+	height: 200px;
+	position: relative;
+	text-align: left;
+}
+.goods-item3 .goods-name{
+	margin-top: 38px;
+	height: 38px;
+	display: block;
+}
+.goods-item3 .buy{
+	width:100px;
+	height:30px;
+	bottom: 38px;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

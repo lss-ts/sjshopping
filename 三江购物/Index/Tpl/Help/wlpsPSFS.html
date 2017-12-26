@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>配送方式 - 三江购物帮助中心 - 三江购物</title>
+		<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/help.css">
+	</head>
+
+	<body>
+		<!--导航条主体-->
+		<div class="top_bar">
+			<div class="w900">
+				<div class="gohome"><i></i>
+					<a href="__APP__/Index/index">返回首页</a>
+				</div>
+				<ul class="ufr">
+					<li class="item1">
+						<if condition="!isset($_SESSION['username'])">
+							您好，欢迎来到三江！
+							<span>
+									<a href="__APP__/Login/login" class="login">登录</a>
+									<a href="__APP__/Register/register">注册</a>
+								</span>
+							<else />
+							<a href="###" style="margin-right: 15px;">{$Think.session.username}</a>
+							<a href="__APP__/Login/login">退出</a>
+						</if>
+					</li>
+					<li class="item2 mydd">
+						<div></div>
+						<if condition="!isset($_SESSION['username'])">
+							<a href="__APP__/Login/login" target="_blank">我的订单</a>
+							<else />
+							<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+						</if>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的三江</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessageindex" target="_blank">我的三江</a>
+							</if>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的订单</a>
+								<a href="__APP__/Login/login" target="_blank">我的收藏</a>
+								<a href="__APP__/Login/login" target="_blank">我的优惠券</a>
+								<a href="__APP__/Login/login" target="_blank">地址管理</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的收藏</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的优惠券</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">地址管理</a>
+							</if>
+						</div>
+					</li>
+					<li class="koudai">
+						<div class="drop_down_top">
+							<div class="line"></div>
+							<div class="phone_app"></div>
+							<a href="http://help.sanjiang.com/app.html" target="_blank">口袋三江</a>
+							<em></em>
+
+						</div>
+						<div class="kd_box">
+							<p></p>
+							<div class="app_code"><span>三江客户端</span><span>三江订阅号</span></div>
+						</div>
+					</li>
+					<li class="item2">
+						<div></div>
+						<a href="javascript:void(0);" target="_blank">企业团购</a>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="__APP__/Help/helpIndex" target="_blank">客户服务</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<a href="__APP__/Help/helpIndex" target="_blank">帮助中心</a>
+							<a href="__APP__/Help/shfwTHGZ" target="_blank">售后服务</a>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">意见反馈</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">意见反馈</a>
+							</if>
+						</div>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="javascript:void(0)">网站导航</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140 daohang">
+							<p></p>
+							<a href="__URL__/sjyx" target="_blank">三江优选</a>
+							<a href="__URL__/hsp" target="_blank">惠商品</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='help-nav-bj'>
+			<div class='help-nav'>
+				<a href="###主页" class='logo'></a>
+				<ul>
+					<li>
+						<a href="__URL__/helpIndex" class='help-index'>首页<i></i></a>
+					</li>
+					<li>
+						<a href="__URL__/gwznZCLC" class='help-index'>问题分类<i class='active'></i></a>
+					</li>
+					<li>
+						<a href="__URL__/zzfwZZFW" class='help-index'>自助服务<i></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='help-nav-bar'>
+			<ul>
+				<li>
+					<a href="__URL__/gwznZCLC">购物指南</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/zffsZXZF">支付方式</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/wlpsPSFS">物流配送</a>
+					<div class='icon active'></div>
+				</li>
+				<li>
+					<a href="__URL__/shfwTHGZ">售后服务</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/mdylbMDYLB">门店一览表</a>
+					<div class='icon'></div>
+				</li>
+			</ul>
+		</div>
+		<div class='helplist-b'>
+			<div class='box'>
+				<div class='helplist-nav'>
+					<ul>
+						<li>
+							<a href="__URL__/wlpsPSFS" class='active'>配送方式</a>
+						</li>
+						<li>
+							<a href="__URL__/wlpsPSFW">配送范围</a>
+						</li>
+						<li>
+							<a href="__URL__/wlpsPSSFBZ">配送收费标准</a>
+						</li>
+						<li>
+							<a href="__URL__/wlpsPSSJ">配送时间</a>
+						</li>
+						<li>
+							<a href="__URL__/wlpsZTLC">自提流程</a>
+						</li>
+						<li>
+							<a href="__URL__/wlpsQSYH">签收验货</a>
+						</li>
+					</ul>
+				</div>
+				<div class='help-detail'>
+					<h2 class='help-detail-title'>配送方式</h2>
+					<div class='help-list'>
+						<a href='###' class='active'>门店自提</a>
+						<a href='###'>三江配送</a>
+						<a href='###'>常见问题</a>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>门店自提
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+							<!--详细内容-->
+
+							<h3>1.	当您购物车中选购的都是常温商品（冰品或特定活动商品不支持自提）商品时，您可选择享受门店自提服务。</h3>
+							<p><img src="http://static.sanjiang.com/help/images/distribution/p01_01.jpg"></p>
+							<h3>2.	订单支付完成2小时后可到自提门店取货，请24小时内到自提门店提货，逾期订单将自动取消。</h3>
+							<h3>3.	自提范围 ：</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 三江支持网购门店均支持自提，请根据您的地址选择正确的区、街道、社区，系统会提示您可供选择的送货方式及相关配送信息。</p>
+							<h3>4.	自提门店信息：</h3>
+							<div class="table_list">
+								<table cellpadding="0" cellspacing="0">
+									<tbody>
+										<tr>
+											<th>门店名称</th>
+											<th>地址</th>
+											<th>电话</th>
+										</tr>
+										<tr>
+											<td>镇明商场</td>
+											<td>宁波市海曙区镇明路298号</td>
+											<td>0574-87024008<br>0574-83886008</td>
+										</tr>
+										<tr class="even">
+											<td>东柳商场</td>
+											<td>宁波市江东区桑田路780号</td>
+											<td>0574-87024014<br>0574-83886014</td>
+										</tr>
+										<tr>
+											<td>实验商场</td>
+											<td>宁波市海曙区呼童街55号</td>
+											<td>0574-87024023<br>0574-83886023</td>
+										</tr>
+										<tr class="even">
+											<td>黄鹂商场</td>
+											<td>宁波市江东区兴宁路116号</td>
+											<td>0574-87024024<br>0574-83886024</td>
+										</tr>
+										<tr>
+											<td>南苑商场</td>
+											<td>宁波市南苑街205、203号和粮丰街80-82号（南苑菜场附近）</td>
+											<td>0574-87024043<br>0574-83886043</td>
+										</tr>
+										<tr class="even">
+											<td>南都商场</td>
+											<td>宁波市海曙区环城西路南段569-591号、恒寿街208-224号</td>
+											<td>0574-87024044<br>0574-83886044</td>
+										</tr>
+										<tr>
+											<td>雅渡商场</td>
+											<td>宁波市鄞州区鄞县大道888号（向阳渔港对面，雅渡新村内）</td>
+											<td>0574-87024047<br>0574-83886047</td>
+										</tr>
+										<tr class="even">
+											<td>银座商场</td>
+											<td>宁波市江东区中山东路589号一、二层</td>
+											<td>0574-87024050<br>0574-83886050</td>
+										</tr>
+										<tr>
+											<td>明楼商场</td>
+											<td>宁波朝晖路273号</td>
+											<td>0574-87024074<br>0574-83886074</td>
+										</tr>
+										<tr class="even">
+											<td>庄市商场</td>
+											<td>宁波市镇海区庄市街道兆龙路852-860号</td>
+											<td>0574-83886084<br>0574-86686084</td>
+										</tr>
+										<tr>
+											<td>锦诚商场</td>
+											<td>宁波科技园区丁香路145-161号</td>
+											<td>0574-87024088<br>0574-83886088</td>
+										</tr>
+										<tr class="even">
+											<td>四明商场</td>
+											<td>鄞州区四明中路格林生活广场一楼</td>
+											<td>0574-87024095<br>0574-83886095</td>
+										</tr>
+										<tr>
+											<td>礼嘉商场</td>
+											<td>宁波市鄞州区古林镇礼嘉桥村地号为18-75-009的房屋</td>
+											<td>0574-87024096<br>0574-83886096</td>
+										</tr>
+										<tr class="even">
+											<td>民安商场</td>
+											<td>书香景苑北区民安东路1393-1395-1397-1399号</td>
+											<td>0574-87314112<br>0574-83886112</td>
+										</tr>
+										<tr>
+											<td>天水商场</td>
+											<td>宁波江北康庄南路43号</td>
+											<td>0574-87324113<br>0574-83886113</td>
+										</tr>
+										<tr class="even">
+											<td>建业商场</td>
+											<td>江北区建业街212号</td>
+											<td>0574-87344116<br>0574-83886116</td>
+										</tr>
+										<tr>
+											<td>姚江商场</td>
+											<td>宁波市江北区长阳东路183号</td>
+											<td>0574-83886142<br>0574-87102142</td>
+										</tr>
+										<tr class="even">
+											<td>胜丰商场</td>
+											<td>宁波市海曙区环城西路北段197号</td>
+											<td>0574-87746143</td>
+										</tr>
+										<tr>
+											<td>学院商场</td>
+											<td>宁波市鄞州区钱湖南路638号S8幛一楼</td>
+											<td>0574-83886144<br>0574-88214144</td>
+										</tr>
+										<tr class="even">
+											<td>上上城商场</td>
+											<td>宁波市鄞州区下应街道城信路上上城小区</td>
+											<td>0574-83886157<br>0574-88233147</td>
+										</tr>
+										<tr>
+											<td>徐家漕商场</td>
+											<td>海曙区徐家漕路91号</td>
+											<td>0574-87077160<br>0574-83886160</td>
+										</tr>
+										<tr class="even">
+											<td>堇西商场</td>
+											<td>堇山中路1528号</td>
+											<td>0574-83886162<br>0574-83057162</td>
+										</tr>
+										<tr>
+											<td>南山商场</td>
+											<td>奉化市南山路与岳林路交汇处宁波奉化银泰城</td>
+											<td>0574-88598177<br>0574-83886177</td>
+										</tr>
+										<tr class="even">
+											<td>庄桥商场</td>
+											<td>江北庄桥街道宁慈东路666号宁波互感器厂内</td>
+											<td>0574-83886182</td>
+										</tr>
+										<tr>
+											<td>来福士商场</td>
+											<td>宁波市江北区大庆南路99号来福士广场</td>
+											<td>0574-87077183<br>0574-83886183</td>
+										</tr>
+										<tr class="even">
+											<td>环球城商场</td>
+											<td>宁波银泰环球城负一层</td>
+											<td>0574-87952194<br>0574-55018194</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<p><b>&nbsp;&nbsp;&nbsp;&nbsp; 友情提醒：</b>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp; a.为了保证货物的及时送达，请您在填写时准确、详细录入有效的联系方式和地址信息。
+								<br>&nbsp;&nbsp;&nbsp;&nbsp; b.下单后系统会进行订单通知，您在提货时需要提供“订单短信”方可提货、验机（请妥善保管好您的订单短信，防止泄露给他人）。</p>
+							<!--详细内容-->
+
+						</div>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>三江配送
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+							<!--详细内容-->
+							<h3>1. 当您购物车中选购的所有商品，您可选择享受三江配送服务。</h3>
+							<p><img src="http://static.sanjiang.com/help/images/distribution/p02_01.jpg"></p>
+							<h3>2. 三江配送范围：</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 在三江电商网购买的商品仅能配送到宁波城区，请根据您的地址选择正确的区、街区、社区后，系统会提示您可供选择的送货方式及相关配送信息。</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; <b>友情提示：</b><br> &nbsp;&nbsp;&nbsp;&nbsp;为了保证货物的及时送达，请您在填写时准确、详细录入有效的联系方式和地址信息。若发生上述情况导致无法及时将货物配送给您，您可通过”我的三江-订单中心-订单详情”中查询。
+							</p>
+							<p><img src="http://static.sanjiang.com/help/images/distribution/p02_02.jpg"></p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;配送人员会尝试与您联系三次，如未收到您的回复又无法联系上您，我们将您购买的商品退货至三江门店。在此之后，若您还需要此商品，建议您重新订购，对此给您带来的不便请您谅解。</p>
+							<!--详细内容-->
+						</div>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>常见问题
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+							<!--详细内容-->
+							<h3>1.	订单提交成功后，是否可以修改配送方式？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 订单提交成功后，暂不支持配送方式修改，如需修改，可取消订单重新下单。</p>
+							<h3>2.	门店自提是否需支付运费？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 门店自提享免运费服务。</p>
+							<h3>3.	门店自提是否可以在门店付款？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 目前门店自提订单仅支持在线支付，您可以在线支付后到门店自提。</p>
+							<h3>4.	实际配送地址与提交订单地址不符，如何修改？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 订单提交成功暂不支持配送地址修改，如需修改，可取消订单重新下单。</p>
+							<!--详细内容-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<iframe width="100%" height="356px" frameborder=0 scrolling="no" src="__ROOT__/Index/Tpl/Footer/footer.html"></iframe>
+	</body>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/jquery-3.2.1.min.js'></script>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/help.js'></script>
+
+</html>

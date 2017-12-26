@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的三江 - 三江购物</title>
+		<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/mymessage.css" />
+		<script type="text/javascript " src="__ROOT__/Index/Common/js/angular.min.js "></script>
+	</head>
+
+	<body ng-app="myapp" ng-controller="mycontroller">
+		<div class="body">
+			<iframe width="100%" height="181px" frameborder=0 scrolling="no" src="__APP__/Header/header"></iframe>
+			<!-- 交易管理 我的订单-->
+			<div class="mymessagebody">
+				<!--头部部导航-->
+				<div class="mun">
+					<b><a href="__APP__/Index/index">首页</a></b> &nbsp;>&nbsp;
+					<a href="__APP__/Mymessageindex/mymessageindex">我的三江</a>
+					&nbsp;>&nbsp;
+					<a href="###" class="cur">我的订单</a>
+				</div>
+				<div class="w2">
+					<!-- 左侧列表 -->
+					<div class="m_left">
+						<div class="m_title">
+							<b></b>
+							<a href="__APP__/Mymessageindex/mymessageindex">我的三江</a>
+						</div>
+						<div class="mt">
+							<b></b> 交易管理
+						</div>
+						<div class="mc">
+							<a href="javascript:void(0)" class="a ">我的订单</a>
+							<a href="javascript:void(0)" class="a ">我的收藏</a>
+							<a href="javascript:void(0)" class="a">我的优惠劵</a>
+							<a href="javascript:void(0)" class="a">积分兑换</a>
+						</div>
+						<div class="mt">
+							<b></b> 会员资料
+						</div>
+						<div class="mc">
+							<a href="javascript:void(0)" class="a">个人资料</a>
+							<a href="javascript:void(0)" class="a">我的会员卡</a>
+							<a href="javascript:void(0)" class="a">安全设置</a>
+							<a href="javascript:void(0)" class="a">地址管理</a>
+						</div>
+						<div class="mt">
+							<b></b> 服务中心
+						</div>
+						<div class="mc">
+							<a href="javascript:void(0)" class="a">购物卡余额查询</a>
+							<a href="javascript:void(0)" class="a">我要投诉</a>
+							<a href="javascript:void(0)" class="a">帮助和反馈</a>
+						</div>
+					</div>
+					<!-- 右侧详细  -->
+					<!-- 订单 -->
+					<div class="m_right mesage-body">
+						<div class="order_tabs">
+							<ul>
+								<li class="current">
+									全部定订单
+									<span id="total">(0)</span>
+									<i></i>
+								</li>
+								<li>
+									待支付订单
+									<span id="total">(0)</span>
+								</li>
+							</ul>
+						</div>
+						<div class="order_dl block">
+							<div class="order_time_select">
+								<div class="time_value">
+									<span>最近三个月的订单</span>
+									<i></i>
+								</div>
+								<div class="time_down">
+									<ul>
+										<li>最近三个月的订单</li>
+										<li>最近一年的订单</li>
+										<li>所有历史订单</li>
+									</ul>
+								</div>
+							</div>
+							<div class="order_time_select">
+								<div class="time_value">
+									<span>所有订单</span>
+									<i></i>
+								</div>
+								<div class="time_down">
+									<ul>
+										<li>所有订单</li>
+										<li>待支付订单</li>
+										<li>待收货订单</li>
+										<li>已取消订单</li>
+										<li>已完成订单</li>
+									</ul>
+								</div>
+							</div>
+							<div class="order_time_seach">
+								<input type="text" placeholder="输入订单号" id="name" ng-model="number">
+								<a href="###" id="search" ng-click="search()">搜索</a>
+							</div>
+
+						</div>
+						<div class="layer_bg">
+							<div class="layer_t"></div>
+						</div>
+						<div class="layer_box">
+							<div class="layer_t">
+								<b>温馨提示</b>
+								<a href="###" id="close">X</a>
+							</div>
+							<div class="layer_content">
+								<div class="layer_cancle">
+									<ul>
+										<div class="yes"></div>
+										<li>
+											<p>当前订单取消后将无法恢复，您可在列表中进行再次购买</p>
+										</li>
+										<li class="mt-20">
+											<a href="###" class="btn_y">确定</a>
+											<a href="###" class="btn_n">返回</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="order_list">
+							<div class="order_head">
+								<span class="order_span_w310">订单商品</span>
+								<span class="order_span_w125">订单金额</span>
+								<span class="order_span_w125">订单时间</span>
+								<span class="order_span_w125">订单状态</span>
+								<span class="order_span_w125">订单操作</span>
+							</div>
+
+							<div id="goodsList">
+
+								<div class="order_body" ng-repeat="v in orderArr">
+									<div class="mt">
+										<span>订单编号：{{v.orderNum}}</span>
+										<a href="http://feedback.sanjiang.com?orderId=914858004997121">在线反馈</a>
+									</div>
+									<div class="mc">
+										<table cellpadding="0" cellspacing="0" border="0" width="100%" class="order_yes">
+											<tbody>
+												<tr>
+													<td>
+														<div class="o_img">
+															<a href="__APP__/Info/info?id={{item.data.id}}" ng-repeat="item in v.detail">
+																<img title="进口香蕉600-650g/份" alt="进口香蕉600-650g/份" src="{{item.data.productImg}}">
+															</a>
+														</div>
+													</td>
+													<td>
+														<div class="o_money">
+															<b>￥{{v.totalC}}</b>
+
+															<i>在线支付</i>
+
+														</div>
+													</td>
+													<td>
+														<div class="o_time">
+															<span>{{v.addTime}}</span>
+
+														</div>
+													</td>
+													<td>
+														<div class="o_status">
+															<span class="no_pay" ng-if="v.pay==0&&v.status!=-1">待支付</span>
+															<span class="no_pay" ng-if="v.pay==1">已支付</span>
+															<span class="no_pay" ng-if="v.status==-1&&v.pay==0">已取消</span>
+															<a href="/getOrderDetail/914858004997121" target="_blank">订单详情</a>
+														</div>
+													</td>
+													<td>
+														<div class="o_operate">
+															<a class="pay" href="__APP__/Pay/msgPay?id={{v.id}}" ng-if="v.pay==0&&v.status!=-1">立即支付</a>
+															<a class="pay" href="javascript:void(0)" ng-if="v.pay==1">已支付</a>														<a href="javascript:void(0)" class="cancle" attr="914858004997121" ng-if="v.pay==0&&v.status!=-1" ng-click="cancel(v.orderNum)">取消订单</a>
+															<a class="pay" href="__APP__/Pay/msgPay?id={{v.id}}" ng-if="v.status==-1">继续购买</a>
+						
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+					<!-- 我的收藏 -->
+					<div class="m_right  mesage-body">
+						<div class="order_tabs">
+							<ul>
+								<li class="current">
+									我的收藏
+
+									<i></i>
+								</li>
+							</ul>
+						</div>
+						<div class="favorite_tabs_body">
+							<div class="mt">
+								<span class="t_goods">商品</span>
+								<span class="t_price">零售价 </span>
+								<span class="t_price">会员价
+				          <i>
+				            <div class="tips">绑定会员卡即可享受会员价<a href="http://card.sanjiang.com/bind">去绑卡&gt;</a></div>
+				          </i>
+				        </span>
+								<span class="t_price">库存</span>
+								<span class="t_price">操作</span>
+							</div>
+
+							<div id="collectionDate">
+								<div class="mc" ng-repeat="v in data">
+									<div class="c_goods">
+
+										<!--<input type="checkbox" class="single_checkbox">-->
+										<div class="goods_info">
+											<a href="http://item.sanjiang.com/detail217240">
+												<img src="{{v.productImg}}" title="{{v.productTitle}}" alt="{{v.productTitle}}">
+											</a>
+										</div>
+
+										<p>
+											<a href="http://item.sanjiang.com/detail217240">{{v.productTitle}}</a>
+											<span></span>
+										</p>
+									</div>
+									<div class="c_price">￥{{v.Price}}</div>
+									<div class="c_price"><b class="member_price">￥{{v.vPrice}}</b></div>
+									<div class="c_price">{{v.stock}}</div>
+									<div class="c_price">
+										<a href="javascript:;" class="a_put" ng-click="addShopping()">加入购物车</a>
+										<input type="hidden" class="productId" id="5306163">
+										<a href="#" class="a_cancel" ng-click="del()">取消收藏</a>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+						<div class="layer_bg">
+							<div class="layer_t"></div>
+						</div>
+						<div class="layer_box">
+							<div class="layer_t">
+								<b>温馨提示</b>
+								<a href="###" id="close">X</a>
+							</div>
+							<div class="layer_content">
+								<p class="error3">
+									<i></i>
+									<b>你未选择任何产品</b>
+								</p>
+								<a href="###" class="btn_y">确定</a>
+							</div>
+						</div>
+					</div>
+					<!-- 我的优惠劵 -->
+					<div class="m_right mesage-body">
+						<div class="order_tabs">
+							<ul>
+								<li class="current">
+									我的优惠劵
+									<i></i>
+								</li>
+							</ul>
+							<a href="###">
+								<i class="use"></i> 如何使用优惠劵
+							</a>
+							<a href="###">
+								<i class="exchange"></i> 积分换劵
+							</a>
+						</div>
+						<div class="coupon_tabs_head">
+							<ul class="fl">
+								<li class="cur" id="unused">可使用（0）</li>
+								<li id="used">已使用（0）</li>
+								<li id="stop">已过期（0）</li>
+								<li id="locked">已占用（0）</li>
+								<li id="all">所有优惠劵（0）</li>
+
+							</ul>
+							<div class="change_button">
+								<button type="button" class="pop_up_box">优惠劵兑换</button>
+							</div>
+
+						</div>
+						<div class="coupon_tabs_title">
+							<span class="w200">劵号</span>
+							<span class="w100">类型</span>
+							<span class="w100">劵余额</span>
+							<span class="w100">有效期</span>
+							<span class="w100">状态</span>
+							<span class="w100">使用说明</span>
+						</div>
+						<div class="coupon_tabs_body">
+							<div class="coupon_not">
+								<p>客官，目前此处暂无优惠劵......</p>
+								<p>您目前没有可使用的优惠劵，赶紧去
+									<a href="###">我的积分</a>
+									兑换吧
+								</p>
+								<div class="after4"></div>
+							</div>
+						</div>
+						<div class="layer_bg">
+							<div class="layer_t"></div>
+						</div>
+						<div class="layer_box2">
+							<div class="layer_t">
+								<b>优惠劵兑换</b>
+								<a href="###" id="close">X</a>
+							</div>
+							<div class="layer_content">
+								<div class="form">
+									<div class="info_item">
+										<div class="info_span">
+											<span>*</span> 优惠劵
+										</div>
+										<input type="text" class="input" placeholder="请输入优惠码" id="bundlingCoupon" />
+										<p class="error "><i></i>验证码错误</p>
+									</div>
+								</div>
+								<div class="info_item">
+									<div class="info_span">
+									</div>
+									<button type="button" class="btn_y" id="exchangeCoupon">确定兑换</button>
+									<a href="javascript:;" class="btn_n">返回</a </div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<!-- 积分兑换 -->
+					<div class="m_right mesage-body">
+						<div class="order_tabs">
+							<ul>
+								<li class="current">
+									我的优惠劵
+									<i></i>
+								</li>
+							</ul>
+						</div>
+						<div class="coupon_tabs_body">
+							<div class="point_not">
+								<p> 目前没有可兑换的优惠劵</p>
+								<div class="after5"></div>
+							</div>
+						</div>
+						<div class="layer_bg">
+							<div class="layer_t"></div>
+						</div>
+						<div class="layer_box3">
+							<div class="layer_t">
+								<b>温馨提示</b>
+								<a href="###" id="close">X</a>
+							</div>
+							<div class="layer_content">
+								<div class="layer_cancle">
+									<ul>
+										<div class="yes"></div>
+										<li class="mt_20">
+											<a href="###" class="btn_y2">
+												兑换
+											</a>
+											<a href="###" class="btn_n2">
+												取消
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<!-- 个人资料 -->
+					<div class="m_right2 mesage-body">
+						<div class="profile_tabs">
+							<ul class="clearfix">
+								<li class="current">
+									<a href="###">基本信息</a>
+								</li>
+							</ul>
+						</div>
+						<div class="infoest">
+							<div class="info_box">
+								<div class="form_fl">
+									<div class="info_item">
+										<div class="info_span">
+											手机：
+										</div>
+										<div class="get_txt"></div>
+										<div class="update_btn">
+											<a href="###">修改</a>
+										</div>
+									</div>
+									<div class="info_item">
+										<div class="info_span">
+											<span>*</span> 昵称：
+										</div>
+										<input type="text" id="nickname" class="input" placeholder="请输入昵称" value="">
+										<p><em></em> 由中文,英文，数字-和_组成，4-20个字符
+										</p>
+									</div>
+									<div class="info_item">
+										<div class="info_span">
+											<span>*</span> 性别：
+										</div>
+										<input type="radio" name="sex" value="1">
+										<span class="radio_txt">男</span>
+										<input type="radio" name="sex" value="2">
+										<span class="radio_txt">女</span>
+										<input type="radio" name="sex" value="0">
+										<span class="radio_txt">保密</span>
+									</div>
+									<div class="info_item">
+										<div class="info_span">
+
+											生日
+										</div>
+										<input type="date" id="birthday_date" class="input" placeholder="请选择日期" value="">
+									</div>
+								</div>
+								<div class="user_info_fr">
+									<div class="user_pic fl">
+										<img src="http://static.sanjiang.com/profile/images/hui-8.png" />
+
+										<!--<div class="pic_bg"></div>-->
+									</div>
+									<div class="user_con fl">
+										<p>昵称：<b><span>{{arr.username}}</span></b></p>
+
+										<div class="user_type">
+											<i></i>
+											<span>惠用户</span>
+											<a href="###">升级为会员</a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div class="fun_type">
+								<h2>请选择您感兴趣的分类，给您最精确的推荐：</h2>
+								<ul>
+									<li class="">
+										<span>进口食品</span>
+										<i></i>
+									</li>
+									<li class="">
+										<span>休闲食品/坚果炒货</span>
+										<i></i>
+									</li>
+									<li class="">
+										<span>粮油调味</span>
+										<i></i>
+									</li>
+									<li class="">
+										<span>酒饮冲调/牛奶乳品</span>
+										<i></i>
+									</li>
+									<li class="">
+										<span>母婴</span>
+										<i></i>
+									</li>
+									<li class="">
+										<span>美容洗护</span>
+										<i></i>
+									</li>
+									<li class="">
+										<span>家庭清洁</span>
+										<i></i>
+									</li>
+									<li class="">
+										<span>家居家纺/厨房用具</span>
+										<i></i>
+									</li>
+									<li class="">
+										<span>服饰箱包/运动户外</span>
+										<i></i>
+									</li>
+									<li class="">
+										<span>家电3c/办公文义</span>
+										<i></i>
+									</li>
+									<li class="">
+										<span>生鲜超市</span>
+										<i></i>
+									</li>
+								</ul>
+							</div>
+							<div class="item_btn">
+								<input type="button" id="basic_submit" value="提交">
+							</div>
+						</div>
+						<div class="layer_bg">
+							<div class="layer_t"></div>
+						</div>
+						<div class="layer_box">
+							<div class="layer_t">
+								<b>温馨提示</b>
+								<a href="###" id="close">X</a>
+							</div>
+							<div class="layer_content">
+								<div class="layer_cancle">
+									<ul>
+										<div class="yes"></div>
+										<li>
+											<p>信息提交成功</p>
+										</li>
+										<li class="mt-20">
+											<a href="###" class="btn_y">确定</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 我的会员卡 -->
+					<div class="m_right2 mesage-body">
+						<div class="card_tabs">
+							<p>您的账号还未绑定会员卡，如果您已有三江购物卡，可以直接
+								<a href="###">绑定会员卡</a>
+								如果您还没有三江会员卡，您可以在线申请三江会员卡。
+							</p>
+							<hr style="height: 1px;border: none;border-top: 1px dashed #f8f8f8;padding-bottom: 15px;">
+							<ul>
+								<li>
+									<a href="###">申请三江会员卡</a>
+								</li>
+							</ul>
+							<p class="p2">会员费30元，线上线下通用，会员有效期1年，到期后卡续费为20元/年申请成功后电子会员卡即时可用</p>
+						</div>
+						<div class="card-apply">
+							<form class="b_line">
+								<div class="info_item">
+									<div class="info_span">
+										<span>*</span> 姓名：
+									</div>
+									<input type="text" id="nickname" class="input" placeholder="请输入会员姓名" ">
+							<p class="error2 ">
+								<i></i>
+								姓名不能为空
+							</p>
+						</div>
+						<div class="info_item ">
+							<div class="info_span ">
+								<span>*</span>
+								身份证正面：
+							</div>
+							<input type="file " id="idCardFront ">
+						</div>
+						<div class="info_item ">
+							<div class="info_span ">
+								<span>*</span>
+								身份证正面：
+							</div>
+							<input type="file " id="idCardFront ">
+						</div>
+						<div class="info_item ">
+							<div class="info_span ">
+								联系人手机
+							</div>
+							<input type="text " id="birthday_date " class="input " placeholder="请输入联系人手机 " value=" " >
+							<p class="error2 " >
+								<i></i>
+								姓名不能为空
+							</p>
+						</div>
+						<div class="info_item ">
+							<div class="info_span ">
+								请填写手机校验码：
+							</div>
+							<input type="text " id="birthday_date "  placeholder=" ">
+							<a href="### " class="a_button_apply ">
+								获取短信校验码
+							</a>
+						</div>
+						<div class="info_item ">
+							<div class="info_span ">
+							</div>
+							<div class="item_btn ">
+								<input type="button" id="pop_up_box" class="pop_up_box " value="提交" style="padding: 0px; ">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="member_rights ">
+		            <div class="ic fl "></div>
+		          	<div class="ic2 fl ">
+			            <a href="### ">
+			            	<h2>会员权益：</h2>
+			            	<ul>
+			            		<li class="c_price ">
+			            			<i></i>
+			            			<p class="rights_con ">
+			            				<b>会员优惠价</b>
+			            				<span>有效期内会员可享受三江会员价</span>
+			            			</p>
+			            			<div class="after8 "></div>
+			            		</li>
+			            		<li class="c_activity ">
+			            			<i></i>
+			            			<p class="rights_con ">
+			            				<b>会员专享活动</b>
+			            				<span>可不定期参加三开展会员专享活动</span>
+			            			</p>
+			            			<div class="after8 "></div>
+			            		</li>
+			            		<li class="c_point ">
+			            			<i></i>
+			            			<p class="rights_con ">
+			            				<b>累计消费积分</b>
+			            				<span>绑定会员卡，线上线下同时累计消费积分到会员卡</span>
+			            			</p>
+			            			<div class="after8 "></div>
+			            		</li>
+			            		<li class="c_coupon ">
+			            			<i></i>
+			            			<p class="rights_con ">
+			            				<b>积分兑换劵</b>
+			            				<span>享受积分兑换又会服务</span>
+			            			</p>
+			            			<div class="after8 "></div>
+			            		</li>
+			            	</ul>
+			            </a>
+		      		</div>
+		    	</div>
+			</div>
+			<!-- 地址管理 -->
+			<div class="m_right3 mesage-body ">
+				<div class="order_tabs ">
+					<ul>
+						<li class="current ">
+							地址管理
+							<i></i>
+						</li>
+					</ul>
+				</div>
+				<div class="address_list ">
+					<div class="mt2 ">
+						<div class="add_btn ">
+							<input class="pop_up_box " id="add_Btn " type="button" value="新增收货地址 ">
+						</div>
+						<span class="ftxt ">
+							已创建
+							<b>0</b>
+							个收货地址，最多可以创建
+							<b>20</b>
+							个
+						</span>
+					</div>
+					<div class="address_not ">
+						<p>你还没添加过地址哦</p>
+						<div class="after6 "></div>
+					</div>
+				</div>
+				<div class="layer_bg addaddress-form-bg ">
+					<div class="layer_t "></div>
+				</div>
+				<div class="layer_box addaddress-form " style="z-index: 113; display:none; ">
+			      <div class="layer_t ">
+			        <b id="dialogTitle ">新增收货地址</b>
+			        <a href="javascript:; " class="likeClose " name="cancel ">X</a>
+			      </div>
+			      <div class="layer_content ">
+			        <form id="saveForm " action="/add " method="post ">
+			          <div class="form ">
+			            <input type="hidden " id="id " name="id " value="23376 ">
+
+			            <div class="info_item ">
+			              <div class="info_span "><span>*</span>收货人姓名：</div>
+			              <input type="text " id="consignee " name="consignee " class="input " maxlength="25 " placeholder="如：张三、Lily ">
+			              <p class="hide "><i></i></p>
+			            </div>
+			            <div class="info_item ">
+			              <div class="info_span "><span>*</span>所在地址：</div>
+			              <div class="send_all ">
+			                <div class="send_where " id="send_where_layer ">
+			                <span>海曙区</span>
+			                <span>江厦街道</span>
+			                <span>新街社区</span>
+			                  <i></i>
+			                </div>
+			                <div class="send_more " style="display: none; ">
+			                  <ul class="top_menu ">
+			                    <li class=" "><span>海曙区</span><i></i></li>
+			                    <li class="hide " style="display: list-item; "><span>江厦街道</span><i></i></li>
+			                    <li class="hide cur " style="display: list-item; "><span>新街社区</span><i></i></li>
+			                    <a href="javascript:; ">×</a>
+			                  </ul>
+			                </div>
+			              </div>
+			            </div>
+			            <div class="info_item ">
+			              <div class="info_span v_align "><span>*</span>详细地址：</div>
+			            <textarea class="input h50 w310 " id="detailAddress " name="detailAddress " placeholder="建议您如实填写详细收货地址，例如街道名称，门牌号 码，楼层和房间号等信息 "></textarea>
+			              <p class="hide "></p>
+			            </div>
+			            <div class="info_item ">
+			              <div class="info_span "><span>*</span>手机号码：</div>
+			              <input type="text " class="input " id="mobile " name="mobile " placeholder="手机号码（重要必填） ">
+
+			              <p class="hide "></p>
+			            </div>
+			            <div class="info_item ">
+			              <div class="info_span "><span>*</span>地址别名：</div>
+			              <input type="text " id="alias " name="alias " class="input w310 " placeholder="设置一个易记的名称，如：“送到家里”、“送到公司” ">
+			              <p class="hide "></p>
+			            </div>
+			            <div class="info_item ">
+			              <div class="info_span "></div>
+			              <button type="button " class="btn_y ">保存收货地址</button>
+			              <a href="javascript:; " class="btn_n " name="cancel ">取消</a>
+			            </div>
+			          </div>
+			        </form>
+
+			      </div>
+			    </div>
+			</div>
+			<!-- 购物卡余额查询 -->
+			<div class="m_right3 mesage-body ">
+				<div class="order_tabs ">
+					<ul>
+						<li class="current ">
+						IC卡余额查询
+							<i></i>
+						</li>
+					</ul>
+				</div>
+				<div class="ICCarrd-con ">
+					<div class="form ">
+						<div class="info_item ">
+							<div class="info_span ">
+								<span>*</span>
+								购物卡卡号:
+							</div>
+							<input type="text " class="input " id="cardNo " placeholder="请输入13位购物卡号 ">
+						</div>
+						<div class="info_item ">
+							<div class="info_span ">
+								<span>*</span>
+								验证码:
+							</div>
+							<input type="text " class="input " id="captchaInput " placeholder="请输入4位验证码 ">
+							<img src="__ROOT__/Index/Common/images/yzm.gif " class="IMG " alt=" ">
+							<p>看不清楚?
+							<a href="### " class="kap ">
+								换一张
+							</a>
+							</p>
+						</div>
+						<div class="info_item ">
+							<div class="info_span ">
+							</div>
+							<button type="btton " id="queryButton ">查询</button>
+						</div>
+					</div>
+					<div class="ICCard-tip ">
+						<div class="query-success "></div>
+						<div class="tip-txt ">
+							<dl>
+								 <dt>温馨提示：</dt>
+					            <dd>查询出来的余额有1个小时的延时，非实时数据，仅作参考，以门店提供的查询和小票数据为准。</dd>
+					            <dd>本卡面值含押金10元，押金需一次性消费，消费完毕后，卡片予以收回。</dd>
+					            <dd>仅支持上图三江购物IC卡查询。</dd>
+					            <dd>如有任何疑问，请联络：<span>0574-83886900 &#160;&#160; 0574-83886838。</span></dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 我要投诉 -->
+			<div class="m_right3 mesage-body ">
+				<div class="order_tabs ">
+					<ul>
+						<li class="current ">
+						客户投诉
+							<i></i>
+						</li>
+					</ul>
+				</div>
+				<div class="address_list ">
+					<div class="mt2 ">
+						<div class="add_btn ">
+							<input class="pop_up_box" id="add_Btn " type="button " value="我要投诉 ">
+						</div>
+						<span class="ftxt ">
+						您的建议，是我们的动力来源！
+						</span>
+					</div>
+					<div class="address_not ">
+						<p>
+						<b>客户投诉建议收集</b>
+						如果您对三江购物有什么建议，可以在这里发表意见哦
+						</p>
+						<div class="after7 "></div>
+					</div>
+				</div>
+				<div class="layer_bg ">
+					<div class="layer_t "></div>
+				</div>
+				<div class="layer_box2 ">
+					<div class="layer_t ">
+						<b>优惠劵兑换</b>
+						<a href="### " id="close ">X</a>
+					</div>
+					<div class="layer_content ">
+						<div class="form ">
+							<div class="info_item ">
+								<div class="info_span ">
+									<span>*</span>
+									优惠劵
+								</div>
+								<input type="text " class="input " placeholder="请输入优惠码 " id="bundlingCoupon " />
+		        				<p class="error "><i></i>验证码错误</p>
+							</div>
+						</div>
+						<div class="info_item ">
+							<div class="info_span ">
+							</div>
+							<button type="button " class="btn_y " id="exchangeCoupon ">确定兑换</button>
+		    				<a href="javascript:; " class="btn_n ">返回</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 投诉填表 -->
+			<div class="m_right4 mesage-body ">
+				<div class="order_tabs ">
+					<ul>
+						<li class="current ">
+						我要投诉
+							<i></i>
+						</li>
+					</ul>
+				</div>
+				<div class="complain_content ">
+					<div class="complain_edit ">
+						<form id="applyForm " action=" ">	
+							<div class="info_item ">
+								<div class="info_span ">
+									<span>*</span>
+									购买平台
+								</div>
+								<ul class="option_group1 ">
+									<li class=" "><span>三江购物各门店</span><i></i></li>
+									<li class=" "><span>淘宝便利店（宁波）</span><i></i></li>
+									<li class=" "><span>海鲜达（宁波）</span><i></i></li>
+									<li  class=" "><span>三江购物网</span><i></i></li>
+									<li class=" "><span>其他投诉</span><i></i></li>
+								</ul>
+							</div>
+							<div class="info_item ">
+								<div class="info_span ">
+									
+									单号：
+								</div>
+								<input type="text " class="input " placeholder="请输入单号 " id="bundlingCoupon " />
+
+							</div>
+							<div class="b_line2 "></div>
+							<div class="info_item ">
+								<div class="info_span ">
+									<span>*</span>
+										投诉类型
+								</div>
+								
+			        			<p class="error9 "><i></i>投诉类型必填</p>
+			        			<ul class="option_group2 ">
+									<li class=" "><span>商品质量</span><i></i></li>
+									<li class=" "><span>商品价格</span><i></i></li>
+									<li class=" "><span>商品缺货</span><i></i></li>
+									<li  class=" "><span>服务态度</span><i></i></li>
+									<li class=" "><span>物流配送</span><i></i></li>
+									<li class=" "><span>购物环境</span><i></i></li>
+									<li class=" "><span>其他类型）</span><i></i></li>
+									<li class=" "><span>会员卡问题</span><i></i></li>
+									<li  class=" "><span>咨询建议</span><i></i></li>
+									<li class=" "><span>顾客表扬</span><i></i></li>
+							
+								</ul>
+							</div>
+							<div class="info_item ">
+								<div class="info_span ">
+									<span>*</span>
+								投诉类型
+								</div>
+								
+					            <p class="error10 "><i></i>投诉内容不能为空</p>
+					            <div class="text_area ">
+					            	<textarea  id="textC "  placeholder="请输入你的投诉内容 "></textarea>
+					            	<em id="words ">
+					            		0/200
+					            	</em>
+					            </div>
+							</div>
+							<div class="info_item ">
+								<div class="info_span ">
+									<span></span>
+									请上传小票和商品照片：
+									<p class="upload ">
+										(最多可上传4张)
+									</p>
+								</div>
+								<div class="web ">
+									<div class="pick ">
+										添加照片
+									</div>
+								</div>
+							</div>
+							<div class="b_line2 "></div>
+							<div class="info_item ">
+								<div class="info_span ">
+									<span></span>
+									联系人：
+								</div>
+								<input type="text " class="input " placeholder="请输入联系人 " id="bundlingCoupon " />
+							</div>
+							<div class="info_item ">
+								<div class="info_span ">
+									<span>*</span>
+									联系电话
+								</div>
+								<input type="text " class="input " placeholder="请输入联系电话 " id="bundlingCoupon " />
+			    				<p class="error12 "><i></i>请输入手机号</p>
+							</div>
+							<div class="info_item ">
+								<div class="info_span ">
+								</div>
+								<button type="button " class="red_btn " id="exchangeCoupon ">提交投诉</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--底部导航-->
+	<iframe width="100% " height="356px " frameborder=0 scrolling="no " src="__APP__/Footer/footer "></iframe>
+</body>
+<script src="__ROOT__/Index/Common/js/jquery-3.2.1.min.js "></script>
+
+<script>
+	var app = angular.module('myapp', []);
+	app.controller('mycontroller', function($scope, $http) {
+		getData();
+		$scope.arr = [];
+		$scope.orderArr = [];
+		$scope.number = "";
+		//获取个人资料
+		$http({
+			method: "post",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+			url: "__URL__/getUserData"
+		}).success((res) => {
+			$scope.arr = res;
+		}).error((err) => {
+			console.log(err);
+		})
+		//获取订单信息
+		getOrderData();
+		function getOrderData(){
+			$http({
+				method: "post",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded"
+				},
+				url: "__URL__/getOrderData"
+			}).success((res) => {
+				<!--console.log(res);-->
+				$scope.orderArr = res;
+				console.log($scope.orderArr);
+			}).error((err) => {
+				console.log(err);
+			})
+		}
+		$scope.search = function(){
+			console.log(111);
+			$http({
+				method: "post",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded"
+				},
+				url: "__URL__/getNowData",
+				data:"orderNum="+$scope.number
+			}).success((res) => {
+				$scope.orderArr=res;
+				console.log(res);
+			}).error((err) => {
+				console.log(err);
+			})
+		}
+		//取消订单
+		$scope.cancel = function(num){
+			console.log(num);
+			$http({
+				method: "post",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded"
+				},
+				url: "__URL__/cancelOrder",
+				data:"orderNum="+num
+			}).success((res) => {
+				console.log(res);
+				if(res){
+					getOrderData();
+				}
+			}).error((err) => {
+				console.log(err);
+			})
+		}
+		$scope.del = function(){
+			console.log(this);
+			var id = this.v.id;
+			$http({
+				method: "post",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded"
+				},
+				url: "__URL__/del",
+				data:"id="+id
+			}).success((res) => {
+				console.log(res);
+				getData();
+			}).error((err) => {
+				console.log(err);
+			})
+			}
+		$scope.addShopping = function(){
+			var id = this.v.id;
+			$http({
+				method: "post",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded"
+				},
+				url: "__URL__/addShopping ",
+				data:"id="+id
+			}).success((res) => {
+				<!--console.log(res);-->
+				if(res.status==1){
+					window.location.href = " __APP__/Shopping/shopping ";
+				}
+			}).error((err) => {
+				console.log(err);
+			})
+		}
+		function getData(){
+			$http({
+				method: "post",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded"
+				},
+				url: "__URL__/getCollectionData"
+			}).success((res) => {
+				<!--console.log(res);-->
+				$scope.data=res;
+			}).error((err) => {
+				console.log(err);
+			})
+		}
+	})
+	// $(".a ").click(function(){
+	// 	console.log($(this).index());
+	// })
+	$(".mesage-body ").hide();
+	$(".mesage-body ").eq(0).show();
+	var as = $(".a ");
+	for (let i = 0; i < as.length; i++) {
+		as[i].onclick=function(){
+			console.log(i);
+			for (var j = 0; j < as.length; j++) {
+				as[j].className="a ";
+			}
+			as[i].className="a active ";
+			var index = i;
+			if(i==6){
+				window.location.href="__APP__/Mysanjiang/index ";
+			}
+			if(i==10){
+				window.location.href="__APP__/Help/helpIndex ";
+			}
+			if(i>6){
+				index = i-1;
+			}
+			$(".mesage-body ").hide();
+			$(".mesage-body ").eq(index).show();
+			$(".m_left ").css({"height ":function(){
+				return $(".mesage-body ").eq(index).css("height ");
+			}})
+		}
+	}
+	// console.log($("#dialogTitle "))
+	// console.log($(".addaddress-form-bg "));
+	$(".addaddress-form ").hide();
+	$("#add_Btn ").click(function(){
+		$(".addaddress-form-bg ").css({"display ":"block "});
+		$(".addaddress-form ").css({"display ":"block "});
+	});
+	$(".likeClose,.btn_n ").click(function(){
+		$(".addaddress-form-bg ").css({"display ":"none "});
+		$(".addaddress-form ").css({"display ":"none "});
+	})
+</script>
+</html>

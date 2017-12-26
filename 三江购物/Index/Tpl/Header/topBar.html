@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			-ms-word-wrap: break-word;
+			word-wrap: break-word;
+		}
+		
+		ul li {
+			list-style: none;
+		}
+		
+		a {
+			text-decoration: none;
+		}
+		
+		._citys {
+			width: 450px;
+			display: inline-block;
+			border: 2px solid #eee;
+			padding: 5px;
+			position: relative;
+			top: 8px;
+			left: -35px;
+			background: white;
+		}
+		
+		._citys span {
+			color: #56b4f8;
+			height: 15px;
+			width: 15px;
+			line-height: 15px;
+			text-align: center;
+			border-radius: 3px;
+			position: absolute;
+			right: 10px;
+			top: 10px;
+			border: 1px solid #56b4f8;
+			cursor: pointer;
+		}
+		
+		._citys0 {
+			width: 100%;
+			height: 34px;
+			display: inline-block;
+			border-bottom: 2px solid #56b4f8;
+			padding: 0;
+			margin: 0;
+		}
+		
+		._citys0 li {
+			display: inline-block;
+			line-height: 34px;
+			font-size: 15px;
+			color: #888;
+			width: 80px;
+			text-align: center;
+			cursor: pointer;
+		}
+		
+		.citySel {
+			background-color: #56b4f8;
+			color: #fff !important;
+		}
+		
+		._citys1 {
+			width: 100%;
+			display: inline-block;
+			padding: 10px 0;
+		}
+		
+		._citys1 a {
+			width: 83px;
+			height: 35px;
+			display: inline-block;
+			background-color: #f5f5f5;
+			color: #666;
+			margin-left: 6px;
+			margin-top: 3px;
+			line-height: 35px;
+			text-align: center;
+			cursor: pointer;
+			font-size: 13px;
+			overflow: hidden;
+		}
+		
+		._citys1 a:hover {
+			color: #fff;
+			background-color: #56b4f8;
+		}
+		
+		.AreaS {
+			background-color: #56b4f8 !important;
+			color: #fff !important;
+		}
+		/*头部导航条*/
+		
+		.header {
+			width: 1200px;
+			margin: 0 auto;
+		}
+		
+		.top_bar {
+			width: 100%;
+			border-bottom: 1px solid #eee;
+			background: #f7f7f7;
+			line-height: 30px;
+		}
+		
+		.w1200 {
+			width: 1200px;
+			height: 30px;
+			margin: 0 auto;
+			color: #666;
+			font-size: 12px;
+			/*overflow: hidden;*/
+		}
+		
+		.send_where {
+			float: left;
+			position: relative;
+			padding-left: 5px;
+			padding-right: 10px;
+		}
+		
+		.send_where #city {
+			min-width: 200px;
+			outline: none;
+			border: none;
+			background: #f7f7f7;
+			color: #666;
+		}
+		
+		.ufr {
+			float: right;
+			/*overflow: hidden;*/
+		}
+		
+		.ufr a {
+			color: #666;
+			font-size: 14px;
+		}
+		
+		.ufr a:hover {
+			color: #ea1414;
+		}
+		
+		.ufr li {
+			height: 30px;
+			float: left;
+		}
+		
+		.ufr .item1 .login {
+			color: #ea1414;
+			margin-left: 5px;
+			margin-right: 10px;
+		}
+		
+		.ufr .item2 {
+			padding-left: 12px;
+			padding-right: 12px;
+			text-align: center;
+			position: relative;
+		}
+		
+		.ufr .item2.mydd {
+			margin-left: 5px;
+		}
+		
+		.ufr .item2 div {
+			display: inline-block;
+			width: 1px;
+			height: 12px;
+			border-left: 1px solid #ddd;
+			position: absolute;
+			top: 9px;
+			left: 0;
+		}
+		
+		.menu {
+			width: 92px;
+			position: relative;
+		}
+		
+		.menu .drop_down_top {
+			width: 92px;
+			position: relative;
+		}
+		
+		.menu .drop_down_top div {
+			display: inline-block;
+			width: 1px;
+			height: 12px;
+			border-left: 1px solid #ddd;
+			position: absolute;
+			top: 9px;
+			left: 0;
+		}
+		
+		.menu .drop_down_top a {
+			margin-left: 15px;
+		}
+		
+		.drop_down_top em {
+			top: 12px;
+			right: 10px;
+			width: 9px;
+			height: 5px;
+			overflow: hidden;
+			position: absolute;
+			background: url(http://static.sanjiang.com/common/images/index.png) 100% -700px no-repeat;
+			transition: all 0.2s linear;
+		}
+		
+		.top_bar .ufr li .drop_down_box.w140 {
+			width: 160px;
+		}
+		
+		.top_bar .ufr li .drop_down_box {
+			background: #fff;
+			border: 1px solid #ddd;
+			padding: 10px 0 10px 12px;
+			left: 0;
+			top: 30px;
+			position: absolute;
+			display: none;
+			min-width: 70px;
+			z-index: 100;
+		}
+		
+		.top_bar .ufr li .daohang {
+			left: -81px;
+		}
+		
+		.top_bar .ufr li .drop_down_box p {
+			width: 92px;
+			height: 1px;
+			background: #fff;
+			/*background: red;*/
+			position: absolute;
+			top: -1px;
+			left: 0;
+			z-index: 100;
+			/*display: none;*/
+		}
+		
+		.top_bar .ufr li .daohang p {
+			left: 81px;
+		}
+		
+		.top_bar .ufr li .drop_down_box a {
+			width: 80px;
+			float: left;
+		}
+		
+		.koudai {
+			position: relative;
+			width: 112px;
+		}
+		
+		.koudai .drop_down_top .line {
+			display: inline-block;
+			width: 1px;
+			height: 12px;
+			border-left: 1px solid #ddd;
+			position: absolute;
+			top: 9px;
+			left: 0;
+		}
+		
+		.koudai .drop_down_top .phone_app {
+			width: 11px;
+			height: 16px;
+			margin-top: 7px;
+			float: left;
+			background: url(http://static.sanjiang.com/common/images/index.png) 100% -655px no-repeat;
+			display: inline-block;
+			margin-left: 15px;
+			margin-right: 8px;
+		}
+		
+		.kd_box {
+			border: 1px solid #ddd;
+			padding: 10px 0 10px 10px;
+			/*overflow: hidden;*/
+			left: 0;
+			top: 30px;
+			position: absolute;
+			display: none;
+			min-width: 70px;
+			background-color: white;
+		}
+		
+		.kd_box p {
+			width: 112px;
+			height: 1px;
+			position: absolute;
+			left: 0;
+			top: -1px;
+			background: #fff;
+		}
+		
+		.kd_box .app_code {
+			background: url(http://static.sanjiang.com/common/images/app.png) no-repeat;
+			width: 182px;
+			height: 105px;
+			z-index: 100;
+		}
+		
+		.kd_box .app_code span {
+			width: 83px;
+			line-height: 25px;
+			margin-top: 83px;
+			margin-right: 8px;
+			float: left;
+			text-align: center;
+		}
+	</style>
+
+	<body>
+		<div class="header">
+			<div class="top_bar">
+				<div class="topContainer">
+					<div class="send_where">
+						<a href="__APP__/Index/index" style="color: #666;font-size: 14px;" target="_blank">返回首页</a>
+					</div>
+					<ul class="ufr">
+						<li class="item1">
+							<if condition="!isset($_SESSION['username'])">
+								您好，欢迎来到三江！
+								<span>
+									<a href="__APP__/Login/login" class="login">登录</a>
+									<a href="__APP__/Register/register">注册</a>
+								</span>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" style="margin-right: 15px;">{$Think.session.username}</a>
+								<a href="__APP__/Login/login" target="_blank">退出</a>
+							</if>
+						</li>
+						<li class="item2 mydd">
+							<div></div>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的订单</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+							</if>
+						</li>
+						<li class="menu">
+							<div class="drop_down_top">
+								<div></div>
+								<if condition="!isset($_SESSION['username'])">
+									<a href="__APP__/Login/login" target="_blank">我的三江</a>
+									<else />
+									<a href="__APP__/Mymessage/mymessage" target="_blank">我的三江</a>
+								</if>
+								<em></em>
+
+							</div>
+							<div class="drop_down_box w140">
+								<p></p>
+								<if condition="!isset($_SESSION['username'])">
+									<a href="__APP__/Login/login" target="_blank">我的订单</a>
+									<a href="__APP__/Login/login" target="_blank">我的收藏</a>
+									<a href="__APP__/Login/login" target="_blank">我的优惠券</a>
+									<a href="__APP__/Login/login" target="_blank">地址管理</a>
+									<else />
+									<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+									<a href="__APP__/Mymessage/mymessage" target="_blank">我的收藏</a>
+									<a href="__APP__/Mymessage/mymessage" target="_blank">我的优惠券</a>
+									<a href="__APP__/Mymessage/mymessage" target="_blank">地址管理</a>
+								</if>
+							</div>
+						</li>
+						<li class="koudai">
+							<div class="drop_down_top">
+								<div class="line"></div>
+								<div class="phone_app"></div>
+								<a href="http://help.sanjiang.com/app.html" target="_blank">口袋三江</a>
+								<em></em>
+
+							</div>
+							<div class="kd_box">
+								<p></p>
+								<div class="app_code"><span>三江客户端</span><span>三江订阅号</span></div>
+							</div>
+						</li>
+						<li class="item2">
+							<div></div>
+							<a href="javascript:void(0);" target="_blank">企业团购</a>
+						</li>
+						<li class="menu">
+							<div class="drop_down_top">
+								<div></div>
+								<a href="__APP__/Help/helpIndex" target="_blank">客户服务</a>
+								<em></em>
+
+							</div>
+							<div class="drop_down_box w140">
+								<p></p>
+								<a href="__APP__/Help/helpIndex" target="_blank">帮助中心</a>
+								<a href="__APP__/Help/shfwTHGZ" target="_blank">售后服务</a>
+								<if condition="!isset($_SESSION['username'])">
+									<a href="__APP__/Login/login" target="_blank">意见反馈</a>
+									<else />
+									<a href="__APP__/Mymessage/mymessage" target="_blank">意见反馈</a>
+								</if>
+							</div>
+						</li>
+						<li class="menu">
+							<div class="drop_down_top">
+								<div></div>
+								<a href="javascript:void(0)">网站导航</a>
+								<em></em>
+
+							</div>
+							<div class="drop_down_box w140 daohang">
+								<p></p>
+								<a href="__APP__/Index/sjyx" target="_blank">三江优选</a>
+								<a href="__APP__/Index/hsp" target="_blank">惠商品</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

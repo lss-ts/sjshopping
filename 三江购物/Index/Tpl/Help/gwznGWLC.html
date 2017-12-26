@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用户登录 - 三江购物帮助中心 - 三江购物</title>
+		<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/help.css">
+	</head>
+
+	<body>
+		<!--导航条主体-->
+		<div class="top_bar">
+			<div class="w900">
+				<div class="gohome"><i></i>
+					<a href="__APP__/Index/index">返回首页</a>
+				</div>
+				<ul class="ufr">
+					<li class="item1">
+						<if condition="!isset($_SESSION['username'])">
+							您好，欢迎来到三江！
+							<span>
+									<a href="__APP__/Login/login" class="login">登录</a>
+									<a href="__APP__/Register/register">注册</a>
+								</span>
+							<else />
+							<a href="###" style="margin-right: 15px;">{$Think.session.username}</a>
+							<a href="__APP__/Login/login">退出</a>
+						</if>
+					</li>
+					<li class="item2 mydd">
+						<div></div>
+						<if condition="!isset($_SESSION['username'])">
+							<a href="__APP__/Login/login" target="_blank">我的订单</a>
+							<else />
+							<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+						</if>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的三江</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessageindex" target="_blank">我的三江</a>
+							</if>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的订单</a>
+								<a href="__APP__/Login/login" target="_blank">我的收藏</a>
+								<a href="__APP__/Login/login" target="_blank">我的优惠券</a>
+								<a href="__APP__/Login/login" target="_blank">地址管理</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的收藏</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的优惠券</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">地址管理</a>
+							</if>
+						</div>
+					</li>
+					<li class="koudai">
+						<div class="drop_down_top">
+							<div class="line"></div>
+							<div class="phone_app"></div>
+							<a href="http://help.sanjiang.com/app.html" target="_blank">口袋三江</a>
+							<em></em>
+
+						</div>
+						<div class="kd_box">
+							<p></p>
+							<div class="app_code"><span>三江客户端</span><span>三江订阅号</span></div>
+						</div>
+					</li>
+					<li class="item2">
+						<div></div>
+						<a href="javascript:void(0);" target="_blank">企业团购</a>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="__APP__/Help/helpIndex" target="_blank">客户服务</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<a href="__APP__/Help/helpIndex" target="_blank">帮助中心</a>
+							<a href="__APP__/Help/shfwTHGZ" target="_blank">售后服务</a>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">意见反馈</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">意见反馈</a>
+							</if>
+						</div>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="javascript:void(0)">网站导航</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140 daohang">
+							<p></p>
+							<a href="__URL__/sjyx" target="_blank">三江优选</a>
+							<a href="__URL__/hsp" target="_blank">惠商品</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='help-nav-bj'>
+			<div class='help-nav'>
+				<a href="###主页" class='logo'></a>
+				<ul>
+					<li>
+						<a href="__URL__/helpIndex" class='help-index'>首页<i></i></a>
+					</li>
+					<li>
+						<a href="__URL__/gwznZCLC" class='help-index'>问题分类<i class='active'></i></a>
+					</li>
+					<li>
+						<a href="__URL__/zzfwZZFW" class='help-index'>自助服务<i></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='help-nav-bar'>
+			<ul>
+				<li>
+					<a href="__URL__/gwznZCLC">购物指南</a>
+					<div class='icon active'></div>
+				</li>
+				<li>
+					<a href="__URL__/zffsZXZF">支付方式</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/wlpsPSFS">物流配送</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/shfwTHGZ">售后服务</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/mdylbMDYLB">门店一览表</a>
+					<div class='icon'></div>
+				</li>
+			</ul>
+		</div>
+		<div class='helplist-b'>
+			<div class='box'>
+				<div class='helplist-nav'>
+					<ul>
+						<li>
+							<a href="__URL__/gwznZCLC">注册流程</a>
+						</li>
+						<li>
+							<a href="__URL__/gwznGWLC" class='active'>购物流程</a>
+						</li>
+						<li>
+							<a href="__URL__/gwznZHAQ">账户安全</a>
+						</li>
+						<li>
+							<a href="__URL__/gwznHYQY">会员权益</a>
+						</li>
+						<li>
+							<a href="__URL__/gwznDDZT">订单状态</a>
+						</li>
+						<li>
+							<a href="__URL__/gwznYHJ">优惠劵</a>
+						</li>
+						<li>
+							<a href="__URL__/gwznCXHD">促销活动</a>
+						</li>
+					</ul>
+				</div>
+				<div class='help-detail'>
+					<h2 class='help-detail-title'>购物流程</h2>
+					<div class='help-list'>
+						<a href='###' class='active'>用户登录</a>
+						<a href='###'>查询商品</a>
+						<a href='###'>加入购物车</a>
+						<a href='###'>地址管理</a>
+						<a href='###'>选择配送方式</a>
+						<a href='###'>选择支付方式</a>
+						<a href='###'>提交订单</a>
+						<a href='###'>常见问题</a>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>用户登录
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+							<!--详细内容-->
+							<h2>若您还已有三江购物账号，请点击“登录”，详细操作步骤如下：</h2>
+							<h3>1. 打开三江购物首页，在右上方，点击“登录”按钮；</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p01_01.jpg"></p>
+							<h3>2. 进入到"登录"页面，输入用户名密码完成登录</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p01_02.jpg"></p>
+							<h3>3. 进入到"三江购物网"首页，您可以开始购物了！</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p01_03.jpg"></p>
+							<!--详细内容-->
+						</div>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>查询商品
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+							<!--详细内容-->
+							<h3> 1、商品搜索框位于首页中部，在搜索框中可输入商品名称，点击搜索按钮即可查找商品。</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p02_01.jpg"></p>
+							<h3>2、商品分类框位于首页左侧，鼠标移入后可选择更多分类。</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p02_02.jpg"></p>
+							<!--详细内容-->
+						</div>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>加入购物车
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+							<!--详细内容-->
+							<h3> 1、选择想要购买的商品，点击“加入购物车”，将该商品加入购物车。</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p03_01.jpg"></p>
+							<h3>2、这时可选择“继续购物”或者“去购物车结算”，点击继续购物回到当前界面，打开去购物车结算页面跳转至到我的购物车界面，能够看到已经选择的商品信息。</h3>
+							<!--详细内容-->
+						</div>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>地址管理
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+							<!--详细内容-->
+							<h2>若您还已有登录三江购物网，详细操作步骤如下：</h2>
+							<h3>1. 在三江购物首页，在右上方，点击“难得糊涂”（用户名）进入“我的三江”页面；</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p04_01.jpg"></p>
+							<h3>2. 点击"地址管理"页面；</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p04_02.jpg"></p>
+							<h3>3. 点击"新增收货地址"页面；</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p04_03.jpg"></p>
+							<h3>4. 填写收货地址相关信息页面；</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p04_04.jpg"></p>
+							<h3>4.1. 点击"所在区域"选择您所在的区域；</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p04_05.jpg"></p>
+							<h3>5. 保存收货地址回到地址管理页面，可设置或修改默认地址；</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p04_06.jpg"></p>
+							<!--详细内容-->
+						</div>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>选择配送方式
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+							<!--详细内容-->
+							<h3>购物车页面点击去结算到订单确定页；</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p05_01.jpg"></p>
+							<h3>2、选择收货方式；</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p05_02.jpg"></p>
+							<h3>3、选取配送填写配送信息；</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p05_03.jpg"></p>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p05_04.jpg"></p>
+							<h3>4、选取自提填写自提信息；</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p05_05.jpg"></p>
+							<h3>5、填写完成保存收货信息。</h3>
+							<!--详细内容-->
+						</div>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>选择支付方式
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+							<!--详细内容-->
+							<h3>1、提交订单；</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p06_01.jpg"></p>
+							<h3>2、在成功提交订单页面选择支付平台；</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p06_02.jpg"></p>
+							<h3>3、选中支付平台点击立即支付；</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p06_03.jpg"></p>
+							<h3>4、在支付平台输入支付信息确定即可支付完成；</h3>
+							<h3>5、支付完成后可在“我的三江”→“我的订单”中查看。</h3>
+							<!--详细内容-->
+						</div>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>提交订单
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+							<!--详细内容-->
+							<h3> 1、查找商品，搜索您需要购买的商品；</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p07_01.jpg"></p>
+							<h3>2、将您需要喜欢的商品点击加入购物车；</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p07_02.jpg"></p>
+							<h3>3、点击去购物车结算，进入到购物车页面；</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p07_03.jpg"></p>
+							<h3>4、进入购物车页面查看已加入购物车商品，后点击“去结算”；</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p07_04.jpg"></p>
+							<h3>5、填写收货人信息、支付方式，核对送货清单等信息；</h3>
+							<p><img src="http://static.sanjiang.com/help/images/shopping/p07_05.jpg"></p>
+							<h3>6、确认无误后点击“提交订单”，生成订单并显示订单编号。</h3>
+							<!--详细内容-->
+						</div>
+					</div>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>常见问题
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+							<!--详细内容-->
+							<h3>1.为什么我的订单总是无法提交成功？</h3>
+							<p><b>&nbsp;&nbsp;&nbsp;&nbsp; 可能存在以下几种情况：</b></p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （1）订单信息填写不完整；</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （2）订单商品库存不足或者库存无货；</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （3）订单商品不能配送到您所填写的收货地址；</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （4）网络延时；</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 以上各种情况都会在页面中弹出提示信息，可以通过修改订单信息（提示信息）或者稍后再试，即可成功提交订单。</p>
+							<h3>2.我刚刚注册了账户，如何提交订单？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 选择商品【加入购物车】/点击【去购物车结算】-【去结算】/填写收货信息和支付，然后点击提交订单即可。</p>
+							<h3>3.订单少支付怎么办？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 如果订单少支付了，请刷新页面，重新点击“支付”按钮支付剩余金额即可。</p>
+							<h3>4.商品页面有满减活动，下单后金额为何没有变化？</h3>
+							<p><b>&nbsp;&nbsp;&nbsp;&nbsp; 若“商品页面有满减活动，下单后订单金额没有变化”，可能存在以下几种情况：</b></p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （1）订单的金额没有达到满减活动的金额要求；</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （2）订单中有未参加满减活动的商品；</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （3） 若以上情况都不存在，请删除购物车中的商品，重新登陆后购买；</p>
+							<h3> 5.订单已经提交成功，可以改送到其他地方吗？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 订单提交成功后暂时无法修改任何订单信息了。</p>
+							<h3>6.我的订单已经取消了，何时给我退款或退优惠券？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 订单取消后，货款7-15个工作日自动退回账户，优惠券详见优惠券退货处理规则。</p>
+							<h3>7.我提交的订单在哪里查看？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 进入“我的三江”→“我的订单”中查看。</p>
+							<h3>8.订单如何取消？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （1）如订单处于待支付或拣货中状态时，进入“我的三江”→“我的订单”页面，找到要取消的订单，点击“取消订单”按钮</p>
+							<p><img src="http://static.sanjiang.com/help/images/aftersales/p01_01.jpg"> </p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （2）如订单处于拣货完成、配送中状态，无法在线取消订单，建议您直接拒收。</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （3）如订单处于收货完成，无法在线取消订单，建议您携带商品到购买门店处理。</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; （4）"取消订单"申请成功后，您可在“我的订单”页面查询取消进度。</p>
+
+							<div class="d">
+								<h4>取消订单注意事项：</h4>
+								<p>1、订单取消申请后，将无法进行任何修改或恢复，请您谨慎操作。</p>
+								<p>2、提交订单取消申请后，系统会确认包裹位置，拦截成功之后会为您办理退款。若订单取消失败，订单会继续为您配送，您可根据需要签收或拒收。</p>
+								<p>3、订单若包含赠品、满减、优惠券等促销活动商品，若主商品订单取消，关联促销商品也将取消。</p>
+							</div>
+							<h3>9.如何开票？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 收货后，携带购物小票到购买门店开票。</p>
+							<!--详细内容-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<iframe width="100%" height="356px" frameborder=0 scrolling="no" src="__ROOT__/Index/Tpl/Footer/footer.html"></iframe>
+	</body>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/jquery-3.2.1.min.js'></script>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/help.js'></script>
+
+</html>

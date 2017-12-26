@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>提交订单 - 三江购物</title>
+		<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/shopping-car.css">
+		<script type="text/javascript" src="__ROOT__/Index/Common/js/angular.min.js"></script>
+		<!--引入angular依赖(在引入angular之后)-->
+		<script type="text/javascript" src="__ROOT__/Index/Common/js/angular-sanitize.js"></script>
+		<script type="text/javascript" src='__ROOT__/Index/Common/js/jquery-3.2.1.min.js'></script>
+		<style type="text/css">
+			.top_bar {
+				width: 100%;
+				border-bottom: 1px solid #eee;
+				background: #f7f7f7;
+				line-height: 30px;
+			}
+			
+			.w900 {
+				width: 990px;
+				height: 30px;
+				margin: 0 auto;
+				color: #666;
+				font-size: 12px;
+			}
+			
+			.top_bar .gohome {
+				float: left;
+			}
+			
+			.top_bar .gohome i {
+				height: 31px;
+				width: 20px;
+				float: left;
+				background: url(http://static.sanjiang.com/common/images/index.png) 100% -620px no-repeat;
+				display: block;
+				margin-right: 8px;
+			}
+			
+			.top_bar .gohome a {
+				color: #666;
+			}
+			
+			.top_bar .gohome a:hover {
+				color: #f03838;
+			}
+			
+			.ufr {
+				float: right;
+			}
+			
+			.ufr a {
+				color: #666;
+			}
+			
+			.ufr a:hover {
+				color: #ea1414;
+			}
+			
+			.ufr li {
+				height: 30px;
+				float: left;
+			}
+			
+			.ufr .item1 .login {
+				color: #ea1414;
+				margin-left: 5px;
+				margin-right: 10px;
+			}
+			
+			.ufr .item2 {
+				padding-left: 12px;
+				padding-right: 12px;
+				text-align: center;
+				position: relative;
+			}
+			
+			.ufr .item2.mydd {
+				margin-left: 5px;
+			}
+			
+			.ufr .item2 div {
+				display: inline-block;
+				width: 1px;
+				height: 12px;
+				border-left: 1px solid #ddd;
+				position: absolute;
+				top: 9px;
+				left: 0;
+			}
+			
+			.menu {
+				width: 92px;
+				position: relative;
+			}
+			
+			.menu .drop_down_top {
+				width: 92px;
+				position: relative;
+			}
+			
+			.menu .drop_down_top div {
+				display: inline-block;
+				width: 1px;
+				height: 12px;
+				border-left: 1px solid #ddd;
+				position: absolute;
+				top: 9px;
+				left: 0;
+			}
+			
+			.menu .drop_down_top a {
+				margin-left: 15px;
+			}
+			
+			.drop_down_top em {
+				top: 12px;
+				right: 10px;
+				width: 9px;
+				height: 5px;
+				overflow: hidden;
+				position: absolute;
+				background: url(http://static.sanjiang.com/common/images/index.png) 100% -700px no-repeat;
+				transition: all 0.2s linear;
+			}
+			
+			.top_bar .ufr li .drop_down_box.w140 {
+				width: 160px;
+			}
+			
+			.top_bar .ufr li .drop_down_box {
+				background: #fff;
+				border: 1px solid #ddd;
+				padding: 10px 0 10px 12px;
+				left: 0;
+				top: 30px;
+				position: absolute;
+				display: none;
+				min-width: 70px;
+				z-index: 100;
+			}
+			
+			.top_bar .ufr li .daohang {
+				left: -81px;
+			}
+			
+			.top_bar .ufr li .drop_down_box p {
+				width: 92px;
+				height: 1px;
+				background: #fff;
+				/*background: red;*/
+				position: absolute;
+				top: -1px;
+				left: 0;
+				z-index: 100;
+				/*display: none;*/
+			}
+			
+			.top_bar .ufr li .daohang p {
+				left: 81px;
+			}
+			
+			.top_bar .ufr li .drop_down_box a {
+				width: 80px;
+				float: left;
+			}
+			
+			.koudai {
+				position: relative;
+				width: 112px;
+			}
+			
+			.koudai .drop_down_top .line {
+				display: inline-block;
+				width: 1px;
+				height: 12px;
+				border-left: 1px solid #ddd;
+				position: absolute;
+				top: 9px;
+				left: 0;
+			}
+			
+			.koudai .drop_down_top .phone_app {
+				width: 11px;
+				height: 16px;
+				margin-top: 7px;
+				float: left;
+				background: url(http://static.sanjiang.com/common/images/index.png) 100% -655px no-repeat;
+				display: inline-block;
+				margin-left: 15px;
+				margin-right: 8px;
+			}
+			
+			.kd_box {
+				border: 1px solid #ddd;
+				padding: 10px 0 10px 10px;
+				/*overflow: hidden;*/
+				left: 0;
+				top: 30px;
+				position: absolute;
+				display: none;
+				min-width: 70px;
+				background-color: white;
+			}
+			
+			.kd_box p {
+				width: 112px;
+				height: 1px;
+				position: absolute;
+				left: 0;
+				top: -1px;
+				background: #fff;
+			}
+			
+			.kd_box .app_code {
+				background: url(http://static.sanjiang.com/common/images/app.png) no-repeat;
+				width: 182px;
+				height: 105px;
+				z-index: 100;
+			}
+			
+			.kd_box .app_code span {
+				width: 83px;
+				line-height: 25px;
+				margin-top: 83px;
+				margin-right: 8px;
+				float: left;
+				text-align: center;
+			}
+			
+			.shopping-step div.active1 {
+				background: url(http://static.sanjiang.com/common/images/p_step.png) 100% -30px no-repeat #fc8;
+				color: #fff;
+			}
+			
+			.shopping-step div.active2 {
+				background: url(http://static.sanjiang.com/common/images/p_step.png) 100% -60px no-repeat #fc8;
+				color: #fff;
+			}
+			
+			.shopping-step div.active3 {
+				background: #f79100;
+				color: #fff;
+			}
+			
+			.pay_tips {
+				border: 1px solid #f9ad40;
+				background: ivory;
+				height: 22px;
+				line-height: 22px;
+				width: 645px;
+				padding: 0 8px;
+			}
+			
+			.pay-b {
+				width: 990px;
+				margin: 0 auto;
+				font-size: 12px;
+			}
+			
+			.pay_message {
+				background: #f8f8f8;
+				padding: 10px 20px 20px;
+				overflow: hidden;
+				margin: 10px 0;
+				position: relative;
+			}
+			
+			.pay_message .icon_succ {
+				width: 32px;
+				height: 32px;
+				display: block;
+				float: left;
+				margin-right: 10px;
+				background: url(http://static.sanjiang.com/common/images/icon-succ.png) no-repeat;
+			}
+			
+			.pay_message .orderinfo {
+				float: left;
+			}
+			
+			.pay_message .orderinfo h1 {
+				color: #333;
+				font-size: 16px;
+				line-height: 30px;
+				font-family: 微软雅黑;
+				margin-bottom: 5px;
+			}
+			
+			.pay_message .orderinfo p {
+				line-height: 24px;
+			}
+			
+			.pay_message .orderinfo p span.red {
+				color: #f03838;
+				margin-right: 0;
+			}
+			
+			.pay_message .orderinfo p strong {
+				color: #f03838;
+				font-size: 14px;
+				font-family: verdana;
+			}
+			
+			.pay_body {
+				border: 1px solid #ddd;
+				padding: 18px;
+				margin-bottom: 50px;
+			}
+			
+			.pay_body .mt {
+				border-bottom: 1px dashed #ddd;
+				height: 36px;
+				line-height: 36px;
+				font-size: 14px;
+				font-weight: 700;
+			}
+			
+			.pay_body .mc {
+				overflow: hidden;
+				margin: 20px 0 20px 40px;
+			}
+			
+			.pay_body .mc li.cur {
+				border: 2px solid #f03838;
+				margin: 0 23px 12px 0;
+			}
+			
+			.pay_body .mc li {
+				position: relative;
+				float: left;
+				zoom: 1;
+				width: 196px;
+				height: 36px;
+				border: 1px solid #ddd;
+				background: #fff;
+				margin: 1px 24px 13px 1px;
+				cursor: pointer;
+			}
+			
+			.pay_body .mc .icon {
+				width: 126px;
+				height: 36px;
+				display: block;
+				background-repeat: no-repeat;
+				margin-left: 8px;
+			}
+			
+			.ALIPAY {
+				background: url(http://static.sanjiang.com/pay/images/banklist_22.png);
+				background-position: 0 -845px;
+			}
+			
+			.WECHAT {
+				background: url(http://static.sanjiang.com/pay/images/banklist_22.png);
+				background-position: 0 -800px;
+			}
+			
+			.pay_body .mc li span {
+				background: url(http://static.sanjiang.com/common/images/index.png) -110px -990px no-repeat;
+				line-height: 16px;
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				padding-left: 10px;
+				color: #fff;
+			}
+			
+			.pay_body .mc li span b {
+				background: url(http://static.sanjiang.com/common/images/index.png) 100% -974px no-repeat;
+				float: left;
+				display: block;
+				height: 16px;
+				padding-right: 4px;
+				font-weight: 400;
+			}
+			
+			.pay_body .mb a {
+				display: block;
+				font-size: 18px;
+				font-family: 微软雅黑;
+				border-radius: 3px;
+				font-weight: 700;
+				width: 160px;
+				height: 36px;
+				line-height: 36px;
+				text-align: center;
+				background: #f03838;
+				color: #fff;
+			}
+			
+			.pay_body .mb {
+				margin: 20px 40px;
+			}
+			
+			.bg {
+				width: 100%;
+				height: 100%;
+				background: rgba(51, 51, 51, 0.3);
+				position: fixed;
+				left: 0;
+				top: 0;
+				display: none;
+				z-index: 50;
+			}
+			
+			.layer_box {
+				border: 5px solid #b3b3b3;
+				width: 470px;
+				position: fixed;
+				left: 50%;
+				margin-left: -235px;
+				top: 50%;
+				margin-top: -250px;
+				background: #fff;
+			}
+			
+			.layer_box .layer_t {
+				padding: 0 15px;
+				border-bottom: 1px solid #e0e0e0;
+				background: #eee;
+				height: 31px;
+				line-height: 31px;
+			}
+			
+			.layer_box .layer_t b {
+				float: left;
+				font-size: 15px;
+				color: #333;
+				font-family: 微软雅黑;
+			}
+			
+			.layer_box .layer_t a {
+				font-size: 16px;
+				color: #aaa;
+				float: right;
+			}
+			
+			.layer_box .layer_content {
+				padding: 15px;
+			}
+			
+			.layer_box .layer_content .layer_tips p {
+				margin-top: 10px;
+			}
+			
+			.layer_box .layer_content .layer_tips p b {
+				line-height: 25px;
+				font-size: 18px;
+				display: block;
+				color: #333;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body ng-app="myapp" ng-controller="mycontroller">
+		<!--导航条主体-->
+		<div class="top_bar">
+			<div class="w900">
+				<div class="gohome"><i></i>
+					<a href="__APP__/Index/index">返回首页</a>
+				</div>
+				<ul class="ufr">
+					<li class="item1">
+						<if condition="!isset($_SESSION['username'])">
+							您好，欢迎来到三江！
+							<span>
+									<a href="__APP__/Login/login" class="login">登录</a>
+									<a href="__APP__/Register/register">注册</a>
+								</span>
+							<else />
+							<a href="###" style="margin-right: 15px;">{$Think.session.username}</a>
+							<a href="__APP__/Login/login">退出</a>
+						</if>
+					</li>
+					<li class="item2 mydd">
+						<div></div>
+						<if condition="!isset($_SESSION['username'])">
+							<a href="__APP__/Login/login" target="_blank">我的订单</a>
+							<else />
+							<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+						</if>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的三江</a>
+								<else />
+								<a href="__APP__/Mymessageindex/mymessageindex" target="_blank">我的三江</a>
+							</if>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的订单</a>
+								<a href="__APP__/Login/login" target="_blank">我的收藏</a>
+								<a href="__APP__/Login/login" target="_blank">我的优惠券</a>
+								<a href="__APP__/Login/login" target="_blank">地址管理</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的收藏</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的优惠券</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">地址管理</a>
+							</if>
+						</div>
+					</li>
+					<li class="koudai">
+						<div class="drop_down_top">
+							<div class="line"></div>
+							<div class="phone_app"></div>
+							<a href="http://help.sanjiang.com/app.html" target="_blank">口袋三江</a>
+							<em></em>
+
+						</div>
+						<div class="kd_box">
+							<p></p>
+							<div class="app_code"><span>三江客户端</span><span>三江订阅号</span></div>
+						</div>
+					</li>
+					<li class="item2">
+						<div></div>
+						<a href="javascript:void(0);" target="_blank">企业团购</a>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="__APP__/Help/helpIndex" target="_blank">客户服务</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<a href="__APP__/Help/helpIndex" target="_blank">帮助中心</a>
+							<a href="__APP__/Help/shfwTHGZ" target="_blank">售后服务</a>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">意见反馈</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">意见反馈</a>
+							</if>
+						</div>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="javascript:void(0)">网站导航</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140 daohang">
+							<p></p>
+							<a href="__URL__/sjyx" target="_blank">三江优选</a>
+							<a href="__URL__/hsp" target="_blank">惠商品</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='logo-box'>
+			<div class='logo'>
+				<a href="###主页"></a>
+			</div>
+			<div class='shopping-step'>
+				<div class='active1'>
+					<i>1</i> 我的购物车
+					<span></span>
+				</div>
+				<div class="active2">
+					<i>2</i> 确认订单信息
+					<span></span>
+				</div>
+				<div class='active3'>
+					<i>3</i> 成功提交订单
+					<span></span>
+				</div>
+			</div>
+		</div>
+		<div class="pay-b">
+			<div class="pay_tips">【重要提醒】： 三江购物不会以订单异常、系统升级等为由，通过电话、短信等方式要求您点击任何链接进行退款操作。</div>
+			<div class="pay_message">
+				<div class="icon_succ"></div>
+				<div class="orderinfo">
+					<h1>订单已提交成功，请您立即付款，我们将为您尽快送达！</h1>
+					<p>请您在<span class="red">24小时</span>内完成付款，超过后系统将自动取消订单。</p>
+					<p>订单编号：<b>{$data.orderNum}</b></p>
+					<p>送货至：<span>{$data.data.address}</span><span style="margin-left: 5px;">{$data.data.username}</span>（收件人）<span>{$data.data.tel}</span></p>
+					<p>应付金额：<strong>￥{$data.totalC}</strong></p>
+				</div>
+			</div>
+			<div class="pay_body">
+				<!-- 购物车推荐和收藏 -->
+				<div class="mt">支付平台</div>
+				<div class="mc" id="third_list">
+					<ul>
+						<!-- 改变 classname  cur 改变选中状态 -->
+						<li plat="alipay" class="cur">
+							<i class="icon ALIPAY" title="支付宝"></i>
+							<span><b>推荐</b></span>
+						</li>
+						<li plat="webchat">
+							<i class="icon WECHAT" title="微信"></i>
+							<span><b>推荐</b></span>
+						</li>
+					</ul>
+				</div>
+				<input type="hidden" name="orderId" id="id" value="911701866759168">
+				<input type="hidden" name="platform" id="platform">
+				<div class="mb">
+					<a href="#" id="payBtn" ng-click="payNow({$data.id})">立即支付</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="bg">
+			<div class="layer_box" id="carBox" style="z-index: 113; margin-top: -81.5px; display: block;">
+				<div class="layer_t"><b>温馨提示</b>
+					<a href="javascript:;">X</a>
+				</div>
+				<div class="layer_content" id="layer_content">
+					<div class="layer_tips">
+						<p><b>支付成功!</b></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--底部导航-->
+		<iframe width="100%" height="356px" frameborder=0 scrolling="no" src="__APP__/Footer/footer"></iframe>
+	</body>
+	<script type="text/javascript">
+		$("#third_list li").click(function() {
+			$(this).addClass("cur").siblings().removeClass("cur");
+		})
+		$(".layer_t a").click(function() {
+			$(".bg").hide();
+		});
+		var app = angular.module('myapp', []);
+		app.controller('mycontroller', function($scope, $http) {
+			$scope.payNow = function(id) {
+				console.log(id);
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__URL__/changeStatus",
+					data: "id=" + id
+				}).success((res) => {
+					console.log(res);
+					if(res.status == 1) {
+						$(".bg").show();
+					}
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+		})
+	</script>
+
+</html>

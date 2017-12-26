@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>退款说明 - 三江购物帮助中心 - 三江购物</title>
+		<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/help.css">
+	</head>
+
+	<body>
+		<!--导航条主体-->
+		<div class="top_bar">
+			<div class="w900">
+				<div class="gohome"><i></i>
+					<a href="__APP__/Index/index">返回首页</a>
+				</div>
+				<ul class="ufr">
+					<li class="item1">
+						<if condition="!isset($_SESSION['username'])">
+							您好，欢迎来到三江！
+							<span>
+									<a href="__APP__/Login/login" class="login">登录</a>
+									<a href="__APP__/Register/register">注册</a>
+								</span>
+							<else />
+							<a href="###" style="margin-right: 15px;">{$Think.session.username}</a>
+							<a href="__APP__/Login/login">退出</a>
+						</if>
+					</li>
+					<li class="item2 mydd">
+						<div></div>
+						<if condition="!isset($_SESSION['username'])">
+							<a href="__APP__/Login/login" target="_blank">我的订单</a>
+							<else />
+							<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+						</if>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的三江</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessageindex" target="_blank">我的三江</a>
+							</if>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的订单</a>
+								<a href="__APP__/Login/login" target="_blank">我的收藏</a>
+								<a href="__APP__/Login/login" target="_blank">我的优惠券</a>
+								<a href="__APP__/Login/login" target="_blank">地址管理</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的收藏</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的优惠券</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">地址管理</a>
+							</if>
+						</div>
+					</li>
+					<li class="koudai">
+						<div class="drop_down_top">
+							<div class="line"></div>
+							<div class="phone_app"></div>
+							<a href="http://help.sanjiang.com/app.html" target="_blank">口袋三江</a>
+							<em></em>
+
+						</div>
+						<div class="kd_box">
+							<p></p>
+							<div class="app_code"><span>三江客户端</span><span>三江订阅号</span></div>
+						</div>
+					</li>
+					<li class="item2">
+						<div></div>
+						<a href="javascript:void(0);" target="_blank">企业团购</a>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="__APP__/Help/helpIndex" target="_blank">客户服务</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<a href="__APP__/Help/helpIndex" target="_blank">帮助中心</a>
+							<a href="__APP__/Help/shfwTHGZ" target="_blank">售后服务</a>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">意见反馈</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">意见反馈</a>
+							</if>
+						</div>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="javascript:void(0)">网站导航</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140 daohang">
+							<p></p>
+							<a href="__URL__/sjyx" target="_blank">三江优选</a>
+							<a href="__URL__/hsp" target="_blank">惠商品</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='help-nav-bj'>
+			<div class='help-nav'>
+				<a href="###主页" class='logo'></a>
+				<ul>
+					<li>
+						<a href="__URL__/helpIndex" class='help-index'>首页<i></i></a>
+					</li>
+					<li>
+						<a href="__URL__/gwznZCLC" class='help-index'>问题分类<i class='active'></i></a>
+					</li>
+					<li>
+						<a href="__URL__/zzfwZZFW" class='help-index'>自助服务<i></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='help-nav-bar'>
+			<ul>
+				<li>
+					<a href="__URL__/gwznZCLC">购物指南</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/zffsZXZF">支付方式</a>
+					<div class='icon active'></div>
+				</li>
+				<li>
+					<a href="__URL__/wlpsPSFS">物流配送</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/shfwTHGZ">售后服务</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/mdylbMDYLB">门店一览表</a>
+					<div class='icon'></div>
+				</li>
+			</ul>
+		</div>
+		<div class='helplist-b'>
+			<div class='box'>
+				<div class='helplist-nav'>
+					<ul>
+						<li>
+							<a href="__URL__/zffsZXZF">在线支付</a>
+						</li>
+						<li>
+							<a href="__URL__/zffsHDFK">货到付款</a>
+						</li>
+						<li>
+							<a href="__URL__/zffsTKSM" class='active'>退款说明</a>
+						</li>
+						<li>
+							<a href="__URL__/zffsCJWT">常见问题</a>
+						</li>
+					</ul>
+				</div>
+				<div class='help-detail'>
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>退款说明
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+
+							<!--详细内容-->
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;未签收的在线支付订单（包含使用满减券、现金券）取消成功后，我们会在申请提交当天24小时内完成退款审核，审核通过后支付金额将3-15个工作日原路退回到支付卡。</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;已签收的在线支付订单，用户携带商品至门店服务台退货后，系统会自动将支付金额将3-15个工作日原路退回到支付卡。</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;已签收的货到付款订单，用户携带商品至门店服务台退货时，服务台将现金退还实际支付金额。</p>
+							<h2>货到付款的订单</h2>
+							<h3>1. 取消订单/拒收订单后怎么退款？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;未签收的在线支付的订单（包含使用满减券、现金券）取消成功后，我们会在申请提交当天24小时内完成退款审核，审核通过后支付金额将3-15个工作日原路退回到支付卡。</p>
+							<h3>2. 部分退货时，满减券与现金券会返还到账户吗？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;不返还。</p>
+							<h3>3. 退货/换货运费怎么算？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;已签收订单的退换货均需用户自行去门店服务台办理，故不需支付运费。</p>
+							<h3>4. 什么时候可以收到退款？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;退货成功后，在线支付金额会3-15个工作日原路退回到支付卡。</p>
+							<h3>5. 可以将我的退款退到我指定的账户吗？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;在线支付金额退款只能按原路返回。</p>
+							<h3>6. 我的退款为什么少退款了？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;三江是根据您的实际支付金额进行退款，请核实您订单中是否使用了优惠券，在退款时订单中使用的满减券、现金券等优惠金额会按照优惠券规则返还。若退款金额小于您实际支付请与客服联系。</p>
+							<h3>7. 什么样的情况会收取退换货的运费？</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;因非商品质量问题由客户发起的退换货行为，将由客户承担返回运费。</p>
+							<!--详细内容-->
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<iframe width="100%" height="356px" frameborder=0 scrolling="no" src="__ROOT__/Index/Tpl/Footer/footer.html"></iframe>
+	</body>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/jquery-3.2.1.min.js'></script>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/help.js'></script>
+
+</html>

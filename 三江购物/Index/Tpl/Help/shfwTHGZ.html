@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>退货规则 - 三江购物帮助中心 - 三江购物</title>
+		<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/help.css">
+	</head>
+
+	<body>
+		<!--导航条主体-->
+		<div class="top_bar">
+			<div class="w900">
+				<div class="gohome"><i></i>
+					<a href="__APP__/Index/index">返回首页</a>
+				</div>
+				<ul class="ufr">
+					<li class="item1">
+						<if condition="!isset($_SESSION['username'])">
+							您好，欢迎来到三江！
+							<span>
+									<a href="__APP__/Login/login" class="login">登录</a>
+									<a href="__APP__/Register/register">注册</a>
+								</span>
+							<else />
+							<a href="###" style="margin-right: 15px;">{$Think.session.username}</a>
+							<a href="__APP__/Login/login">退出</a>
+						</if>
+					</li>
+					<li class="item2 mydd">
+						<div></div>
+						<if condition="!isset($_SESSION['username'])">
+							<a href="__APP__/Login/login" target="_blank">我的订单</a>
+							<else />
+							<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+						</if>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的三江</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessageindex" target="_blank">我的三江</a>
+							</if>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的订单</a>
+								<a href="__APP__/Login/login" target="_blank">我的收藏</a>
+								<a href="__APP__/Login/login" target="_blank">我的优惠券</a>
+								<a href="__APP__/Login/login" target="_blank">地址管理</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的收藏</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的优惠券</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">地址管理</a>
+							</if>
+						</div>
+					</li>
+					<li class="koudai">
+						<div class="drop_down_top">
+							<div class="line"></div>
+							<div class="phone_app"></div>
+							<a href="http://help.sanjiang.com/app.html" target="_blank">口袋三江</a>
+							<em></em>
+
+						</div>
+						<div class="kd_box">
+							<p></p>
+							<div class="app_code"><span>三江客户端</span><span>三江订阅号</span></div>
+						</div>
+					</li>
+					<li class="item2">
+						<div></div>
+						<a href="javascript:void(0);" target="_blank">企业团购</a>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="__APP__/Help/helpIndex" target="_blank">客户服务</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<a href="__APP__/Help/helpIndex" target="_blank">帮助中心</a>
+							<a href="__APP__/Help/shfwTHGZ" target="_blank">售后服务</a>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">意见反馈</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">意见反馈</a>
+							</if>
+						</div>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="javascript:void(0)">网站导航</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140 daohang">
+							<p></p>
+							<a href="__URL__/sjyx" target="_blank">三江优选</a>
+							<a href="__URL__/hsp" target="_blank">惠商品</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='help-nav-bj'>
+			<div class='help-nav'>
+				<a href="###主页" class='logo'></a>
+				<ul>
+					<li>
+						<a href="__URL__/helpIndex" class='help-index'>首页<i></i></a>
+					</li>
+					<li>
+						<a href="__URL__/gwznZCLC" class='help-index'>问题分类<i class='active'></i></a>
+					</li>
+					<li>
+						<a href="__URL__/zzfwZZFW" class='help-index'>自助服务<i></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='help-nav-bar'>
+			<ul>
+				<li>
+					<a href="__URL__/gwznZCLC">购物指南</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/zffsZXZF">支付方式</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/wlpsPSFS">物流配送</a>
+					<div class='icon'></div>
+				</li>
+				<li>
+					<a href="__URL__/shfwTHGZ">售后服务</a>
+					<div class='icon active'></div>
+				</li>
+				<li>
+					<a href="__URL__/mdylbMDYLB">门店一览表</a>
+					<div class='icon'></div>
+				</li>
+			</ul>
+		</div>
+		<div class='helplist-b'>
+			<div class='box'>
+				<div class='helplist-nav'>
+					<ul>
+						<li>
+							<a href="__URL__/shfwHHGZ" class='active'>退货规则</a>
+						</li>
+						<li>
+							<a href="__URL__/shfwHHGZ">换货规范</a>
+						</li>
+						<li>
+							<a href="__URL__/shfwCJWT">常见问题</a>
+						</li>
+						<li>
+							<a href="__URL__/shfwYHFK">用户反馈</a>
+						</li>
+					</ul>
+				</div>
+				<div class='help-detail'>
+
+					<div class='help-detail-b'>
+						<div class='title'>
+							<span>退货规则
+							<i class='icon'></i>
+						</span>
+						</div>
+						<div class='help-detail-d'>
+							<!--详细内容-->
+							<!--<h3>如订单在拣货完成前，如需要取消订单，在我的三江-我的订单中取消订单即可；</h3>
+				          <p><img src="/help/images/aftersales/p01_01.jpg"/></p>
+				          <h3>如订单在拣货完成后，如需要取消订单，联系我们的客服400-186-9090取消订单。</h3>
+				          <h3>如订单已在配送中，联系配送人员取消订单或到货拒收。</h3>
+				          <h3>如收货后出现退货情况，请到配送门店退货。</h3>-->
+							<h1>无理由退货服务承诺</h1>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 为倡导诚信服务、塑造零售企业形象，我公司作为连锁超市零售企业对“无理由退货”承诺的倡议单位，特制订相关服务承诺，其内容如下：</p>
+							<h3> 一、“无理由退货”的含义：</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 是指消费者购买的商品无任何质量问题，不属于国家“三包”规定范围，在商家承诺的商品范围和期限内（以购货发票或凭证为准），未经使用（含外包装），经销售商家检验确认不影响再次销售的商品，给予还复消费前状态的一种退货承诺。（其他法律法规有具体规定的按照法律法规的规定处理）。</p>
+							<h3>二、实行“无理由退货”商品的退货时间：</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 如果您在购物20天之内，改变了想法或发现任何质量问题，可携带购物小票或发票至服务台办理退货或换货。</p>
+							<h3>三、不实行“无理由退货”商品的范围：</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 1、无本商场购物小票或发票，如通过银行卡网络交易的还需提供签购单；<br> &nbsp;&nbsp;&nbsp;&nbsp; 2、商品已经使用，影响第二次销售的；<br> &nbsp;&nbsp;&nbsp;&nbsp; 3、烟酒类产品、婴幼儿产品、营养品、生鲜类商品、散装商品以及包装破损的食品；<br> &nbsp;&nbsp;&nbsp;&nbsp; 4、药品类；<br> &nbsp;&nbsp;&nbsp;&nbsp; 5、有碍卫生无法再销售的（如安全套、内衣/内裤、卫生用品）；<br> &nbsp;&nbsp;&nbsp;&nbsp; 6、电器类商品包装损坏、配件不全、自行拆卸的；<br> &nbsp;&nbsp;&nbsp;&nbsp; 7、已拆封之消耗商品（如胶卷、电池、音像制品、充值卡）；<br> &nbsp;&nbsp;&nbsp;&nbsp; 8、清仓商品/处理品。</p>
+							<h3>四、实行“无理由退货”商品的退货操作程序：</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 除上述8条外，在我商场消费之日起20天内（包括第20天）可退货，退货时本店收回销售时所赠礼品、对奖券等，退货金额以交易日为准，即现金消费的退现金、消费卡（券）消费的退还消费卡（券）、信用卡消费的退款回原信用卡（到账日为15至30日个工作日）。</p>
+							<h3>五、实行“无理由退货”监督：</h3>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp; 本公司“无理由退货”服务设在商场服务台。</p>
+							<!--详细内容-->
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<iframe width="100%" height="356px" frameborder=0 scrolling="no" src="__ROOT__/Index/Tpl/Footer/footer.html"></iframe>
+	</body>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/jquery-3.2.1.min.js'></script>
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/help.js'></script>
+
+</html>

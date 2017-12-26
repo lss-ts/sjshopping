@@ -1,0 +1,2657 @@
+* {
+	margin: 0;
+	padding: 0;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+ul li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+._citys {
+	width: 450px;
+	display: inline-block;
+	border: 2px solid #eee;
+	padding: 5px;
+	position: relative;
+	top: 8px;
+	left: -35px;
+	background: white;
+}
+
+._citys span {
+	color: #56b4f8;
+	height: 15px;
+	width: 15px;
+	line-height: 15px;
+	text-align: center;
+	border-radius: 3px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	border: 1px solid #56b4f8;
+	cursor: pointer;
+}
+
+._citys0 {
+	width: 100%;
+	height: 34px;
+	display: inline-block;
+	border-bottom: 2px solid #56b4f8;
+	padding: 0;
+	margin: 0;
+}
+
+._citys0 li {
+	display: inline-block;
+	line-height: 34px;
+	font-size: 15px;
+	color: #888;
+	width: 80px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.citySel {
+	background-color: #56b4f8;
+	color: #fff !important;
+}
+
+._citys1 {
+	width: 100%;
+	display: inline-block;
+	padding: 10px 0;
+}
+
+._citys1 a {
+	width: 83px;
+	height: 35px;
+	display: inline-block;
+	background-color: #f5f5f5;
+	color: #666;
+	margin-left: 6px;
+	margin-top: 3px;
+	line-height: 35px;
+	text-align: center;
+	cursor: pointer;
+	font-size: 13px;
+	overflow: hidden;
+}
+
+._citys1 a:hover {
+	color: #fff;
+	background-color: #56b4f8;
+}
+
+.AreaS {
+	background-color: #56b4f8 !important;
+	color: #fff !important;
+}
+
+
+/*头部导航条*/
+
+.header {
+	width: 100%;
+}
+
+.top_bar {
+	width: 100%;
+	border-bottom: 1px solid #eee;
+	background: #f7f7f7;
+	line-height: 30px;
+}
+
+.w1200 {
+	width: 1200px;
+	height: 30px;
+	margin: 0 auto;
+	color: #666;
+	font-size: 12px;
+	/*overflow: hidden;*/
+}
+
+.send_where {
+	float: left;
+	position: relative;
+	padding-left: 5px;
+	padding-right: 10px;
+}
+
+.send_where #city {
+	min-width: 200px;
+	outline: none;
+	border: none;
+	background: #f7f7f7;
+	color: #666;
+}
+
+.ufr {
+	float: right;
+	/*overflow: hidden;*/
+}
+
+.ufr a {
+	color: #666;
+}
+
+.ufr a:hover {
+	color: #ea1414;
+}
+
+.ufr li {
+	height: 30px;
+	float: left;
+}
+
+.ufr .item1 .login {
+	color: #ea1414;
+	margin-left: 5px;
+	margin-right: 10px;
+}
+
+.ufr .item2 {
+	padding-left: 12px;
+	padding-right: 12px;
+	text-align: center;
+	position: relative;
+}
+
+.ufr .item2.mydd {
+	margin-left: 5px;
+}
+
+.ufr .item2 div {
+	display: inline-block;
+	width: 1px;
+	height: 12px;
+	border-left: 1px solid #ddd;
+	position: absolute;
+	top: 9px;
+	left: 0;
+}
+
+.menu {
+	width: 92px;
+	position: relative;
+}
+
+.menu .drop_down_top {
+	width: 92px;
+	position: relative;
+}
+
+.menu .drop_down_top div {
+	display: inline-block;
+	width: 1px;
+	height: 12px;
+	border-left: 1px solid #ddd;
+	position: absolute;
+	top: 9px;
+	left: 0;
+}
+
+.menu .drop_down_top a {
+	margin-left: 15px;
+}
+
+.drop_down_top em {
+	top: 12px;
+	right: 10px;
+	width: 9px;
+	height: 5px;
+	overflow: hidden;
+	position: absolute;
+	background: url(http://static.sanjiang.com/common/images/index.png) 100% -700px no-repeat;
+	transition: all 0.2s linear;
+}
+
+.top_bar .ufr li .drop_down_box.w140 {
+	width: 160px;
+}
+
+.top_bar .ufr li .drop_down_box {
+	background: #fff;
+	border: 1px solid #ddd;
+	padding: 10px 0 10px 12px;
+	left: 0;
+	top: 30px;
+	position: absolute;
+	display: none;
+	min-width: 70px;
+	z-index: 100;
+}
+
+.top_bar .ufr li .daohang {
+	left: -81px;
+}
+
+.top_bar .ufr li .drop_down_box p {
+	width: 92px;
+	height: 1px;
+	background: #fff;
+	/*background: red;*/
+	position: absolute;
+	top: -1px;
+	left: 0;
+	z-index: 100;
+	/*display: none;*/
+}
+
+.top_bar .ufr li .daohang p {
+	left: 81px;
+}
+
+.top_bar .ufr li .drop_down_box a {
+	width: 80px;
+	float: left;
+}
+
+.koudai {
+	position: relative;
+	width: 112px;
+}
+
+.koudai .drop_down_top .line {
+	display: inline-block;
+	width: 1px;
+	height: 12px;
+	border-left: 1px solid #ddd;
+	position: absolute;
+	top: 9px;
+	left: 0;
+}
+
+.koudai .drop_down_top .phone_app {
+	width: 11px;
+	height: 16px;
+	margin-top: 7px;
+	float: left;
+	background: url(http://static.sanjiang.com/common/images/index.png) 100% -655px no-repeat;
+	display: inline-block;
+	margin-left: 15px;
+	margin-right: 8px;
+}
+
+.kd_box {
+	border: 1px solid #ddd;
+	padding: 10px 0 10px 10px;
+	/*overflow: hidden;*/
+	left: 0;
+	top: 30px;
+	position: absolute;
+	display: none;
+	min-width: 70px;
+	background-color: white;
+}
+
+.kd_box p {
+	width: 112px;
+	height: 1px;
+	position: absolute;
+	left: 0;
+	top: -1px;
+	background: #fff;
+}
+
+.kd_box .app_code {
+	background: url(http://static.sanjiang.com/common/images/app.png) no-repeat;
+	width: 182px;
+	height: 105px;
+	z-index: 100;
+}
+
+.kd_box .app_code span {
+	width: 83px;
+	line-height: 25px;
+	margin-top: 83px;
+	margin-right: 8px;
+	float: left;
+	text-align: center;
+}
+
+
+/*搜索框*/
+
+.searchContainer {
+	width: 1200px;
+	height: 110px;
+	margin: 0 auto;
+}
+
+.searchContainer .logo {
+	height: 60px;
+	padding: 25px 0;
+	float: left;
+	width: 370px;
+}
+
+.searchContainer .logo a {
+	background: url(http://static.sanjiang.com/common/images/login-logo.png) 50% no-repeat;
+	width: 260px;
+	height: 60px;
+	display: block;
+}
+
+.searchContainer .top_search {
+	width: 540px;
+	height: 36px;
+	float: left;
+	margin-top: 36px;
+}
+
+.top_search input {
+	float: left;
+	width: 450px;
+	height: 24px;
+	line-height: 24px;
+	padding: 4px;
+	border: 2px solid #f03838;
+	outline: 0;
+}
+
+.top_search button {
+	background: #f03838;
+	float: left;
+	width: 78px;
+	text-align: center;
+	height: 36px;
+	border: none;
+	line-height: 1;
+	color: #fff;
+	font-family: Microsoft YaHei;
+	font-size: 16px;
+	cursor: pointer;
+	outline: aqua;
+}
+
+.s_cart {
+	width: 130px;
+	height: 36px;
+	float: right;
+	z-index: 12;
+	height: 36px;
+	margin-top: 35px;
+	position: relative;
+}
+
+.s_cart .s_box {
+	width: 78px;
+	height: 34px;
+	border: 1px solid #f03838;
+	padding: 0 15px 0 35px;
+	background: #fff;
+	line-height: 34px;
+	position: relative;
+	cursor: pointer;
+	z-index: 21;
+}
+
+.s_cart .s_box a {
+	color: #666666;
+	font-size: 12px;
+	position: absolute;
+	top: 0;
+}
+
+.s_cart .s_box:before {
+	width: 17px;
+	height: 15px;
+	display: block;
+	content: "";
+	background: url(http://static.sanjiang.com/common/images/index.png) -103px -868px no-repeat;
+	position: absolute;
+	top: 8px;
+	left: 8px;
+}
+
+.s_cart .s_box:after {
+	width: 4px;
+	height: 7px;
+	display: block;
+	content: "";
+	background: url(http://static.sanjiang.com/common/images/index.png) -103px -890px no-repeat;
+	position: absolute;
+	top: 13px;
+	right: 9px;
+}
+
+.s_cart .s_box .goods_number {
+	background: url(http://static.sanjiang.com/common/images/index.png) -112px -928px no-repeat;
+	line-height: 16px;
+	position: absolute;
+	top: -5px;
+	left: 95px;
+	padding-left: 6px;
+	color: #fff;
+}
+
+.s_cart .s_box .goods_number b {
+	background: url(http://static.sanjiang.com/common/images/index.png) 100% -954px no-repeat;
+	float: left;
+	display: block;
+	height: 16px;
+	padding-right: 4px;
+	font-size: 12px;
+}
+
+.s_cart .s_content {
+	border: 1px solid #f03838;
+	width: 288px;
+	z-index: 20;
+	position: absolute;
+	top: 34px;
+	right: 0;
+	background: #fff;
+	display: none;
+}
+
+.s_cart .s_content .s_goods_no {
+	padding: 10px 0;
+	margin-bottom: 15px;
+}
+
+.s_cart .s_content .s_goods_no i {
+	float: left;
+	display: block;
+	width: 36px;
+	height: 37px;
+	background: url(http://static.sanjiang.com/common/images/index.png) -84px -814px no-repeat;
+	margin: 0 10px 20px;
+}
+
+.s_cart .s_content .s_goods_no p {
+	color: #bbb;
+	line-height: 22px;
+	margin-top: 10px;
+	font-size: 12px;
+}
+
+.s_cart .s_content .s_goods_no p a {
+	color: #3390ee;
+	font-size: 12px;
+}
+
+.s_cart:hover {
+	box-shadow: 0 0 5px #bbb;
+}
+
+.s_cart .s_content .mc {
+	max-height: 258px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.d_cart_list {
+	width: 277px;
+}
+
+.d_cart_list dl dd {
+	border-bottom: 1px dashed #ddd;
+	height: 85px;
+	overflow: hidden;
+}
+
+.d_cart_list dl dd .p_img {
+	width: 58px;
+	height: 58px;
+	border: 1px solid #ddd;
+	float: left;
+	margin: 12px 0 12px 10px;
+}
+
+.d_cart_list dl dd .p_img img {
+	width: 58px;
+	height: 58px;
+}
+
+.d_cart_list dl dd .p_name {
+	width: 190px;
+	height: 32px;
+	line-height: 16px;
+	margin-bottom: 4px;
+	overflow: hidden;
+	margin-top: 12px;
+	padding-left: 12px;
+}
+
+.d_cart_list dl dd .p_name a {
+	color: #666;
+}
+
+.d_cart_list dl dd .p_price {
+	height: 24px;
+	line-height: 24px;
+	overflow: hidden;
+	padding-left: 12px;
+}
+
+.d_cart_list dl dd .p_price span {
+	float: left;
+	margin-right: 5px;
+	font-family: Verdana;
+}
+
+.d_cart_list dl dd .p_price b {
+	color: #f03838;
+	margin-right: 5px;
+	width: 60px;
+	display: block;
+	float: left;
+}
+
+.d_cart_list dl dd .choose_amount {
+	margin: 0 10px;
+	float: left;
+}
+
+.choose_amount a.btn_reduce {
+	margin-right: -1px;
+}
+
+.choose_amount p {
+	width: 28px;
+	height: 22px;
+	line-height: 22px;
+	float: left;
+	border: 1px solid #ccc;
+	text-align: center;
+	background: #fff;
+	color: #333;
+}
+
+.choose_amount a.btn_add {
+	margin-left: -1px;
+}
+
+.choose_amount a {
+	border: 1px solid #ccc;
+	width: 18px;
+	height: 22px;
+	display: block;
+	color: #333;
+	background: #f8f8f8;
+	float: left;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.d_cart_list dl dd .p_price .miniDel {
+	cursor: pointer;
+	font-style: normal;
+	float: left;
+	color: #2272c8;
+	display: none;
+	font-size: 12px;
+}
+
+.s_cart .s_content .mb {
+	height: 65px;
+	background: #f0f0f0;
+}
+
+.s_cart .s_content .mb .s_buy_num {
+	line-height: 20px;
+	font-weight: 700;
+	color: #666;
+	padding: 5px 20px 0 0;
+	text-align: right;
+}
+
+.s_cart .s_content .mb .s_buy_num p {
+	margin-left: 15px;
+	display: inline;
+	font-family: verdana;
+	font-size: 12px;
+}
+
+.s_cart .s_content .mb .s_buy_num b {
+	color: #f03838;
+	font-size: 16px;
+}
+
+.s_cart .s_content .mb .s_buy_button {
+	border-radius: 3px;
+	text-align: center;
+	width: 96px;
+	height: 28px;
+	line-height: 28px;
+	color: #fff;
+	background: #f03838;
+	display: block;
+	margin: 4px 10px 0 170px;
+	font-size: 12px;
+}
+
+.hotword {
+	font-size: 12px;
+	float: left;
+	color: #999;
+	width: 450px;
+	line-height: 25px;
+}
+
+.hotword a.hot,
+.hotword a:hover {
+	color: #f03838;
+}
+
+.hotword a {
+	margin-right: 10px;
+	color: #999;
+}
+
+
+/*商品导航条*/
+
+.nav {
+	border-bottom: 2px solid #d00000;
+}
+
+.navContainer {
+	width: 1200px;
+	height: 40px;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}
+
+.cate_nav {
+	float: left;
+}
+
+.cate_nav .nav_top {
+	cursor: pointer;
+	position: relative;
+	width: 165px;
+	padding-left: 45px;
+	background: #d00000;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	font-family: 微软雅黑;
+	color: #fff;
+}
+
+.cate_nav .nav_top i {
+	background: url(http://static.sanjiang.com/common/images/nav_i.png) no-repeat;
+	position: absolute;
+	top: 16px;
+	right: 14px;
+	width: 12px;
+	height: 7px;
+	background-position: 0 -420px;
+}
+
+.nav .navitems {
+	float: left;
+	line-height: 30px;
+	height: 30px;
+	margin-top: 8px;
+	padding-left: 10px;
+}
+
+.nav .navitems a.curr,
+.nav .navitems a:hover {
+	color: #ea1414;
+}
+
+.nav .navitems a {
+	font-family: 微软雅黑;
+	color: #000;
+	font-size: 16px;
+	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+
+/*分类和轮播图*/
+
+.adverContainer {
+	width: 1200px;
+	height: 520px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.categorys {
+	width: 208px;
+	height: 518px;
+	border: 1px solid #ddd;
+	border-top: none;
+	background: #fff;
+	float: left;
+}
+
+.categorys .item {
+	width: 210px;
+	height: 47px;
+	position: relative;
+}
+
+.categorys .item .product {
+	width: 209px;
+	height: 47px;
+	line-height: 51px;
+	font-weight: 700;
+	font-size: 16px;
+	position: relative;
+	overflow: hidden;
+}
+
+.categorys .item b {
+	width: 21px;
+	height: 21px;
+	display: inline-block;
+	float: left;
+	vertical-align: middle;
+	margin: 15px;
+	background: url(http://static.sanjiang.com/common/images/nav_i.png) no-repeat;
+}
+
+.categorys .item .product a {
+	color: #333;
+	font-family: 微软雅黑;
+	font-size: 14px;
+	margin-right: 2px;
+	margin-left: 1px;
+	font-weight: 400;
+}
+
+.categorys .item .product i {
+	width: 7px;
+	height: 12px;
+	display: inline-block;
+	vertical-align: middle;
+	position: absolute;
+	right: 10px;
+	top: 20px;
+	background: url(http://static.sanjiang.com/common/images/index.png) no-repeat 0 -666px;
+}
+
+.categorys .item b.b_jinkou {
+	background-position: 0 -273px;
+}
+
+.categorys .item b.b_xiuxian {
+	background-position: 0 -592px;
+}
+
+.categorys .item b.b_liangyou {
+	background-position: 0 -315px;
+}
+
+.categorys .item b.b_jiuyin {
+	background-position: 0 -294px;
+}
+
+.categorys .item b.b_muying {
+	background-position: 0 -357px;
+}
+
+.categorys .item b.b_meirong {
+	background-position: 0 -336px;
+}
+
+.categorys .item b.b_jiating {
+	background-position: 0 -210px;
+}
+
+.categorys .item b.b_jiaju {
+	background-position: 0 -252px;
+}
+
+.categorys .item b.b_fushi {
+	background-position: 0 -399px;
+}
+
+.categorys .item b.b_jiadian {
+	background-position: 0 -231px;
+}
+
+.categorys .item b.b_shengxian {
+	background-position: 0 -378px;
+}
+
+
+/*动态样式*/
+
+.categorys .item.active .b_jinkou {
+	background-position: 0 -63px
+}
+
+.categorys .item.active .b_xiuxian {
+	background-position: 0 -568px
+}
+
+.categorys .item.active .b_liangyou {
+	background-position: 0 -105px
+}
+
+.categorys .item.active .b_jiuyin {
+	background-position: 0 -84px
+}
+
+.categorys .item.active .b_muying {
+	background-position: 0 -147px
+}
+
+.categorys .item.active .b_meirong {
+	background-position: 0 -126px
+}
+
+.categorys .item.active .b_jiating {
+	background-position: 0 0
+}
+
+.categorys .item.active .b_jiaju {
+	background-position: 0 -42px
+}
+
+.categorys .item.active .b_fushi {
+	background-position: 0 -189px
+}
+
+.categorys .item.active .b_jiadian {
+	background-position: 0 -21px
+}
+
+.categorys .item.active .b_shengxian {
+	background-position: 0 -168px
+}
+
+.categorys .item.active i {
+	background-position: 0 -644px;
+	display: inline-block
+}
+
+.categorys .item.active .product {
+	background: #f03838;
+	color: #fff
+}
+
+.categorys .item.active .product a {
+	color: #fff
+}
+
+.categorys .product_wrap {
+	display: none;
+	height: 518px;
+	zoom: 1;
+	position: absolute;
+	left: 208px;
+	width: 991px;
+	z-index: 11;
+	border-bottom: 1px solid #f03838;
+	background: #f7f7f7;
+}
+
+.categorys .product_wrap .subitems {
+	width: 760px;
+	float: left;
+	margin-top: 20px;
+}
+
+.categorys .product_wrap .subitems dt {
+	width: 102px;
+	padding-right: 18px;
+	text-align: right;
+	color: #999;
+	line-height: 20px;
+	float: left;
+	position: relative;
+}
+
+.categorys .product_wrap .subitems dt a {
+	font-weight: 700;
+	color: #666;
+	margin-right: 5px;
+	font-family: 微软雅黑;
+	font-size: 12px;
+}
+
+.categorys .product_wrap .subitems dt i {
+	position: absolute;
+	font-style: normal;
+	top: 2px;
+	right: 12px;
+	width: 12px;
+	height: 12px;
+	font-size: 12px;
+	font-family: Consolas;
+}
+
+.categorys .product_wrap .subitems dd {
+	border-bottom: 1px solid #eee;
+	min-height: 24px;
+	line-height: 20px;
+	padding-bottom: 5px;
+	color: #ddd;
+	width: 620px;
+	float: left;
+	margin-bottom: 10px;
+}
+
+.categorys .product_wrap .subitems dd a {
+	color: #666;
+	float: left;
+	padding: 0 8px;
+	margin: 4px 0;
+	line-height: 16px;
+	height: 16px;
+	border-left: 1px solid #ddd;
+	white-space: nowrap;
+	font-family: 微软雅黑;
+	font-size: 12px;
+}
+
+.categorys .list1 {
+	top: 0;
+}
+
+.categorys .list2 {
+	top: -47px;
+}
+
+.categorys .list3 {
+	top: -94px;
+}
+
+.categorys .list4 {
+	top: -141px;
+}
+
+.categorys .list5 {
+	top: -188px;
+}
+
+.categorys .list6 {
+	top: -235px;
+}
+
+.categorys .list7 {
+	top: -282px;
+}
+
+.categorys .list8 {
+	top: -329px;
+}
+
+.categorys .list9 {
+	top: -376px;
+}
+
+.categorys .list10 {
+	top: -423px;
+}
+
+.categorys .list11 {
+	top: -470px;
+}
+
+.categorys .product_wrap .subitems a:hover {
+	color: #ea1414;
+}
+
+.swiper-container {
+	width: 760px;
+	height: 400px;
+	/*background: yellow;*/
+	float: left;
+}
+
+.swiper-container img {
+	width: 760px;
+	height: 400px;
+}
+
+.swiper-pagination-bullet {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	border-radius: 100%;
+	background: #666;
+	text-align: center;
+	color: white;
+	line-height: 20px;
+}
+
+.swiper-pagination-bullet-active {
+	background: #ea1414;
+	font-weight: 700;
+}
+
+.arrow {
+	display: none;
+}
+
+.swiper-container:hover .arrow {
+	display: block;
+}
+
+.news {
+	width: 230px;
+	height: 400px;
+	float: left;
+	color: #666;
+}
+
+.news a {
+	color: #666;
+	font-size: 14px;
+}
+.news li:first-child a{
+	color: #f03838;
+}
+
+.news a:hover {
+	color: #f03838;
+}
+
+.news .news_inner {
+	width: 228px;
+	height: 268px;
+	background: #fff;
+	border: 1px solid #ddd;
+}
+
+.news .news_inner .mt {
+	height: 39px;
+	line-height: 39px;
+	padding: 0 15px;
+	border-bottom: 1px dashed #ddd;
+	display: flex;
+	justify-content: center;
+}
+
+.news .news_inner .mt span {
+	font-family: 微软雅黑;
+	font-size: 14px;
+	text-align: center;
+}
+
+
+.news .news_inner ul li {
+	line-height: 32px;
+	height: 32px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin: 0 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.news .news_inner ul li a {
+	font-size: 12px;
+}
+
+.news .news_inner ul li a:hover {
+	color: #ea1414;
+}
+
+.news .news_app {
+	width: 230px;
+	height: 120px;
+	margin-top: 10px;
+}
+
+.smallSwiper {
+	width: 760px;
+	height: 119px;
+	float: left;
+	overflow: hidden;
+	position: relative;
+}
+
+.smallSwiper:hover .left_arrow {
+	display: block;
+}
+
+.smallSwiper:hover .right_arrow {
+	display: block;
+}
+
+.smallSwiper ul {
+	width: 1523px;
+	height: 119px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-around;
+	margin-top: 1px;
+}
+
+.smallSwiper ul li {
+	display: inline-block;
+	width: 253px;
+	height: 118px;
+}
+
+.smallSwiper ul li img {
+	width: 253px;
+	height: 118px;
+}
+
+.smallSwiper .left_arrow,
+.right_arrow {
+	width: 30px;
+	height: 46px;
+	background: rgba(0, 0, 0, 0.3);
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+	padding-top: 14px;
+	cursor: pointer;
+	display: none;
+}
+
+.smallSwiper .left_arrow {
+	left: 0;
+}
+
+.smallSwiper .right_arrow {
+	right: 0;
+}
+
+.adverContainer .mc {
+	float: right;
+	width: 230px;
+}
+
+.adverContainer .mc img {
+	width: 230px;
+	height: 118px;
+}
+
+
+/*热销好货*/
+
+.hot_goods {
+	width: 1200px;
+	height: 380px;
+	margin: 15px auto 20px auto;
+	overflow: hidden;
+}
+
+.hot_goods .mt {
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+}
+
+.hot_goods .mt h1 {
+	float: left;
+	display: inline;
+	font-weight: 400;
+	color: #f03838;
+	font-size: 20px;
+	font-family: 微软雅黑;
+}
+
+.hot_goods .mt h1 i {
+	float: left;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin: 5px;
+	background: url(http://static.sanjiang.com/common/images/index.png) 0 -914px no-repeat;
+}
+
+.hot_goods .mt h1 span {
+	color: #666;
+	font-size: 12px;
+	font-family: Verdana;
+	margin-left: 4px;
+}
+
+.hot_goods .mt h1 span {
+	color: #666;
+	font-size: 12px;
+	font-family: Verdana;
+	margin-left: 4px;
+}
+
+.hot_goods .mt a {
+	float: right;
+	display: block;
+	margin-top: 10px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	color: #666;
+}
+
+.hot_goods .mt a:hover {
+	color: #f03838;
+}
+
+.hot_goods .mt a div {
+	display: inline-block;
+	width: 16px;
+	height: 15px;
+	background: url(http://static.sanjiang.com/common/images/items.png) 0 -238px no-repeat;
+	vertical-align: middle;
+	margin-right: 6px;
+	transition: all .2s ease-in;
+}
+
+.hot_goods .mc {
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	height: 338px;
+	width: 1199px;
+}
+
+.hot_goods .mc .product_left {
+	float: left;
+	width: 206px;
+	height: 337px;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+}
+
+.hot_goods .mc .product_left h1 {
+	margin: 12px;
+	line-height: 20px;
+	height: 44px;
+	overflow: hidden;
+}
+
+.hot_goods .mc .product_left h1 a {
+	font-size: 16px;
+	color: #333;
+	font-family: 微软雅黑;
+	font-weight: 400;
+}
+
+.hot_goods .mc img:hover {
+	opacity: 0.8;
+}
+
+.hot_goods .mc .product_left h1 a:hover {
+	color: #f03838;
+}
+
+.hot_goods .mc .product_left .price a:hover {
+	color: #f03838;
+}
+
+.hot_goods .mc .product_right h1 a:hover {
+	color: #f03838;
+}
+
+.hot_goods .mc .product_right .buy:hover {
+	color: #f03838;
+}
+
+.hot_goods .mc .product_left .tips {
+	display: inline-block;
+	padding: 0 5px;
+	min-width: 60px;
+	margin: 0 12px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 19px;
+	height: 19px;
+	color: #fff;
+	background: url(http://static.sanjiang.com/www/images/tips.jpg) 100% 0 no-repeat #ff7474;
+}
+
+.hot_goods .mc .product_left .price {
+	overflow: hidden;
+	margin: 10px 12px;
+}
+
+.hot_goods .mc .product_left .price b {
+	color: #f03838;
+	line-height: 25px;
+	font-size: 17px;
+	font-family: Impact, 微软雅黑;
+	font-weight: 400;
+	float: left;
+}
+
+.hot_goods .mc .product_left .price .buy {
+	display: block;
+	color: #333;
+	margin-left: 20px;
+	line-height: 25px;
+	float: left;
+	font-size: 12px;
+}
+
+.hot_goods .mc .product_left img {
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+	display: block;
+}
+
+.hot_goods .mc .product_right {
+	width: 992px;
+	height: 338px;
+	float: left;
+}
+
+.hot_goods .mc .product_right ul li {
+	padding: 12px;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	width: 223px;
+	height: 144px;
+	float: left;
+	position: relative;
+}
+
+.hot_goods .mc .product_right ul li h1 {
+	line-height: 28px;
+	height: 28px;
+	width: 225px;
+	margin-bottom: 5px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	z-index: 2;
+	position: relative;
+}
+
+.hot_goods .mc .product_right ul li h1 a {
+	font-size: 16px;
+	color: #333;
+	font-family: 微软雅黑;
+	font-weight: 400;
+}
+
+.hot_goods .mc .product_right ul li .tips {
+	z-index: 2;
+	display: inline-block;
+	padding: 0 5px;
+	min-width: 60px;
+	max-width: 90px;
+	overflow: hidden;
+	text-align: center;
+	line-height: 19px;
+	height: 19px;
+	color: #fff;
+	background: url(http://static.sanjiang.com/www/images/tips.jpg) 100% 0 no-repeat #ff7474;
+	font-size: 12px;
+}
+
+.hot_goods .mc .product_right ul li b {
+	display: block;
+	color: #f03838;
+	line-height: 25px;
+	margin: 15px 0;
+	font-size: 17px;
+	font-family: Impact, 微软雅黑;
+	font-weight: 400;
+}
+
+.hot_goods .mc .product_right ul li .buy {
+	margin-top: 35px;
+	display: block;
+	color: #333;
+	font-size: 12px;
+}
+
+.hot_goods .mc .product_right ul li img {
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	right: 12px;
+	bottom: 8px;
+	z-index: 1;
+}
+
+
+/*四个入口*/
+
+.entrance {
+	width: 1200px;
+	height: 210px;
+	margin: 0 auto;
+	margin-bottom: 15px;
+}
+
+.entrance ul li {
+	width: 300px;
+	height: 210px;
+	float: left;
+	overflow: hidden;
+}
+
+.entrance ul li.li1 {
+	background: url(http://static.sanjiang.com/www/images/entrance_bg_1.png) no-repeat;
+}
+
+.entrance ul li.li2 {
+	background: url(http://static.sanjiang.com/www/images/entrance_bg_2.png) no-repeat;
+}
+
+.entrance ul li.li3 {
+	background: url(http://static.sanjiang.com/www/images/entrance_bg_3.png) no-repeat;
+}
+
+.entrance ul li.li4 {
+	background: url(http://static.sanjiang.com/www/images/entrance_bg_4.png) no-repeat;
+}
+
+.entrance ul li img {
+	float: left;
+	transition: all .2s linear;
+}
+
+.entrance ul li .active {
+	margin-left: 16px;
+}
+
+
+/*楼层*/
+
+.floor {
+	width: 1200px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+.floor .mt {
+	height: 50px;
+	line-height: 50px;
+	overflow: hidden;
+	border-bottom: 1px solid #f03838;
+}
+
+.floor .mt h1 {
+	float: left;
+	display: inline;
+	font-weight: 400;
+	color: #333;
+	font-size: 17px;
+	font-family: 微软雅黑;
+}
+
+.floor .mt h1 i {
+	font-style: normal;
+	float: left;
+	display: block;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	margin: 10px 5px;
+	background: url(http://static.sanjiang.com/common/images/index.png) 0 -734px no-repeat;
+}
+
+.floor .mt .ul_class {
+	float: right;
+	height: 30px;
+	margin-top: 20px;
+}
+
+.floor .mt .ul_class li.cc {
+	border-bottom: 2px solid #f03838;
+	height: 28px;
+	line-height: 30px;
+}
+
+.floor .mt .ul_class li {
+	padding: 0 13px;
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	cursor: pointer;
+}
+
+.floor .mt .ul_class li a {
+	font-size: 12px;
+	color: #666;
+}
+
+.floor .mt .ul_class li.cc a {
+	color: #f03838;
+}
+
+.floor .mc {
+	width: 1198px;
+	height: 520px;
+	border: 1px solid #ddd;
+	border-top: none;
+	border-bottom: none;
+	overflow: hidden;
+}
+
+.floor .mc .side {
+	float: left;
+	width: 208px;
+	height: 519px;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	overflow: hidden;
+}
+
+.floor .mc .side img {
+	width: 208px;
+	height: 520px;
+}
+
+.floor .mc .side .s_type {
+	width: 208px;
+	height: 68px;
+	position: relative;
+	margin-top: -190px;
+}
+
+.floor .mc .side .s_type p {
+	z-index: 2;
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: #fff;
+	opacity: .5;
+}
+
+.floor .mc .side .s_type ul {
+	height: 68px;
+	width: 204px;
+	z-index: 3;
+	position: relative;
+	padding: 2px 0;
+	overflow: hidden;
+}
+
+.floor .mc .side .s_type ul li {
+	width: 80px;
+	padding-left: 20px;
+	display: inline-block;
+	height: 32px;
+	line-height: 32px;
+	color: #666;
+	overflow: hidden;
+}
+
+.floor .mc .side .s_type ul li a {
+	font-family: 微软雅黑;
+	font-size: 14px;
+	color: #666;
+}
+
+.floor .mc .side .s_type ul li a:hover {
+	color: #f03838;
+}
+
+.iconfont {
+	font-family: iconfont!important;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: .2px;
+}
+
+.floor .mc .side .s_bottom {
+	width: 168px;
+	height: 69px;
+	margin: 25px 20px 0;
+	overflow: hidden;
+}
+
+.floor .mc .side .s_bottom a {
+	display: inline-block;
+	margin-right: 8px;
+	word-wrap: break-word;
+	color: #777;
+	line-height: 20px;
+	font-size: 12px;
+}
+
+.floor .mc .side .s_bottom a:hover {
+	color: #f03838;
+}
+
+.floor .mc .center {
+	float: left;
+	width: 816px;
+	height: 520px;
+	position: relative;
+	overflow: hidden;
+}
+
+.floor .mc .center .cs {
+	float: left;
+	position: absolute;
+	left: 0;
+	width: 12240px;
+	height: 520px;
+	overflow: hidden;
+	transition: all 0.8s ease-out;
+}
+
+.floor .mc .center ul {
+	display: inline-block;
+	width: 816px;
+	height: 520px;
+	float: left;
+}
+
+.floor .mc .center ul li {
+	position: relative;
+	height: 259px;
+	width: 203px;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	float: left;
+}
+
+.floor .mc .center ul li .img_box {
+	width: 160px;
+	height: 160px;
+	margin: 10px 21px;
+	display: block;
+}
+
+.floor .mc .center ul li img {
+	width: 160px;
+	height: 160px;
+}
+
+.floor .mc .center ul li h2 {
+	height: 40px;
+	line-height: 18px;
+	overflow: hidden;
+	margin: 5px 20px;
+}
+
+.floor .mc .center ul li h2 a {
+	font-size: 12px;
+	font-family: 微软雅黑;
+	font-weight: 400;
+	color: #666;
+}
+
+.floor .mc .center ul li .price {
+	height: 36px;
+	line-height: 36px;
+	margin: 0 20px;
+}
+
+.floor .mc .center ul li .price b {
+	float: left;
+	color: #f03838;
+	font-size: 14px;
+	font-family: Verdana;
+	margin-top: -6px;
+}
+
+.floor .mc .center ul li .price .buy {
+	float: right;
+	margin-top: -10px;
+	background: url(http://static.sanjiang.com/common/images/index.png) 0 -688px no-repeat;
+	height: 36px;
+	width: 36px;
+	display: block;
+}
+
+.floor .mc .side_right {
+	float: left;
+	width: 173px;
+	height: 520px;
+}
+
+.floor .mc .side_right a {
+	width: 173px;
+	height: 259px;
+	overflow: hidden;
+	border-bottom: 1px solid #ddd;
+	display: block;
+}
+
+.floor .mc .side_right a img {
+	width: 174px;
+	height: 260px;
+}
+
+.floor .mb {
+	height: 58px;
+	overflow: hidden;
+	border: 1px solid #ddd;
+	border-top: none;
+}
+
+.floor .mb a {
+	width: 119px;
+	float: left;
+}
+
+.floor .mb a img {
+	width: 120px;
+	height: 58px;
+}
+
+
+/*左侧导航条*/
+
+.left_nav {
+	width: 24px;
+	position: fixed;
+	left: 50%;
+	margin-left: -650px;
+	top: 50%;
+	margin-top: -170px;
+	z-index: 22;
+	transition: all .5s ease-in;
+	display: none;
+}
+
+.left_nav ul li {
+	cursor: pointer;
+	width: 24px;
+	text-align: center;
+	height: 38px;
+	border-bottom: 1px dashed #ccc;
+	overflow: hidden;
+	font-size: 12px;
+}
+
+.left_nav ul li a {
+	display: block;
+	width: 24px;
+	height: 38px;
+}
+
+.left_nav ul li i,
+.left_nav ul li span {
+	padding: 4px 0;
+	width: 24px;
+	display: block;
+	float: left;
+	height: 30px;
+}
+
+.left_nav ul li i {
+	font-style: normal;
+	line-height: 30px;
+	color: #666;
+}
+
+.left_nav ul li span {
+	line-height: 15px;
+	color: #f03838;
+	font-size: 12px;
+	display: none;
+}
+
+.left_nav ul li i,
+.left_nav ul li span {
+	padding: 4px 0;
+	width: 24px;
+	display: block;
+	float: left;
+	height: 30px;
+}
+
+
+/*右导航*/
+
+.right_nav {
+	width: 36px;
+	height: 100%;
+	background: #e6e6e6;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 200;
+}
+
+.right_nav .nav_top {
+	position: absolute;
+	top: 40%;
+	height: 144px;
+	display: block;
+}
+
+.right_nav .mc {
+	width: 36px;
+	height: 36px;
+	position: relative;
+}
+
+.right_nav .mc a {
+	font-style: normal;
+	width: 36px;
+	height: 36px;
+	z-index: 8;
+	position: relative;
+	display: block;
+	background: url(http://static.sanjiang.com/common/images/index.png) no-repeat #e6e6e6;
+	cursor: pointer;
+}
+
+.right_nav .mc a.member {
+	background-position: 0 0;
+}
+
+.right_nav .mc a.coupon {
+	background-position: 0 -46px;
+}
+
+.right_nav .mc a.collection {
+	background-position: 0 -92px;
+}
+
+.right_nav .mc a.cart {
+	background-position: 0 -138px;
+}
+
+.right_nav .mc a b {
+	font-size: 10px;
+	font-weight: 400;
+	padding: 1px 2px;
+	min-width: 12px;
+	height: 12px;
+	display: inline-block;
+	background: #f03838;
+	color: #fff;
+	border-radius: 10px;
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	text-align: center;
+	line-height: 12px;
+}
+
+.right_nav .mc .left_tips {
+	cursor: pointer;
+	background: #fff;
+	z-index: 9;
+	width: 80px;
+	height: 34px;
+	border: 1px solid #f03838;
+	border-right: none;
+	text-align: center;
+	color: #666;
+	line-height: 34px;
+	font-size: 12px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all .2s linear;
+	opacity: 0;
+}
+
+.right_nav .nav_bottom {
+	position: absolute;
+	bottom: 0;
+	height: 108px;
+	display: block;
+}
+
+.right_nav .mc a.app {
+	background-position: 0 -184px;
+}
+
+.right_nav .mc a.feedback {
+	background-position: 0 -230px;
+}
+
+.right_nav .mc a.totop {
+	background-position: 0 -276px;
+}
+
+.right_nav .mc .left_tips.qrcode {
+	border: none;
+	display: none;
+	top: -154px;
+	z-index: 1
+}
+
+.right_nav .mc .left_tips i {
+	position: absolute;
+	z-index: 10;
+	bottom: 8px;
+	right: -5px;
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid #fff;
+}
+
+.right_nav .mc.current .left_tips {
+	top: 0;
+	left: -81px;
+	filter: alpha(opacity=100);
+	opacity: 1
+}
+
+.right_nav .mc.current .left_tips.qrcode {
+	display: block;
+	border: none;
+	top: -154px;
+	left: -164px;
+	z-index: 1
+}
+
+.right_nav .mc.current a.member {
+	background-position: 0 -322px;
+	background-color: #f03838
+}
+
+.right_nav .mc.current a.coupon {
+	background-position: 0 -368px;
+	background-color: #f03838
+}
+
+.right_nav .mc.current a.collection {
+	background-position: 0 -414px;
+	background-color: #f03838
+}
+
+.right_nav .mc.current a.cart {
+	background-position: 0 -460px;
+	background-color: #f03838
+}
+
+.right_nav .mc.current a.app {
+	background-position: 0 -506px;
+	background-color: #f03838
+}
+
+.right_nav .mc.current a.feedback {
+	background-position: 0 -552px;
+	background-color: #f03838
+}
+
+.right_nav .mc.current a.totop {
+	background-position: 0 -598px;
+	background-color: #f03838
+}
+
+.right_nav .mc.current a b {
+	color: #f03838;
+	background: #fff
+}
+
+.right_nav .mc.current_cart:before {
+	content: "";
+	display: block;
+	background: url(http://static.sanjiang.com/common/images/index.png) -68px -694px no-repeat;
+	left: 0;
+	top: 13px;
+	width: 4px;
+	height: 7px;
+	position: absolute;
+	z-index: 16
+}
+
+.right_nav .mc.current_cart a.cart {
+	background-position: 0 -460px;
+	background-color: #f03838
+}
+
+.right_nav .mc.current_cart a b {
+	color: #f03838;
+	background: #fff
+}
+
+.side_cart {
+	width: 290px;
+	height: 100%;
+	border-left: 2px solid #e6e6e6;
+	position: fixed;
+	top: 0;
+	right: -300px;
+	/*right: 40px;*/
+	background: #fff;
+	transition: all 0.3s linear;
+}
+
+.cart_show {
+	right: 36px;
+}
+
+
+/*我的购物车导航条*/
+
+.side_cart .mt {
+	height: 46px;
+	line-height: 46px;
+	background: #f0f0f0
+}
+
+.side_cart .mt b {
+	float: left;
+	font-family: 微软雅黑;
+	font-size: 16px;
+	font-weight: 400;
+	margin-left: 10px;
+	color: #666;
+}
+
+.side_cart .mt a {
+	float: right;
+	background: url(http://static.sanjiang.com/common/images/index.png) -62px -709px no-repeat;
+	width: 10px;
+	height: 9px;
+	display: block;
+	margin: 19px;
+	transition: all .2s linear
+}
+
+.side_cart .mt a:hover {
+	transform: rotate(1turn)
+}
+
+.side_cart .mb {
+	width: 290px;
+	height: 54px;
+	background: #f0f0f0;
+	position: absolute;
+	bottom: 0;
+}
+
+.side_cart .mb .buy_num {
+	float: left;
+	line-height: 20px;
+	font-weight: 700;
+	color: #666;
+	padding: 7px;
+	font-size: 12px;
+}
+
+.side_cart .mb .buy_num span {
+	color: #f03838;
+	font-family: Verdana
+}
+
+.side_cart .mb .buy_button {
+	border-radius: 3px;
+	text-align: center;
+	width: 96px;
+	height: 28px;
+	line-height: 28px;
+	color: #fff;
+	background: #f03838;
+	display: block;
+	float: right;
+	margin: 13px 10px;
+	font-size: 12px;
+}
+
+.side_cart .mb .buy_button:hover {
+	background: #ea1414
+}
+
+.side_cart .mc {
+	width: 290px;
+	height: 810px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.d_cart_list {
+	width: 277px;
+}
+
+.d_cart_list dl dd {
+	border-bottom: 1px dashed #ddd;
+	height: 85px;
+	overflow: hidden;
+}
+
+.d_cart_list dl dd .p_img {
+	width: 58px;
+	height: 58px;
+	border: 1px solid #ddd;
+	float: left;
+	margin: 12px 0 12px 10px;
+}
+
+.d_cart_list dl dd .p_img img {
+	width: 58px;
+	height: 58px;
+}
+
+.d_cart_list dl dd .p_name {
+	width: 190px;
+	height: 32px;
+	line-height: 16px;
+	margin-bottom: 4px;
+	overflow: hidden;
+	margin-top: 12px;
+	padding-left: 12px;
+}
+
+.d_cart_list dl dd .p_name a {
+	color: #666;
+	font-size: 12px;
+}
+
+.d_cart_list dl dd .p_name a:hover {
+	color: #ea1414;
+}
+
+.d_cart_list dl dd .p_price {
+	height: 24px;
+	line-height: 24px;
+	overflow: hidden;
+	padding-left: 12px;
+}
+
+.d_cart_list dl dd .p_price span {
+	float: left;
+	margin-right: 5px;
+	font-family: Verdana;
+	margin-top: 5px;
+}
+
+.d_cart_list dl dd .p_price b {
+	color: #f03838;
+	margin-right: 5px;
+	width: 60px;
+	display: block;
+	float: left;
+	font-size: 12px;
+}
+
+.d_cart_list dl dd .choose_amount {
+	margin: 0 10px;
+	float: left;
+}
+
+.choose_amount {
+	width: 68px;
+	height: 24px;
+	overflow: hidden;
+	line-height: 22px;
+	display: block;
+	text-align: center;
+}
+
+.choose_amount a.btn_reduce {
+	margin-right: -1px;
+	font-size: 12px;
+}
+
+.choose_amount p {
+	width: 28px;
+	height: 22px;
+	line-height: 22px;
+	float: left;
+	border: 1px solid #ccc;
+	text-align: center;
+	background: #fff;
+	color: #333;
+	font-size: 12px;
+}
+
+.choose_amount a.btn_add {
+	margin-left: -1px;
+	font-size: 12px;
+}
+
+.choose_amount a {
+	border: 1px solid #ccc;
+	width: 18px;
+	height: 22px;
+	display: block;
+	color: #333;
+	background: #f8f8f8;
+	float: left;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.d_cart_list dl dd .p_price .J-shoping-close {
+	cursor: pointer;
+	font-style: normal;
+	float: left;
+	color: #2272c8;
+	display: none;
+	font-size: 12px;
+}
+
+.side_cart .m_cart_no {
+	position: relative;
+	overflow: hidden;
+	width: 297px
+}
+
+.side_cart .m_cart_no:after {
+	content: "";
+	display: block;
+	width: 55px;
+	height: 55px;
+	position: absolute;
+	left: 110px;
+	top: 30%;
+	background: url(http://static.sanjiang.com/common/images/mysj.png) -80px -189px no-repeat
+}
+
+.side_cart .m_cart_no p {
+	text-align: center;
+	color: #999;
+	margin-top: 50%;
+	font-size: 12px;
+	line-height: 22px
+}
+
+.side_cart .m_cart_no p .buy_button_yes {
+	color: #3390ee;
+	font-size: 12px;
+	display: block;
+	margin-top: 8px;
+	margin: 8px auto
+}
+
+.side_cart .m_cart_no p .buy_button_login {
+	border-radius: 3px;
+	text-align: center;
+	width: 76px;
+	height: 28px;
+	line-height: 28px;
+	color: #fff;
+	background: #f03838;
+	display: block;
+	margin: 8px auto
+}
+
+.side_cart .m_cart_no p .buy_button_login:hover {
+	background: #ea1414
+}
+
+.footer {
+	width: 100%;
+	height: 296px;
+	background: #f8f8f8;
+	padding: 30px 0;
+	text-align: center;
+	margin-top: 40px;
+}
+
+.footer_container {
+	width: 1200px;
+	height: 296px;
+	margin: 0 auto;
+}
+
+.footer_service {
+	width: 1150px;
+	height: 134px;
+	padding: 0 25px;
+	margin-bottom: 20px;
+}
+
+.footer_service dl {
+	float: left;
+	width: 190px;
+	text-align: left;
+}
+
+.footer_service dl dt {
+	position: relative;
+	padding: 6px 0 6px 50px;
+	font: 16px 微软雅黑;
+	color: #666;
+	zoom: 1;
+}
+
+.footer_service dl dt i {
+	position: absolute;
+	top: 5px;
+	left: 0;
+	width: 40px;
+	height: 40px;
+	background: url(http://static.sanjiang.com/common/images/footer.png) no-repeat;
+}
+
+.footer_service dl dd {
+	min-height: 80px;
+	padding-left: 50px;
+	line-height: 20px;
+}
+
+.footer_service dl dd a {
+	color: #666;
+	font-size: 12px;
+	line-height: 20px;
+}
+
+.footer_service dl dt i.fore1 {
+	background-position: 0 0;
+}
+
+.footer_service dl dt i.fore2 {
+	background-position: -193px 0;
+}
+
+.footer_service dl dt i.fore3 {
+	background-position: -384px 0;
+}
+
+.footer_service dl dt i.fore4 {
+	background-position: -572px 0;
+}
+
+.footer_service dl dt i.fore5 {
+	background-position: -761px 0;
+}
+
+.footer_service dl dt i.fore6 {
+	background-position: -948px 0;
+}
+
+.footer_service dl dd a.a_blue {
+	color: #094bb8;
+	display: block;
+	text-align: right;
+	line-height: 40px;
+}
+
+.footer_service dl dd p {
+	color: #666666;
+	font-size: 12px;
+}
+
+.footer .links {
+	width: 1200px;
+	color: #666;
+	height: 35px;
+	line-height: 35px;
+	font-size: 12px;
+}
+
+.footer .links a {
+	margin: 0 15px;
+	color: #676767;
+}
+
+.footer .copyright {
+	font-size: 12px;
+	margin: 5px 0;
+	color: #777;
+}
+
+.footer .authentication {
+	padding: 20px 0;
+}
+
+.footer .authentication a {
+	margin: 0 5px;
+}
+
+.footer .authentication a img {
+	width: 108px;
+	height: 40px;
+}
+.layer_box,
+.layer_box_two {
+	border: 5px solid #b3b3b3;
+	width: 470px;
+	position: fixed;
+	left: 50%;
+	margin-left: -235px;
+	top: 50%;
+	margin-top: -250px;
+	background: #fff;
+}
+
+.layer_box .layer_t,
+.layer_box_two .layer_t {
+	padding: 0 15px;
+	border-bottom: 1px solid #e0e0e0;
+	background: #eee;
+	height: 31px;
+	line-height: 31px;
+}
+
+.layer_box .layer_t b,
+.layer_box_two .layer_t b {
+	float: left;
+	font-size: 15px;
+	color: #333;
+	font-family: 微软雅黑;
+}
+
+.layer_box .layer_t a,
+.layer_box_two .layer_t a {
+	font-size: 16px;
+	color: #aaa;
+	float: right;
+}
+
+.layer_box .layer_content,
+.layer_box_two .layer_content {
+	padding: 15px;
+}
+
+.layer_box .layer_content .layer_tips,
+.layer_box_two .layer_content .layer_tips {
+	overflow: hidden;
+}
+
+.layer_box .layer_content .layer_tips p,
+.layer_box_two .layer_content .layer_tips p {
+	margin-top: 10px;
+	float: left;
+}
+
+.layer_box .layer_content .layer_tips p b,
+.layer_box_two .layer_content .layer_tips p b {
+	line-height: 25px;
+	font-size: 14px;
+	display: block;
+	color: #333;
+}
+
+.layer_box .layer_content .layer_cancle,
+.layer_box_two .layer_content .layer_cancle {
+	background: #fff;
+	padding: 15px 20px 25px 40px;
+	position: relative;
+}
+
+.layer_box .layer_content .btn_n,
+.layer_box_two .layer_content .btn_n {
+	width: 90px;
+	height: 24px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	line-height: 24px;
+	text-align: center;
+	background: #eee;
+	border-radius: 2px;
+	color: #666;
+	display: inline-block;
+	margin-right: 10px;
+	font-size: 12px;
+}
+
+.layer_box .layer_content .btn_y,
+.layer_box_two .layer_content .btn_y {
+	width: 92px;
+	height: 26px;
+	border: none;
+	cursor: pointer;
+	line-height: 26px;
+	text-align: center;
+	background: #e63c3f;
+	border-radius: 2px;
+	color: #fff;
+	display: inline-block;
+	margin-right: 10px;
+	outline: none;
+	font-size: 12px;
+}
+
+.bg {
+	width: 100%;
+	height: 100%;
+	background: rgba(51, 51, 51, 0.3);
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 50;
+	display: none;
+}
+
+.fr {
+	margin-left: 80px;
+}
+
+.login_from {
+	width: 320px;
+}
+
+.login_from .lg_t {
+	height: 40px;
+	margin-bottom: 5px;
+	color: #999;
+	font-size: 12px;
+}
+
+.login_from .lg_t b {
+	font-size: 22px;
+	font-weight: 500;
+	float: left;
+}
+
+.login_from .lg_t span {
+	float: right;
+	margin-top: 12px;
+}
+
+.login_from .lg_t span a {
+	color: #ea1414;
+	cursor: pointer;
+}
+
+.item1 {
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.input {
+	width: 268px;
+	font-size: 14px;
+	border: 1px solid #ccc;
+	height: 20px;
+	line-height: 20px;
+	padding: 10px 10px 10px 40px;
+}
+
+.input:focus {
+	outline: none;
+	border: 1px solid #8ed200;
+}
+
+#i_phone {
+	background: url(../images/login-bg.png) 0 0 no-repeat;
+}
+
+.i_common {
+	width: 20px;
+	height: 20px;
+	display: block;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	z-index: 4;
+}
+
+#i_psd {
+	background: url(../images/login-bg.png) 0 -26px no-repeat;
+}
+
+.password_un {
+	font-size: 12px;
+	color: #888;
+	overflow: hidden;
+	height: 18px;
+	line-height: 18px;
+	margin-bottom: 20px;
+}
+
+.password_un label {
+	font-style: normal;
+	margin-right: 10px;
+	float: left;
+}
+
+.password_un label input {
+	margin-right: 6px;
+}
+
+.password_un label span {
+	color: #ea1414;
+	display: inline-block;
+}
+
+.password_un a {
+	color: #666;
+	float: right;
+}
+
+.password_un a:hover {
+	color: #ea1414;
+}
+
+.btn_entry {
+	width: 100%;
+	height: 42px;
+	color: white;
+	background: #dd1b1b;
+	font-size: 16px;
+	line-height: 16px;
+	border: none;
+	cursor: pointer;
+}
+
+.sj_login_footer {
+	padding: 30px 0;
+	text-align: center;
+	color: #666;
+	width: 990px;
+}
+
+.links {
+	color: #666;
+	height: 35px;
+	line-height: 35px;
+	font-size: 12px;
+}
+
+.bor_tb {
+	border-bottom: 1px solid #eee;
+	border-top: 1px solid #eee;
+}
+
+.links a {
+	color: #676767;
+	margin: 0 15px;
+	font-size: 12px;
+}
+
+.Copyright {
+	color: #777;
+	font-size: 12px;
+	margin-top: 30px;
+}
+
+.authentication {
+	padding: 20px 0;
+}
+
+.authentication a {
+	margin: 0 5px;
+}

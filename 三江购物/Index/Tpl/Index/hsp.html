@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>惠商品档期【11.16-11.29】-三江购物全品类活动-三江购物</title>
+	<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/hui.css">
+	<script type="text/javascript" src='__ROOT__/Index/Common/js/jquery-3.2.1.min.js'></script>
+</head>
+<body>
+	<!--头部部导航-->
+	<iframe width="100%" height="181px" frameborder=0 scrolling="no" src="__APP__/Header/header"></iframe>
+	<div class='hui-body'>
+		<!-- 顶部的大图 -->
+		<div class='bigimgbox'>
+			<div class='banner'>
+				<img src="__ROOT__/Index/Common/images/banner.jpg" class='banner-img'>
+			</div>
+		</div>
+		<!-- 右边漂浮的导航栏 -->
+		<div class='slide-nav'>
+			<ul>
+				<!-- href 和下面的 id 绑定 跳到该地方 -->
+				<li><p class='storey'>酒水饮料</p></li>
+				<li><p class='storey'>休闲零食</p></li>
+				<li><p class='storey'>商品的大分类</p></li>
+				<li><p class='storey'>商品的大分类</p></li>
+			</ul>
+			<div class="QR-code">
+				<img src="http://static.sanjiang.com/activity/images/qr_code.png">
+			</div>
+			<div class='to-top'>
+				<img src="http://static.sanjiang.com/activity/images/up_top.png">
+			</div>
+		</div>
+		<!-- 中间的商品页面 -->
+		<div class='hui-items'>
+			<!-- 4排商品的页面 -->
+			<div class='item' id='item1'>
+				<!-- 大标题 -->
+				<div class='items-title'>
+					酒水饮料
+				</div>
+				<!-- 列表项 -->
+				<div class='goods'>
+					<ul>
+						<!-- classname 带数字 几 就几列展示 -->
+						<li class='goods-item4'>
+							<div class='imgbox4'>
+								<img src="http://img.sanjiang.com/images/1150445/00.jpg">
+							</div>
+							<div class='message'>
+								<a href="###" class='goods-name'>香格里拉珍藏级橡木桶干红葡萄酒</a>
+								<p class='price1'>零售价:<span>￥42.80</span></p>
+								<p class='price2'>会员价:<span>￥35.80</span></p>
+								<button class='buy'>
+									<span>点击购买</span>
+									<i></i>
+								</button>
+							</div>
+						</li>
+					
+					</ul>
+				</div>
+			</div>
+			<!-- 5排商品的页面 -->
+			<div class='item' id='item2'>
+				<div class='items-title'>
+					休闲零食
+				</div>
+				<div class='goods'>
+					<ul>
+						<li class='goods-item5'>
+							<div class='imgbox5'>
+								<img src="http://img.sanjiang.com/images/3140287/00.jpg">
+							</div>
+							<div class='message'>
+								<a href="###" class='goods-name'>达利园派蛋黄味注心蛋类芯饼</a>
+								<p class='price1'>零售价:<span>￥42.80</span></p>
+								<p class='price2'>会员价:<span>￥35.80</span></p>
+								<button class='buy'>
+									<span>点击购买</span>
+									<i></i>
+								</button>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--底部导航-->
+	<iframe width="100%" height="356px" frameborder=0 scrolling="no" src="__APP__/Footer/footer"></iframe>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(window).scroll( function() { 
+			$('.slide-nav').css({'display':function(){
+				return $(document).scrollTop()>300 ? 'block' : 'none' ;
+			}});
+		 } );
+		$(".to-top").click(function(){
+			console.log(111);
+		  $('body,html').animate({scrollTop: "0px" }, 1000);
+		});
+		var storeys = $('.storey');
+		for (let i = storeys.length - 1; i >= 0; i--) {
+			storeys[i].onclick=function(){
+				// 获取对应位置的 item 的 offsetTop;
+				var t = $('.item').eq(i).offset().top;
+				$('body,html').animate({scrollTop: t }, 500);
+			}
+		};
+  	});
+
+</script>
+</html>

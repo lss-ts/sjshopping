@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>我的三江 - 三江购物</title>
+<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/mymessage.css" />
+<script type="text/javascript " src="__ROOT__/Index/Common/js/angular.min.js "></script>
+</head>
+
+<body ng-app="myapp" ng-controller="mycontroller">
+		<!-- 头部导航栏 -->
+	<iframe width="100%" height="30px" frameborder=0 scrolling="no" src="__APP__/Header/topBar"></iframe>
+	<!-- 搜索框一栏 -->
+	<div class="nav1">
+		<div class="w1">
+			<div class="logo">
+				<a href="###"></a>
+			</div>
+			<div class="back">
+				<a href="__APP__/Index/index">返回首页</a>
+			</div>
+			<div class="search">
+				<form action="">
+					<input type="text" name="key" placeholder="昆仑山矿泉水">
+					<button class="button" type="sumbit" id="search2">搜索</button>
+				</form>
+			</div>
+			<div class="shop">
+				<form action="" id="form1">
+					<input type="hidden" name="shopId" name="shopId">
+					<div class="shop2">
+						<div class="before"></div>
+						<a href="__APP__/Shopping/shopping">我的购物车</a>
+						<div class="number">
+							<b id="number2">0</b>
+						</div>
+						<div class="after"></div>
+					</div>
+					<div class="content">
+						<div class="goods">
+							<i></i>
+							<p>您的购物车中还空荡荡的，赶紧去选吧</p>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- box1主页 -->
+	<div class="box1">
+		<div class="w2">
+			<div class="mun ">
+				<b><a href="__APP__/Index/index">首页</a></b> &nbsp;>&nbsp;
+				<a href="__APP__/Mymessageindex/mymessageindex" class="cur">我的三江</a>
+			</div>
+		</div>
+		<!-- 左侧列表 -->
+		<div class="w2">
+			<div class="m_left">
+				<div class="m_title">
+					<b></b>
+					<a href="__APP__/Mymessageindex/mymessageindex">我的三江</a>
+				</div>
+				<div class="mt">
+					<b></b> 交易管理
+				</div>
+				<div class="mc">
+					<a href="__APP__/Mymessage/mymessage" class="a1">我的订单</a>
+					<a href="__APP__/Mymessage/mymessage" class="a2">我的收藏</a>
+					<a href="__APP__/Mymessage/mymessage" class="a3">我的优惠劵</a>
+					<a href="__APP__/Mymessage/mymessage" class="a4">积分兑换</a>
+				</div>
+				<div class="mt">
+					<b></b> 会员资料
+				</div>
+				<div class="mc">
+					<a href="__APP__/Mymessage/mymessage" class="a5">个人资料</a>
+					<a href="__APP__/Mymessage/mymessage" class="a6">我的会员卡</a>
+					<a href="__APP__/Mymessage/mymessage" class="a7">安全设置</a>
+					<a href="__APP__/Mymessage/mymessage" class="a8">地址管理</a>
+				</div>
+				<div class="mt">
+					<b></b> 服务中心
+				</div>
+				<div class="mc">
+					<a href="__APP__/Mymessage/mymessage" class="a9">购物卡余额查询</a>
+					<a href="__APP__/Mymessage/mymessage" class="a10">我要投诉</a>
+					<a href="__APP__/Mymessage/mymessage" class="a11">帮助和反馈</a>
+				</div>
+			</div>
+			<div class="m_right">
+				<div class="user_info">
+					<div class="user_left">
+						<div class="user_pic">
+							<img src="http://static.sanjiang.com/profile/images/hui-8.png" />
+							<div class="user_bg"></div>
+						</div>
+						<div class="user_m">
+							<p>{{arr.username}}</p>
+							<div class="u_type">
+								<i></i>
+								<span>惠用户</span>
+								<a href="http://card.sanjiang.com">升级为会员</a>
+
+							</div>
+
+						</div>
+					</div>
+					<div class="user_center">
+						<h3>我的订单</h3>
+						<div class="con">
+							<a href="###" class="mc">
+								<b class="b1"></b>
+
+								<p>待付款<strong>0</strong></p>
+							</a>
+							<a href="###" class="mc">
+								<b class="b2"></b>
+
+								<p>待收货<strong>0</strong></p>
+							</a>
+						</div>
+					</div>
+					<div class="user_point">
+						<h3>我的资产</h3>
+
+						<div class="con">
+							<p class="jf clearfix"><span class="fl"><i></i>可用积分：</span><span class="fr"><b>0</b>分</span></p>
+
+							<p class="yhq clearfix">
+								<a href="http://coupon.sanjiang.com"><span class="fl"><i></i>优惠券：</span><span class="fr"><b>0</b>张</span></a>
+							</p>
+						</div>
+					</div>
+					<div class="user_safe">
+
+						<h3>账号安全</h3>
+
+						<div class="con">
+							<div class="u_safe">
+								<span>安全等级：<b>较高</b></span>
+								<a href="http://safe.sanjiang.com">提升安全等级 <i>
+			&#62;</i></a>
+							</div>
+							<div class="u_strength"><b></b></div>
+							<div class="u_validate">
+								<span class="sjyzed"><i></i>手机验证</span>
+
+								<a class="yxyz" target="_blank" href="###"><i></i>邮箱验证</a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="layer_bg">
+					<div class="layer_t"></div>
+				</div>
+				<div class="layer_box">
+					<div class="layer_t">
+						<b>温馨提示</b>
+						<a href="###" id="close">X</a>
+					</div>
+					<div class="layer_content">
+						<div class="layer_cancle">
+							<ul>
+								<div class="yes"></div>
+								<li>
+									<p>当前订单取消后将无法恢复，您可在列表中进行再次购买</p>
+								</li>
+								<li class="mt-20">
+									<a href="###" class="btn_y">确定</a>
+									<a href="###" class="btn_n">返回</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="member_title">
+					<b>我的订单</b>
+				</div>
+				<div class="m_order">
+					<div class="m_order_no">
+						<p>这里都空空的，赶紧去挑选喜欢的商品把！
+							<a href="###">前往购物》</a>
+						</p>
+						<div class="after2"></div>
+					</div>
+				</div>
+				<div class="member_title">
+					<b>我的收藏</b>
+				</div>
+				<div class="m_Collection">
+					<div class="m_Collection_no">
+						<p>您还没有收藏商品，赶紧去吧
+							<a href="__APP__/Index/index">首页</a>
+							看看吧
+						</p>
+						<div class="after3"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<iframe width="100% " height="356px " frameborder=0 scrolling="no " src="__APP__/Footer/footer "></iframe>
+</body>
+<script type="text/javascript">
+	var app = angular.module('myapp', []);
+	app.controller('mycontroller', function($scope, $http) {
+		$scope.arr = [];
+		//获取个人资料
+		$http({
+			method: "post",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+			url: "__URL__/getUserData"
+		}).success((res) => {
+			console.log(res);
+			$scope.arr = res;
+		}).error((err) => {
+			console.log(err);
+		})
+	})
+</script>
+</html>

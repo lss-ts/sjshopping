@@ -1,0 +1,101 @@
+[ 2017-11-22T19:38:12+08:00 ] 127.0.0.1 /html06/%E4%B8%89%E6%B1%9F%E8%B4%AD%E7%89%A9/index.php/index/getProductData
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000747s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000852s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/ThinkPHP/Lib/Core/Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000679s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000752s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/ThinkPHP/Lib/Driver/Db/DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `sjgw_product` [ RunTime:0.025702s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/ThinkPHP/Lib/Core/Db.class.php 第 605 行.
+SQL: SELECT * FROM `sjgw_product` WHERE ( `isSoldout` = 0 )  [ RunTime:0.023813s ]
+NOTIC: [8] Use of undefined constant floorTitle - assumed 'floorTitle' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+NOTIC: [8] Use of undefined constant data - assumed 'data' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+
+[ 2017-11-22T19:38:12+08:00 ] 127.0.0.1 /html06/%E4%B8%89%E6%B1%9F%E8%B4%AD%E7%89%A9/index.php/index/getShopData
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000650s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000735s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/ThinkPHP/Lib/Core/Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000401s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000459s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/ThinkPHP/Lib/Driver/Db/DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `sjgw_shop` [ RunTime:0.029993s ]
+SQL: SHOW COLUMNS FROM `sjgw_region` [ RunTime:0.029784s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/ThinkPHP/Lib/Core/Db.class.php 第 605 行.
+SQL: SELECT * FROM `sjgw_shop`  [ RunTime:0.057158s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/ThinkPHP/Lib/Core/Db.class.php 第 605 行.
+SQL: SELECT * FROM `sjgw_region`  [ RunTime:0.031022s ]
+NOTIC: [8] Use of undefined constant data - assumed 'data' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 355 行.
+NOTIC: [8] Use of undefined constant region - assumed 'region' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 355 行.
+NOTIC: [8] Use of undefined constant data - assumed 'data' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 355 行.
+NOTIC: [8] Use of undefined constant region - assumed 'region' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 355 行.
+NOTIC: [8] Use of undefined constant data - assumed 'data' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 355 行.
+NOTIC: [8] Use of undefined constant region - assumed 'region' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 355 行.
+NOTIC: [8] Use of undefined constant data - assumed 'data' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 355 行.
+NOTIC: [8] Use of undefined constant region - assumed 'region' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 355 行.
+NOTIC: [8] Use of undefined constant data - assumed 'data' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 355 行.
+NOTIC: [8] Use of undefined constant region - assumed 'region' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 355 行.
+NOTIC: [8] Use of undefined constant data - assumed 'data' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 355 行.
+NOTIC: [8] Use of undefined constant region - assumed 'region' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 355 行.
+NOTIC: [8] Use of undefined constant data - assumed 'data' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 355 行.
+NOTIC: [8] Use of undefined constant region - assumed 'region' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 355 行.
+
+[ 2017-11-22T19:38:12+08:00 ] 127.0.0.1 /html06/%E4%B8%89%E6%B1%9F%E8%B4%AD%E7%89%A9/index.php/index/getUserData
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000579s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000662s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/ThinkPHP/Lib/Core/Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000395s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000449s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/ThinkPHP/Lib/Driver/Db/DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `sjgw_users` [ RunTime:0.034809s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/ThinkPHP/Lib/Core/Db.class.php 第 605 行.
+SQL: SELECT * FROM `sjgw_users`  [ RunTime:0.032111s ]
+
+[ 2017-11-22T19:40:08+08:00 ] 127.0.0.1 /html06/%E4%B8%89%E6%B1%9F%E8%B4%AD%E7%89%A9/index.php/index/updataProduct
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000325s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000374s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/ThinkPHP/Lib/Core/Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000208s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000234s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/ThinkPHP/Lib/Driver/Db/DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `sjgw_product` [ RunTime:0.030217s ]
+SQL: UPDATE `sjgw_product` SET `id`=4,`vPrice`=13.8,`Price`=16.8 WHERE ( `id` = 4 ) [ RunTime:0.036531s ]
+
+[ 2017-11-22T19:40:10+08:00 ] 127.0.0.1 /html06/%E4%B8%89%E6%B1%9F%E8%B4%AD%E7%89%A9/index.php/index/getProductData
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000321s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000367s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/ThinkPHP/Lib/Core/Dispatcher.class.php 第 132 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000233s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/ThinkPHP/Lib/Driver/Db/DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `sjgw_product` [ RunTime:0.029030s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/ThinkPHP/Lib/Core/Db.class.php 第 605 行.
+SQL: SELECT * FROM `sjgw_product` WHERE ( `isSoldout` = 1 )  [ RunTime:0.308711s ]
+NOTIC: [8] Use of undefined constant floorTitle - assumed 'floorTitle' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+NOTIC: [8] Use of undefined constant data - assumed 'data' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+NOTIC: [8] Use of undefined constant floorTitle - assumed 'floorTitle' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+NOTIC: [8] Use of undefined constant data - assumed 'data' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+NOTIC: [8] Use of undefined constant floorTitle - assumed 'floorTitle' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+NOTIC: [8] Use of undefined constant data - assumed 'data' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+NOTIC: [8] Use of undefined constant floorTitle - assumed 'floorTitle' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+NOTIC: [8] Use of undefined constant data - assumed 'data' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+NOTIC: [8] Use of undefined constant floorTitle - assumed 'floorTitle' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+NOTIC: [8] Use of undefined constant data - assumed 'data' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+NOTIC: [8] Use of undefined constant floorTitle - assumed 'floorTitle' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+NOTIC: [8] Use of undefined constant data - assumed 'data' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+NOTIC: [8] Use of undefined constant floorTitle - assumed 'floorTitle' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+NOTIC: [8] Use of undefined constant data - assumed 'data' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+NOTIC: [8] Use of undefined constant floorTitle - assumed 'floorTitle' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+NOTIC: [8] Use of undefined constant data - assumed 'data' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+NOTIC: [8] Use of undefined constant floorTitle - assumed 'floorTitle' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+NOTIC: [8] Use of undefined constant data - assumed 'data' /Applications/XAMPP/xamppfiles/htdocs/html06/三江购物/Sjgw/Lib/Action/indexAction.class.php 第 248 行.
+

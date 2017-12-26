@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车 - 三江购物</title>
+		<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/shopping-car.css">
+		<script type="text/javascript" src="__ROOT__/Index/Common/js/angular.min.js"></script>
+		<!--引入angular依赖(在引入angular之后)-->
+		<script type="text/javascript" src="__ROOT__/Index/Common/js/angular-sanitize.js"></script>
+		<script type="text/javascript" src='__ROOT__/Index/Common/js/jquery-3.2.1.min.js'></script>
+	</head>
+
+	<body ng-app="myapp" ng-controller="mycontroller">
+		<!--导航条主体-->
+		<div class="top_bar">
+			<div class="w900">
+				<div class="gohome"><i></i>
+					<a href="__APP__/Index/index">返回首页</a>
+				</div>
+				<ul class="ufr">
+					<li class="item1">
+						<if condition="!isset($_SESSION['username'])">
+							您好，欢迎来到三江！
+							<span>
+									<a href="__APP__/Login/login" class="login">登录</a>
+									<a href="__APP__/Register/register">注册</a>
+								</span>
+							<else />
+							<a href="###" style="margin-right: 15px;">{$Think.session.username}</a>
+							<a href="__APP__/Login/login">退出</a>
+						</if>
+					</li>
+					<li class="item2 mydd">
+						<div></div>
+						<if condition="!isset($_SESSION['username'])">
+							<a href="__APP__/Login/login" target="_blank">我的订单</a>
+							<else />
+							<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+						</if>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的三江</a>
+								<else />
+								<a href="__APP__/Mymessageindex/mymessageindex" target="_blank">我的三江</a>
+							</if>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的订单</a>
+								<a href="__APP__/Login/login" target="_blank">我的收藏</a>
+								<a href="__APP__/Login/login" target="_blank">我的优惠券</a>
+								<a href="__APP__/Login/login" target="_blank">地址管理</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的收藏</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的优惠券</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">地址管理</a>
+							</if>
+						</div>
+					</li>
+					<li class="koudai">
+						<div class="drop_down_top">
+							<div class="line"></div>
+							<div class="phone_app"></div>
+							<a href="http://help.sanjiang.com/app.html" target="_blank">口袋三江</a>
+							<em></em>
+
+						</div>
+						<div class="kd_box">
+							<p></p>
+							<div class="app_code"><span>三江客户端</span><span>三江订阅号</span></div>
+						</div>
+					</li>
+					<li class="item2">
+						<div></div>
+						<a href="javascript:void(0);" target="_blank">企业团购</a>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="__APP__/Help/helpIndex" target="_blank">客户服务</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<a href="__APP__/Help/helpIndex" target="_blank">帮助中心</a>
+							<a href="__APP__/Help/shfwTHGZ" target="_blank">售后服务</a>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">意见反馈</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">意见反馈</a>
+							</if>
+						</div>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="javascript:void(0)">网站导航</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140 daohang">
+							<p></p>
+							<a href="__URL__/sjyx" target="_blank">三江优选</a>
+							<a href="__URL__/hsp" target="_blank">惠商品</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='logo-box'>
+			<div class='logo'>
+				<a href="__APP__/Index/index"></a>
+			</div>
+			<div class='shopping-step'>
+				<div class='active'>
+					<i>1</i> 我的购物车
+				</div>
+				<div>
+					<i>2</i> 确认订单信息
+				</div>
+				<div class='last'>
+					<i>3</i> 成功提交订单
+				</div>
+			</div>
+		</div>
+		<!-- 购物车主体部分 -->
+		<div class='shopping-car'>
+			<div class='car-head'>
+				<div class='where'>
+					<div class='fle'>我的购物车</div>
+					<div class='address'>区域：</div>
+					<div class="sendall ">
+						浙江省杭州市萧山区
+					</div>
+				</div>
+
+				<div class="tips">部分价格和库存可能因收货地址不同而改动，请以订单提交时为准
+				</div>
+				<a href="__APP__/Index/index" class='back-buy'>返回继续购物</a>
+			</div>
+			<div class='shopping-list'>
+				<table cellpadding="0" cellspacing="0" class="table1">
+					<!-- 购物车头部 -->
+					<tr class='shopping-car-top'>
+						<th class='row1'>
+							<label>
+							<input type="checkbox" class='allcheck' ng-true-value="true" ng-false-value="false"  ng-model="allcheckbox" ng-click="allcheck()"> <span class='allcheck-t'>全选</span>
+						</label>
+						</th>
+						<th class='row2'>商品</th>
+						<th class='row3'>零售价</th>
+						<th class='row3 vip'>会员价
+							<i>
+					        <div class="tips">绑定会员卡即可享受会员价<a href="http://card.sanjiang.com/bind/bind" target="_blank">去绑卡&gt;</a>
+					        </div>
+					    </i>
+						</th>
+						<th class='row3'>数量</th>
+						<th class='row3'>小计（元）</th>
+						<th class='row3'>重量</th>
+						<th class='row3'>操作</th>
+					</tr>
+					<!-- 购物车 商品展示 多个用循环-->
+					<tr ng-class="{true:'now',false:'pre'}[val.checked]" id="shopping-car-b" ng-repeat="(key,val) in arr">
+						<td class='row1'><input type="checkbox" class="checkt" ng-true-value="true" ng-false-value="false" ng-model="val.checked" ng-click="choose(key)"></td>
+						<td class='row2'>
+							<a href="__APP__/Info/info?id={{val.data.pid}}">
+								<img src="{{val.data.data.productImg}}" alt='' title=''>
+							</a>
+							<a href="__APP__/Info/info?id={{val.data.pid}}" class='goods-name'>{{val.data.data.productTitle}}</a>
+						</td>
+						<td class='row3'>￥<span class='price1'>{{val.data.data.Price}}</span></td>
+						<td class='row3'>￥<span class='price2'>{{val.data.data.vPrice}}</span></td>
+						<td class='row3'><span ng-click="minus(val.data.data.id)">-</span><span class='goods-num'>{{val.data.num}}</span><span ng-click="plus(val.data.data.id)">+</span></td>
+						<td class='row3'><span class="tPrice">￥{{(val.data.data.Price*val.data.num) | number:2}}</span></td>
+						<td class='row3'>{{(val.data.data.weight*val.data.num) | number:2}}kg</td>
+						<td class='row3'><span class="favorite" ng-click="addCollection()">加入收藏</span><span class='needalert' ng-click="del(val.data.data.id)">删除</span></td>
+					</tr>
+					<tr style="text-align: center;height: 200px;" ng-if="isShow">
+						<td colspan="8" style="font-size: 20px;color: #999;">
+							<p>您的购物车空荡荡的！</p>
+							<p>
+								<a href="__APP__/Index/index" style="color: #999;">赶紧去选购吧</a>
+							</p>
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<!-- 购物车底部 -->
+					<tr class='shopping-car-f1'>
+						<td colspan="5" class='tips'>
+							<div ng-show="(88-totalPrice)>0">
+								<p>再购买<span>{{88-totalPrice | number:2}}</span>元（总重量小于10kg）可免运费 &nbsp;&nbsp;
+									<a href="__APP__/Index/index">马上去凑单></a>
+								</p>
+							</div>
+						</td>
+						<td class='row3' ng-model="totalPrice">￥{{totalPrice | number:2}}</td>
+						<td class='row3 total-w' ng-model='totalWeight'>{{totalWeight | number:2}}kg</td>
+						<td class='row3'>消耗积分：0</td>
+					</tr>
+				</table>
+				<table cellpadding="0" cellspacing="0" class='table2'>
+					<tr class='shopping-car-f2'>
+						<td class='row1'>
+							<label>
+							<input type="checkbox" name="" class='allcheck' ng-true-value="true" ng-false-value="false"  ng-model="allcheckbox" ng-click="allcheck()"> 
+						</label>
+							<span class='allcheck-t'>全选</span>
+						</td>
+						<td class='row2'>
+							<span class='delAll' ng-click="delSelect()">删除选中商品</span>
+						</td>
+						<td colspan="5" class='row3 check-goods-message'>
+							<div>
+								已选择<span class='red-span' id='number' ng-model="pNum">{{pNum}}</span>件商品&nbsp;&nbsp;商品总价（不含运费）：<span class='red-span'>￥{{totalPrice | number:2}}</span>
+							</div>
+							<div>
+								<a href="">升级为会员</a>可优惠：<span ng-model="totalVPrice">￥{{totalPrice-totalVPrice | number:2}}</span>
+							</div>
+						</td>
+						<td class='row3'>
+							<input type="button" id="cartBtn" ng-class="{true:'c_button',false:'c_button c_button_not'}[isSelect]" value="去结算" ng-click="order()">
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!-- 类似弹框 -->
+		<div class='alert-mask'>
+			<div class='alert'>
+				<div class="alert-t"><span class='tips'>温馨提示</span>
+					<a href="javascript:;" class='close'>X</a>
+				</div>
+				<div class="alert-content">
+					<div class="yes"></div>
+					<div class='message'>
+						<p>悄悄地告诉你<br>你可以选择加入收藏或者删除商品</p>
+						<div class="button">
+							<a class='btn1'>加入收藏</a>
+							<a class='btn2'>删除商品</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='alert-mask1'>
+			<div class='alert'>
+				<div class="alert-t"><span class='tips'>温馨提示</span>
+					<a href="javascript:;" class='close'>X</a>
+				</div>
+				<div class="alert-content">
+					<div class="yes"></div>
+					<div class='message'>
+						<p>悄悄地告诉你<br>收藏后商品可以在我的收藏中查看</p>
+						<div class="button">
+							<a class='btn1' ng-click="addCollect()">加入收藏</a>
+							<a class='btn2'>取消</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--底部导航-->
+		<iframe width="100%" height="356px" frameborder=0 scrolling="no" src="__APP__/Footer/footer"></iframe>
+	</body>
+	<script type="text/javascript" src="__ROOT__/Index/Common/js/shopping-car.js"></script>
+	<script type="text/javascript">
+		//  点击加入收藏 或者 删除 显示 类似弹框 部分
+		$('.shopping-car').on("click", ".needalert", function() {
+			$('.alert-mask').css({
+				'display': 'block'
+			});
+		})
+		// 点击X隐藏弹框
+		$(".alert-mask .close").click(function() {
+			$('.alert-mask').css({
+				'display': 'none'
+			});
+		});
+		$(".alert-mask1 .close").click(function() {
+			$('.alert-mask1').css({
+				'display': 'none'
+			});
+		});
+		$(".alert-mask1 .btn2").click(function() {
+			$('.alert-mask1').css({
+				'display': 'none'
+			});
+		})
+
+		var app = angular.module('myapp', []);
+		app.controller('mycontroller', function($scope, $http) {
+			$scope.arr = [];
+			$scope.sureArr = [];
+			$scope.totalPrice = 0;
+			$scope.totalVPrice = 0;
+			$scope.totalWeight = 0;
+			$scope.pNum = 0;
+			$scope.isSelect = false;
+			$scope.isShow = false;
+			//首次进入页面获取数据；
+			getData();
+			//减
+			$scope.minus = function(id) {
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__URL__/minusNum",
+					data: "pid=" + id
+				}).success((res) => {
+					//console.log(res);
+					getData();
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+			//加
+			$scope.plus = function(id) {
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__URL__/plusNum",
+					data: "pid=" + id
+				}).success((res) => {
+					//console.log(res);
+					getData();
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+			//删除单个
+			$scope.del = function(id) {
+				//弹框里的删除商品按钮
+				$(".alert-mask .btn2").click(function() {
+					$http({
+						method: "post",
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded"
+						},
+						url: "__URL__/del",
+						data: "pid=" + id
+					}).success((res) => {
+						//console.log(res);
+						getData();
+						//删除成功隐藏弹框
+						$('.alert-mask').css({
+							'display': 'none'
+						});
+					}).error((err) => {
+						console.log(err);
+					})
+				});
+			}
+			//加入收藏
+			$scope.addCollection = function() {
+				console.log(this);
+				var id = this.val.data.pid
+				$('.alert-mask1').css({
+					'display': 'block'
+				});
+				$scope.addCollect = function() {
+					$http({
+						method: "post",
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded"
+						},
+						url: "__APP__/Mymessage/addData",
+						data: "id=" + id
+					}).success((res) => {
+						console.log(res);
+						if(res != 3) {
+							$('.alert-mask1').css({
+								'display': 'none'
+							});
+						}
+					}).error((err) => {
+						console.log(err);
+					})
+				}
+			}
+			//删除选中商品
+			$scope.delSelect = function() {
+				for(var i = 0; i < $scope.arr.length; i++) {
+					if($scope.arr[i].checked == true) {
+						$http({
+							method: "post",
+							headers: {
+								"Content-Type": "application/x-www-form-urlencoded"
+							},
+							url: "__URL__/del",
+							data: "pid=" + $scope.arr[i].data.pid
+						}).success((res) => {
+							//console.log(res);
+							getData();
+							$('.alert-mask').css({
+								'display': 'none'
+							});
+						}).error((err) => {
+							console.log(err);
+						})
+					}
+				}
+			}
+			//单选
+			$scope.choose = function(k) {
+				if($scope.arr[k].checked == true) {
+					$scope.change();
+					$scope.select();
+				} else {
+					$scope.allcheckbox = false;
+					$scope.select();
+				}
+				total();
+				order();
+			}
+			//全选
+			$scope.allcheck = function() {
+				for(var i = $scope.arr.length - 1; i >= 0; i--) {
+					$scope.arr[i].checked = $scope.allcheckbox;
+				};
+				if($scope.arr.length == 0) {
+					$scope.isSelect = false;
+				} else {
+					$scope.isSelect = $scope.allcheckbox;
+				}
+				total();
+				order();
+			}
+
+			$scope.change = function() {
+				$scope.allcheckbox = true;
+				for(var i = $scope.arr.length - 1; i >= 0; i--) {
+					if($scope.arr[i].checked == false) {
+						$scope.allcheckbox = false;
+						break;
+					}
+				};
+			}
+			$scope.select = function() {
+				$scope.isSelect = false;
+				for(var i = $scope.arr.length - 1; i >= 0; i--) {
+					if($scope.arr[i].checked == true) {
+						$scope.isSelect = true;
+						break;
+					}
+				};
+			}
+			//总价
+			function total() {
+				$scope.totalPrice = 0;
+				$scope.totalVPrice = 0;
+				$scope.totalWeight = 0;
+				$scope.pNum = 0;
+				for(var i = 0; i < $scope.arr.length; i++) {
+					if($scope.arr[i].checked == true) {
+						$scope.totalPrice += $scope.arr[i].data.num * $scope.arr[i].data.data.Price;
+						$scope.totalVPrice += $scope.arr[i].data.num * $scope.arr[i].data.data.vPrice;
+						$scope.totalWeight += $scope.arr[i].data.num * $scope.arr[i].data.data.weight;
+						$scope.pNum++;
+					}
+				}
+			}
+
+			function order() {
+				$scope.sureArr = [];
+				for(var i = 0; i < $scope.arr.length; i++) {
+					if($scope.arr[i].checked == true) {
+						$scope.sureArr.push($scope.arr[i].data.pid);
+					}
+				}
+				$scope.order = function() {
+					if($scope.sureArr.length != 0) {
+						var str = $scope.sureArr.join(",");
+						window.location.href = "__APP__/Order/order?arr=" + str;
+					}
+				}
+			}
+
+			function getData() {
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__URL__/getData"
+				}).success((res) => {
+					//					console.log(res);
+					var newarr = [];
+					if(res == null) {
+						res = [];
+					}
+					for(var i = 0; i < res.length; i++) {
+						var obj = {
+							'data': res[i],
+							'checked': false,
+						}
+						newarr.push(obj);
+					}
+					$scope.arr = newarr;
+					//					console.log($scope.arr);
+					if($scope.arr.length == 0) {
+						$scope.isShow = true;
+					} else {
+						$scope.isShow = false;
+					}
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+		})
+	</script>
+
+</html>

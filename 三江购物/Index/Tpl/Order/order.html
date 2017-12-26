@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>订单确认 - 三江购物</title>
+		<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/shopping-car.css">
+		<script type="text/javascript" src="__ROOT__/Index/Common/js/angular.min.js"></script>
+		<!--引入angular依赖(在引入angular之后)-->
+		<script type="text/javascript" src="__ROOT__/Index/Common/js/angular-sanitize.js"></script>
+		<script type="text/javascript" src='__ROOT__/Index/Common/js/jquery-3.2.1.min.js'></script>
+		<style type="text/css">
+			._citys {
+				width: 450px;
+				display: inline-block;
+				border: 2px solid #eee;
+				padding: 5px;
+				position: relative;
+				top: 8px;
+				left: -35px;
+				background: white;
+			}
+			
+			._citys span {
+				color: #56b4f8;
+				height: 15px;
+				width: 15px;
+				line-height: 15px;
+				text-align: center;
+				border-radius: 3px;
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				border: 1px solid #56b4f8;
+				cursor: pointer;
+			}
+			
+			._citys0 {
+				width: 100%;
+				height: 34px;
+				display: inline-block;
+				border-bottom: 2px solid #56b4f8;
+				padding: 0;
+				margin: 0;
+			}
+			
+			._citys0 li {
+				display: inline-block;
+				line-height: 34px;
+				font-size: 15px;
+				color: #888;
+				width: 80px;
+				text-align: center;
+				cursor: pointer;
+			}
+			
+			.citySel {
+				background-color: #56b4f8;
+				color: #fff !important;
+			}
+			
+			._citys1 {
+				width: 100%;
+				display: inline-block;
+				padding: 10px 0;
+			}
+			
+			._citys1 a {
+				width: 83px;
+				height: 35px;
+				display: inline-block;
+				background-color: #f5f5f5;
+				color: #666;
+				margin-left: 6px;
+				margin-top: 3px;
+				line-height: 35px;
+				text-align: center;
+				cursor: pointer;
+				font-size: 13px;
+				overflow: hidden;
+			}
+			
+			._citys1 a:hover {
+				color: #fff;
+				background-color: #56b4f8;
+			}
+			
+			.AreaS {
+				background-color: #56b4f8 !important;
+				color: #fff !important;
+			}
+			
+			.top_bar {
+				width: 100%;
+				border-bottom: 1px solid #eee;
+				background: #f7f7f7;
+				line-height: 30px;
+			}
+			
+			.w900 {
+				width: 990px;
+				height: 30px;
+				margin: 0 auto;
+				color: #666;
+				font-size: 12px;
+			}
+			
+			.top_bar .gohome {
+				float: left;
+			}
+			
+			.top_bar .gohome i {
+				height: 31px;
+				width: 20px;
+				float: left;
+				background: url(http://static.sanjiang.com/common/images/index.png) 100% -620px no-repeat;
+				display: block;
+				margin-right: 8px;
+			}
+			
+			.top_bar .gohome a {
+				color: #666;
+			}
+			
+			.top_bar .gohome a:hover {
+				color: #f03838;
+			}
+			
+			.ufr {
+				float: right;
+			}
+			
+			.ufr a {
+				color: #666;
+			}
+			
+			.ufr a:hover {
+				color: #ea1414;
+			}
+			
+			.ufr li {
+				height: 30px;
+				float: left;
+			}
+			
+			.ufr .item1 .login {
+				color: #ea1414;
+				margin-left: 5px;
+				margin-right: 10px;
+			}
+			
+			.ufr .item2 {
+				padding-left: 12px;
+				padding-right: 12px;
+				text-align: center;
+				position: relative;
+			}
+			
+			.ufr .item2.mydd {
+				margin-left: 5px;
+			}
+			
+			.ufr .item2 div {
+				display: inline-block;
+				width: 1px;
+				height: 12px;
+				border-left: 1px solid #ddd;
+				position: absolute;
+				top: 9px;
+				left: 0;
+			}
+			
+			.menu {
+				width: 92px;
+				position: relative;
+			}
+			
+			.menu .drop_down_top {
+				width: 92px;
+				position: relative;
+			}
+			
+			.menu .drop_down_top div {
+				display: inline-block;
+				width: 1px;
+				height: 12px;
+				border-left: 1px solid #ddd;
+				position: absolute;
+				top: 9px;
+				left: 0;
+			}
+			
+			.menu .drop_down_top a {
+				margin-left: 15px;
+			}
+			
+			.drop_down_top em {
+				top: 12px;
+				right: 10px;
+				width: 9px;
+				height: 5px;
+				overflow: hidden;
+				position: absolute;
+				background: url(http://static.sanjiang.com/common/images/index.png) 100% -700px no-repeat;
+				transition: all 0.2s linear;
+			}
+			
+			.top_bar .ufr li .drop_down_box.w140 {
+				width: 160px;
+			}
+			
+			.top_bar .ufr li .drop_down_box {
+				background: #fff;
+				border: 1px solid #ddd;
+				padding: 10px 0 10px 12px;
+				left: 0;
+				top: 30px;
+				position: absolute;
+				display: none;
+				min-width: 70px;
+				z-index: 100;
+			}
+			
+			.top_bar .ufr li .daohang {
+				left: -81px;
+			}
+			
+			.top_bar .ufr li .drop_down_box p {
+				width: 92px;
+				height: 1px;
+				background: #fff;
+				/*background: red;*/
+				position: absolute;
+				top: -1px;
+				left: 0;
+				z-index: 100;
+				/*display: none;*/
+			}
+			
+			.top_bar .ufr li .daohang p {
+				left: 81px;
+			}
+			
+			.top_bar .ufr li .drop_down_box a {
+				width: 80px;
+				float: left;
+			}
+			
+			.koudai {
+				position: relative;
+				width: 112px;
+			}
+			
+			.koudai .drop_down_top .line {
+				display: inline-block;
+				width: 1px;
+				height: 12px;
+				border-left: 1px solid #ddd;
+				position: absolute;
+				top: 9px;
+				left: 0;
+			}
+			
+			.koudai .drop_down_top .phone_app {
+				width: 11px;
+				height: 16px;
+				margin-top: 7px;
+				float: left;
+				background: url(http://static.sanjiang.com/common/images/index.png) 100% -655px no-repeat;
+				display: inline-block;
+				margin-left: 15px;
+				margin-right: 8px;
+			}
+			
+			.kd_box {
+				border: 1px solid #ddd;
+				padding: 10px 0 10px 10px;
+				/*overflow: hidden;*/
+				left: 0;
+				top: 30px;
+				position: absolute;
+				display: none;
+				min-width: 70px;
+				background-color: white;
+			}
+			
+			.kd_box p {
+				width: 112px;
+				height: 1px;
+				position: absolute;
+				left: 0;
+				top: -1px;
+				background: #fff;
+			}
+			
+			.kd_box .app_code {
+				background: url(http://static.sanjiang.com/common/images/app.png) no-repeat;
+				width: 182px;
+				height: 105px;
+				z-index: 100;
+			}
+			
+			.kd_box .app_code span {
+				width: 83px;
+				line-height: 25px;
+				margin-top: 83px;
+				margin-right: 8px;
+				float: left;
+				text-align: center;
+			}
+			
+			.shopping-step div.active1 {
+				background: url(http://static.sanjiang.com/common/images/p_step.png) 100% -60px no-repeat #fc8;
+				color: #fff;
+			}
+			
+			.shopping-step div.active2 {
+				background: url(http://static.sanjiang.com/common/images/p_step.png) 100% -90px no-repeat #f79100;
+				color: #fff;
+			}
+			
+			.shopping-step div.active3 {
+				background: #ddd;
+			}
+			
+			.order-b {
+				width: 988px;
+				border: 1px solid #eee;
+				margin: 0px auto;
+				margin-top: -1px;
+			}
+			
+			.mt {
+				min-height: 36px;
+				background: #f8f8f8;
+				/*overflow: hidden;*/
+				line-height: 36px;
+			}
+			
+			.mt .title {
+				margin-left: 20px;
+			}
+			
+			.mc {
+				padding: 5px 0;
+			}
+			
+			.mc .sel_type {
+				height: 32px;
+				line-height: 32px;
+				color: #666;
+				font-size: 14px;
+				margin: 0 20px;
+				width: 948px;
+				display: block;
+			}
+			
+			.mc .sel_type label {
+				width: 100%;
+				height: 32px;
+				display: block;
+			}
+			
+			.mc .sel_type input {
+				margin-right: 8px;
+				vertical-align: middle;
+				font-size: 100%;
+				color: #999;
+				vertical-align: middle;
+				border: none;
+				outline: none;
+				vertical-align: middle;
+			}
+			
+			.mc .sel_type span {
+				line-height: 32px;
+				font-size: 12px;
+				vertical-align: middle;
+			}
+			
+			.mc .sel_type span.red {
+				color: #f03838;
+				;
+			}
+			
+			.mc .address {
+				overflow: hidden;
+			}
+			
+			.oldaddress {
+				border: 1px solid #eee;
+				height: 22px;
+				float: left;
+				line-height: 22px;
+				width: 613px;
+				position: relative;
+				margin-left: 40px;
+				margin-bottom: 2px;
+			}
+			
+			.oldaddress.active {
+				border: 1px solid #f9ad40;
+				background: ivory;
+			}
+			
+			.oldaddress i {
+				content: "";
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				/*display: none;*/
+				width: 19px;
+				height: 14px;
+				background: url(http://static.sanjiang.com/common/images/mysj.png) -23px -429px no-repeat;
+			}
+			
+			.oldaddress span {
+				margin: 0 10px;
+				font-size: 12px;
+				line-height: 22px;
+				color: #333;
+			}
+			
+			.newaddress {
+				border: 1px solid #eee;
+				height: 22px;
+				float: left;
+				line-height: 22px;
+				width: 613px;
+				position: relative;
+				margin-left: 40px;
+			}
+			
+			.newaddress span {
+				margin: 0 10px;
+				font-size: 12px;
+				line-height: 22px;
+				color: #333;
+			}
+			
+			.bset {
+				width: 180px;
+				overflow: hidden;
+				position: absolute;
+				display: none;
+				left: 612px;
+				padding-left: 20px;
+				top: 0;
+			}
+			
+			.bset p {
+				/*width: 100px;*/
+				text-align: right;
+				font-size: 12px;
+				line-height: 22px;
+				margin-right: 20px;
+				float: left;
+				color: #2272c8;
+				cursor: pointer;
+			}
+			
+			.addaddress {
+				height: 24px;
+				margin: 10px 0 10px 40px;
+				line-height: 24px;
+				overflow: hidden;
+			}
+			
+			.addaddress span {
+				cursor: pointer;
+				color: #2272c8;
+				font-size: 14px;
+			}
+			
+			.addaddress-item p i {
+				width: 16px;
+				height: 16px;
+				display: block;
+				float: left;
+				margin: 7px;
+				background: url(http://static.sanjiang.com/safe/images/safe-bf.png) 0 -50px no-repeat;
+			}
+			
+			.addaddress-item {
+				line-height: 29px;
+				overflow: hidden;
+				margin-bottom: 8px;
+			}
+			
+			.addaddress-item p {
+				float: left;
+				margin-right: 8px;
+				display: block;
+				height: 28px;
+				overflow: hidden;
+				font-size: 14px;
+			}
+			
+			.addaddress-item input[type=text] {
+				width: 172px;
+				height: 26px;
+				line-height: 26px;
+				border: 1px solid #d9d9d9;
+				padding: 0 8px;
+				float: left;
+				margin-right: 8px;
+				overflow: hidden;
+				outline: none;
+			}
+			
+			.addaddress-item input[type=text].focus {
+				border: 1px solid #36c127;
+			}
+			
+			.addaddress-item input[type=text].error {
+				border: 1px solid #ea1414;
+			}
+			
+			.addaddress-item span {
+				color: #f03838;
+				font-weight: 700;
+				margin-right: 5px;
+				font-size: 14px;
+			}
+			
+			.addaddress-item>div {
+				width: 110px;
+				font-size: 14px;
+				float: left;
+				text-align: right;
+			}
+			
+			.addaddress-item .buy_checked {
+				/*width: 110px;*/
+				font-size: 14px;
+				float: left;
+				text-align: right;
+			}
+			
+			.addaddress-item .buy_checked input {
+				margin-right: 8px;
+				vertical-align: middle;
+				width: 14px;
+				height: 14px;
+			}
+			
+			.mc .buy_button {
+				border-radius: 3px;
+				border: 0;
+				outline: none;
+				text-align: center;
+				width: 96px;
+				height: 28px;
+				line-height: 28px;
+				color: #fff;
+				background: #f03838;
+				display: block;
+				float: left;
+				margin: 10px 10px 0 0;
+				cursor: pointer;
+			}
+			
+			.addaddress-item2 {
+				padding-left: 110px;
+			}
+			
+			.addaddress-item3 .buy_select {
+				border: 1px solid #ccc;
+				width: 108px;
+				height: 26px;
+				line-height: 26px;
+				cursor: pointer;
+				text-align: left;
+				position: relative;
+				margin-right: 20px;
+			}
+			
+			.addaddress-item3 .buy_select span {
+				margin-left: 10px;
+				color: #333;
+				font-size: 12px;
+			}
+			
+			.addaddress-item3>div {
+				width: 110px;
+				font-size: 14px;
+				float: left;
+				text-align: right;
+			}
+			
+			.buy_select i {
+				display: block;
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				background: url(http://static.sanjiang.com/common/images/list.png) 0 -23px no-repeat;
+				width: 9px;
+				height: 5px;
+			}
+			
+			.shop_down {
+				display: block;
+				width: 108px;
+				position: absolute;
+				top: 26px;
+				left: -1px;
+				z-index: 1;
+				border: 1px solid #ccc;
+				border-top: none;
+			}
+			
+			.shop_down ul {
+				width: 108px;
+				background-color: white;
+				border-top: 1px solid #ccc;
+				display: none;
+			}
+			
+			.shop_down ul li {
+				width: 98px;
+				padding-left: 10px;
+				font-size: 14px;
+				color: #333;
+				background-color: white;
+			}
+			
+			.shop_down ul li:hover {
+				color: white;
+				background-color: #3390ee;
+			}
+			
+			.addaddress-item3 {
+				line-height: 29px;
+				margin-bottom: 8px;
+				height: 29px;
+			}
+			
+			.addaddress-item b {
+				font-size: 14px;
+				color: #999;
+			}
+			
+			.addaddress-item p.yes i {
+				background-position: 0 -76px;
+			}
+			
+			.mc .sel_type p.tips {
+				font-size: 12px;
+				color: #999;
+				margin-left: 20px;
+				display: inline-block;
+			}
+			
+			.mc .sel_type p.tips a {
+				display: inline-block;
+				margin-left: 20px;
+				color: #2272c8;
+			}
+			
+			.mc .goods {
+				margin: 0 19px;
+				overflow: hidden;
+			}
+			
+			.goods-item {
+				height: 35px;
+				line-height: 35px;
+				font-size: 12px;
+				border-bottom: 1px dashed #ddd;
+				text-align: center;
+			}
+			
+			.goods-item a {
+				color: #666;
+			}
+			
+			.goods-item a:hover {
+				color: #f03838;
+			}
+			
+			.goods .info1 {
+				width: 400px;
+				height: 35px;
+				float: left;
+				font-size: 12px;
+			}
+			
+			.goods .info2 {
+				width: 100px;
+				height: 35px;
+				float: left;
+			}
+			
+			.goods .info3 {
+				width: 150px;
+				height: 35px;
+				float: left;
+				text-align: center;
+			}
+			
+			.goods .info4 {
+				width: 150px;
+				height: 35px;
+				float: right;
+				font-size: 12px;
+				line-height: 35px;
+				text-align: center;
+				color: #666;
+				font-weight: 800;
+			}
+			
+			.goods .info5 {
+				width: 100px;
+				height: 35px;
+				line-height: 35px;
+				float: right;
+				font-size: 12px;
+				text-align: center;
+				color: #999;
+			}
+			
+			.mc .goods-head {
+				margin: 0 19px;
+				/*overflow: hidden;*/
+				border-bottom: 2px solid #eee;
+				height: 32px;
+				line-height: 32px;
+			}
+			
+			.mc .goods-head .yhq {
+				text-align: center;
+				width: 122px;
+				display: block;
+				float: left;
+				font-family: 微软雅黑;
+				font-size: 12px;
+				cursor: pointer;
+				position: relative;
+				font-weight: 700;
+				height: 31px;
+			}
+			
+			.mc .goods-head .active {
+				color: #ea1414;
+			}
+			
+			.mc .goods-head .active b {
+				width: 122px;
+				height: 2px;
+				background-color: #ea1414;
+				position: absolute;
+				z-index: 1;
+				bottom: -2px;
+				left: 0px;
+			}
+			
+			.yhq i {
+				font-style: normal;
+				position: absolute;
+				right: 0;
+				top: 10px;
+				border-left: 1px solid #ddd;
+				width: 1px;
+				height: 14px;
+			}
+			
+			.info6 {
+				width: 140px;
+				float: left;
+			}
+			
+			.info7 {
+				width: 208px;
+				float: left;
+				line-height: 35px;
+			}
+			
+			.info8 {
+				width: 310px;
+				float: left;
+				line-height: 35px;
+			}
+			
+			.goods>p {
+				text-align: right;
+				font-size: 12px;
+				line-height: 26px;
+				text-align: right;
+				color: #333;
+				display: block;
+				height: 26px;
+			}
+			
+			.goods>p:nth-child(1) {
+				margin-top: 10px;
+			}
+			
+			.goods>p span {
+				color: #333;
+			}
+			
+			.goods>p span.red {
+				color: #f03838;
+			}
+			
+			.mc textarea {
+				width: 990px;
+				border: none;
+				resize: none;
+				outline: none;
+			}
+			
+			.suborder-item {
+				float: right;
+				min-width: 105px;
+				height: 38px;
+				margin-top: 15px;
+				margin-right: 20px;
+			}
+			
+			.suborder-item button {
+				width: 105px;
+				height: 38px;
+				font-size: 18px;
+				background: #ccc;
+				color: #fff;
+				outline: none;
+			}
+			
+			.suborder-item button.active {
+				background-color: #f03838;
+			}
+			
+			.suborder-item p {
+				font-size: 12px;
+				line-height: 19px;
+			}
+			
+			.suborder-item p .needpay {
+				color: #f03838;
+				line-height: 19px;
+				font-size: 16px;
+			}
+			
+			.suborder-item p .canlow {
+				color: #333;
+			}
+			
+			.suborder-item a {
+				color: #2272c8;
+				;
+			}
+			
+			.myaddress {
+				text-align: right;
+				font-size: 12px;
+			}
+			
+			.myaddress span {
+				display: inline-block;
+				margin-right: 8px;
+			}
+			
+			.pay {
+				overflow: hidden;
+			}
+			
+			.myaddress span.changeaddress {
+				color: #2272c8;
+				margin-right: 20px;
+				cursor: pointer;
+			}
+			
+			.myaddress .tips {
+				color: #f03838;
+				margin-right: 20px;
+			}
+			
+			.sel_body {
+				display: none;
+			}
+			
+			.sel_body .inputaddress {
+				/*display: none;*/
+				overflow: hidden;
+				height: 0px;
+			}
+			
+			.mc .sel_bodyactive {
+				display: block;
+			}
+		</style>
+		<script src="__ROOT__/Index/Common/js/jquery-1.11.3.min.js"></script>
+		<script src="__ROOT__/Index/Common/js/Popt.js"></script>
+		<script src="__ROOT__/Index/Common/js/cityJson.js"></script>
+		<script src="__ROOT__/Index/Common/js/citySet.js"></script>
+	</head>
+
+	<body ng-app="myapp" ng-controller="mycontroller">
+		<!--导航条主体-->
+		<div class="top_bar">
+			<div class="w900">
+				<div class="gohome"><i></i>
+					<a href="__APP__/Index/index">返回首页</a>
+				</div>
+				<ul class="ufr">
+					<li class="item1">
+						<if condition="!isset($_SESSION['username'])">
+							您好，欢迎来到三江！
+							<span>
+									<a href="__APP__/Login/login" class="login">登录</a>
+									<a href="__APP__/Register/register">注册</a>
+								</span>
+							<else />
+							<a href="###" style="margin-right: 15px;">{$Think.session.username}</a>
+							<a href="__APP__/Login/login">退出</a>
+						</if>
+					</li>
+					<li class="item2 mydd">
+						<div></div>
+						<if condition="!isset($_SESSION['username'])">
+							<a href="__APP__/Login/login" target="_blank">我的订单</a>
+							<else />
+							<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+						</if>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的三江</a>
+								<else />
+								<a href="__APP__/Mymessageindex/mymessageindex" target="_blank">我的三江</a>
+							</if>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">我的订单</a>
+								<a href="__APP__/Login/login" target="_blank">我的收藏</a>
+								<a href="__APP__/Login/login" target="_blank">我的优惠券</a>
+								<a href="__APP__/Login/login" target="_blank">地址管理</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的订单</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的收藏</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">我的优惠券</a>
+								<a href="__APP__/Mymessage/mymessage" target="_blank">地址管理</a>
+							</if>
+						</div>
+					</li>
+					<li class="koudai">
+						<div class="drop_down_top">
+							<div class="line"></div>
+							<div class="phone_app"></div>
+							<a href="http://help.sanjiang.com/app.html" target="_blank">口袋三江</a>
+							<em></em>
+
+						</div>
+						<div class="kd_box">
+							<p></p>
+							<div class="app_code"><span>三江客户端</span><span>三江订阅号</span></div>
+						</div>
+					</li>
+					<li class="item2">
+						<div></div>
+						<a href="javascript:void(0);" target="_blank">企业团购</a>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="__APP__/Help/helpIndex" target="_blank">客户服务</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140">
+							<p></p>
+							<a href="__APP__/Help/helpIndex" target="_blank">帮助中心</a>
+							<a href="__APP__/Help/shfwTHGZ" target="_blank">售后服务</a>
+							<if condition="!isset($_SESSION['username'])">
+								<a href="__APP__/Login/login" target="_blank">意见反馈</a>
+								<else />
+								<a href="__APP__/Mymessage/mymessage" target="_blank">意见反馈</a>
+							</if>
+						</div>
+					</li>
+					<li class="menu">
+						<div class="drop_down_top">
+							<div></div>
+							<a href="javascript:void(0)">网站导航</a>
+							<em></em>
+
+						</div>
+						<div class="drop_down_box w140 daohang">
+							<p></p>
+							<a href="__URL__/sjyx" target="_blank">三江优选</a>
+							<a href="__URL__/hsp" target="_blank">惠商品</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='logo-box'>
+			<div class='logo'>
+				<a href="###主页"></a>
+			</div>
+			<div class='shopping-step'>
+				<div class='active1'>
+					<i>1</i> 我的购物车
+					<span></span>
+				</div>
+				<div class="active2">
+					<i>2</i> 确认订单信息
+					<span></span>
+				</div>
+				<div class='active3'>
+					<i>3</i> 成功提交订单
+					<span></span>
+				</div>
+			</div>
+		</div>
+		<!-- 订单主体部分 -->
+		<!-- 收货地址 -->
+		<div class="order-b">
+			<div class="mt">
+				<p class="title">收货信息</p>
+			</div>
+			<div class="mc">
+				<div class="sel_type" id="sj_give">
+					<label><input type="radio" name="sel" checked="checked"><span>三江配送</span></label>
+				</div>
+				<div class="sel_body sel_bodyactive">
+					<div class="address">
+						<div class="oldaddress active" ng-repeat="v in addressArr">
+							<p><span>{{v.username}}</span><span>{{v.address}}{{v.detail}}</span><span>{{v.tel}}</span></p>
+							<i ng-show="{{v.isMoren}}"></i>
+							<div class="bset">
+								<p class="moren" ng-click="set()">设为默认地址</p>
+								<p ng-click="del(v.id)">删除</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="addaddress">
+						<span id="add_address">+添加新地址</span>
+					</div>
+					<form novalidate="novalidate" name="myform">
+						<div class="inputaddress">
+							<!-- input 边框颜色改变 添加classname .focus .error-->
+							<div class="addaddress-item">
+								<div><span>*</span>收货人：</div>
+								<input class="input" type="text" name="consignee" placeholder="请填写姓名" ng-required="true" ng-model="username">
+								<p ng-if="!myform.consignee.$valid"><i></i>联系人不能为空！</p>
+								<p class="yes" ng-if="myform.consignee.$valid"><i></i></p>
+							</div>
+							<div class="addaddress-item">
+								<div><span>*</span>所在地区：</div>
+								<input type="text" id="city" placeholder="浙江省" />
+							</div>
+							<div class="addaddress-item">
+								<div><span>*</span>详细地址：</div>
+								<input class="input" type="text" name="address" placeholder="请填写详细地址" ng-required="true" ng-model="detail">
+								<p ng-if="!myform.address.$valid"><i></i>详细地址不能为空！</p>
+								<p class="yes" ng-if="myform.address.$valid"><i></i></p>
+							</div>
+							<div class="addaddress-item">
+								<div><span>*</span>手机：</div>
+								<input class="input" type="text" name="tel" placeholder="请填写正确11位手机号码" ng-required="true" ng-minlength="11" ng-maxlength="11" ng-model="tel">
+								<p ng-if="!myform.tel.$valid"><i></i>手机号不能为空！</p>
+								<p class="yes" ng-if="myform.tel.$valid"><i></i></p>
+							</div>
+							<div class="addaddress-item">
+								<div>固定电话：</div>
+								<input class="input" type="text" name="" placeholder="请输入固定号码-分机号码" ng-model='phone'>
+							</div>
+							<div class="addaddress-item addaddress-item2">
+								<button type="button" class="buy_button" id="btn_y_sj" ng-click='sub()'>确认配送信息</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="mc">
+				<div class="sel_type" id="sj_give">
+					<label>
+	          	<input type="radio" name="sel" >
+	          	<span>门店自提</span><span class="red">(免运费)</span>
+	          </label>
+				</div>
+				<div class="sel_body">
+					<div class="addaddress-item3">
+						<div>自提门店：</div>
+						<div class="buy_select">
+							<div class="shop_value" id="sinceArea" attr=""><span>请选择区域</span><i></i></div>
+							<div class="shop_down" id="sinceAreas">
+								<ul>
+									<li>海曙区</li>
+									<li>江东区</li>
+									<li>江北区</li>
+									<li>鄞州区</li>
+								</ul>
+							</div>
+						</div>
+						<div class="buy_select">
+							<div class="shop_value" id="sinceArea" attr=""><span>请选择区域</span><i></i></div>
+							<div class="shop_down" id="sinceAreas">
+								<ul>
+									<li>海曙区</li>
+									<li>江东区</li>
+									<li>江北区</li>
+									<li>鄞州区</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="addaddress-item">
+						<div>门店地址：</div>
+						<b>选择自提门店之后自动显示</b>
+					</div>
+					<div class="addaddress-item">
+						<div><span>*</span>收货人：</div>
+						<input type="text" name="username" placeholder="请填写姓名" ng-required="true" ng-model="userinfo.name">
+						<p ng-if="!myform.username.$valid"><i></i>联系人人不能为空！</p>
+						<p class="yes" ng-if="myform.username.$valid"><i></i></p>
+					</div>
+					<div class="addaddress-item">
+						<div><span>*</span>手机：</div>
+						<input type="text" name="" placeholder="请填写正确11位手机号码" ng-required="true" ng-minlength="11" ng-maxlength="11" ng-model="userinfo.tel">
+						<p ng-if="!myform.tel.$valid"><i></i>手机号不能为空！</p>
+						<p class="yes" ng-if="myform.tel.$valid"><i></i></p>
+					</div>
+					<div class="addaddress-item addaddress-item2">
+						<button type="button" class="buy_button">确认配送信息</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 支付方式 -->
+		<div class="order-b">
+			<div class="mt">
+				<p class="title">支付方式</p>
+			</div>
+			<div class="mc">
+				<div class="sel_type" id="sj_give">
+					<label>
+	          		<input type="radio" name="pay">
+	          		<span>在线支付</span>
+	          		<p class="tips">即时到帐，支持绝大数银行借记卡及部分银行信用卡
+	          			<a href="###帮助中心">查看银行及限额</a>
+	          		</p>
+	      		</label>
+				</div>
+			</div>
+		</div>
+		<!-- 商品清单 -->
+		<div class="order-b">
+			<div class="mt">
+				<p class="title">商品清单
+					<a href="__APP__/Shopping/shopping" style="float:right;font-size: 13px;color:#2272c8;margin-right: 20px">返回购物车修改</a>
+				</p>
+			</div>
+			<div class="mc">
+				<div class="goods">
+					<div class="goods-item">
+						<div class="info1">商品</div>
+						<div class="info2">销售价</div>
+						<div class="info2">会员价</div>
+						<div class="info2">数量</div>
+						<div class="info3">小计</div>
+						<div class="info2">重量</div>
+					</div>
+					<div class="goods-item" ng-repeat="val in arr">
+						<div class="info1">
+							<a href="###商品详情页">{{val.data.productTitle}}</a>
+						</div>
+						<div class="info2">￥{{val.data.Price}}</div>
+						<div class="info2">￥{{val.data.vPrice}}</div>
+						<div class="info2">{{val.num}}</div>
+						<div class="info3">￥{{val.data.Price*val.num|number:2}}</div>
+						<div class="info2">{{val.data.weight}}kg</div>
+					</div>
+				</div>
+				<div class="goods">
+					<div class="info5">{{allW}}kg</div>
+					<div class="info4">￥{{totalC|number:2}}</div>
+				</div>
+			</div>
+		</div>
+		<!-- 抵用券 -->
+		<div class="order-b">
+			<div class="mt">
+				<p class="title">抵用券</p>
+			</div>
+			<div class="mc">
+				<div class="goods-head">
+					<!-- 添加classname active 变红的 -->
+					<div class="yhq active">
+						可用优惠券(<span>0</span>)
+						<i></i>
+						<b></b>
+					</div>
+					<div class="yhq">
+						不可用优惠券(<span>0</span>)
+						<b></b>
+					</div>
+				</div>
+				<div class="goods">
+					<div class="goods-item">
+						<div class="info6">券金额（元）</div>
+						<div class="info6">券类型</div>
+						<div class="info6">券名称</div>
+						<div class="info7">券有效期</div>
+						<div class="info8">使用说明</div>
+					</div>
+				</div>
+				<div class="goods">
+					<p><span>{{arr.length}}</span>件商品，总商品金额：<span>￥{{totalC|number:2}}</span></p>
+					<p>优惠券：<span class="red">-￥0</span></p>
+					<p>现金券：<span class="red">-￥0.00</span></p>
+					<p>运费合计：<span>￥{{ymoney|number:2}}</span></p>
+					<p>应付金额：<span>￥{{totalC|number:2}}</span></p>
+				</div>
+			</div>
+		</div>
+		<!-- 订单备注 -->
+		<div class="order-b">
+			<div class="mt">
+				<p class="title">订单备注</p>
+			</div>
+			<div class="mc">
+				<textarea ng-model="userinfo.remarks"></textarea>
+			</div>
+		</div>
+		<!-- 提交订单 -->
+		<div class="order-b" id="bottom">
+			<div class="mt">
+				<div class="pay">
+					<div class="suborder-item">
+						<!-- btn 添加classname   .active 变红 -->
+						<button ng-click="pay(totalC)" ng-class="{true:'active',false:''}[isSelect]">提交订单</button>
+					</div>
+					<div class="suborder-item">
+						<p>应付总额<span class="needpay">￥{{totalC|number:2}}</span></p>
+						<p>
+							<a href="##">升级为会员</a>可在优惠<span class="canlow">￥1.23</span></p>
+					</div>
+
+				</div>
+				<div class="myaddress">
+					<p>
+						<span>送货至</span>
+						<span>{{address}}{{detail}}</span>
+						<span>{{username}}</span>
+						<span>{{tel}}</span>
+						<span class="changeaddress">修改</span>
+					</p>
+					<p>
+						<span class="tips">请先设置收货人地址</span>
+					</p>
+
+				</div>
+			</div>
+		</div>
+		<!--底部导航-->
+		<iframe width="100%" height="356px" frameborder=0 scrolling="no" src="__APP__/Footer/footer"></iframe>
+	</body>
+	<script type="text/javascript">
+		//↓送至效果
+		$("#city").click(function(e) {
+			SelCity(this, e);
+			console.log("inout", $(this).val(), new Date())
+		});
+		$(".address").on("mouseover", ".oldaddress", function() {
+			$(this).children().eq(2).show();
+		})
+		$(".address").on("mouseout", ".oldaddress", function() {
+			$(this).children(".bset").hide();
+		})
+		// 初始化 所有的提示 全部隐藏
+		$(".addaddress-item p").css({
+			"display": 'none'
+		});
+		var app = angular.module("myapp", []);
+		app.controller("mycontroller", function($scope, $http) {
+			get();
+			//添加地址
+			$scope.sub = function() {
+				if($scope.username != "" && $("#city").val() != "" && $scope.detail != "" && $scope.tel != "" && $scope.phone != "") {
+					var str = "username=" + $scope.username + "&address=" + $("#city").val() + "&detail=" + $scope.detail + "&tel=" + $scope.tel + "&phone=" + $scope.phone;
+					$http({
+						method: "post",
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded"
+						},
+						url: "__URL__/addAddress",
+						data: str
+					}).success((res) => {
+						get();
+					}).error((err) => {
+						console.log(err);
+					})
+
+				}
+
+			}
+			//删除
+			$scope.del = function(id) {
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__URL__/delAddress",
+					data: "id=" + id
+				}).success((res) => {
+					get();
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+			//获取地址
+			function get() {
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__URL__/getAddress"
+				}).success((res) => {
+					console.log(res);
+					$scope.addressArr = res;
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+			$scope.isSelect = false;
+			$http({
+				method: "post",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded"
+				},
+				url: "__URL__/getData"
+			}).success((res) => {
+				//console.log(res);
+				if(res.totalC != 0) {
+					$scope.isSelect = true;
+				} else {
+					$scope.isSelect = false;
+				}
+				$scope.arr = res.data;
+				$scope.allW = res.allW;
+				$scope.totalC = res.totalC;
+				var tp = $scope.totalC;
+				var tw = $scope.allW;
+				//运费
+				$scope.ymoney = money(tp, tw);
+
+				function money(tp, tw) {
+					if(tp >= 88 && tw <= 10) {
+						return 0;
+					}
+					if(tp >= 176 && tw <= 20) {
+						return 0;
+					}
+					if(tp < 50) {
+						return 10 + (tw - 5) > 10 ? 10 + (tw - 5) : 10;
+					}
+					if(tp < 88 && tp > 50) {
+						return 5 + (tw - 5) > 5 ? 5 + (tw - 5) : 5;
+					}
+					if(tp >= 176) {
+						return tw - 20;
+					}
+					if(tp >= 88 && tp <= 176) {
+						return tw - 10;
+					}
+
+				}
+				$scope.str = "";
+				for(var i = 0; i < $scope.arr.length; i++) {
+					$scope.str += $scope.arr[i].data.id + "/" + $scope.arr[i].num + ";"
+				}
+			}).error((err) => {
+				console.log(err);
+			})
+			$scope.set = function() {
+				$scope.id = this.v.id;
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__URL__/setMoren",
+					data: "id=" + $scope.id
+				}).success((res) => {
+					console.log(res);
+					if(res.status == 1) {
+						get();
+					}
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+			$scope.pay = function(money) {
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__URL__/addDin",
+					data: "str=" + $scope.str + "&addressId=" + $scope.id + "&totalC=" + $scope.totalC + "&ymoney=" + $scope.ymoney + "&totalW=" + $scope.allW
+				}).success((res) => {
+					//console.log(res);
+					if(res.info == 1) {
+						alert("请先选择地址");
+					} else {
+						if(res) {
+							//提交订单成功后跳转到支付页面
+							window.location.href = "__APP__/Pay/pay";
+							//提交订单成功后删除购物车数据
+							$http({
+								method: "post",
+								headers: {
+									"Content-Type": "application/x-www-form-urlencoded"
+								},
+								url: "__URL__/delProduct",
+								data: "str=" + $scope.str
+							}).success((res) => {
+								//								console.log(res);
+							}).error((err) => {
+								console.log(err);
+							})
+						}
+					}
+
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+			// 点击添加地址
+			$("#add_address").click(function() {
+				var h = parseInt($(".sel_body .inputaddress").css("height")) > 200 ? 0 : 252;
+				$(".sel_body .inputaddress").animate({
+					"height": h
+				}, 300);
+			});
+
+			// 点击切换--配送方式
+			$("input[name=sel]").click(function() {
+				// 清除 另一个配送方式中的已经输入的信息
+				$scope.userinfo = {};
+				// 防止相互影响
+				$(".sel_body").css({
+					'display': 'none'
+				});
+				// console.log($(this).parents(".mc"));
+				$(this).parents(".mc").find(".sel_body").css({
+					"display": function(index, value) {
+						return value == "block" ? "none" : "block";
+					}
+				})
+			})
+			// 当input框被访问时 给当前input框添加 classname “focus” 变为绿色
+			$(".mc .input").focus(function() {
+				$(".mc .input").removeClass("focus");
+				$(this).addClass("focus");
+			})
+			// 当离开当前 input 时 判断是否输入了信息 没有显示 红色 ，并展示提示
+			// 有输入信息  展示正确
+			$(".mc .input").blur(function() {
+				// $(".mc input[type=text]").removeClass("focus");
+				// 让提示展示出来
+				$(this).parent().find("p").css({
+					"display": "block"
+				});
+				var _this = $(this)[0];
+				$(this).removeClass("error");
+				$(this).addClass(function() {
+					// 返回当前框的颜色
+					return _this.value == "" ? "error" : '';
+				});
+			})
+		})
+
+		$(".yhq").click(function() {
+			$(".yhq").removeClass("active");
+			$(this).addClass("active");
+		})
+	</script>
+
+</html>

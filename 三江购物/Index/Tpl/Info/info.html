@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>【{$data[0].productTitle}】{$data[0].productTitle}</title>
+		<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon" />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			.body {
+				height: 100%;
+				width: 100%;
+				margin-bottom: 15px;
+				position: relative;
+			}
+			
+			ul li {
+				list-style: none;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			.center {
+				width: 1200px;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			
+			.num1 {
+				line-height: 40px;
+				height: 40px;
+				font-family: 宋体;
+				text-align: left;
+			}
+			
+			.num1 a {
+				font-size: 12px;
+				color: #666;
+			}
+			
+			#a1 {
+				color: #f03838;
+			}
+			
+			.nmu2 {
+				width: 1200px;
+				margin: 0 auto;
+			}
+			
+			.left {
+				position: relative;
+				display: block;
+				float: left;
+			}
+			
+			.small {
+				width: 400px;
+				height: 400px;
+				border: 1px solid #eee;
+				text-align: center;
+				padding: 14px;
+				float: left;
+				margin-bottom: 20px;
+				position: relative;
+				cursor: crosshair;
+			}
+			
+			.big {
+				width: 428px;
+				height: 428px;
+				border: 1px #eee solid;
+				background-image: url({$data[0].productImg});
+				position: absolute;
+				left: 428px;
+				top: -1px;
+				display: none;
+				z-index: 100;
+			}
+			
+			.img1 {
+				width: 400px;
+				height: 400px;
+			}
+			
+			#img2 {
+				margin-top: 15px;
+				width: 430px;
+				display: block;
+				overflow: hidden;
+			}
+			
+			#img2 i {
+				display: block;
+				width: 18px;
+				height: 28px;
+				margin: 17px 0;
+				background: url(http://static.sanjiang.com/common/images/items.png) no-repeat;
+			}
+			
+			.a2 {
+				float: left;
+				width: 18px;
+				height: 62px;
+				line-height: 62px;
+			}
+			
+			#img2 .a2 i {
+				background-position: -47px -201px;
+			}
+			
+			.a3 {
+				float: right;
+				width: 18px;
+				height: 62px;
+				line-height: 62px;
+			}
+			
+			#img2 .a3 i {
+				background-position: -47px -163px;
+			}
+			
+			.bottom {
+				float: left;
+				position: relative;
+				width: 358px;
+				margin: 0 17px;
+				height: 62px;
+				overflow: hidden;
+			}
+			
+			.bottom li {
+				float: left;
+				margin-right: 12px;
+				width: 54px;
+				height: 54px;
+				border: 1px solid red;
+				padding: 3px;
+			}
+			
+			.bottom li img {
+				width: 54px;
+				height: 54px;
+			}
+			
+			.box {
+				width: 500px;
+				margin: 0 50px 10px 30px;
+				float: left;
+				position: relative;
+			}
+			
+			.name {
+				height: 78px;
+				font-family: 微软雅黑;
+				font-size: 14px;
+			}
+			
+			.h1 {
+				font-size: 16px;
+				color: #666;
+				line-height: 30px;
+			}
+			
+			.name2 {
+				width: 474px;
+				height: 60px;
+				padding: 15px;
+				background: #ffedde;
+				position: relative;
+			}
+			
+			.price {
+				float: left;
+				font-size: 12px;
+				color: #999;
+			}
+			
+			.span1 {
+				color: #f03838;
+				line-height: 30px;
+				margin-bottom: 7px;
+				display: inline-block;
+			}
+			
+			.span1 b {
+				font-size: 16px;
+				color: #f03838;
+				vertical-align: middle;
+			}
+			
+			.span1 b strong {
+				font-size: 25px;
+			}
+			
+			.price span {
+				display: block;
+			}
+			
+			.share {
+				float: right;
+				width: 150px;
+			}
+			
+			.collection1 {
+				float: left;
+				cursor: pointer;
+				color: #666;
+				height: 14px;
+				line-height: 14px;
+				margin-right: 50px;
+				margin-top: 5px;
+				font-size: 12px;
+			}
+			
+			.collection1 i {
+				background: url(http://static.sanjiang.com/common/images/items.png) 0 -355px;
+				width: 12px;
+				height: 12px;
+				display: inline-block;
+				margin-right: 5px;
+				vertical-align: middle;
+			}
+			
+			.collection1 i:hover {
+				background: red;
+			}
+			
+			.collection2 {
+				width: 113px;
+				height: 63px;
+				float: left;
+				padding: 1px;
+				position: absolute;
+				right: -30px;
+				font-size: 12px;
+			}
+			
+			.collection2 i:hover {
+				background: red;
+			}
+			
+			.collection2 .collectin3 {
+				width: 100px;
+				margin-left: 12px;
+				cursor: pointer;
+				color: #666;
+				height: 14px;
+				line-height: 14px;
+				margin-right: 20px;
+				margin-top: 5px;
+			}
+			
+			.collection2 .collection3 i {
+				background: url(http://static.sanjiang.com/common/images/items.png) 0 -311px;
+				width: 12px;
+				height: 12px;
+				display: inline-block;
+				margin-right: 5px;
+				vertical-align: middle;
+			}
+			
+			.collection3 b {
+				background: url(http://static.sanjiang.com/common/images/list.png) 0 -23px;
+				width: 9px;
+				height: 5px;
+				display: inline-block;
+				margin-left: 5px;
+				vertical-align: middle;
+			}
+			
+			.collection4 {
+				width: 113px;
+				height: 63px;
+				float: left;
+				padding: 1px;
+				position: absolute;
+				right: -30px;
+				font-size: 12px;
+				background: white;
+				border: 1px solid red;
+				display: none;
+			}
+			
+			.collection5 {
+				width: 110px;
+				margin-top: 10px;
+				height: 19px;
+				margin-left: 3px;
+			}
+			
+			.collection6 a {
+				margin: 0 0 0 2px;
+				padding-left: 0;
+				background-image: url(__ROOT__/Index/Common/images/4.png);
+				background-repeat: no-repeat;
+				cursor: pointer;
+				width: 19px;
+				height: 19px;
+				display: block;
+				float: left;
+			}
+			
+			.white {
+				width: 215px;
+				height: 215px;
+				background-color: white;
+				opacity: 0.3;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				display: none;
+			}
+			
+			.choose {
+				line-height: 25px;
+				font-size: 12px;
+			}
+			
+			.choose1 {
+				margin-bottom: 10px;
+				margin-top: 10px;
+				color: #999;
+			}
+			
+			.choose3 {
+				width: 60px;
+				text-align: left;
+				padding-left: 15px;
+				display: block;
+				float: left;
+				vertical-align: middle;
+				color: #999;
+			}
+			
+			.mc {
+				color: #666;
+				display: block;
+				float: left;
+				width: 425px;
+			}
+			
+			.choose2 {
+				margin-bottom: 10px;
+				color: #999;
+			}
+			
+			.mc2 {
+				color: #666;
+				display: block;
+				float: left;
+				width: 425px;
+			}
+			
+			.all {
+				display: block;
+				float: left;
+				z-index: 19;
+				color: #666;
+			}
+			
+			.where {
+				border: 1px solid #ddd;
+				cursor: pointer;
+				padding: 0 10px;
+				height: 24px;
+				line-height: 24px;
+				display: block;
+				float: left;
+				min-width: 40px;
+			}
+			
+			.where i {
+				margin-left: 3px;
+				display: inline-block;
+				background: url(http://static.sanjiang.com/common/images/list.png) 0 -23px no-repeat;
+				width: 9px;
+				height: 5px;
+			}
+			
+			.who {
+				display: block;
+				float: left;
+				font-weight: 700;
+			}
+			
+			.active {
+				display: none;
+			}
+			
+			.mc3 {
+				line-height: 25px;
+				margin-bottom: 10px;
+			}
+			
+			.mc4 {
+				color: #666;
+				display: block;
+				float: left;
+				width: 425px;
+			}
+			
+			.mc4 a {
+				color: #666;
+			}
+			
+			.mc4 a:hover {
+				color: red;
+			}
+			
+			.m5 {
+				color: #666;
+				display: block;
+				float: left;
+				width: 425px;
+			}
+			
+			.m6 {
+				height: 26px;
+				border-top: 1px solid #ddd;
+				border-bottom: 1px solid #ddd;
+				width: 66px;
+				line-height: 26px;
+				display: block;
+				float: left;
+			}
+			
+			.jian {
+				display: block;
+				float: left;
+				border-left: 1px solid #ddd;
+				border-right: 1px solid #ddd;
+				background: #f0f0f0;
+				font-size: 14px;
+				font-weight: 400;
+				color: #666;
+				width: 16px;
+				text-align: center;
+				cursor: pointer;
+			}
+			
+			.num {
+				color: #666;
+				background: none;
+				width: 24px;
+				height: 26px;
+				line-height: 26px;
+				padding: 0 3px;
+				border: none;
+				text-align: center;
+				float: left;
+			}
+			
+			.jia {
+				display: block;
+				float: left;
+				border-left: 1px solid #ddd;
+				border-right: 1px solid #ddd;
+				background: #f0f0f0;
+				font-size: 14px;
+				font-weight: 400;
+				color: #666;
+				width: 16px;
+				text-align: center;
+				cursor: pointer;
+			}
+			
+			.btn {
+				position: absolute;
+				top: 300px;
+			}
+			
+			.btn1 {
+				background: #f2a730;
+			}
+			
+			.btn a {
+				border-radius: 2px;
+				display: block;
+				float: left;
+				font-family: 微软雅黑;
+				font-size: 18px;
+				width: 142px;
+				height: 38px;
+				margin-right: 10px;
+				line-height: 38px;
+				color: #fff;
+				text-align: center;
+			}
+			
+			.btn2 {
+				background: #f03838;
+			}
+			
+			.right {
+				width: 190px;
+				float: left;
+			}
+			
+			.filter {
+				border: 1px solid #ddd;
+				border-top: none;
+				width: 188px;
+				margin-bottom: 10px;
+			}
+			
+			.r1 {
+				cursor: pointer;
+				background: #f9f9f9;
+				border-top: 1px solid #ddd;
+				height: 35px;
+				display: block;
+				line-height: 35px;
+			}
+			
+			.r1 strong {
+				font-family: 微软雅黑;
+				font-size: 14px;
+				float: left;
+				margin-left: 16px;
+			}
+			
+			.change {
+				float: right;
+				cursor: pointer;
+				font-weight: 400;
+				color: #999;
+				margin-right: 10px;
+			}
+			
+			.change:hover {
+				color: #f03838;
+			}
+			
+			.change b {
+				background: url(http://static.sanjiang.com/common/images/items.png) 0 -239px no-repeat;
+				width: 14px;
+				height: 14px;
+				display: inline-block;
+				margin-right: 3px;
+				vertical-align: middle;
+				transition: all 0.2s linear;
+			}
+			
+			.see {
+				padding: 0 8px;
+				overflow: hidden;
+			}
+			
+			.see div {
+				display: block;
+			}
+			
+			.dd {
+				border-bottom: 1px dashed #e5e5e5;
+				padding-bottom: 5px;
+				width: 172px;
+				position: relative;
+				overflow: hidden;
+				text-align: center;
+			}
+			
+			.dd:last-child {
+				border-bottom: none;
+			}
+			
+			.dd img {
+				margin: 10px;
+				width: 120px;
+				height: 120px;
+				border: 0 none;
+				vertical-align: top;
+			}
+			
+			.dd h3 {
+				font-weight: 400;
+				font-size: 12px;
+				color: #666;
+				text-align: center;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			
+			.dd h3 a {
+				text-decoration: none;
+				color: #666;
+				font-size: 12px;
+			}
+			
+			.dd h3 a:hover {
+				color: #f03838;
+			}
+			
+			.dd span {
+				text-align: center;
+				color: #f03838;
+				display: block;
+				overflow: hidden;
+				padding: 0 10px;
+				font-family: verdana;
+				font-size: 12px;
+			}
+			
+			.left2 {
+				float: left;
+				width: 190px;
+			}
+			
+			.hot {
+				/*border: 1px solid #ddd;*/
+				border-top: none;
+				width: 188px;
+				margin-bottom: 10px;
+			}
+			
+			.hot2 {
+				cursor: pointer;
+				background: #f9f9f9;
+				border-top: 1px solid #ddd;
+				height: 35px;
+				display: block;
+				line-height: 35px;
+			}
+			
+			.hot2 strong {
+				font-family: 微软雅黑;
+				font-size: 14px;
+				float: left;
+				margin-left: 16px;
+			}
+			
+			.gl {
+				padding: 0 8px;
+			}
+			
+			.gl dd {
+				padding: 21px 0;
+				border-bottom: 1px dashed #e5e5e5;
+				position: relative;
+				overflow: hidden;
+				margin: 0;
+			}
+			
+			.gl dd.last {
+				border-bottom: none;
+			}
+			
+			.gl dd a {
+				color: #666;
+			}
+			
+			.gl dd i {
+				width: 16px;
+				height: 16px;
+				margin-right: 8px;
+				display: block;
+				float: left;
+				background: url(http://static.sanjiang.com/common/images/nav_i.png) no-repeat;
+			}
+			
+			.gl dd .i1 {
+				background-position: 0 -480px;
+			}
+			
+			.gl dd .i2 {
+				background-position: 0 -496px;
+			}
+			
+			.gl dd .i3 {
+				background-position: 0 -512px;
+			}
+			
+			.gl dd .i4 {
+				background-position: 0 -528px;
+			}
+			
+			.gl dd .i5 {
+				background-position: 0 -544px;
+			}
+			
+			.gl dd img {
+				margin-right: 6px;
+				border: 1px solid #e5e5e5;
+				width: 54px;
+				height: 54px;
+				float: left;
+			}
+			
+			.gl dd h3 {
+				font-weight: 400;
+				font-size: 12px;
+				color: #666;
+				height: 36px;
+				line-height: 18px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				width: 84px;
+				float: left;
+			}
+			
+			.gl dd span {
+				float: left;
+				color: #f03838;
+				display: block;
+				font-family: verdana;
+				font-size: 5px;
+				position: absolute;
+				left: 100px;
+				top: 65px;
+			}
+			
+			.buy2 {
+				border: 1px solid #ddd;
+				border-top: none;
+				width: 188px;
+				margin-bottom: 10px;
+			}
+			
+			.buy3 {
+				cursor: pointer;
+				background: #f9f9f9;
+				border-top: 1px solid #ddd;
+				height: 35px;
+				display: block;
+				line-height: 35px;
+			}
+			
+			.buy3 strong {
+				font-family: 微软雅黑;
+				font-size: 14px;
+				float: left;
+				margin-left: 16px;
+			}
+			
+			.gd {
+				padding: 0 8px;
+				overflow: hidden;
+				margin: 0;
+			}
+			
+			.gd dd {
+				border-bottom: 1px dashed #e5e5e5;
+				padding-bottom: 5px;
+				width: 172px;
+				position: relative;
+				overflow: hidden;
+				margin: 0;
+			}
+			
+			.gd h3 {
+				font-weight: 400;
+				font-size: 12px;
+				color: #666;
+				height: 20px;
+				line-height: 20px;
+				text-align: center;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				margin: 0;
+				padding: 0;
+			}
+			
+			.gd h3:hover {
+				color: #f03838;
+			}
+			
+			.gd dd img {
+				margin: 7px 26px;
+				width: 120px;
+				height: 120px;
+			}
+			
+			.gd dd span {
+				text-align: center;
+				color: #f03838;
+				display: block;
+				overflow: hidden;
+				padding: 0 30px;
+				font-family: verdana;
+			}
+			
+			.gd dd span i {
+				line-height: 23px;
+				margin: 10px 0;
+				font-style: normal;
+				vertical-align: middle;
+				font-size: 12px;
+			}
+			
+			.right2 {
+				width: 1010px;
+				float: left;
+			}
+			
+			.tab {
+				background: #f9f9f9;
+				border: 1px solid #ddd;
+				height: 38px;
+				margin: 0 0 0 10px;
+			}
+			
+			.tab ul {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.curret {
+				background: #fff;
+				border-top: 2px solid #f03838;
+				color: #f03838;
+				line-height: 37px;
+				margin-top: -1px;
+			}
+			
+			.tab li {
+				width: 108px;
+				height: 38px;
+				font-weight: 700;
+				line-height: 38px;
+				cursor: pointer;
+				float: left;
+				border-right: 1px solid #ddd;
+				text-align: center;
+				font-size: 14px;
+				font-family: 微软雅黑;
+			}
+			
+			.content1 {
+				margin-left: 10px;
+				width: 750px;
+				margin: 10px 0 10px 60px;
+				text-align: left
+			}
+			
+			.content2 {
+				margin-left: 10px;
+				overflow: hidden;
+				display: none;
+			}
+			
+			.secrt {
+				margin: 10px 0 15px 10px;
+				border: 1px solid #ddd;
+			}
+			
+			.secrt2 {
+				background: url(http://static.sanjiang.com/item/images/after_sale.png);
+				width: 998px;
+				height: 198px;
+				border-bottom: 1px solid #ddd;
+				text-indent: -999em;
+			}
+			
+			.secrt3 {
+				padding: 0 40px;
+			}
+			
+			.secrt3 dl {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			.secrt3 dt {
+				padding: 30px 0 10px;
+				font-weight: 700;
+				font-size: 14px;
+				color: #ea1414
+			}
+			
+			.secrt3 dd {
+				border-bottom: 1px dashed #ddd;
+				line-height: 18px;
+			}
+			
+			.secrt3 dd p {
+				padding-bottom: 20px;
+				font-size: 10px;
+				color: #666;
+			}
+			
+			.secrt3 img {
+				border: 0 none;
+				vertical-align: top;
+			}
+			
+			.secrt3 b {
+				font-weight: bold;
+			}
+			
+			.secrt4 {
+				background: #f9f9f9;
+				padding: 20px;
+				border-top: 1px solid #ddd;
+			}
+			
+			.secrt4 dl {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.secrt4 dt {
+				padding-bottom: 10px;
+				font-weight: 700;
+				font-size: 14px;
+				color: #ea1414;
+			}
+			
+			.secrt4 dt i {
+				background: url(http://static.sanjiang.com/common/images/items.png) 0 -147px no-repeat;
+				display: inline-block;
+				width: 7px;
+				height: 6px;
+				margin-right: 5px;
+				vertical-align: middle;
+			}
+			
+			.secrt4 dd {
+				color: #666;
+				font-size: 12px;
+			}
+			
+			.detail_content {
+				margin-left: 10px;
+				overflow: hidden;
+				display: none;
+			}
+			
+			.detail_content .table {
+				border-left: 1px solid #ddd;
+				border-bottom: 1px solid #ddd;
+				margin-top: 10px;
+				font-size: 12px;
+			}
+			
+			.detail_content .table th {
+				background: #f0f0f0;
+				color: #333;
+				text-align: left;
+				height: 31px;
+				line-height: 31px;
+				border-top: 1px solid #ddd;
+				border-right: 1px solid #ddd;
+				padding-left: 5px;
+			}
+			
+			.detail_content .table td {
+				text-align: left;
+				height: 31px;
+				line-height: 31px;
+				border-top: 1px solid #ddd;
+				border-right: 1px solid #ddd;
+				color: #999;
+				padding-left: 5px;
+			}
+			
+			.gl h3:hover {
+				color: red;
+			}
+			
+			.bg {
+				width: 100%;
+				height: 100%;
+				background: rgba(51, 51, 51, 0.3);
+				position: fixed;
+				left: 0;
+				top: 0;
+				display: none;
+				z-index: 50;
+			}
+			
+			.bg1 {
+				width: 100%;
+				height: 100%;
+				background: rgba(51, 51, 51, 0.3);
+				position: fixed;
+				left: 0;
+				top: 0;
+				display: none;
+				z-index: 50;
+			}
+			
+			.layer_box,
+			.layer_box_two {
+				border: 5px solid #b3b3b3;
+				width: 470px;
+				position: fixed;
+				left: 50%;
+				margin-left: -235px;
+				top: 50%;
+				margin-top: -250px;
+				/*display: none;*/
+				background: #fff;
+			}
+			
+			.layer_box .layer_t,
+			.layer_box_two .layer_t {
+				padding: 0 15px;
+				border-bottom: 1px solid #e0e0e0;
+				background: #eee;
+				height: 31px;
+				line-height: 31px;
+			}
+			
+			.layer_box .layer_t b,
+			.layer_box_two .layer_t b {
+				float: left;
+				font-size: 15px;
+				color: #333;
+				font-family: 微软雅黑;
+			}
+			
+			.layer_box .layer_t a,
+			.layer_box_two .layer_t a {
+				font-size: 16px;
+				color: #aaa;
+				float: right;
+			}
+			
+			.layer_box .layer_content,
+			.layer_box_two .layer_content {
+				padding: 15px;
+			}
+			
+			.layer_box .layer_content .layer_tips,
+			.layer_box_two .layer_content .layer_tips {
+				overflow: hidden;
+			}
+			
+			.layer_box .layer_content .layer_tips p,
+			.layer_box_two .layer_content .layer_tips p {
+				margin-top: 10px;
+				float: left;
+			}
+			
+			.layer_box .layer_content .layer_tips p b,
+			.layer_box_two .layer_content .layer_tips p b {
+				line-height: 25px;
+				font-size: 14px;
+				display: block;
+				color: #333;
+			}
+			
+			.layer_box .layer_content .layer_cancle,
+			.layer_box_two .layer_content .layer_cancle {
+				background: #fff;
+				padding: 15px 20px 25px 40px;
+				position: relative;
+			}
+			
+			.layer_box .layer_content .btn_n,
+			.layer_box_two .layer_content .btn_n {
+				width: 90px;
+				height: 24px;
+				border: 1px solid #ccc;
+				cursor: pointer;
+				line-height: 24px;
+				text-align: center;
+				background: #eee;
+				border-radius: 2px;
+				color: #666;
+				display: inline-block;
+				margin-right: 10px;
+				font-size: 12px;
+			}
+			
+			.layer_box .layer_content .btn_y,
+			.layer_box_two .layer_content .btn_y {
+				width: 92px;
+				height: 26px;
+				border: none;
+				cursor: pointer;
+				line-height: 26px;
+				text-align: center;
+				background: #e63c3f;
+				border-radius: 2px;
+				color: #fff;
+				display: inline-block;
+				margin-right: 10px;
+				outline: none;
+				font-size: 12px;
+			}
+			
+			.bg2 {
+				width: 100%;
+				height: 100%;
+				background: rgba(51, 51, 51, 0.3);
+				position: fixed;
+				left: 0;
+				top: 0;
+				z-index: 50;
+				display: none;
+			}
+			
+			.fr {
+				margin-left: 80px;
+			}
+			
+			.login_from {
+				width: 320px;
+			}
+			
+			.login_from .lg_t {
+				height: 40px;
+				margin-bottom: 5px;
+				color: #999;
+				font-size: 12px;
+			}
+			
+			.login_from .lg_t b {
+				font-size: 22px;
+				font-weight: 500;
+				float: left;
+			}
+			
+			.login_from .lg_t span {
+				float: right;
+				margin-top: 12px;
+			}
+			
+			.login_from .lg_t span a {
+				color: #ea1414;
+				cursor: pointer;
+			}
+			
+			.item {
+				margin-bottom: 20px;
+				position: relative;
+			}
+			
+			.input {
+				width: 268px;
+				font-size: 14px;
+				border: 1px solid #ccc;
+				height: 20px;
+				line-height: 20px;
+				padding: 10px 10px 10px 40px;
+			}
+			
+			.input:focus {
+				outline: none;
+				border: 1px solid #8ed200;
+			}
+			
+			.i_phone {
+				background: url(__ROOT__/Index/Common/images/login-bg.png) 0 0 no-repeat;
+			}
+			
+			.i_common {
+				width: 20px;
+				height: 20px;
+				display: block;
+				position: absolute;
+				left: 10px;
+				top: 10px;
+				z-index: 4;
+			}
+			
+			.i_psd {
+				background: url(__ROOT__/Index/Common/images/login-bg.png) 0 -26px no-repeat;
+			}
+			
+			.password_un {
+				font-size: 12px;
+				color: #888;
+				overflow: hidden;
+				height: 18px;
+				line-height: 18px;
+				margin-bottom: 20px;
+			}
+			
+			.password_un label {
+				font-style: normal;
+				margin-right: 10px;
+				float: left;
+			}
+			
+			.password_un label input {
+				margin-right: 6px;
+			}
+			
+			.password_un label span {
+				color: #ea1414;
+				display: inline-block;
+			}
+			
+			.password_un a {
+				color: #666;
+				float: right;
+			}
+			
+			.password_un a:hover {
+				color: #ea1414;
+			}
+			
+			.btn_entry {
+				width: 100%;
+				height: 42px;
+				color: white;
+				background: #dd1b1b;
+				font-size: 16px;
+				line-height: 16px;
+				border: none;
+				cursor: pointer;
+			}
+			
+			.sj_login_footer {
+				padding: 30px 0;
+				text-align: center;
+				color: #666;
+				width: 990px;
+			}
+			
+			.links {
+				color: #666;
+				height: 35px;
+				line-height: 35px;
+				font-size: 12px;
+			}
+			
+			.bor_tb {
+				border-bottom: 1px solid #eee;
+				border-top: 1px solid #eee;
+			}
+			
+			.links a {
+				color: #676767;
+				margin: 0 15px;
+				font-size: 12px;
+			}
+			
+			.Copyright {
+				color: #777;
+				font-size: 12px;
+				margin-top: 30px;
+			}
+			
+			.authentication {
+				padding: 20px 0;
+			}
+			
+			.authentication a {
+				margin: 0 5px;
+			}
+		</style>
+		<script type="text/javascript" src="__ROOT__/Index/Common/js/angular.min.js"></script>
+	</head>
+
+	<body ng-app="myapp" ng-controller="mycontroller">
+		<div class="body">
+			<!--头部部导航-->
+			<iframe width="100%" height="181px" frameborder=0 scrolling="no" src="__APP__/Header/header"></iframe>
+			<!-- 身体 -->
+			<div class="center">
+				<div class="num1">
+					<a href="###">首页</a>
+					&nbsp; > &nbsp;
+					<a href="###">{$data[0].floorTitle}</a>
+					&nbsp; > &nbsp;
+					<a href="###">{$data[0].productType}</a>
+					&nbsp; > &nbsp;
+					<a id="a1" href="###">{$data[0].productTitle}</a>
+				</div>
+				<!-- 图片 -->
+				<div class="num2">
+					<div class="left">
+						<div class="small">
+							<img class="img1" src="{$data[0].productImg}" alt="">
+							<div class="white">
+
+							</div>
+							<div class="big">
+
+							</div>
+						</div>
+						<br>
+						<div id="img2">
+							<a class="a2" href="###">
+								<i></i>
+							</a>
+							<a class="a3" href="###">
+								<i></i>
+							</a>
+							<div class="bottom">
+								<ul style="width: 74px;">
+									<li><img src="{$data[0].productImg}" alt=""></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="box">
+					<div class="name">
+						<h1 class="h1">{$data[0].productTitle}</h1>
+					</div>
+					<div class="name2">
+						<div class="price">
+							<span class="span1">会员价：<b>      ￥<strong>{$data[0].vPrice}</strong></b></span>
+							<span>零售价：<b>￥{$data[0].Price}</b></span>
+						</div>
+						<div class="share">
+							<div class="collection1" ng-click="addCollection({$data[0].id})">
+								<i></i> 收藏商品
+							</div>
+
+							<div class="collection2">
+								<div class="collection3">
+									<i></i> 分享
+									<b></b>
+								</div>
+								<div class="collection5">
+
+								</div>
+							</div>
+							<div class="collection4">
+								<div class="collection3">
+									<i></i> 分享
+									<b></b>
+								</div>
+
+								<div class="collection5">
+									<div class="collection6">
+										<a href="###"></a>
+										<a href="###"></a>
+										<a href="###"></a>
+										<a href="###"></a>
+										<a href="###"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="choose">
+						<div class="choose1">
+							<div class="choose3"><span>品牌：</span></div>
+							<div class="mc">无</div>
+						</div>
+						<div class="choose2">
+							<div class="choose3"><span>库存：</span></div>
+							<div class="mc2">
+								<div class="all">
+									<div class="who">
+										仅剩
+										<b>{$data[0].stock}</b> 件
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="mc3">
+							<div class="choose3"><span>服务：</span></div>
+							<div class="mc4">20元起送
+								<a href="__APP__/Help/wlpsPSSFBZ">运费说明</a>
+							</div>
+						</div>
+						<div class="mc3">
+							<div class="choose3"><span>购物数量：</span></div>
+							<div class="mc5">
+								<div class="m6">
+									<a href="javascript:void(0)" class="jian">-</a>
+									<input type="text" value="1" class="num">
+									<a href="javascript:void(0)" class="jia">+</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="btn">
+						<a class="btn1" href="javascript:void(0)" ng-click='add({$data[0].id})'>立即购买</a>
+						<a class="btn2" href="javascript:void(0)"><i></i>加入购物车</a>
+					</div>
+
+				</div>
+				<div class="right">
+					<div class="filter">
+						<div class="r1"> <strong>看了又看</strong>
+							<a class="change" href="javascript:;" ng-click='changeOther()'>
+								<b></b> 换一组
+							</a>
+						</div>
+						<div class="see">
+							<div class="dd" ng-repeat="v in rightArr">
+								<a href="__URL__/info?id={{v.id}}">
+									<img src="{{v.productImg}}" alt="{{v.productTitle}}">
+								</a>
+								<h3>
+									<a href="###">
+										{{v.productTitle}}
+									</a>
+								</h3>
+								<span>￥{{v.Price}}</span>
+							</div>
+						</div>
+						<div>
+						</div>
+					</div>
+				</div>
+				<div class="left2">
+					<div class="hot">
+						<div class="hot2"><strong>热门商品</strong></div>
+						<div class="gl">
+							<div ng-repeat="v in arr">
+								<dd>
+									<a href="__URL__/info?id={{v.id}}">
+										<i class="i1"></i>
+										<img src="{{v.productImg}}" alt="{{v.productTitle}}">
+										<h3>{{v.productTitle}}</h3>
+										<span>￥{{v.Price}}</span>
+									</a>
+								</dd>
+							</div>
+						</div>
+					</div>
+					<div class="buy">
+						<div class="buy2">
+							<div class="buy3"><strong>看了本商品最终也买了</strong></div>
+							<div class="gd">
+								<div ng-repeat="v in sureArr">
+									<dd>
+										<a href="__URL__/info?id={{v.id}}">
+											<img src="{{v.productImg}}" alt="{{v.productTitle}}">
+											<h3>{{v.productTitle}}</h3>
+											<span><i>￥{{v.Price}}</i></span>
+
+										</a>
+									</dd>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="right2">
+					<div class="tab">
+						<ul>
+							<li class="curret">商品详情</li>
+							<li>包装及参数</li>
+							<li>售后保障</li>
+						</ul>
+					</div>
+					<div class="content1"></div>
+					<div class="detail_content">
+						<table cellpadding="0" cellspacing="0" width="100%" border="0" class="table">
+							<tbody>
+								<th colspan="2">主体参数</th>
+								<tr>
+									<td>
+										品牌
+									</td>
+									<td>无</td>
+								</tr>
+								<tr>
+									<td>
+										分类
+									</td>
+									<td>{$data[0].productType}</td>
+								</tr>
+								<tr>
+									<td>
+										产地
+									</td>
+									<td>{$data[0].place}</td>
+
+								</tr>
+							</tbody>
+
+							<tbody>
+								<th colspan="2">自定义参数</th>
+
+							</tbody>
+
+						</table>
+
+					</div>
+					<div class="content2"></div>
+					<div class="secrt">
+						<div class="secrt2">售后保障</div>
+						<div class="secrt3">
+							<dl>
+								<dt>正品保证</dt>
+								<dd>
+									<p>
+										三江商城向您保证所售商品均为正品行货，三江自营商品提供与门店一致的发票或小票，与商品一起寄送
+									</p>
+								</dd>
+							</dl>
+							<dl>
+								<dt>退货与流程说明</dt>
+								<dd>
+									<p>
+										<img src="__ROOT__/Index/Common/images/7.png" alt="">
+									</p>
+									<p>
+										<b>支持“20天无理由退货”服务</b>
+										<br> 三江购物出售的商品可以享受“20天无理由退货”服务，除规定不支持20天无理由退换服务的类目商品外
+										<a href="###">《详见退货政策》</a>
+										;
+										<br> 退货商品请保证是未使用过，不影响二次销售（质量问题的商品除外）
+										<br> 退货商品请保证是未使用过，不影响二次销售（质量问题的商品除外）
+
+									</p>
+									<p>
+										<b>退货费用说明：</b><br /> 如果是买家原因退货，由买家承担退货费用。
+										<br /> 如果是商品质量问题而导致的退货，退货费用由三江购物承担。
+									</p>
+								</dd>
+							</dl>
+							<dl>
+								<dt>全国联保</dt>
+								<dd class="end">
+									<p>凭质保证书及三江小票/发票，可享受全国联保服务（奢侈品、钟表除外；奢侈品、钟表由三江联系保修，享受法定三包售后服务），与您亲临商场选购的商品享 受相同的质量保证。三江购物网还为您提供具有竞争力的商品价格和运费政策，请您放心购买！
+									</p>
+								</dd>
+							</dl>
+						</div>
+						<div class="secrt4">
+							<dl>
+								<dt><i></i>特别申明：</dt>
+								<dd>
+									本站商品品简介、产地、规格等信息均由供应商提供，其真实性、准确性和合法性由信息拥有者（厂商）负责。本站不提供任何保证，并不承担任何法律责任。因厂家 会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，我司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。网站商品的功能参数仅供参考， 请以实物为准，我司只能确保网站经营商品均为原厂正品行货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，敬请谅解！
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="bg">
+			<div class="layer_box" id="carBox" style="z-index: 113; margin-top: -81.5px; display: block;">
+				<div class="layer_t"><b>温馨提示</b>
+					<a href="javascript:;">X</a>
+				</div>
+				<div class="layer_content" id="layer_content">
+					<div class="layer_tips error">
+						<p><b>加入购物车成功!</b></p>
+					</div>
+					<div class="layer_cancle" style="padding-left: 100px;">
+						<a href="javascript:;" class="btn_n">继续购物</a>
+						<a href="javascript:;" class="btn_y">去购物车结算</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bg1">
+			<div class="layer_box" id="carBox" style="z-index: 113; margin-top: -81.5px; display: block;">
+				<div class="layer_t"><b>温馨提示</b>
+					<a href="javascript:;">X</a>
+				</div>
+				<div class="layer_content" id="layer_content">
+					<div class="layer_tips error">
+						<p><b>商品收藏成功!</b></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bg2">
+			<div class="layer_box" id="login" style="z-index: 113; display: block; margin-top: -218px;">
+				<div class="layer_t"><b>您尚未登录</b>
+					<a href="javascript:;" class="close">X</a>
+				</div>
+				<form action="" method="post" class="fr login_from">
+					<div class="lg_t">
+						<b>用户登录</b>
+						<span>
+						没有账号
+						<a href="__APP__/Register/register">免费注册</a>
+					</span>
+					</div>
+					<div class="item">
+						<input type="text" name="" id="" placeholder="用户名/手机/邮箱" class="input" ng-model="username" />
+						<i class="i_phone i_common"></i>
+					</div>
+					<div class="item">
+						<input type="password" name="" id="" placeholder="请输入密码" class="input" ng-model="pwd" />
+						<i class="i_psd i_common"></i>
+					</div>
+					<div class="password_un">
+						<label for="" id="zddl">
+						<input type="checkbox" name="" id="" value="" checked="checked" class="check"/>自动登录
+						<span class="tip">公共场合请勿使用</span>
+					</label>
+						<a href="#">忘记密码？</a>
+					</div>
+					<div class="item">
+						<input type="submit" name="" id="" value="登录" class="btn_entry" ng-click="sub()" />
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--底部导航-->
+		<iframe width="100%" height="356px" frameborder=0 scrolling="no" src="__APP__/Footer/footer"></iframe>
+	</body>
+	<script src="__ROOT__/Index/Common/js/jquery-3.2.1.min.js"></script>
+	<script>
+		$(".change").mouseover(function() {
+			$(".change b").css({
+				"transform": "rotate(180deg)"
+			});
+		})
+		$(".change").mouseout(function() {
+			$(".change b").css({
+				"transform": ""
+			});
+		})
+		$(".close").click(function() {
+			$(".bg2").hide();
+		})
+		var big = document.getElementsByClassName('big')[0];
+		var small = document.getElementsByClassName('small')[0];
+		var white = document.getElementsByClassName('white')[0];
+		var collect1 = document.getElementsByClassName('collection3')[0];
+		var collect2 = document.getElementsByClassName('collection2')[0];
+
+		// 放大镜
+		small.onmouseover = function(ev) {
+			big.style.display = "block";
+			white.style.display = "block";
+		}
+		small.onmouseout = function(ev) {
+			big.style.display = "none";
+			white.style.display = "none";
+		}
+		small.onmousemove = function(ev) {
+			var x = ev.clientX - small.offsetLeft - small.offsetWidth / 2 - 205;
+			var y = ev.clientY - small.offsetTop - small.offsetHeight / 2 - 105;
+			x = x < 0 ? 0 : (x > 215 ? 215 : x);
+			y = y < 0 ? 0 : (y > 215 ? 215 : y);
+			white.style.top = y + "px";
+			white.style.left = x + "px";
+
+			var bX = -x / 430 * 800;
+			var bY = -y / 430 * 800;
+			big.style.backgroundPosition = "" + bX + "px " + bY + "px";
+		}
+		// 售后保障
+		$(".tab li:first").click(function() {
+			$(".tab li:first").addClass("curret");
+			$(".tab li:eq(2) ").removeClass("curret");
+			$(".tab li:eq(1) ").removeClass("curret");
+			$(".detail_content").css("display", "none")
+
+		});
+		$(".tab li:eq(1) ").click(function() {
+			$(".tab li:eq(1) ").addClass("curret");
+			$(".tab li:first").removeClass("curret");
+			$(".tab li:eq(2) ").removeClass("curret");
+			$(".detail_content").css("display", "block");
+
+		});
+		$(".tab li:last ").click(function() {
+			$(".tab li:last ").addClass("curret");
+			$(".tab li:first").removeClass("curret");
+			$(".tab li:eq(1) ").removeClass("curret");
+			$(".detail_content").css("display", "none");
+
+		});
+
+		// 分享
+		$(".collection3").click(function() {
+			if($(".collection4").css("display") == "none") {
+				$(".collection4").show();
+			} else {
+				$(".collection4").hide();
+			}
+		});
+		// 加减
+		$(document).ready(function() {
+			$(".jian").click(function() {
+				var value = parseInt($('.num').val()) - 1;
+				if(value<=1) {
+					value=1
+				}
+				$('.num').val(value);
+			});
+			$('.jia').click(function() {
+				var value = parseInt($('.num').val()) + 1;
+				$('.num').val(value);
+			});
+		});
+
+		$(".layer_t a").click(function() {
+			$(".bg").hide();
+			$(".bg1").hide();
+		});
+		//继续购物
+		$(".btn_n").click(function() {
+			$(".bg").hide();
+		});
+		//去购物车结算
+		$(".btn_y").click(function() {
+			window.location.href = "__APP__/Shopping/shopping";
+		});
+		$(".btn1").click(function() {
+			var num = parseInt($('.num').val());
+			$.ajax({
+				type: "get",
+				url: "__APP__/Shopping/addData",
+				async: true,
+				dataType: "json",
+				data: "num=" + num,
+				success: function(data) {
+					console.log(data);
+					if(data.status == 3) {
+						$(".bg2").show();
+					} else if(data.status == 1) {
+						window.location.href = "__APP__/Shopping/shopping";
+					}
+				}
+			})
+		})
+		$(".btn2").click(function() {
+			var num = parseInt($('.num').val());
+			$.ajax({
+				type: "get",
+				url: "__APP__/Shopping/addData",
+				async: true,
+				dataType: "json",
+				data: "num=" + num,
+				success: function(data) {
+					console.log(data);
+					if(data.status == 3) {
+						$(".bg2").show();
+					} else if(data.status == 1) {
+						$(".bg").show();
+					}
+				}
+			})
+		})
+		var app = angular.module('myapp', []);
+		app.controller('mycontroller', function($scope, $http) {
+			$scope.arr = [];
+			$scope.sureArr = [];
+			$scope.rightArr = [];
+			$scope.username = "";
+			$scope.pwd = "";
+			//获取热门商品
+			$http({
+				method: "post",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded"
+				},
+				url: "__URL__/getHotData"
+			}).success((res) => {
+				//				console.log(res);
+				$scope.arr = res;
+			}).error((err) => {
+				console.log(err);
+			})
+			//看了本商品最终也买了
+			$http({
+				method: "post",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded"
+				},
+				url: "__URL__/getData"
+			}).success((res) => {
+				//				console.log(res);
+				$scope.sureArr = res;
+			}).error((err) => {
+				console.log(err);
+			})
+			//看了又看
+			getRightData();
+			//换一组
+			$scope.changeOther = function() {
+				getRightData();
+			}
+
+			function getRightData() {
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__URL__/getRightData"
+				}).success((res) => {
+					//					console.log(res);
+					$scope.rightArr = res;
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+			$scope.addCollection = function(id) {
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__APP__/Mymessage/addData",
+					data: "id=" + id
+				}).success((res) => {
+					console.log(res);
+					if(res.status == 4) {
+						$(".bg2").show();
+					} else if(res.status == 1) {
+						$(".bg1").show();
+					} else {
+						alert(res.info);
+					}
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+			//登录按钮
+			$scope.sub = function() {
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__APP__/Login/check",
+					data: "username=" + $scope.username + "&pwd=" + $scope.pwd
+				}).success((res) => {
+					console.log(res);
+					if(res.status == 1) {
+						window.location.href = "__APP__/Index/index";
+					} else if(res.status == 2) {
+						alert(res.info);
+					}
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+		})
+	</script>
+
+</html>

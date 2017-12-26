@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户登录-三江</title>
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/login.css"/>
+		<script type="text/javascript" src="__ROOT__/Index/Common/js/angular.min.js"></script>
+	</head>
+	<body ng-app="myapp" ng-controller="mycontroller">
+		<form action="" method="post" class="fr login_from">
+				<div class="lg_t">
+					<b>用户登录</b>
+					<span>
+						没有账号
+						<a href="__APP__/Register/register">免费注册</a>
+					</span>
+				</div>
+				<div class="item">
+					<input type="text" name="" id="" placeholder="用户名/手机/邮箱" class="input" ng-model="username"/>
+					<i class="i_phone i_common"></i>
+				</div>
+				<div class="item">
+					<input type="password" name="" id="" placeholder="请输入密码" class="input" ng-model="pwd"/>
+					<i class="i_psd i_common"></i>
+				</div>
+				<div class="password_un">
+					<label for="" id="zddl">
+						<input type="checkbox" name="" id="" value="" checked="checked" class="check"/>自动登录
+						<span class="tip">公共场合请勿使用</span>
+					</label>
+					<a href="#">忘记密码？</a>
+				</div>
+				<div class="item">
+					<input type="submit" name="" id="" value="登录" class="btn_entry" ng-click="sub()"/>
+				</div>
+			</form>
+	</body>
+	<script type="text/javascript">
+		var app = angular.module('myapp', []);
+		app.controller('mycontroller', function($scope, $http) {
+			$scope.username = "";
+			$scope.pwd = "";
+			$scope.sub = function(){
+				console.log(111);
+			}
+		})
+	</script>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>商品搜索 - 三江超市</title>
+		<link href="http://static.sanjiang.com/common/images/favicon.ico" rel="icon" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Index/Common/css/search.css" />
+		<script type="text/javascript" src="__ROOT__/Index/Common/js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="__ROOT__/Index/Common/js/angular.min.js"></script>
+		<script type="text/javascript" src="__ROOT__/Index/Common/js/ui-bootstrap-tpls.min.js"></script>
+	</head>
+
+	<body ng-app="myapp" ng-controller="mycontroller">
+		<!--头部部导航-->
+		<iframe width="100%" height="181px" frameborder=0 scrolling="no" src="__APP__/Header/header"></iframe>
+		<div class="w">
+			<div class="mallcrumb">
+				<a href="__APP__/Index/index">首页</a>&nbsp;>&nbsp;
+				<a href="javascript:void(0);">{{datas[0].floorTitle}}</a>&nbsp;>&nbsp;
+				<a href="javascript:void(0);" class="cur">{{datas[0].productType}}</a>
+			</div>
+			<!--左边-->
+			<div class="left">
+				<div class="filter">
+					<div class="item">
+						<a href="javascript:void(0);" id="shrink"><strong>三江超市</strong></a>
+					</div>
+					<div class="items" ng-repeat="val in arr">
+						<div class="item item_s">
+							<i id="plus"></i>
+							<a href="javascript:void(0);">{{val.floorTitle}}</a>
+						</div>
+						<ul class="Proclass">
+							<a href="javascript:void(0);" ng-click="productType(link.productType)" ng-repeat="link in val.data">{{link.productType}}</a>
+						</ul>
+					</div>
+				</div>
+				<div class="hotProduct">
+					<div class="filter">
+						<div class="item">
+							<a href="javascript:void(0);"><strong>热门商品</strong></a>
+						</div>
+						<div class="gl">
+							<div ng-repeat="(key,val) in sales|limitTo:5">
+								<dd>
+									<a href="__APP__/Info/info?id={{val.id}}">
+										<i class="i1"></i>
+										<img class="lazy-loaded" src="{{val.productImg}}" />
+										<h3>{{val.productTitle}}️</h3>
+										<span>{{val.Price}}</span>
+									</a>
+								</dd>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--右边-->
+			<div class="right">
+				<div class="related_search">相关搜索：</div>
+				<div class="hasBeenSelected">
+					<dl>
+						<dt>已选条件：</dt>
+						<dd class="cleardd">
+							<div class="clearlist">
+
+							</div>
+						</dd>
+					</dl>
+				</div>
+				<div class="list_select">
+					<div class="mt">
+						<b>{{datas[0].productType}}</b> 共搜索到
+						<strong>{{data.length}}</strong> 个相关产品
+					</div>
+					<div class="mc">
+						<div class="a_key">品牌：</div>
+						<div class="a_more">
+							<div class="a_li">
+								<a href="javascript:void(0);">无</a>
+							</div>
+						</div>
+					</div>
+					<div class="mc">
+						<div class="a_key">产地：</div>
+						<div class="a_more">
+							<div class="a_li">
+								<a href="javascript:void(0);">{{datas[0].place}}</a>
+							</div>
+						</div>
+					</div>
+					<div class="mc">
+						<div class="a_key">包装：</div>
+						<div class="a_more">
+							<div class="a_li">
+								<a href="javascript:void(0);">盒装</a>
+							</div>
+						</div>
+					</div>
+					<div class="mc mc_hide">
+						<div class="a_key">分类：</div>
+						<div class="a_more">
+							<div class="a_li" ng-repeat="val in arr">
+								<a href="javascript:void(0);" ng-repeat="link in val.data" ng-click="productType(link.productType)">{{link.productType}}</a>
+								<!--<a href="#">茄果类</a>-->
+							</div>
+						</div>
+					</div>
+					<div class="mb">
+						<span>更多选项</span>
+						<i></i>
+					</div>
+				</div>
+				<div class="r_filter">
+					<div class="sort">
+						<a href="javascript:void(0);" class="normal cur">默认</a>
+						<a href="javascript:void(0);" class="arrow arrow1">
+							销量
+							<i></i>
+						</a>
+						<a href="javascript:void(0);" class="arrow arrow2">
+							价格
+							<i></i>
+						</a>
+					</div>
+					<div class="price">
+						价格：
+						<input maxlength="16" placeholder="￥" ng-model="moneyone" />-<input maxlength="16" placeholder="￥" ng-model="moneytwo" />
+						<button type="submit" ng-click="sub()">确定</button>
+					</div>
+					<div class="page_r">
+						<uib-pager total-items="page.totalCount" ng-model="page.pageNo" max-size="5" class="samplePages pagination " previous-text="&lt;" next-text="&gt;" items-per-page="page.limit" ng-change="pageChanged()">
+						</uib-pager>
+
+					</div>
+				</div>
+				<div class="plist">
+					<ul>
+						<li ng-repeat="val in datas">
+							<a href="__APP__/Info/info?id={{val.id}}" class="div_img">
+								<img class="lazy-loaded" src="{{val.productImg}}" alt="" />
+							</a>
+							<h1><a href="__APP__/Info/info?id={{val.id}}" target="_blank" style="color: #666;">{{val.productTitle}}</a></h1>
+							<div class="mb">
+								<div class="fl">
+									<div class="l_price">会员价：
+										<b>￥{{val.vPrice}}</b>
+									</div>
+									<div class="mb_price">零售价：
+										<b>￥{{val.Price}}</b>
+									</div>
+								</div>
+							</div>
+							<div class="push" ng-click="add(val.id)"></div>
+						</li>
+					</ul>
+
+				</div>
+				<div class="paginations">
+					<div class="paging">
+						<uib-pagination total-items="page.totalCount" ng-model="page.pageNo" max-size="5" class="samplePage pagination" boundary-links="true" force-ellipses="false" first-text="首页" last-text="末页" previous-text="上一页" next-text="下一页" items-per-page="page.limit" ng-change="pageChanged()" boundary-link-numbers="true">
+						</uib-pagination>
+					</div>
+					<div class="skip">
+						跳到第<input type="text" class="form-control" name="" ng-model="go" />页
+						<a class="btn btn-primary btn-sm" ng-click="setPage(go)">确定</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--登录弹窗-->
+		<div class="bg">
+			<div class="layer_box" id="login" style="z-index: 113; display: block; margin-top: -218px;">
+				<div class="layer_t"><b>您尚未登录</b>
+					<a href="javascript:;" class="close">X</a>
+				</div>
+				<form action="" method="post" class="fr login_from">
+					<div class="lg_t">
+						<b>用户登录</b>
+						<span>
+						没有账号
+						<a href="__APP__/Register/register">免费注册</a>
+					</span>
+					</div>
+					<div class="item1">
+						<input type="text" name="" id="" placeholder="用户名/手机/邮箱" class="input" ng-model="username" />
+						<i class="i_common" id="i_phone"></i>
+					</div>
+					<div class="item1">
+						<input type="password" name="" id="" placeholder="请输入密码" class="input" ng-model="pwd" />
+						<i class="i_common" id="i_psd"></i>
+					</div>
+					<div class="password_un">
+						<label for="" id="zddl">
+						<input type="checkbox" name="" id="" value="" checked="checked" class="check"/>自动登录
+						<span class="tip">公共场合请勿使用</span>
+					</label>
+						<a href="#">忘记密码？</a>
+					</div>
+					<div class="item1">
+						<input type="submit" name="" id="" value="登录" class="btn_entry" ng-click="login()" />
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--底部导航-->
+		<iframe width="100%" height="356px" frameborder=0 scrolling="no" src="__APP__/Footer/footer"></iframe>
+	</body>
+	<script src="__ROOT__/Index/Common/js/jquery.lazyload.js"></script>
+	<script type="text/javascript">
+		//懒加载
+		$(function() {
+		    $("img.lazy-loaded").lazyload({
+		    		effect : "fadeIn",
+		    		threshold : 400
+		    });
+		})				
+		$(".close").click(function() {
+			$(".bg").hide();
+		})
+		var app = angular.module("myapp", ['ui.bootstrap']);
+		app.controller("mycontroller", function($scope, $http) {
+			$scope.username = "";
+			$scope.pwd = "";
+			//登录按钮
+			$scope.login = function() {
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__APP__/Login/check",
+					data: "username=" + $scope.username + "&pwd=" + $scope.pwd
+				}).success((res) => {
+					console.log(res);
+					if(res.status == 1) {
+						window.location.href = "__APP__/Index/index";
+					} else if(res.status == 2) {
+						alert(res.info);
+					}
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+			//加入购物车图标
+			$scope.add = function(id){
+				console.log(id);
+				$http({
+					method: "post",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					url: "__URL__/addData",
+					data:"pid="+id
+				}).success((res) => {
+//					console.log(res);
+					if(res.status==3){
+						$(".bg").show();
+					}else if(res.status==1){
+						window.location.href = "__APP__/Shopping/shopping";
+					}
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+			$http.get("__URL__/getCate").success((res) => {
+				//				console.log(res);
+				$scope.arr = res;
+				//				console.log($scope.arr.data);
+
+			}).error((err) => {
+				console.log(err);
+			})
+			getDataList("");
+			$(".sort>a").click(function() {
+				var index = $(this).index();
+				if(index == 0) {
+					$(".multiselect").hide();
+					$(".normal").addClass("cur");
+					$(".arrow2").removeClass("cur");
+					$(".arrow1").removeClass("cur");
+					$(".arrow1>i").removeClass("down");
+					$(".arrow2>i").removeClass("down");
+					getDataList("");
+
+				} else if(index == 1) {
+
+					$(".normal").removeClass("cur");
+					$(".arrow1").addClass("cur");
+					$(".arrow2").removeClass("cur");
+					$(".arrow1>i").addClass("down");
+					$(".arrow2>i").removeClass("down");
+					$http({
+						method: "post",
+						url: "__URL__/getSales",
+						headers: {
+							"Content-type": "application/x-www-form-urlencoded"
+						},
+
+					}).success((response) => {
+						//							console.log(response);
+						//						$scope.datas= res;
+						$scope.total = response.length;
+						//					  	  	console.log($scope.total);
+						//反转函数转化abcd转dcba
+						$scope.data = response;
+
+						//					        console.log($scope.data);
+						//选择显示的条数
+						$scope.values = [{
+							"limit": 20
+						}];
+						//默认显示的条数
+						$scope.selectedLimit = $scope.values[0];
+						//默认显示当前页数
+						$scope.currentPage = 1;
+						if($scope.data != null) {
+							$scope.datas = $scope.data.slice($scope.selectedLimit.limit * ($scope.currentPage - 1), $scope.selectedLimit.limit * $scope.currentPage);
+						} else {
+							alert($scope.data);
+						}
+						$scope.page = {
+							"limit": $scope.selectedLimit.limit,
+							"pageSize": 5,
+							"pageNo": $scope.currentPage,
+							"totalCount": $scope.total
+						};
+					}).error((err) => {
+						console.log(err);
+					})
+
+				} else {
+					$(".normal").removeClass("cur");
+					$(".arrow2").addClass("cur");
+					$(".arrow1").removeClass("cur");
+					$(".arrow1>i").removeClass("down");
+					$(".arrow2>i").addClass("down");
+					$http({
+						method: "post",
+						url: "__URL__/getData",
+						headers: {
+							"Content-type": "application/x-www-form-urlencoded"
+						},
+						//						
+					}).success((response) => {
+						//						console.log(response);
+						//						$scope.datas= res;
+						$scope.total = response.length;
+						//				  	  	console.log($scope.total);
+						//反转函数转化abcd转dcba
+						$scope.data = response;
+						//				        console.log($scope.data);
+						//选择显示的条数
+						$scope.values = [{
+							"limit": 20
+						}];
+						//默认显示的条数
+						$scope.selectedLimit = $scope.values[0];
+						//默认显示当前页数
+						$scope.currentPage = 1;
+						if($scope.data != null) {
+							$scope.datas = $scope.data.slice($scope.selectedLimit.limit * ($scope.currentPage - 1), $scope.selectedLimit.limit * $scope.currentPage);
+						} else {
+							alert($scope.data);
+						}
+						$scope.page = {
+							"limit": $scope.selectedLimit.limit,
+							"pageSize": 5,
+							"pageNo": $scope.currentPage,
+							"totalCount": $scope.total
+						};
+					}).error((err) => {
+						console.log(err);
+					})
+				}
+
+			})
+			$scope.productType = function(productType) {
+				console.log(productType);
+				getDataList(productType)
+			}
+
+			function getDataList(productType) {
+				$http({
+					method: "post",
+					url: "__URL__/getlist",
+					headers: {
+						"Content-type": "application/x-www-form-urlencoded"
+					},
+					data: "productType=" + productType
+				}).success((response) => {
+					//							console.log(response);
+					//							//总条数
+					$scope.total = response.length;
+					//					  	  	console.log($scope.total);
+					//反转函数转化abcd转dcba
+					$scope.data = response;
+					//					        console.log($scope.data);
+					$scope.sales = $scope.data;
+					//选择显示的条数
+					$scope.values = [{
+						"limit": 20
+					}];
+					//默认显示的条数
+					$scope.selectedLimit = $scope.values[0];
+					//默认显示当前页数
+					$scope.currentPage = 1;
+					if($scope.data != null) {
+						$scope.datas = $scope.data.slice($scope.selectedLimit.limit * ($scope.currentPage - 1), $scope.selectedLimit.limit * $scope.currentPage);
+					} else {
+						alert($scope.data);
+					}
+					$scope.page = {
+						"limit": $scope.selectedLimit.limit,
+						"pageSize": 5,
+						"pageNo": $scope.currentPage,
+						"totalCount": $scope.total
+					};
+
+				}).error((err) => {
+					console.log(err);
+				})
+			}
+			$scope.moneyone = "";
+			$scope.moneytwo = "";
+			$scope.sub = function() {
+
+				$http({
+					method: "post",
+					headers: {
+						"Content-type": "application/x-www-form-urlencoded"
+					},
+					url: "__URL__/getPrice",
+					data: "moneyone=" + $scope.moneyone + "&moneytwo=" + $scope.moneytwo,
+				}).success((response) => {
+					console.log(response)
+					//总条数
+					$scope.total = response.length;
+					//					  	  	console.log($scope.total);
+					//反转函数转化abcd转dcba
+					$scope.data = response;
+					//					        console.log($scope.data);
+					//选择显示的条数
+					$scope.values = [{
+						"limit": 20
+					}];
+					//默认显示的条数
+					$scope.selectedLimit = $scope.values[0];
+					//默认显示当前页数
+					$scope.currentPage = 1;
+					if($scope.data != null) {
+						$scope.datas = $scope.data.slice($scope.selectedLimit.limit * ($scope.currentPage - 1), $scope.selectedLimit.limit * $scope.currentPage);
+					} else {
+						alert($scope.data);
+					}
+					$scope.page = {
+						"limit": $scope.selectedLimit.limit,
+						"pageSize": 5,
+						"pageNo": $scope.currentPage,
+						"totalCount": $scope.total
+					};
+
+				}).error((err) => {
+					console.log(err);
+				})
+
+			}
+
+			$scope.pageChanged = function() {
+				$scope.page.limit = $scope.selectedLimit.limit;
+				$scope.datas = $scope.data.slice($scope.selectedLimit.limit * ($scope.page.pageNo - 1), $scope.selectedLimit.limit * $scope.page.pageNo);
+			}
+			$scope.setPage = function(go) {
+				$scope.length = Math.ceil($scope.total / $scope.selectedLimit.limit);
+				console.log($scope.length);
+				if(go > $scope.length) {
+					$scope.page.pageNo = $scope.length;
+					console.log($scope.length);
+
+				} else {
+					$scope.page.pageNo = go;
+				}
+				$scope.datas = $scope.data.slice($scope.selectedLimit.limit * ($scope.page.pageNo - 1), $scope.selectedLimit.limit * $scope.page.pageNo);
+			}
+
+		})
+
+		//左侧导航
+		$(".left").on("click", "#plus", function() {
+			//			console.log(111);
+			if($(this).parent().parent().children("ul").css("display") == "none") {
+				$(this).parent().addClass("active");
+				$(this).parent().parent().children("ul").slideDown(100).children("a");
+			} else {
+				$(this).parent().removeClass("active");
+				$(this).parent().parent().children("ul").slideUp(100);
+			}
+		})
+
+		//右侧更多选项
+		$(".mb").click(function() {
+			if($(".mc_hide").css("display") == "none") {
+				$(".mc_hide").slideToggle(400);
+				$(this).siblings().eq(3).css("border-bottom", "1px dashed #ddd");
+				$(this).children("span").html("收起");
+				$(this).children("i").addClass("up");
+			} else {
+				$(".mc_hide").slideToggle(400);
+				$(this).siblings().eq(3).css("border-bottom", "none");
+				$(this).children("span").html("更多选项");
+				$(this).children("i").removeClass("up");
+			}
+		})
+		//加入购物车
+		$(".push").click(function() {
+			$(".layer_box").show();
+			$(".layer_bg").show();
+		})
+
+		//取消登录
+		$(".layer_t>a").click(function() {
+			$(".layer_box").hide();
+			$(".layer_bg").hide();
+		})
+	</script>
+
+</html>
